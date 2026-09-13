@@ -11,11 +11,12 @@
 
 
 /*
-    -------------------------------------------------
-    -----  Demo page — description components  -----
-    -------------------------------------------------
-    Estilos compartidos (patrón jquery-spa v5) para
-    pages-components/*-description.html
+    ---------------------------------------------------------
+    -----  Description page + demo page (shared layout)  -----
+    ---------------------------------------------------------
+    Bloque BEM `description-page` en *-description.html.
+    `demo-page` se mantiene para *-demo.html y páginas src/pages
+    que aún reutilizan el mismo layout.
 */
 
 $demo-primary:          var.$color-primary;
@@ -106,7 +107,8 @@ $demo-hero-mark:        rgba($demo-color-white, 0.12);
 }
 
 
-.demo-page {
+.demo-page,
+.description-page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -261,7 +263,8 @@ $demo-hero-mark:        rgba($demo-color-white, 0.12);
         overflow: hidden;
         box-shadow: 0 10px 32px rgba($demo-text, 0.16);
 
-        .demo-page__hero {
+        .demo-page__hero,
+        .description-page__hero {
             border-radius: 0;
             min-height: 14rem;
 
@@ -278,18 +281,21 @@ $demo-hero-mark:        rgba($demo-color-white, 0.12);
             }
         }
 
-        .demo-page__intro {
+        .demo-page__intro,
+        .description-page__intro {
             background-color: transparent;
             border-left: 0;
             border-radius: 0;
             padding: 0;
         }
 
-        .demo-page__intro-text {
+        .demo-page__intro-text,
+        .description-page__intro-text {
             max-width: 72ch;
         }
 
-        .demo-page__features-title {
+        .demo-page__features-title,
+        .description-page__features-title {
             text-align: left;
 
             &::after {

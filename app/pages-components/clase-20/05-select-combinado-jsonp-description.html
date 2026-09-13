@@ -9,45 +9,45 @@
 
 <div class="main__description">
 
-    <div class="demo-page">
+    <div class="description-page">
 
-        <section class="demo-page__intro">
+        <section class="description-page__intro">
 
-            <h3 class="demo-page__features-title">
+            <h3 class="description-page__features-title">
                 Que hace este ejercicio
             </h3>
 
-            <p class="demo-page__intro-text">
+            <p class="description-page__intro-text">
                 Variante del select combinado que usa <kbd>dataType: "jsonp"</kbd>.
                 El servidor envuelve el JSON en un callback, lo que permite peticiones
                 cross-domain tipicas del patron JSONP.
             </p>
 
-            <p class="demo-page__intro-note">
+            <p class="description-page__intro-note">
                 <kbd> Objetivo: </kbd> Diferenciar JSON vs JSONP en <kbd>$.ajax()</kbd>
                 y entender el parametro <kbd>callback</kbd> que genera jQuery.
             </p>
 
         </section>
 
-        <section class="demo-page__features">
+        <section class="description-page__features">
 
-            <div class="demo-page__features-grid">
+            <div class="description-page__features-grid">
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         La peticion usa <kbd>dataType: "jsonp"</kbd> en lugar de <kbd>"json"</kbd>.
                     </p>
                 </article>
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         El PHP detecta <kbd>$_GET["callback"]</kbd> y responde como script.
                     </p>
                 </article>
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         El resto del flujo (beforeSend, success, complete, error) se mantiene igual.
                     </p>
                 </article>

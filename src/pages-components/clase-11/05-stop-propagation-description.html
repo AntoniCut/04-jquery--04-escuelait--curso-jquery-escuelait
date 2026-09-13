@@ -7,42 +7,42 @@
 
 <div class="main__description">
 
-    <div class="demo-page">
+    <div class="description-page">
 
-        <section class="demo-page__intro">
+        <section class="description-page__intro">
 
-            <h3 class="demo-page__features-title">
+            <h3 class="description-page__features-title">
                 stopPropagation() - Detener propagacion de eventos
             </h3>
 
-            <p class="demo-page__intro-text">
+            <p class="description-page__intro-text">
                 <kbd>stopPropagation()</kbd> evita que un evento se propague hacia elementos padres (bubbling), manteniendo el evento contenido en el elemento actual.
             </p>
 
-            <p class="demo-page__intro-note">
+            <p class="description-page__intro-note">
                 <kbd> Objetivo: </kbd> controlar el flujo de eventos evitando propagacion no deseada a contenedores padres.
             </p>
 
         </section>
 
-        <section class="demo-page__features">
+        <section class="description-page__features">
 
-            <div class="demo-page__features-grid">
+            <div class="description-page__features-grid">
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         Sin <kbd>stopPropagation()</kbd>: un click en span dispara handlers de span → p → div.
                     </p>
                 </article>
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         Con <kbd>stopPropagation()</kbd>: el click se detiene en span, no sube hacia padres.
                     </p>
                 </article>
 
-                <article class="demo-page__feature">
-                    <p class="demo-page__feature-text">
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
                         Se utiliza cuando se quieren handlers independientes en elementos anidados.
                     </p>
                 </article>
