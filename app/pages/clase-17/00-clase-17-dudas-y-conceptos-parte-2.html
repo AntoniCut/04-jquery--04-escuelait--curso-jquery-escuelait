@@ -9,68 +9,322 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C17</p>
-                <h2 class="description-page__hero-title">Dudas y Conceptos Parte 2</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">on()</p>
+                    <h2 class="description-page__hero-title">Dudas y conceptos 2</h2>
+                    <p class="description-page__hero-subtitle">DOM · eventos · scroll</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Dudas y Conceptos Parte 2">
-                Clase 17 - Dudas y Conceptos Parte 2
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 17 y organiza los conceptos principales
-                    para practicar manipulacion del DOM, eventos y efectos con jQuery.
+                <p class="description-page__intro-text">
+                    Segunda tanda de dudas: une manipulacion del
+                    DOM, eventos de raton o teclado y efectos
+                    de scroll. Cada practica resuelve un caso
+                    real y deja el concepto listo para
+                    reutilizarlo.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        Presenta una vista general de los ejercicios y el objetivo tecnico de cada practica.
-                    </li>
-                    <li>
-                        Agrupa los temas por interaccion: eventos de raton, formularios, desplazamiento y efectos visuales.
-                    </li>
-                    <li>
-                        Sirve como punto de entrada para validar rapidamente cada ejercicio antes de profundizar en codigo.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> tener una guia clara de la clase 17 para entender el contexto de cada ejercicio y su resultado esperado.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> entender el contexto
+                    de cada ejercicio y el resultado esperado
+                    antes de entrar en el codigo.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Se inyectan listas, DIV y pies de
+                            foto a partir de arrays o
+                            atributos del markup.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Formularios, hover y menus usan
+                            <kbd>click</kbd>, <kbd>mouseenter</kbd>
+                            o <kbd>keydown</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>scroll</kbd> y
+                            <kbd>offset()</kbd> disparan un
+                            cambio cuando el bloque entra en
+                            pantalla.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Ejercicios para realizar
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Doce practicas: DOM, formularios, menus,
+                    hover, teclado y scroll.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> resolver cada
+                    enunciado con selectores, eventos y
+                    metodos de jQuery.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Crea un <kbd>ul</kbd> y sus
+                            <kbd>li</kbd> a partir de un array
+                            de ciudades.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio01"
+                            data-route="route-clase17-ejercicio01"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Al enviar el formulario, inyecta
+                            un <kbd>div</kbd> con el texto del
+                            input.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio02"
+                            data-route="route-clase17-ejercicio02"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Pon un <kbd>hr</kbd> debajo de
+                            cada parrafo, menos el ultimo.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio03"
+                            data-route="route-clase17-ejercicio03"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Despliega un menu oculto y lo
+                            cierra solo a los 3 segundos.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio04"
+                            data-route="route-clase17-ejercicio04"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Crea un pie de foto con el
+                            <kbd>alt</kbd> de cada imagen, o
+                            un texto generico.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio05"
+                            data-route="route-clase17-ejercicio05"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 5 Hover
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Muestra el pie de foto al hacer
+                            hover sobre la imagen.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio05Hover"
+                            data-route="route-clase17-ejercicio05-hover"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Un checkbox desactiva
+                            <kbd>textarea</kbd> e
+                            <kbd>input[type=text]</kbd> con
+                            <kbd>prop()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio06"
+                            data-route="route-clase17-ejercicio06"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 7
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Controla el auto-ocultado del
+                            menu contextual de la clase 12.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio07"
+                            data-route="route-clase17-ejercicio07"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 8
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Compara <kbd>mouseenter</kbd> y
+                            <kbd>mouseover</kbd> en
+                            contenedores anidados.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio08"
+                            data-route="route-clase17-ejercicio08"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 9
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Impide que <kbd>Tab</kbd> saque
+                            el foco del campo con
+                            <kbd>keydown</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio09"
+                            data-route="route-clase17-ejercicio09"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 10
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Al hacer scroll hasta un bloque,
+                            cambia su fondo con
+                            <kbd>offset()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio10"
+                            data-route="route-clase17-ejercicio10"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 10 Paralax
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Variante: el bloque cambia al
+                            entrar en el viewport.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase17Ejercicio10Paralax"
+                            data-route="route-clase17-ejercicio10-paralax"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
-
 
 </div>
