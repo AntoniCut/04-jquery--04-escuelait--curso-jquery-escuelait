@@ -1,13 +1,22 @@
 <!--
-    *  ----------------------------------------------------------------------------------------------------------------------------------------------------------  *
-    *  -----  /02-handlebars-string-en-javascript-description.html  --  /src/pages-components/clase-24/02-handlebars-string-en-javascript-description.html  -----  *
-    *  ----------------------------------------------------------------------------------------------------------------------------------------------------------  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  02-handlebars-string-en-javascript-description.html  --  /src/pages-components/clase-24/02-handlebars-string-en-javascript-description.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------------------------------  *
 -->
 
 
 <div class="main__description">
 
-    <div class="description-page">
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '{}'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">{{ title }}</p>
+                <h2 class="description-page__hero-title">Template en JavaScript</h2>
+                <p class="description-page__hero-subtitle">{{ title }} · {{ body }}</p>
+            </div>
+        </header>
+
 
         <section class="description-page__intro">
 
@@ -57,6 +66,6 @@
 
         </section>
 
-    </div>
+    </article>
 
 </div>
