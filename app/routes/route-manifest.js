@@ -146,6 +146,10 @@ export const routeManifest = [
     { id: 'clase24HandlebarsBlockExpressions', path: 'clase24-template-systems/06-handlebars-block-expressions', file: 'route-clase24-handlebars-block-expressions' },
     { id: 'clase24HandlebarsPath', path: 'clase24-template-systems/07-handlebars-path', file: 'route-clase24-handlebars-path' },
     { id: 'clase24HandlebarsBuiltInHelpers', path: 'clase24-template-systems/08-handlebars-built-in-helpers', file: 'route-clase24-handlebars-built-in-helpers' },
+
+    { id: 'clase25', path: 'clase25-jquery-plugins', file: 'route-clase25' },
+    { id: 'clase25PluginsBasicos', path: 'clase25-jquery-plugins/01-plugins-basicos', file: 'route-clase25-plugins-basicos' },
+    { id: 'clase25PluginsConHandlebars', path: 'clase25-jquery-plugins/02-plugins-con-handlebars', file: 'route-clase25-plugins-con-handlebars' },
     
     { id: '404NotFoundPage', path: '404', file: 'route-404-not-found-page' },
 

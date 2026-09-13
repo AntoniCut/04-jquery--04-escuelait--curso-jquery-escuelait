@@ -1,0 +1,59 @@
+<!--
+    *  --------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  /02-plugins-con-handlebars-demo.html  --  /src/pages-components/clase-25/02-plugins-con-handlebars-demo.html  -----  *
+    *  --------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+
+    <div class="tpl tpl--double">
+
+        <h3 class="tpl__title">
+            Plugin templatize con Handlebars
+        </h3>
+
+        <p class="tpl__hint">
+            El mismo template se pinta dos veces: con un objeto y con
+            un JSON cargado por URL.
+        </p>
+
+
+        <section class="tpl__panel" aria-label="Contexto como objeto">
+
+            <h4 class="tpl__panel-title">Contexto como objeto</h4>
+
+            <div id="templateTarget" class="tpl__preview">
+                <p class="tpl__preview-placeholder">
+                    Aqui se mostrara el HTML generado con el objeto.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="tpl__panel" aria-label="Contexto desde URL JSON">
+
+            <h4 class="tpl__panel-title">Contexto desde URL JSON</h4>
+
+            <div id="templateTargetAjax" class="tpl__preview">
+                <p class="tpl__preview-placeholder">
+                    Aqui se mostrara el HTML generado desde el JSON.
+                </p>
+            </div>
+
+        </section>
+
+
+        <script id="template" type="text/x-handlebars-template">
+            <div>
+                <h4>{{title}}</h4>
+                <p>{{body}}</p>
+            </div>
+        </script>
+
+    </div>
+
+
+</div>

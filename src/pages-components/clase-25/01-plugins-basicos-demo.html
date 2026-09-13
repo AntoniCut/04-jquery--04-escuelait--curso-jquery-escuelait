@@ -1,0 +1,175 @@
+<!--
+    *  ------------------------------------------------------------------------------------------------------------  *
+    *  -----  /01-plugins-basicos-demo.html  --  /src/pages-components/clase-25/01-plugins-basicos-demo.html  -----  *
+    *  ------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+
+    <div class="plugins">
+
+        <h3 class="plugins__title">
+            Plugins basicos
+        </h3>
+
+        <p class="plugins__hint">
+            Cada tarjeta aplica un plugin. El ultimo bloque encadena varios.
+        </p>
+
+
+        <section class="plugins__card" aria-labelledby="plugins-urlize-title">
+
+            <h4 class="plugins__card-title" id="plugins-urlize-title">
+                urlize
+            </h4>
+
+            <p class="plugins__card-hint">
+                Clic para ir a la URL de <kbd>data-url</kbd>.
+            </p>
+
+            <div
+                id="urlize"
+                class="plugins__sample"
+                data-url="https://jquery.antonydev.tech/escuelait/curso-jquery-escuelait/"
+            >
+                Div convertido a enlace con el plugin urlize para acceder
+                al curso de jQuery de Escuela IT de AntonyDev.
+            </div>
+
+        </section>
+
+
+        <section class="plugins__card" aria-labelledby="plugins-underlinize-title">
+
+            <h4 class="plugins__card-title" id="plugins-underlinize-title">
+                underlinize
+            </h4>
+
+            <div id="underlinize" class="plugins__sample">
+                Div con el plugin underlinize para aplicar subrayado.
+            </div>
+
+        </section>
+
+
+        <section class="plugins__card" aria-labelledby="plugins-boldize-title">
+
+            <h4 class="plugins__card-title" id="plugins-boldize-title">
+                boldize
+            </h4>
+
+            <div id="boldize" class="plugins__sample">
+                Div con el plugin boldize para aplicar negrita.
+            </div>
+
+        </section>
+
+
+        <section class="plugins__card" aria-labelledby="plugins-fontsizer-title">
+
+            <h4 class="plugins__card-title" id="plugins-fontsizer-title">
+                fontSizer
+            </h4>
+
+            <p class="plugins__card-hint">
+                Los botones animan el tamaño de fuente del destino.
+            </p>
+
+            <div class="plugins__actions">
+                <button
+                    type="button"
+                    class="fontSizer plugins__btn"
+                    data-fontsizer="-=1"
+                    data-fontsizer-target="#fontSizer"
+                >
+                    -1 px
+                </button>
+                <button
+                    type="button"
+                    class="fontSizer plugins__btn"
+                    data-fontsizer="+=1"
+                    data-fontsizer-target="#fontSizer"
+                >
+                    +1 px
+                </button>
+            </div>
+
+            <div id="fontSizer" class="plugins__sample plugins__sample--grow">
+                Div con el plugin fontSizer para cambiar el tamaño de la fuente.
+            </div>
+
+        </section>
+
+
+        <section class="plugins__card" aria-labelledby="plugins-colorize-title">
+
+            <h4 class="plugins__card-title" id="plugins-colorize-title">
+                colorize
+            </h4>
+
+            <p class="plugins__card-hint">
+                El input pinta el color del destino
+                <kbd>data-colorize-target</kbd>.
+            </p>
+
+            <div id="colorize" class="plugins__sample" data-color="coral">
+                Div con el plugin colorize para aplicar color.
+            </div>
+
+            <label class="plugins__label" for="colorizeInput">
+                Color del texto
+            </label>
+            <input
+                type="color"
+                id="colorizeInput"
+                class="plugins__color"
+                value="#ff7f50"
+                data-colorize-target="#colorize"
+            >
+
+        </section>
+
+
+        <section class="plugins__card plugins__card--combo" aria-labelledby="plugins-combo-title">
+
+            <h4 class="plugins__card-title" id="plugins-combo-title">
+                Encadenando metodos
+            </h4>
+
+            <p class="plugins__card-hint">
+                urlize + underlinize, boldize + colorize y fontSizer
+                sobre <kbd>#mydiv</kbd>.
+            </p>
+
+            <div class="plugins__actions">
+                <button
+                    type="button"
+                    class="font-sizer plugins__btn"
+                    data-fontsizer="-=10"
+                >
+                    -10 px
+                </button>
+                <button
+                    type="button"
+                    class="font-sizer plugins__btn"
+                    data-fontsizer="+=10"
+                >
+                    +10 px
+                </button>
+            </div>
+
+            <div id="mydiv" class="plugins__sample plugins__sample--grow">
+                <div class="urlize" data-url="https://escuela.it">
+                    Enlazar <span class="boldize colorize" data-color="red">sin</span>
+                    ser un enlace
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+</div>

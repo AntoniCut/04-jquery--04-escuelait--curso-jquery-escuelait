@@ -6,6 +6,7 @@
 
 //  -----  Referencias a otros archivos de tipos  -----  //
 /// <reference path="./dom.d.ts" />
+/// <reference path="./plugins.d.ts" />
 
 
 //  -----  Declaración de tipos globales  -----  //
@@ -25,7 +26,7 @@ declare global {
     }
 
     const Handlebars: HandlebarsStatic;
-    
+
     interface Window {
         __spaFirstRouteLoaded?: boolean;
         $: JQueryStatic;
