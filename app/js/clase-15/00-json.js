@@ -1,7 +1,7 @@
 /*
-    *  ---------------------------------------------------------------  *
-    *  -----  /00-json.js  --  /src/scripts/clase-15/00-json.js  -----  *
-    *  ---------------------------------------------------------------  *
+    *  --------------------------------------------------------------  *
+    *  -----  00-json.js  --  /src/scripts/clase-15/00-json.js  -----  *
+    *  --------------------------------------------------------------  *
 */
 
 
@@ -55,7 +55,7 @@ import { bebidas } from './bebidas.js';
 
 
         //  -----  Ingredientes  -----
-        bebidas.ingredientes.forEach(ing => arrIngredientes.push(`<li> - ${ing} </li>`));
+        bebidas.ingredientes.forEach(ing => arrIngredientes.push(`<li>${ing}</li>`));
         $ingredientes.empty().append(arrIngredientes.join(''));
 
 

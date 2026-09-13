@@ -1,52 +1,58 @@
-<!--  
-    *  -----------------------------------------------------------------------------------------------------------------------  *
-    *  -----  /00-json-demo.html  --  /src/pages-components/clase-15/00-json-demo.html  -----  *
-    *  -----------------------------------------------------------------------------------------------------------------------  *
+<!--
+    *  -------------------------------------------------------------------------------------  *
+    *  -----  00-json-demo.html  --  /src/pages-components/clase-15/00-json-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------  *
 -->
-
 
 
 <div class="main__demo">
 
+    <article class="json-bebidas">
 
-    <!--  -----  Contenido de la Práctica, Aqui se renderiza la logica de la Página  -----  -->
+        <header class="json-bebidas__header">
+            <h2 class="json-bebidas__title">
+                Bebida
+                <span id="bebida" class="json-bebidas__name">
+                    <!--  inyectar contenido con jQuery  -->
+                </span>
+            </h2>
+            <p class="json-bebidas__meta">
+                <span class="json-bebidas__meta-label">Inicio de produccion</span>
+                <span id="inicio" class="json-bebidas__meta-value">
+                    <!--  inyectar contenido con jQuery  -->
+                </span>
+            </p>
+        </header>
 
-    <section class="main__section-practica main__json-bebidas">
-
-        <h2 class="json-bebidas__title"> 
-            Bebida:
-            <span id="bebida">
+        <section class="json-bebidas__block" aria-labelledby="ingredientes-title">
+            <h3 id="ingredientes-title" class="json-bebidas__subtitle">
+                Ingredientes
+            </h3>
+            <ul id="ingredientes" class="json-bebidas__list">
                 <!--  inyectar contenido con jQuery  -->
-            </span>
-        </h2>
+            </ul>
+        </section>
 
-        <p>
-            <strong> Inicio de producción: </strong>
-            <span id="inicio"> 
-                <!--  inyectar contenido con jQuery  -->
-            </span>
-        </p>
+        <section class="json-bebidas__block" aria-labelledby="marcas-title">
+            <h3 id="marcas-title" class="json-bebidas__subtitle">
+                Marcas
+            </h3>
+            <div class="json-bebidas__table-wrap">
+                <table class="json-bebidas__table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Procedencia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaMarcas">
+                        <!--  inyectar contenido con jQuery  -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <h3 class="json-bebidas__subtitle"> Ingredientes </h3>
-        <ul id="ingredientes"> 
-                <!--  inyectar contenido con jQuery  -->
-        </ul>
-
-        <h3 class="json-bebidas__subtitle"> Marcas </h3>
-        <table>
-            <thead>
-                <tr>
-                    <th> Nombre </th>
-                    <th> Tipo </th>
-                    <th> Procedencia </th>
-                </tr>
-            </thead>
-            <tbody id="tablaMarcas">
-                 <!--  inyectar contenido con jQuery  -->
-            </tbody>
-        </table>
-
-    </section>
-
+    </article>
 
 </div>

@@ -1,64 +1,188 @@
 /*
-    *  -----------------------------------------------------------------------------  *
-    *  -----  /00-json.scss  --  /src/styles/scss/pages/clase-15/00-json.scss  -----  *
-    *  -----------------------------------------------------------------------------  *
+    *  ---------------------------------------------------------------------  *
+    *  -----  00-json.scss  --  /src/scss/pages/clase-15/00-json.scss  -----  *
+    *  ---------------------------------------------------------------------  *
 */
 
 
 @use '../../base/mixins' as mix;
+@use '../../base/variables' as var;
 
 
-.main__section-practica {
-    min-height: 60rem;
-}
+$json-primary: var.$color-primary;
+$json-text: #0d2035;
+$json-muted: #3a5672;
+$json-surface: #fff;
+$json-wash: #eef6fb;
+$json-border: rgba($json-primary, 0.16);
+$json-shadow: 0 10px 32px rgba(3, 106, 173, 0.12);
 
-.main__json-bebidas {
-    background-color: #f0f0f0;
-    padding: 2rem;
-    border-radius: 8px;
-}
 
-.json-bebidas__title {
-    color: darkgreen;
-    margin-top: 5rem;
-}
-
-#bebida,
-.json-bebidas__subtitle {
-    color: #37b837;
-}
-
-.main__json-bebidas ul,
-.main__json-bebidas ol {
-    padding-left: 2rem;
-}
-
-.main__json-bebidas table {
-    border-collapse: collapse;
-    width: 60%;
-    margin-bottom: 5rem;
-}
-
-.main__json-bebidas th,
-.main__json-bebidas td {
-    border: 1px solid #ccc;
-    padding: 0.8rem 1.2rem;
-    text-align: left;
-}
-
-.main__json-bebidas td {
-    
-    font-size: 1rem;
+.main__demo > article.json-bebidas {
+    padding: 2.4rem 2.4rem 4.8rem;
 
     @include mix.tablet {
-        font-size: 1.4rem;
+        padding: 3.2rem 3.2rem 6rem;
     }
 }
 
-.main__json-bebidas tbody tr:nth-child(odd) {
-    background-color: #e7f6e7;
-}
+.json-bebidas {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: $json-surface;
+    border: 1px solid $json-border;
+    border-radius: 1.4rem;
+    box-shadow: $json-shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    color: $json-text;
 
-.main__json-bebidas tbody tr:nth-child(odd) td {
-    color: #1f4d1f;
+    ::selection {
+        background: rgba($json-primary, 0.22);
+        color: $json-text;
+    }
+
+    @include mix.tablet {
+        gap: 3rem;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $json-border;
+    }
+
+    &__title {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.8rem 1.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $json-muted;
+    }
+
+    &__name {
+        font-size: 2.4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: $json-primary;
+        line-height: 1.1;
+        padding-bottom: 0.4rem;
+
+        @include mix.tablet {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__meta {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.6rem 1rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: $json-text;
+    }
+
+    &__meta-label {
+        font-weight: 700;
+        color: $json-muted;
+    }
+
+    &__meta-value {
+        font-variant-numeric: tabular-nums;
+        color: $json-text;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    &__subtitle {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $json-primary;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    &__list li {
+        margin: 0;
+        padding: 0.55rem 1.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $json-primary;
+        background: $json-wash;
+        border: 1px solid $json-border;
+        border-radius: 999px;
+    }
+
+    &__table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid $json-border;
+        border-radius: 1.2rem;
+
+        scrollbar-color: rgba($json-primary, 0.45) $json-wash;
+        scrollbar-width: thin;
+    }
+
+    &__table {
+        width: 100%;
+        min-width: 48rem;
+        border-collapse: collapse;
+        font-size: 1.45rem;
+        line-height: 1.5;
+    }
+
+    &__table th,
+    &__table td {
+        padding: 1.1rem 1.4rem;
+        text-align: left;
+        border-bottom: 1px solid $json-border;
+    }
+
+    &__table th {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $json-muted;
+        background: $json-wash;
+    }
+
+    &__table td {
+        font-variant-numeric: tabular-nums;
+        color: $json-text;
+    }
+
+    &__table tbody tr:last-child td {
+        border-bottom: 0;
+    }
+
+    &__table tbody tr:nth-child(even) {
+        background: rgba($json-primary, 0.035);
+    }
+
+    &__table tbody tr:hover {
+        background: rgba($json-primary, 0.08);
+    }
 }
