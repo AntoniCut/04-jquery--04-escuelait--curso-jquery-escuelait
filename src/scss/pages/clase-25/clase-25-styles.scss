@@ -23,7 +23,7 @@
 }
 
 [data-component-page="pluginsConHandlebarsDemo"] {
-    min-height: 78rem;
+    min-height: 0;
 }
 
 .plugins {
@@ -168,12 +168,7 @@
     gap: 2rem;
     width: 100%;
     max-width: 72rem;
-    min-height: 64rem;
     margin: 0 auto;
-
-    &--double {
-        min-height: 78rem;
-    }
 
     &__title {
         font-size: 2rem;
@@ -258,12 +253,6 @@
     }
 
     .tpl {
-        min-height: 72rem;
-
-        &--double {
-            min-height: 88rem;
-        }
-
         &__preview {
             padding: 1.6rem;
         }
