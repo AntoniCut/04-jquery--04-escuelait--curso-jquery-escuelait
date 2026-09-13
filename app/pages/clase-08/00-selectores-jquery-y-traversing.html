@@ -9,13 +9,67 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C08</p>
-                <h2 class="description-page__hero-title">Selectores jQuery y Traversing</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$('sel')</p>
+                    <h2 class="description-page__hero-title">Selectores y traversing</h2>
+                    <p class="description-page__hero-subtitle">jerarquia · traversing · contexto</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Profundiza en como localizar nodos: selectores de
+                    jerarquia, una herramienta para probarlos en vivo,
+                    metodos de <kbd>traversing</kbd> como
+                    <kbd>children()</kbd> o <kbd>find()</kbd>, y busquedas
+                    limitadas a un <kbd>contexto</kbd>.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> elegir el selector o el metodo
+                    de traversing adecuado y acotar la busqueda con un
+                    contexto.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>padre &gt; hijo</kbd> y
+                            <kbd>:not()</kbd> recorren la jerarquia del
+                            markup.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>children()</kbd>, <kbd>siblings()</kbd>
+                            y <kbd>find()</kbd> navegan desde un nodo.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$(sel, ctx)</kbd> limita la busqueda a
+                            un bloque concreto del DOM.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 
