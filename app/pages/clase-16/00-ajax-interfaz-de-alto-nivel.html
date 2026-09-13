@@ -9,13 +9,167 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C16</p>
-                <h2 class="description-page__hero-title">AJAX - Interfaz de alto nivel</h2>
-                <p class="description-page__hero-subtitle">AJAX Interfaz de alto nivel</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.get()</p>
+                    <h2 class="description-page__hero-title">AJAX de alto nivel</h2>
+                    <p class="description-page__hero-subtitle">load · get · datos</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Introduce la interfaz AJAX de alto nivel de
+                    jQuery: inyectar HTML con <kbd>.load()</kbd>,
+                    pedir datos con <kbd>$.get()</kbd>, enviar
+                    parametros y observar el ciclo de la peticion.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> cargar contenido remoto
+                    y controlar el exito o el error de una
+                    peticion GET.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>.load()</kbd> pide un archivo y
+                            vuelca el HTML en un elemento.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$.get()</kbd> recibe la respuesta
+                            en un callback y la pinta a mano.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Se envian datos, se usan handlers
+                            globales y <kbd>.done()</kbd> /
+                            <kbd>.fail()</kbd>.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cuatro practicas: load, get, get con datos
+                    y get con el objeto Deferred.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y
+                    ver como llega la respuesta AJAX.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Inyecta HTML remoto con
+                            <kbd>.load()</kbd> en un solo paso.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase16Load"
+                            data-route="route-clase16-load"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Pide un archivo con
+                            <kbd>$.get()</kbd> y pinta el
+                            fragmento en el callback.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase16GetAjax"
+                            data-route="route-clase16-get-ajax"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Envia nombre y apellido con
+                            <kbd>$.get()</kbd> y registra el
+                            ciclo de la peticion.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase16GetAjaxDatos"
+                            data-route="route-clase16-get-ajax-datos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Sustituye el callback por
+                            <kbd>.done()</kbd>, <kbd>.fail()</kbd>
+                            y <kbd>.always()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase16GetAjaxDatosObjetoAjax"
+                            data-route="route-clase16-get-ajax-datos-objeto-ajax"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 
