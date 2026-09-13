@@ -9,73 +9,136 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C25</p>
-                <h2 class="description-page__hero-title">jQuery Plugins</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.fn</p>
+                    <h2 class="description-page__hero-title">jQuery plugins</h2>
+                    <p class="description-page__hero-subtitle">each · chain · template</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="jQuery Plugins">
-                Clase 25 - jQuery Plugins
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 25: como
-                    extender <kbd>$.fn</kbd> para crear plugins reutilizables,
-                    encadenarlos y, en el segundo ejercicio, conectar un
+                <p class="description-page__intro-text">
+                    Extiende <kbd>$.fn</kbd> para crear
+                    plugins reutilizables, encadenarlos
+                    y, en la segunda demo, conectar un
                     plugin con Handlebars.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>01</kbd> Plugins basicos:
-                        <kbd>urlize</kbd>, <kbd>underlinize</kbd>,
-                        <kbd>boldize</kbd>, <kbd>fontSizer</kbd> y
-                        <kbd>colorize</kbd>, aplicados uno a uno y encadenados.
-                    </li>
-                    <li>
-                        <kbd>02</kbd> Plugin <kbd>templatize</kbd>: compila
-                        un template Handlebars y pinta el HTML con un objeto
-                        o con un JSON cargado por URL.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> entender el patron
-                    <kbd>$.fn.nombre = function () { return this.each(...) }</kbd>
-                    y devolver la coleccion para poder encadenar metodos.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> devolver
+                    <kbd>this.each(...)</kbd> para poder
+                    encadenar metodos.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El patron es
+                            <kbd>$.fn.nombre = function () {}</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>urlize</kbd>,
+                            <kbd>boldize</kbd> y
+                            <kbd>colorize</kbd> se
+                            encadenan sobre la coleccion.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>templatize</kbd> compila
+                            Handlebars y pinta un objeto
+                            o un JSON.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Dos practicas: plugins basicos y
+                    plugin con plantilla.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y encadenar el plugin.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Plugins
+                            <kbd>urlize</kbd>,
+                            <kbd>underlinize</kbd>,
+                            <kbd>boldize</kbd>,
+                            <kbd>fontSizer</kbd> y
+                            <kbd>colorize</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase25PluginsBasicos"
+                            data-route="route-clase25-plugins-basicos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Plugin <kbd>templatize</kbd>
+                            con Handlebars y un JSON
+                            por URL.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase25PluginsConHandlebars"
+                            data-route="route-clase25-plugins-con-handlebars"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

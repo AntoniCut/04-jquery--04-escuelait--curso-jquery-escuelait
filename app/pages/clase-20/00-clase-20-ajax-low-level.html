@@ -9,67 +9,188 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C20</p>
-                <h2 class="description-page__hero-title">Ajax Low Level</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.ajax()</p>
+                    <h2 class="description-page__hero-title">Ajax low level</h2>
+                    <p class="description-page__hero-subtitle">post · script · jsonp</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Ajax Low Level">
-                Clase 20 - Ajax Low Level
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 20 y organiza los conceptos principales
-                    para practicar la interfaz de bajo nivel de Ajax con jQuery mediante <kbd>$.ajax()</kbd>.
+                <p class="description-page__intro-text">
+                    Usa la interfaz de bajo nivel
+                    <kbd>$.ajax()</kbd>: POST a PHP, cargar
+                    scripts, un buscador, selects
+                    dependientes y JSONP.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        Presenta una vista general de los ejercicios y el objetivo tecnico de cada practica.
-                    </li>
-                    <li>
-                        Agrupa los temas por peticion: POST, carga de scripts, busquedas, selects dependientes y JSONP.
-                    </li>
-                    <li>
-                        Sirve como punto de entrada para validar rapidamente cada ejercicio antes de profundizar en codigo.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> tener una guia clara de la clase 20 para entender el contexto de cada ejercicio y su resultado esperado.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> configurar una
+                    peticion completa: metodo, datos,
+                    dataType y callbacks.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$.ajax()</kbd> declara
+                            url, type, data y
+                            <kbd>success</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Puede cargar un script o
+                            filtrar resultados de un
+                            buscador.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Selects encadenados y
+                            <kbd>jsonp</kbd> para APIs
+                            de otro dominio.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cinco practicas con
+                    <kbd>$.ajax()</kbd> a distintos
+                    destinos.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y revisar la peticion en la red.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Envia un POST a PHP con
+                            <kbd>$.ajax()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase20AjaxPostPhp"
+                            data-route="route-clase20-ajax-post-php"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Carga un script remoto y
+                            lo ejecuta.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase20AjaxLoadScripts"
+                            data-route="route-clase20-ajax-load-scripts"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Filtra resultados de un
+                            buscador mientras escribes.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase20Buscador"
+                            data-route="route-clase20-buscador"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Rellena un segundo
+                            <kbd>select</kbd> segun el
+                            primero.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase20SelectCombinado"
+                            data-route="route-clase20-select-combinado"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Misma idea con
+                            <kbd>jsonp</kbd> cruzando
+                            dominios.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase20SelectCombinadoJsonp"
+                            data-route="route-clase20-select-combinado-jsonp"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

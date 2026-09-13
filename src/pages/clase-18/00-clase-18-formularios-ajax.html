@@ -9,67 +9,166 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C18</p>
-                <h2 class="description-page__hero-title">Formularios Ajax</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.post()</p>
+                    <h2 class="description-page__hero-title">Formularios Ajax</h2>
+                    <p class="description-page__hero-subtitle">post · serialize · validacion</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Formularios Ajax">
-                Clase 18 - Formularios Ajax
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 18 y organiza los conceptos principales
-                    para practicar formularios Ajax con jQuery.
+                <p class="description-page__intro-text">
+                    Envia datos por POST con y sin formulario,
+                    serializa campos y valida en el cliente
+                    o tambien en el servidor antes de
+                    mandar la peticion.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        Presenta una vista general de los ejercicios y el objetivo tecnico de cada practica.
-                    </li>
-                    <li>
-                        Agrupa los temas por interaccion: formularios, validacion y envio Ajax con jQuery.
-                    </li>
-                    <li>
-                        Sirve como punto de entrada para validar rapidamente cada ejercicio antes de profundizar en codigo.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> tener una guia clara de la clase 18 para entender el contexto de cada ejercicio y su resultado esperado.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> enviar un formulario
+                    por Ajax y decidir que se valida antes
+                    del POST.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$.post()</kbd> manda datos
+                            sueltos, sin etiqueta
+                            <kbd>form</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>serialize()</kbd> empaqueta
+                            los campos de un formulario.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            La validacion puede ser solo
+                            cliente o cliente y servidor.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cuatro practicas de envio POST y
+                    validacion de formularios.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y
+                    ver como viajan los datos.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Envia un POST con
+                            <kbd>$.post()</kbd> sin usar
+                            un formulario.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase18EnviarDatosPostSinFormularios"
+                            data-route="route-clase18-enviar-datos-post-sin-formularios"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Serializa el formulario y lo
+                            envia sin validar campos.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase18FormulariosSinValidacion"
+                            data-route="route-clase18-formularios-sin-validacion"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Valida en el cliente antes
+                            de lanzar el POST.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase18FormularioValidacionCliente"
+                            data-route="route-clase18-formulario-validacion-cliente"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Valida en el cliente y otra
+                            vez en el servidor.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase18FormularioValidacionClienteServidor"
+                            data-route="route-clase18-formulario-validacion-cliente-servidor"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

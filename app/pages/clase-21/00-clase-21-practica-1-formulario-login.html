@@ -9,69 +9,130 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C21</p>
-                <h2 class="description-page__hero-title">Práctica 1 Formulario Login</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.post()</p>
+                    <h2 class="description-page__hero-title">Formulario login</h2>
+                    <p class="description-page__hero-subtitle">modal · json · mysql</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Práctica 1 Formulario Login">
-                Clase 21 - Práctica 1 Formulario Login
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume la practica 1 de la clase 21: login modal con Ajax/JSON
-                    y una segunda practica con autenticacion real contra MySQL.
+                <p class="description-page__intro-text">
+                    Practica un login modal con Ajax y
+                    JSON: primero simulado, luego con
+                    registro e inicio de sesion contra
+                    MySQL, sin recargar la pagina.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>01</kbd> Login modal simulado (JSON fijo) con fundido y feedback visual.
-                    </li>
-                    <li>
-                        <kbd>02</kbd> Registro e inicio de sesion consultando
-                        <kbd>jquery_escuelait_classicmodels.login_users</kbd>.
-                    </li>
-                    <li>
-                        Si el usuario no esta dado de alta, el login indica que debe registrarse.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> integrar efectos, Ajax, JSON y autenticacion MySQL
-                    en un flujo de login amigable sin recargar la pagina.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> integrar efectos,
+                    Ajax y autenticacion en un flujo de
+                    login.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El modal se abre con fundido
+                            y muestra feedback visual.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            La primera demo compara
+                            usuario y clave con un JSON
+                            fijo.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            La segunda consulta
+                            <kbd>login_users</kbd> y pide
+                            registro si no existe.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Dos practicas: login simulado y
+                    login con base de datos.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y completar el flujo de login.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Login modal contra un JSON
+                            fijo, con fundido y feedback.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase21FormularioLogin"
+                            data-route="route-clase21-formulario-login"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Registro e inicio de sesion
+                            consultando MySQL.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase21FormularioLoginAutenticacion"
+                            data-route="route-clase21-formulario-login-autenticacion"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

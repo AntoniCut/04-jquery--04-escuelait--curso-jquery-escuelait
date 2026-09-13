@@ -9,87 +9,245 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C24</p>
-                <h2 class="description-page__hero-title">Template Systems</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '{{'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">{{ }}</p>
+                    <h2 class="description-page__hero-title">Template systems</h2>
+                    <p class="description-page__hero-subtitle">compile · each · path</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Template Systems">
-                Clase 24 - Template Systems
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 24: como generar HTML
-                    a partir de plantillas con Handlebars y, en contraste, como montar
-                    el mismo resultado creando nodos con jQuery.
+                <p class="description-page__intro-text">
+                    Genera HTML a partir de plantillas
+                    Handlebars y, en contraste, monta
+                    el mismo resultado creando nodos
+                    con jQuery.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>01</kbd> Compilar un string fijo con <kbd>Handlebars.compile</kbd>
-                        y pintar el HTML resultante.
-                    </li>
-                    <li>
-                        <kbd>02</kbd> Template como string en JavaScript con placeholders
-                        <kbd>{{title}}</kbd> y <kbd>{{body}}</kbd>.
-                    </li>
-                    <li>
-                        <kbd>03</kbd> Template declarado en un <kbd>script type="text/x-handlebars-template"</kbd>.
-                    </li>
-                    <li>
-                        <kbd>04</kbd> Misma salida sin motor de plantillas: crear el DOM
-                        con <kbd>$()</kbd>, <kbd>.text()</kbd> y <kbd>.append()</kbd>.
-                    </li>
-                    <li>
-                        <kbd>05</kbd> Cargar un template externo por AJAX con <kbd>$.get</kbd>.
-                    </li>
-                    <li>
-                        <kbd>06</kbd> Helpers de bloque personalizados (<kbd>toH1</kbd>, <kbd>toUl</kbd>).
-                    </li>
-                    <li>
-                        <kbd>07</kbd> Paths anidados: <kbd>{{author.id}}</kbd> y <kbd>{{author.name}}</kbd>.
-                    </li>
-                    <li>
-                        <kbd>08</kbd> Helpers nativos <kbd>#if</kbd> y <kbd>#each</kbd>.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> separar datos y markup con un template system,
-                    y saber cuando basta con generar el DOM a mano.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> separar datos y
+                    markup, y saber cuando basta con
+                    generar el DOM a mano.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>Handlebars.compile</kbd>
+                            transforma un string o un
+                            <kbd>script</kbd> en funcion.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El template puede vivir en
+                            JS, en el HTML o llegar
+                            por Ajax.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Paths, <kbd>#if</kbd>,
+                            <kbd>#each</kbd> y helpers
+                            de bloque pintan listas.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Ocho practicas: compile, string,
+                    script, DOM a mano, Ajax, helpers
+                    y paths.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y ver como se pinta el HTML.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Compila un string fijo con
+                            <kbd>Handlebars.compile</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsCompilarBasico"
+                            data-route="route-clase24-handlebars-compilar-basico"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Template como string en JS
+                            con <kbd>{{title}}</kbd> y
+                            <kbd>{{body}}</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsStringEnJavascript"
+                            data-route="route-clase24-handlebars-string-en-javascript"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Template en un
+                            <kbd>script type="text/x-handlebars-template"</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsScriptEnHtml"
+                            data-route="route-clase24-handlebars-script-en-html"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Misma salida creando el DOM
+                            con <kbd>$()</kbd> y
+                            <kbd>append()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24JqueryGenerarDom"
+                            data-route="route-clase24-jquery-generar-dom"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Carga el template externo
+                            con <kbd>$.get()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsTemplateExternoAjax"
+                            data-route="route-clase24-handlebars-template-externo-ajax"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Helpers de bloque
+                            <kbd>toH1</kbd> y
+                            <kbd>toUl</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsBlockExpressions"
+                            data-route="route-clase24-handlebars-block-expressions"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 7
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Paths anidados:
+                            <kbd>{{author.id}}</kbd> y
+                            <kbd>{{author.name}}</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsPath"
+                            data-route="route-clase24-handlebars-path"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 8
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Helpers nativos
+                            <kbd>#if</kbd> y
+                            <kbd>#each</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase24HandlebarsBuiltInHelpers"
+                            data-route="route-clase24-handlebars-built-in-helpers"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

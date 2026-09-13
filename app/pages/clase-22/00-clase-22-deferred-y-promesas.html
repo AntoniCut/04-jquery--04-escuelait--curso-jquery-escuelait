@@ -9,73 +9,173 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C22</p>
-                <h2 class="description-page__hero-title">Deferred y Promesas</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">Deferred</p>
+                    <h2 class="description-page__hero-title">Deferred y promesas</h2>
+                    <p class="description-page__hero-subtitle">done · when · then</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Deferred y Promesas">
-                Clase 22 - Deferred y Promesas
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 22 y organiza los conceptos principales
-                    para practicar el objeto <kbd>Deferred</kbd> de jQuery, las promesas que expone
-                    con <kbd>.promise()</kbd> y la coordinacion de tareas asincronas con <kbd>$.when()</kbd>.
+                <p class="description-page__intro-text">
+                    Modela el asincronismo con
+                    <kbd>Deferred</kbd>, las promesas de
+                    <kbd>.promise()</kbd> y
+                    <kbd>$.when()</kbd> para coordinar
+                    varias tareas sin anidar callbacks.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>01</kbd> Estados de un Deferred: <kbd>resolve</kbd>, <kbd>reject</kbd>,
-                        <kbd>done</kbd>, <kbd>fail</kbd> y <kbd>always</kbd>.
-                    </li>
-                    <li>
-                        <kbd>02</kbd> Promesas de <kbd>$.get</kbd> y combinacion de peticiones con <kbd>$.when</kbd>.
-                    </li>
-                    <li>
-                        <kbd>03</kbd> Una funcion propia que devuelve una promesa (<kbd>esPar</kbd>).
-                    </li>
-                    <li>
-                        <kbd>04</kbd> Encadenar <kbd>.then</kbd>, <kbd>.progress</kbd>, animaciones y varios <kbd>.done</kbd>.
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> entender como jQuery modela el asincronismo con Deferred
-                    y como se coordinan varias operaciones sin anidar callbacks.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> resolver, rechazar
+                    y encadenar operaciones asincronas
+                    con jQuery.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>resolve</kbd> y
+                            <kbd>reject</kbd> cambian el
+                            estado; <kbd>done</kbd> /
+                            <kbd>fail</kbd> reaccionan.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$.when()</kbd> espera
+                            varias promesas de
+                            <kbd>$.get()</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Una funcion propia puede
+                            devolver una promesa y
+                            encadenar <kbd>.then()</kbd>.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cuatro practicas: Deferred, when,
+                    funcion-promesa y encadenado.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y seguir el estado de la promesa.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Resuelve o rechaza un
+                            <kbd>Deferred</kbd> y escucha
+                            <kbd>done</kbd> / <kbd>fail</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase22Deferred"
+                            data-route="route-clase22-deferred"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Combina varias peticiones
+                            <kbd>$.get()</kbd> con
+                            <kbd>$.when()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase22Promesas"
+                            data-route="route-clase22-promesas"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Una funcion
+                            (<kbd>esPar</kbd>) que
+                            devuelve una promesa.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase22FuncionComoPromesa"
+                            data-route="route-clase22-funcion-como-promesa"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Encadena <kbd>.then()</kbd>,
+                            <kbd>.progress()</kbd> y
+                            varios <kbd>.done()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase22AplicandoConceptos"
+                            data-route="route-clase22-aplicando-conceptos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

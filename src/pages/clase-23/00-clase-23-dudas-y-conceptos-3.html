@@ -9,74 +9,155 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C23</p>
-                <h2 class="description-page__hero-title">Dudas y conceptos 3</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">queue()</p>
+                    <h2 class="description-page__hero-title">Dudas y conceptos 3</h2>
+                    <p class="description-page__hero-subtitle">form · queue · bucle</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Dudas y conceptos 3">
-                Clase 23 - Dudas y conceptos 3
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Que hace esta clase
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Esta pagina resume los ejercicios de la clase 23 y organiza los conceptos
-                    que quedaron pendientes: validar un formulario cuando todos los campos
-                    han cambiado, y dos formas de montar una animacion en bucle con cola
-                    de efectos de jQuery.
+                <p class="description-page__intro-text">
+                    Cierra dudas pendientes: validar un
+                    formulario cuando todos los campos
+                    han cambiado, y dos formas de
+                    montar una animacion en bucle con
+                    la cola de efectos.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>01</kbd> Recorrer varios <kbd>select</kbd> y comprobar que ninguno
-                        sigue vacio antes de considerar el pedido listo.
-                    </li>
-                    <li>
-                        <kbd>02</kbd> Animacion en bucle forma 1: un ciclo encadenado con
-                        <kbd>queue</kbd>, <kbd>animate</kbd>, <kbd>fade</kbd> y <kbd>stop</kbd>.
-                    </li>
-                    <li>
-                        <kbd>03</kbd> Animacion en bucle forma 2: el mismo recorrido separado
-                        en funciones por fase (<kbd>derecha</kbd>, <kbd>transicion</kbd>,
-                        <kbd>izquierda</kbd>).
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> cerrar dudas de formularios y de cola de animaciones
-                    con dos implementaciones distintas del mismo bucle.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> validar selects
+                    y repetir una cola de animaciones
+                    de dos maneras distintas.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Recorre varios
+                            <kbd>select</kbd> y comprueba
+                            que ninguno sigue vacio.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El bucle forma 1 encadena
+                            <kbd>queue</kbd>,
+                            <kbd>animate</kbd> y
+                            <kbd>fade</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El bucle forma 2 separa el
+                            mismo recorrido en funciones
+                            por fase.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Ejercicios para realizar
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Tres practicas: un formulario y
+                    dos implementaciones del bucle.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> resolver cada
+                    enunciado y comparar las dos
+                    formas del bucle.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El pedido solo esta listo
+                            cuando ningun
+                            <kbd>select</kbd> queda vacio.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase23ValidarFormulario"
+                            data-route="route-clase23-validar-formulario"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Animacion en bucle forma 1:
+                            un ciclo encadenado con
+                            <kbd>queue()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase23AnimacionesEnBucleForma1"
+                            data-route="route-clase23-animaciones-en-bucle-forma-1"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Animacion en bucle forma 2:
+                            mismas fases en funciones
+                            sueltas.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase23AnimacionesEnBucleForma2"
+                            data-route="route-clase23-animaciones-en-bucle-forma-2"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
     </section>
-   
 
 </div>

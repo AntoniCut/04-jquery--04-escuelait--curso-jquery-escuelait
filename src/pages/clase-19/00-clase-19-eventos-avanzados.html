@@ -9,40 +9,203 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C19</p>
-                <h2 class="description-page__hero-title">Eventos Avanzados</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">on()</p>
+                    <h2 class="description-page__hero-title">Eventos avanzados</h2>
+                    <p class="description-page__hero-subtitle">delegacion · trigger · custom</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Profundiza en eventos: delegacion a
+                    elementos futuros, pasar datos al
+                    manejador, disparar eventos o solo
+                    el handler, y crear eventos propios.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> controlar quien
+                    escucha, que datos recibe y cuando
+                    se dispara un evento.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>on('click', 'sel', fn)</kbd>
+                            delega a nodos creados despues.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>trigger()</kbd> dispara el
+                            evento;
+                            <kbd>triggerHandler()</kbd> solo
+                            el callback.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Un nombre propio
+                            (<kbd>miEvento</kbd>) se
+                            escucha igual que un click.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Seis practicas de delegacion, trigger
+                    y eventos personalizados.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo
+                    y ver quien recibe el evento.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Delega el click a elementos
+                            que se crean despues.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19DelegacionEventos"
+                            data-route="route-clase19-delegacion-eventos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Pasa un objeto de datos al
+                            manejador del evento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19PasarParametrosAEventos"
+                            data-route="route-clase19-pasar-parametros-a-eventos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Dispara un evento nativo
+                            con <kbd>trigger()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19DispararEventos"
+                            data-route="route-clase19-disparar-eventos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Ejecuta solo el handler con
+                            <kbd>triggerHandler()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19DispararManejadores"
+                            data-route="route-clase19-disparar-manejadores"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Define y escucha un evento
+                            personalizado.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19EventosPersonalizados1"
+                            data-route="route-clase19-eventos-personalizados-1"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Encadena o reutiliza el
+                            evento personalizado.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase19EventosPersonalizados2"
+                            data-route="route-clase19-eventos-personalizados-2"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
-
-
-
-    <!--  -----  INFO  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Eventos Avanzados">
-                Clase 19 - Eventos Avanzados
-            </h2>
-
-        </header>
-
-
-        <!--  -----  Contenido de la sección  -----  -->
-        <article class="section__content">
-
-            <!--  -----  Contenido vacio, rellenar despues  -----  -->
-
-        </article>
-
-    </section>
-   
 
 </div>
