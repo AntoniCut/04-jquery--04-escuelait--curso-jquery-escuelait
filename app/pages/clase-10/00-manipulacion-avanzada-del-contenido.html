@@ -9,13 +9,205 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C10</p>
-                <h2 class="description-page__hero-title">Manipulación Avanzada del Contenido</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">append()</p>
+                    <h2 class="description-page__hero-title">Manipulación avanzada</h2>
+                    <p class="description-page__hero-subtitle">append · wrap · offset</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Pasa de leer el DOM a construirlo: inyectar nodos
+                    dentro o al lado de un elemento, envolver bloques,
+                    medir tamanos y leer scroll u offset.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> insertar, envolver y medir
+                    elementos con los metodos avanzados de jQuery.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>append()</kbd> y <kbd>after()</kbd>
+                            insertan dentro o al lado del nodo.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>wrap()</kbd> envuelve elementos y
+                            <kbd>width()</kbd> lee sus dimensiones.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>scrollTop()</kbd> y <kbd>offset()</kbd>
+                            situan el elemento respecto a la pagina.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Practicas de inyeccion, envoltura, medidas y
+                    posicionamiento en el documento.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y aplicar
+                    el metodo sobre el markup de la practica.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Inserta al final o al inicio con
+                            <kbd>append()</kbd>, <kbd>prepend()</kbd>,
+                            <kbd>appendTo()</kbd> y <kbd>prependTo()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10AppendPrepend"
+                            data-route="route-clase10-append-prepend"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Coloca nodos al lado con
+                            <kbd>after()</kbd>, <kbd>before()</kbd>,
+                            <kbd>insertAfter()</kbd> e
+                            <kbd>insertBefore()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10AfterBefore"
+                            data-route="route-clase10-after-before"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Crea elementos con <kbd>$()</kbd> y
+                            los inyecta en el DOM como nodos nuevos.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10Dom"
+                            data-route="route-clase10-dom"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Envuelve y desenvuelve bloques con
+                            <kbd>wrap()</kbd>, <kbd>unwrap()</kbd>
+                            y <kbd>wrapAll()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10Envoltura"
+                            data-route="route-clase10-envoltura"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Lee y escribe <kbd>width()</kbd>,
+                            <kbd>height()</kbd>,
+                            <kbd>innerWidth()</kbd> y
+                            <kbd>outerHeight()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10Dimensiones"
+                            data-route="route-clase10-dimensiones"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Usa <kbd>scrollTop()</kbd>,
+                            <kbd>offset()</kbd> y
+                            <kbd>position()</kbd> para situar
+                            el elemento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase10ScrollOffset"
+                            data-route="route-clase10-scroll-offset"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 

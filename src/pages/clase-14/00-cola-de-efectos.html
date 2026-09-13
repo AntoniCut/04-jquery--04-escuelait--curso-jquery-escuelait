@@ -9,13 +9,205 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C14</p>
-                <h2 class="description-page__hero-title">Cola de efectos</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">queue()</p>
+                    <h2 class="description-page__hero-title">Cola de efectos</h2>
+                    <p class="description-page__hero-subtitle">queue · stop · loop</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Encadena efectos en la cola <kbd>fx</kbd>,
+                    la interrumpe con <kbd>stop()</kbd>, mide
+                    su longitud, encola funciones que no son
+                    animaciones y lanza bucles.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> controlar el orden,
+                    la parada y la repeticion de efectos
+                    encolados.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>queue()</kbd> y <kbd>dequeue()</kbd>
+                            encadenan pasos sobre el mismo nodo.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>stop()</kbd> y <kbd>finish()</kbd>
+                            cortan o completan la cola
+                            <kbd>fx</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Se pueden encolar funciones, leer
+                            <kbd>queue().length</kbd> y repetir
+                            el ciclo.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Seis practicas para encolar, parar, medir
+                    y repetir animaciones.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y
+                    ver como se comporta la cola de efectos.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Encadena <kbd>slideUp()</kbd>,
+                            <kbd>fadeOut()</kbd> y
+                            <kbd>animate()</kbd> en la cola
+                            <kbd>fx</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14EncoladoEfectos"
+                            data-route="route-clase14-encolado-efectos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Interrumpe la cola con
+                            <kbd>stop()</kbd> y compara
+                            <kbd>finish()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14EjemploStop"
+                            data-route="route-clase14-ejemplo-stop"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Lee <kbd>queue().length</kbd> para
+                            saber cuantos efectos quedan.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14LongitudColaEfectos"
+                            data-route="route-clase14-longitud-cola-efectos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Encola funciones que no son
+                            efectos y llama a
+                            <kbd>dequeue()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14EncolarFuncionesNoEfectos"
+                            data-route="route-clase14-encolar-funciones-no-efectos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Evita que un click nuevo dispare
+                            otra cola encima de la actual.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14EncoladoRespuestasEventos"
+                            data-route="route-clase14-encolado-respuestas-eventos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Repite la animacion en bucle
+                            volviendo a encolar al terminar.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase14AnimacionesEnBucle"
+                            data-route="route-clase14-animaciones-en-bucle"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 

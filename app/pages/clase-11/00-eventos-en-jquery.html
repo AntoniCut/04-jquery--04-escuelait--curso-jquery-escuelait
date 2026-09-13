@@ -9,13 +9,218 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C11</p>
-                <h2 class="description-page__hero-title">Eventos en jQuery</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">on()</p>
+                    <h2 class="description-page__hero-title">Eventos en jQuery</h2>
+                    <p class="description-page__hero-subtitle">on · off · type</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Enlaza y suelta manejadores con <kbd>on()</kbd> y
+                    <kbd>off()</kbd>, distingue el tipo de evento,
+                    frena el default o la burbuja y lee coordenadas
+                    del puntero.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> controlar el ciclo de un
+                    evento: asignarlo, cancelarlo y leer sus datos.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>on()</kbd> asigna y delega;
+                            <kbd>off()</kbd> quita el manejador.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>preventDefault()</kbd> y
+                            <kbd>stopPropagation()</kbd> cortan
+                            default y burbuja.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>event.type</kbd>,
+                            <kbd>pageX</kbd> y <kbd>pageY</kbd>
+                            describen que ocurrio y donde.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Siete practicas para asignar, retirar y
+                    controlar eventos del DOM.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y
+                    observar como reacciona el evento.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Asigna manejadores y delega eventos
+                            futuros con <kbd>on()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11MetodoOn"
+                            data-route="route-clase11-metodo-on"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Quita un manejador concreto o todos
+                            los de un elemento con <kbd>off()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11MetodoOff"
+                            data-route="route-clase11-metodo-off"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Lee <kbd>event.type</kbd> para saber
+                            que evento se disparo.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11EventType"
+                            data-route="route-clase11-event-type"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Evita el comportamiento nativo con
+                            <kbd>preventDefault()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11PreventDefault"
+                            data-route="route-clase11-prevent-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Corta la burbuja para que el padre
+                            no reciba el mismo evento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11StopPropagation"
+                            data-route="route-clase11-stop-propagation"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Impide un segundo click mientras
+                            dura la primera accion.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11EvitarDobleClick"
+                            data-route="route-clase11-evitar-doble-click"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 7
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Lee <kbd>pageX</kbd> y <kbd>pageY</kbd>
+                            para situar algo segun el puntero.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase11EventoPageXPageY"
+                            data-route="route-clase11-evento-page-xpage-y"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 

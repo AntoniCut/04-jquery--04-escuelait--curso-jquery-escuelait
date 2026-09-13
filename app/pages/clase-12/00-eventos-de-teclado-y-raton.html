@@ -9,13 +9,149 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C12</p>
-                <h2 class="description-page__hero-title">Eventos de teclado y ratón</h2>
-                <p class="description-page__hero-subtitle">Vista general de la clase</p>
-            </div>
-        </header>
+
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">mousemove</p>
+                    <h2 class="description-page__hero-title">Teclado y ratón</h2>
+                    <p class="description-page__hero-subtitle">mousemove · contextmenu · keyup</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Aplica eventos de raton y teclado a tres
+                    interfaces: un bloque que sigue al cursor,
+                    un menu contextual propio y un textarea
+                    que cuenta caracteres.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> combinar
+                    <kbd>mousemove</kbd>, <kbd>contextmenu</kbd>
+                    y <kbd>keyup</kbd> en practicas reales.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>mousemove</kbd> actualiza
+                            <kbd>top</kbd> y <kbd>left</kbd> con
+                            <kbd>pageX</kbd> y <kbd>pageY</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>contextmenu</kbd> cancela el menu
+                            nativo y muestra uno propio.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>keyup</kbd> cuenta letras y
+                            limita el texto del textarea.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Tres practicas para seguir el puntero,
+                    sustituir el menu del sistema y validar
+                    un campo de texto.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y
+                    probar el evento de raton o teclado.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Mueve un bloque con el cursor usando
+                            <kbd>mousemove</kbd>, <kbd>pageX</kbd>
+                            y <kbd>pageY</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase12MovimientoRaton"
+                            data-route="route-clase12-movimiento-raton"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Sustituye el menu nativo con
+                            <kbd>contextmenu</kbd> y
+                            <kbd>preventDefault()</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase12MenuContextual"
+                            data-route="route-clase12-menu-contextual"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Cuenta caracteres del textarea con
+                            <kbd>keyup</kbd> y muestra el resto.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase12TextareaCuentaCaracteres"
+                            data-route="route-clase12-textarea-cuenta-caracteres"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
         </article>
     </section>
 
