@@ -406,16 +406,29 @@ $demo-hero-mark:        rgba($demo-color-white, 0.12);
     }
 
     &__features-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
 
+        > * {
+            flex: 1 1 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
         @include mix.tablet {
-            grid-template-columns: repeat(2, 1fr);
+            > * {
+                flex: 0 1 calc((100% - 2rem) / 2);
+                max-width: calc((100% - 2rem) / 2);
+            }
         }
 
         @include mix.desktopSM {
-            grid-template-columns: repeat(3, 1fr);
+            > * {
+                flex: 0 1 calc((100% - 4rem) / 3);
+                max-width: calc((100% - 4rem) / 3);
+            }
         }
     }
 
