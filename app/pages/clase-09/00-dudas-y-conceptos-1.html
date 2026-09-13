@@ -9,115 +9,225 @@
 
     <section class="main__description">
         <article class="description-page">
-        <header class="description-page__hero" style="--hero-mark: '$'">
-            <div class="description-page__hero-badge">
-                <p class="description-page__hero-tag" aria-hidden="true">C09</p>
-                <h2 class="description-page__hero-title">Dudas y Conceptos 1</h2>
-                <p class="description-page__hero-subtitle">Manipulación Básica de Elementos</p>
-            </div>
-        </header>
-        </article>
-    </section>
 
+            <header class="description-page__hero" style="--hero-mark: '$'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">this</p>
+                    <h2 class="description-page__hero-title">Dudas y conceptos</h2>
+                    <p class="description-page__hero-subtitle">this · each · Date</p>
+                </div>
+            </header>
 
+            <section class="description-page__intro">
 
-    <!--  -----  Sección 1  -----  -->
-    <section class="main__section-info">
-
-
-        <!--  -----  Header de la Sección  -----  -->
-        <header class="section__header">
-
-            <h2 class="section__title" title="Manipulación Básica de Elementos">
-                Clase 9 - Dudas y Conceptos 1
-            </h2>
-
-        </header>
-
-
-        <article class="section__content">
-
-            <div class="content__description content__description--exercise">
-
-                <h3 class="content__title">
-                    Dudas y conceptos sobre programacion
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
                 </h3>
 
-                <p class="content__text">
-                    Este modulo aclara los conceptos fundamentales de <strong>programacion orientada a objetos</strong>
-                    y como se relacionan con jQuery, enfocandose especialmente en el concepto de <kbd>this</kbd>.
+                <p class="description-page__intro-text">
+                    Aclara los conceptos de programacion orientada a
+                    objetos y como se relacionan con jQuery, sobre todo
+                    <kbd>this</kbd>: en una clase es el contexto de
+                    ejecucion; en un evento o en <kbd>each()</kbd> es el
+                    elemento HTML actual.
                 </p>
 
-                <ul class="content__list">
-                    <li>
-                        <kbd>Clases</kbd> = definiciones, planos. 
-                    </li>
-                    <li>
-                        <kbd>Objetos</kbd> = ejemplares concretos de una clase.
-                    </li>
-                    <li>
-                        <kbd>this</kbd> referencia <strong>el objeto sobre el que se invoco un metodo</strong>, es decir, el contexto de ejecucion.
-                    </li>
-                    <li>
-                        En jQuery, <kbd>this</kbd> se refiere al elemento HTML actual en un evento o iteracion con <code>each()</code>.
-                    </li>
-                    <li>
-                        <kbd>this</kbd> = <kbd>contexto</kbd>
-                    </li>
-                </ul>
-
-                <p class="content__note">
-                    <kbd> Objetivo: </kbd> comprender que es this y resolver dudas frecuentes sobre su uso en jQuery.
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> entender que es
+                    <kbd>this</kbd> y resolver dudas frecuentes sobre su
+                    uso en jQuery.
                 </p>
 
-            </div>
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>Clases</kbd> son el plano y
+                            <kbd>objetos</kbd> son ejemplares concretos
+                            de esa clase.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>this</kbd> referencia el objeto sobre
+                            el que se invoco el metodo: el contexto.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            En jQuery, <kbd>this</kbd> es el elemento
+                            actual del evento o de <kbd>each()</kbd>.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Ejercicios para realizar
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Practicas cortas para recorrer el DOM con
+                    <kbd>each()</kbd>, usar <kbd>this</kbd> y aplicar
+                    contenido o estilos segun el indice.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> resolver cada enunciado
+                    aplicando selectores, <kbd>each()</kbd> y
+                    <kbd>this</kbd>.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 0
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Practica el concepto de <kbd>this</kbd>
+                            dentro de <kbd>each()</kbd> y de un evento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio00This"
+                            data-route="route-clase09-ejercicio00-this"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Carga en 5 parrafos vacios el texto
+                            <kbd>parrafo 1</kbd>, <kbd>parrafo 2</kbd>
+                            y asi sucesivamente.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio01"
+                            data-route="route-clase09-ejercicio01"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Recorre los <kbd>li</kbd> y pinta el fondo
+                            con colores de un array
+                            <kbd>["#f4e", "#600"]</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio02"
+                            data-route="route-clase09-ejercicio02"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Si se acaban los colores y quedan
+                            <kbd>li</kbd>, vuelve a empezar el array.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio03"
+                            data-route="route-clase09-ejercicio03"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Asigna tamanos crecientes de texto:
+                            <kbd>1em</kbd>, <kbd>1.25em</kbd>,
+                            <kbd>1.5em</kbd>...
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio04"
+                            data-route="route-clase09-ejercicio04"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Pon a todos los parrafos un borde verde
+                            de <kbd>1px</kbd>. Esta va con trampa.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio05"
+                            data-route="route-clase09-ejercicio05"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Ejercicio 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Usa el objeto <kbd>Date</kbd> para guardar
+                            timestamps y calcular el tiempo transcurrido.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase09Ejercicio06Date"
+                            data-route="route-clase09-ejercicio06-date"
+                        >
+                            Ir al ejercicio
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
 
         </article>
-
-
-
-        <article class="section__content">
-
-            <h3> Ejercicios para realizar - Introducción a jQuery </h3>
-
-            <p>
-                1.- Crea una página con el HTML de 5 párrafos vacíos. Crea un script Javascript con jQuery <br>
-                para cargar en cada uno de los párrafos un texto que ponga "parrafo 1" en el primero, <br>
-                "parrafo 2" en el segundo y así todo seguido.
-            </p>
-
-            <p>
-                2.- Crea una lista con varios LI. Luego te creas un array Javascript con valores de colores <br>
-                RGB. Luego recorres todos los LI y vas asignando colores de fondo con valores que sacas
-                del array.
-                <br> <br>
-                var colores = ["#f4e", "#600", ...]
-                 <br> <br>
-                Con ese array, el primer LI tendría el background-color #f4e y el segundo "#600"... así todo
-                seguido.
-            </p>
-
-            <p>
-                3.- Sobre el ejercicio anterior haz un tratamiento para que, si se te acaban los colores del <br>
-                array y aun te quedan LI, vuelvas a empezar escogiendo el primer color del array.
-            </p>
-
-            <p>
-                4.- Crea un número de párrafos con texto cualquiera. Recórrelos todos a asígnales tamaños <br>
-                crecientes de texto. Por ejemplo al primero 1em, al segundo 1.25em, al tercero 1.5em y así
-                todo.
-            </p>
-
-            <p>
-                5.- Haz que todos los párrafos de la página tengan borde de 1px verde. <br>
-                (Esta va con trampa).
-            </p>
-
-
-
-        </article>
-
     </section>
-
 
 </div>

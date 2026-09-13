@@ -436,6 +436,27 @@ $demo-hero-mark:        rgba($demo-color-white, 0.12);
         }
     }
 
+    &__feature-title {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $demo-primary;
+    }
+
+    &__feature-link {
+        margin-top: auto;
+        align-self: flex-start;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $demo-primary;
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+
     &__feature-text {
         margin: 0;
         font-size: 1.4rem;
