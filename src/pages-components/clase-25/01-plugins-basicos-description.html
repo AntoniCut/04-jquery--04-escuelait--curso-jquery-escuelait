@@ -28,6 +28,12 @@
                 poder encadenar plugins.
             </p>
 
+            <p class="demo-page__intro-note">
+                El bloque combinado encadena
+                <kbd>.urlize().underlinize()</kbd> y
+                <kbd>.boldize().colorize()</kbd>.
+            </p>
+
         </section>
 
         <section class="demo-page__features">
@@ -43,17 +49,34 @@
 
                 <article class="demo-page__feature">
                     <p class="demo-page__feature-text">
-                        <kbd>fontSizer</kbd> anima
-                        <kbd>font-size</kbd> del destino indicado en
-                        <kbd>data-fontsizer-target</kbd>.
+                        <kbd>underlinize</kbd> aplica
+                        <kbd>text-decoration: underline</kbd> a cada
+                        elemento de la coleccion.
                     </p>
                 </article>
 
                 <article class="demo-page__feature">
                     <p class="demo-page__feature-text">
-                        El bloque combinado encadena
-                        <kbd>.urlize().underlinize()</kbd> y
-                        <kbd>.boldize().colorize()</kbd>.
+                        <kbd>boldize</kbd> aplica
+                        <kbd>font-weight: bold</kbd> a cada elemento de
+                        la coleccion.
+                    </p>
+                </article>
+
+                <article class="demo-page__feature">
+                    <p class="demo-page__feature-text">
+                        <kbd>colorize</kbd> lee <kbd>data-color</kbd> y
+                        pinta el texto; en un
+                        <kbd>input[type="color"]</kbd> actualiza el
+                        destino de <kbd>data-colorize-target</kbd>.
+                    </p>
+                </article>
+
+                <article class="demo-page__feature">
+                    <p class="demo-page__feature-text">
+                        <kbd>fontSizer</kbd> anima
+                        <kbd>font-size</kbd> del destino indicado en
+                        <kbd>data-fontsizer-target</kbd>.
                     </p>
                 </article>
 
