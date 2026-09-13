@@ -54,7 +54,7 @@
     &:has(.aside-left__container),
     &:has(.aside-right__container) {
         display: block;
-        height: var.$aside-mobile-height;
+        height: auto;
         max-height: var.$aside-mobile-height;
         margin-top: 5rem;
         overflow-y: auto;
