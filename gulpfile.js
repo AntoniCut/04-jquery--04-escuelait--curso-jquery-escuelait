@@ -618,7 +618,14 @@ const phpMinifyTransform = () => new Transform({
 */
 
 
-/** Compila src/scss/globals.scss → app/css/globals.css. */
+/**
+ * - `true` incrusta el mapa en el CSS (Base64, cientos de KB).
+ * - `'.'` escribe un `archivo.css.map` junto al CSS compilado.
+ */
+const CSS_SOURCEMAPS = '.';
+
+
+/** Compila src/scss/globals.scss → app/css/globals.css + globals.css.map. */
 export const css = () =>
     
     !fs.existsSync(paths.src.scssGlobals)
@@ -627,11 +634,11 @@ export const css = () =>
             .pipe(safePipe())
             .pipe(sass().on('error', sass.logError))
             .pipe(validateFiles('css'))
-            .pipe(dest(path.posix.join(paths.appRoot, 'css'), { sourcemaps: true }));
+            .pipe(dest(path.posix.join(paths.appRoot, 'css'), { sourcemaps: CSS_SOURCEMAPS }));
 
 
 
-/** Compila src/scss/pages/*.scss → app/css/pages/*.css. */
+/** Compila src/scss/pages/*.scss → app/css/pages/*.css + *.css.map. */
 export const cssPages = () =>
     
     !existsDir(paths.src.scssPagesDir)
@@ -640,7 +647,7 @@ export const cssPages = () =>
             .pipe(safePipe())
             .pipe(sass().on('error', sass.logError))
             .pipe(validateFiles('cssPages'))
-            .pipe(dest(path.posix.join(paths.appRoot, 'css', 'pages'), { sourcemaps: true }));
+            .pipe(dest(path.posix.join(paths.appRoot, 'css', 'pages'), { sourcemaps: CSS_SOURCEMAPS }));
 
 
 
