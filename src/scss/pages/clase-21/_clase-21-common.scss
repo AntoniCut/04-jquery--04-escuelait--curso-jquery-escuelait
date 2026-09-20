@@ -1,24 +1,75 @@
 /*
-    *  --------------------------------------------------------------------------------------  *
-    *  -----  /clase-21-styles.scss  --  /src/scss/pages/clase-21/clase-21-styles.scss  -----  *
-    *  --------------------------------------------------------------------------------------  *
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-21-common.scss  --  /src/scss/pages/clase-21/_clase-21-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
 */
 
 
-/*
-    -----------------------------
-    -----  login-practica  -----
-    -----------------------------
-*/
+@use '../../base/mixins' as mix;
 
-.login-practica {
+
+$ink: #102a43;
+$muted: #486581;
+$label: #334e68;
+$accent: #1d4d94;
+$accent-soft: #5f89a3;
+$accent-hover: #0b3a7a;
+$submit-hover: #163a70;
+$caja-bg: #aec8ee;
+$danger: #8a1f1f;
+$ok: #0a7a3e;
+$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-soft 100%);
+
+
+@mixin mobile {
+    @include mix.mobile {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin desktop-sm {
+    @include mix.desktopSM {
+        @content;
+    }
+}
+
+
+@mixin description-slot {
+    min-height: 42rem;
+}
+
+
+@mixin block {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
     width: 100%;
     max-width: 75rem;
     margin: 0 auto;
 
+    @include mix.mobile {
+        gap: 1.6rem;
+    }
+
+    @include mix.tablet {
+        gap: 2rem;
+    }
+}
+
+
+@mixin login-practica {
     &__vista {
         width: 100%;
+        min-height: 36rem;
 
         &[hidden] {
             display: none !important;
@@ -27,20 +78,30 @@
 
     &__layout {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(14rem, 22%);
-        gap: 2.4rem;
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
         align-items: start;
+
+        @include mix.tablet {
+            grid-template-columns: minmax(0, 1fr) minmax(14rem, 22%);
+            gap: 2.4rem;
+        }
     }
 
     &__title {
         grid-column: 1 / -1;
         margin: 0 0 0.4rem;
-        font-size: 2.2rem;
+        padding-bottom: 0.8rem;
+        font-size: 1.8rem;
         font-weight: 700;
-        color: #102a43;
-        padding-bottom: 1rem;
+        color: $ink;
         border-bottom: 3px solid transparent;
-        border-image: linear-gradient(135deg, #1d4d94 0%, #5f89a3 100%) 1;
+        border-image: $gradient-accent 1;
+
+        @include mix.tablet {
+            padding-bottom: 1rem;
+            font-size: 2.2rem;
+        }
     }
 
     &__section {
@@ -48,54 +109,73 @@
 
         p {
             margin: 0 0 1.4rem;
-            font-size: 1.45rem;
+            font-size: 1.35rem;
             line-height: 1.7;
-            color: #334e68;
+            color: $label;
+
+            @include mix.tablet {
+                font-size: 1.45rem;
+            }
         }
     }
 
     &__aside {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         line-height: 1.6;
-        color: #486581;
+        color: $muted;
 
         p {
             margin: 0 0 1.2rem;
         }
 
         a {
-            color: #1d4d94;
+            color: $accent;
             font-weight: 600;
             text-decoration: underline;
             text-underline-offset: 0.2em;
 
             &:hover {
-                color: #0b3a7a;
+                color: $accent-hover;
             }
+        }
+
+        @include mix.tablet {
+            font-size: 1.35rem;
         }
     }
 
     &__caja {
         display: none;
         box-sizing: border-box;
-        width: 32rem;
-        max-width: calc(100vw - 3rem);
+        width: min(32rem, calc(100vw - 2rem));
+        min-height: 24rem;
         padding: 1.2rem 1.2rem 1.6rem 1.6rem;
-        border: 2px solid #1d4d94;
+        border: 2px solid $accent;
         border-radius: 5px;
-        background-color: #aec8ee;
+        background-color: $caja-bg;
         line-height: 2em;
-        box-shadow: 0 0 9px #000;
+        box-shadow: 0 8px 18px rgba(16, 42, 67, 0.28);
+
+        &[hidden] {
+            display: none !important;
+        }
+
+        &--auth {
+            width: min(36rem, calc(100vw - 2rem));
+            min-height: 30rem;
+        }
     }
 
     &__caja-msg {
         margin: -0.4rem 0.4rem 1rem -0.8rem;
+        min-height: 3.2rem;
         padding: 0.4rem 1rem;
         font-size: 1.4rem;
         border-radius: 4px;
-        background-color: #5f89a3;
+        background-color: $accent-soft;
         color: #fff;
         text-shadow: 1px 1px #666;
+        box-sizing: border-box;
 
         &.cargando {
             background-image: url('/escuelait/curso-jquery-escuelait/assets/img/clase-21/loading.gif');
@@ -112,43 +192,60 @@
 
     &__label {
         display: flex;
-        align-items: center;
-        gap: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
         font-size: 1.4rem;
-        color: #102a43;
+        color: $ink;
 
         span {
-            flex: 0 0 8rem;
+            flex: none;
+        }
+
+        @include mix.tablet {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.8rem;
+
+            span {
+                flex: 0 0 8rem;
+            }
         }
     }
 
     &__input {
-        width: 15rem;
-        max-width: 100%;
-        padding: 0.4rem 0.6rem;
-        border: 1px solid #1d4d94;
+        width: 100%;
+        min-height: 4.4rem;
+        padding: 0.6rem 0.8rem;
+        border: 1px solid $accent;
         border-radius: 3px;
         font-size: 1.4rem;
+        box-sizing: border-box;
+
+        @include mix.tablet {
+            width: 15rem;
+        }
     }
 
     &__errores {
-        min-height: 1.6rem;
+        min-height: 2.4rem;
         margin: 0 0 1rem;
         padding: 0.6rem 0.8rem;
         border-radius: 4px;
         font-size: 1.3rem;
         font-weight: 600;
         line-height: 1.4;
-        color: #8a1f1f;
+        color: $danger;
         background: rgba(255, 255, 255, 0.55);
         border: 1px solid rgba(195, 51, 51, 0.35);
+        box-sizing: border-box;
 
         &:empty {
-            display: none;
+            visibility: hidden;
         }
 
         &--ok {
-            color: #0a7a3e;
+            color: $ok;
             border-color: rgba(10, 122, 62, 0.35);
         }
     }
@@ -158,21 +255,23 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 0.8rem;
+        min-height: 4.8rem;
         margin-top: 0.4rem;
     }
 
     &__submit {
+        min-height: 4.4rem;
         padding: 0.5rem 1.4rem;
-        border: 1px solid #1d4d94;
+        border: 1px solid $accent;
         border-radius: 4px;
-        background: #1d4d94;
+        background: $accent;
         color: #fff;
         font-size: 1.4rem;
         font-weight: 600;
         cursor: pointer;
 
         &:hover:not(:disabled) {
-            background: #163a70;
+            background: $submit-hover;
         }
 
         &:disabled {
@@ -182,11 +281,12 @@
     }
 
     &__cancelar {
+        min-height: 4.4rem;
         padding: 0.5rem 1.4rem;
-        border: 1px solid #5f89a3;
+        border: 1px solid $accent-soft;
         border-radius: 4px;
         background: #fff;
-        color: #1d4d94;
+        color: $accent;
         font-size: 1.4rem;
         font-weight: 600;
         cursor: pointer;
@@ -205,14 +305,6 @@
         }
     }
 
-    &__caja[hidden] {
-        display: none !important;
-    }
-
-    &__caja--auth {
-        width: 36rem;
-    }
-
     &__aside-actions {
         display: flex;
         flex-direction: column;
@@ -221,23 +313,30 @@
 
     &__tabs {
         display: flex;
+        flex-direction: column;
         gap: 0.6rem;
+        min-height: 4.8rem;
         margin: 0 0 1.2rem;
+
+        @include mix.tablet {
+            flex-direction: row;
+        }
     }
 
     &__tab {
         flex: 1;
+        min-height: 4.4rem;
         padding: 0.5rem 0.8rem;
-        border: 1px solid #1d4d94;
+        border: 1px solid $accent;
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.55);
-        color: #102a43;
+        color: $ink;
         font-size: 1.3rem;
         font-weight: 600;
         cursor: pointer;
 
         &.is-active {
-            background: #1d4d94;
+            background: $accent;
             color: #fff;
         }
 
@@ -248,44 +347,14 @@
 
     &__user {
         display: block;
+        min-height: 2.2rem;
         margin-top: 0.4rem;
         font-size: 1.5rem;
         font-weight: 500;
-        color: #486581;
+        color: $muted;
     }
 
     kbd {
         font-size: 1.25rem;
-    }
-}
-
-
-@media (max-width: 700px) {
-    .login-practica {
-        &__layout {
-            grid-template-columns: 1fr;
-        }
-
-        &__caja,
-        &__caja--auth {
-            width: min(36rem, calc(100vw - 2rem));
-        }
-
-        &__label {
-            flex-direction: column;
-            align-items: flex-start;
-
-            span {
-                flex: none;
-            }
-        }
-
-        &__input {
-            width: 100%;
-        }
-
-        &__tabs {
-            flex-direction: column;
-        }
     }
 }

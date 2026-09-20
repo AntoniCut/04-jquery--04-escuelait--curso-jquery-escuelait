@@ -1,0 +1,37 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  01-formulario-login.scss  --  /src/scss/pages/clase-21/01-formulario-login.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-21-common' as c21;
+
+
+[data-component-page="formularioLoginDescription"] {
+    @include c21.description-slot;
+}
+
+[data-component-page="formularioLoginDemo"] {
+    min-height: 48rem;
+
+    @include c21.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.demo__login-practica {
+    @include c21.block;
+
+    min-height: 48rem;
+
+    @include c21.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.login-practica {
+    @include c21.login-practica;
+}

@@ -62,7 +62,7 @@ export const routeClase21FormularioLogin = {
             {
                 fileName: '01-formulario-login-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-21/clase-21-styles.css`,
+                urlInput: `${styles}/pages/clase-21/01-formulario-login.css`,
                 urlOutput: `${markdownShikiHtml}/clase-21`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -83,7 +83,7 @@ export const routeClase21FormularioLogin = {
         ],
         headerTitle: 'Clase 21 - Formulario Login',
         styles: [
-            { href: `${styles}/pages/clase-21/clase-21-styles.css` },
+            { href: `${styles}/pages/clase-21/01-formulario-login.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
