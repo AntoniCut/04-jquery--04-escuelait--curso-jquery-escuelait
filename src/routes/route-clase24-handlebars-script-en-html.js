@@ -62,7 +62,7 @@ export const routeClase24HandlebarsScriptEnHtml = {
             {
                 fileName: '03-handlebars-script-en-html-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/03-handlebars-script-en-html.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsScriptEnHtml = {
         ],
         headerTitle: 'Clase 24 - 3. Handlebars script en HTML',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/03-handlebars-script-en-html.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

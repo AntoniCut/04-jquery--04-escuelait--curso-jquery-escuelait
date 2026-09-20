@@ -1,0 +1,48 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+    *  -----  06-handlebars-block-expressions.scss  --  /src/scss/pages/clase-24/06-handlebars-block-expressions.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-24-common' as c24;
+
+
+[data-component-page="handlebarsBlockExpressionsDescription"] {
+    @include c24.description-slot;
+}
+
+[data-component-page="handlebarsBlockExpressionsDemo"] {
+    min-height: 120rem;
+
+    @include c24.tablet {
+        min-height: 80rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c24.block;
+
+    min-height: 120rem;
+
+    @include c24.tablet {
+        min-height: 80rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: start;
+    }
+}
+
+
+.tpl {
+    @include c24.tpl;
+
+    &__title,
+    &__hint,
+    &__form {
+        @include c24.tablet {
+            grid-column: 1 / -1;
+        }
+    }
+}

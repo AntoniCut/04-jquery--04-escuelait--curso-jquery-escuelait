@@ -1,0 +1,37 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------------------  *
+    *  -----  08-handlebars-built-in-helpers.scss  --  /src/scss/pages/clase-24/08-handlebars-built-in-helpers.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-24-common' as c24;
+
+
+[data-component-page="handlebarsBuiltInHelpersDescription"] {
+    @include c24.description-slot;
+}
+
+[data-component-page="handlebarsBuiltInHelpersDemo"] {
+    min-height: 168rem;
+
+    @include c24.tablet {
+        min-height: 152rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c24.block;
+
+    min-height: 168rem;
+
+    @include c24.tablet {
+        min-height: 152rem;
+    }
+}
+
+
+.tpl {
+    @include c24.tpl;
+}

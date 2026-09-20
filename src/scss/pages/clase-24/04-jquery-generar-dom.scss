@@ -1,0 +1,37 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  04-jquery-generar-dom.scss  --  /src/scss/pages/clase-24/04-jquery-generar-dom.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-24-common' as c24;
+
+
+[data-component-page="jqueryGenerarDomDescription"] {
+    @include c24.description-slot;
+}
+
+[data-component-page="jqueryGenerarDomDemo"] {
+    min-height: 72rem;
+
+    @include c24.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c24.block;
+
+    min-height: 72rem;
+
+    @include c24.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.tpl {
+    @include c24.tpl;
+}

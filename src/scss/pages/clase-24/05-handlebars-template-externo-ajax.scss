@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  05-handlebars-template-externo-ajax.scss  --  /src/scss/pages/clase-24/05-handlebars-template-externo-ajax.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-24-common' as c24;
+
+
+[data-component-page="handlebarsTemplateExternoAjaxDescription"] {
+    @include c24.description-slot;
+}
+
+[data-component-page="handlebarsTemplateExternoAjaxDemo"] {
+    min-height: 76rem;
+
+    @include c24.tablet {
+        min-height: 68rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c24.block;
+
+    min-height: 76rem;
+
+    @include c24.tablet {
+        min-height: 68rem;
+    }
+}
+
+
+.tpl {
+    @include c24.tpl;
+}

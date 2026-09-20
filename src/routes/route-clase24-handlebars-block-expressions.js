@@ -62,7 +62,7 @@ export const routeClase24HandlebarsBlockExpressions = {
             {
                 fileName: '06-handlebars-block-expressions-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/06-handlebars-block-expressions.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsBlockExpressions = {
         ],
         headerTitle: 'Clase 24 - 6. Handlebars block expressions',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/06-handlebars-block-expressions.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

@@ -62,7 +62,7 @@ export const routeClase24HandlebarsPath = {
             {
                 fileName: '07-handlebars-path-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/07-handlebars-path.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsPath = {
         ],
         headerTitle: 'Clase 24 - 7. Handlebars path',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/07-handlebars-path.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

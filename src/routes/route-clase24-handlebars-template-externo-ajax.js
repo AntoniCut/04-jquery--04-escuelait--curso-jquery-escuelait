@@ -62,7 +62,7 @@ export const routeClase24HandlebarsTemplateExternoAjax = {
             {
                 fileName: '05-handlebars-template-externo-ajax-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/05-handlebars-template-externo-ajax.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsTemplateExternoAjax = {
         ],
         headerTitle: 'Clase 24 - 5. Handlebars template externo AJAX',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/05-handlebars-template-externo-ajax.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

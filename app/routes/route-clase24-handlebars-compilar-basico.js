@@ -62,7 +62,7 @@ export const routeClase24HandlebarsCompilarBasico = {
             {
                 fileName: '01-handlebars-compilar-basico-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/01-handlebars-compilar-basico.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsCompilarBasico = {
         ],
         headerTitle: 'Clase 24 - 1. Handlebars compilar básico',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/01-handlebars-compilar-basico.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

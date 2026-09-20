@@ -62,7 +62,7 @@ export const routeClase24HandlebarsBuiltInHelpers = {
             {
                 fileName: '08-handlebars-built-in-helpers-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/08-handlebars-built-in-helpers.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase24HandlebarsBuiltInHelpers = {
         ],
         headerTitle: 'Clase 24 - 8. Handlebars built-in helpers',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/08-handlebars-built-in-helpers.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

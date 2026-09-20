@@ -1,0 +1,402 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-24-common.scss  --  /src/scss/pages/clase-24/_clase-24-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use '../../base/mixins' as mix;
+
+
+$ink: #1a1a2e;
+$muted: #4a5568;
+$title: #312e81;
+$accent: #667eea;
+$accent-deep: #764ba2;
+$danger: #c0392b;
+$label: #3d4152;
+$border: #e1e4eb;
+$border-soft: #eef0f5;
+$placeholder: #a0a4b0;
+$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+$gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+$gradient-sample: linear-gradient(145deg, #f8f9fc 0%, #eef0f7 100%);
+
+
+@mixin mobile {
+    @include mix.mobile {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin desktop-sm {
+    @include mix.desktopSM {
+        @content;
+    }
+}
+
+
+@mixin description-slot {
+    min-height: 42rem;
+}
+
+
+@mixin block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+
+    @include mix.mobile {
+        gap: 1.6rem;
+    }
+
+    @include mix.tablet {
+        gap: 2rem;
+    }
+
+    script {
+        display: none;
+    }
+}
+
+
+@mixin title {
+    margin: 0 0 0.4rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $ink;
+    border-bottom: 3px solid transparent;
+    border-image: $gradient-accent 1;
+
+    @include mix.mobile {
+        font-size: 1.7rem;
+    }
+
+    @include mix.tablet {
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+}
+
+
+@mixin hint {
+    margin: 0;
+    font-size: 1.35rem;
+    color: $muted;
+    line-height: 1.6;
+
+    kbd {
+        font-size: 1.15rem;
+    }
+
+    @include mix.mobile {
+        font-size: 1.4rem;
+
+        kbd {
+            font-size: 1.2rem;
+        }
+    }
+
+    @include mix.tablet {
+        font-size: 1.5rem;
+
+        kbd {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.4rem;
+    background: $gradient-card;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 40px rgba(102, 126, 234, 0.08);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+
+    @include mix.mobile {
+        padding: 1.6rem;
+    }
+
+    @include mix.tablet {
+        padding: 2.4rem 3rem;
+        border-radius: 16px;
+    }
+}
+
+
+@mixin card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $title;
+
+    @include mix.tablet {
+        font-size: 1.6rem;
+    }
+}
+
+
+@mixin sample {
+    min-height: 14rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: $ink;
+    background: $gradient-sample;
+    border-left: 4px solid $accent;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    @include mix.tablet {
+        padding: 1.6rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+@mixin btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.8rem;
+    min-height: 4.4rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background: $gradient-accent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+    &:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+    }
+
+    @include mix.tablet {
+        padding: 1.2rem 3rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+@mixin tpl {
+    &__title {
+        @include title;
+    }
+
+    &__hint {
+        @include hint;
+    }
+
+    &__form {
+        @include card;
+
+        width: 100%;
+        gap: 1.6rem;
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+
+        @include mix.tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        &--full {
+            grid-column: 1 / -1;
+        }
+
+        &--actions {
+            flex-direction: row;
+            min-height: 5.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid $border-soft;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $label;
+        letter-spacing: 0.02em;
+
+        @include mix.tablet {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        min-height: 4.4rem;
+        padding: 1.1rem 1.4rem;
+        font-size: 1.6rem;
+        color: $ink;
+        background: #fff;
+        border: 2px solid $border;
+        border-radius: 8px;
+        transition: all 250ms ease;
+
+        &::placeholder {
+            color: $placeholder;
+        }
+
+        &:hover {
+            border-color: #c5c9d6;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $accent;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+        }
+
+        @include mix.tablet {
+            padding: 1.2rem 1.6rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__submit {
+        @include btn;
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        min-height: 38rem;
+    }
+
+    &__panel-title {
+        @include card-title;
+    }
+
+    &__preview {
+        @include sample;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: auto;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        ul,
+        li,
+        label,
+        select {
+            margin: 0 0 0.8rem;
+            color: $ink;
+        }
+
+        h1 {
+            font-size: 2rem;
+
+            @include mix.tablet {
+                font-size: 2.2rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.6rem;
+
+            @include mix.tablet {
+                font-size: 1.8rem;
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+
+            @include mix.tablet {
+                font-size: 1.6rem;
+            }
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+    }
+
+    &__preview-placeholder {
+        margin: 0;
+        min-height: 2.4rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $accent;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+
+        @include mix.tablet {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__source {
+        width: 100%;
+        height: 20rem;
+        min-height: 20rem;
+        padding: 1.2rem 1.6rem;
+        font-size: 1.4rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        color: $ink;
+        background: #fff;
+        border: 2px solid $border;
+        border-radius: 8px;
+        resize: none;
+        box-sizing: border-box;
+    }
+
+    &__error {
+        margin: 0;
+        min-height: 2.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.6;
+        color: $danger;
+
+        @include mix.tablet {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------------  *
+    *  -----  01-handlebars-compilar-basico.scss  --  /src/scss/pages/clase-24/01-handlebars-compilar-basico.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-24-common' as c24;
+
+
+[data-component-page="handlebarsCompilarBasicoDescription"] {
+    @include c24.description-slot;
+}
+
+[data-component-page="handlebarsCompilarBasicoDemo"] {
+    min-height: 72rem;
+
+    @include c24.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c24.block;
+
+    min-height: 72rem;
+
+    @include c24.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.tpl {
+    @include c24.tpl;
+}

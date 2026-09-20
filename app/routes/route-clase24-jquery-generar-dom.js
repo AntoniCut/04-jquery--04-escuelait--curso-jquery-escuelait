@@ -61,7 +61,7 @@ export const routeClase24JqueryGenerarDom = {
             {
                 fileName: '04-jquery-generar-dom-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-24/clase-24-styles.css`,
+                urlInput: `${styles}/pages/clase-24/04-jquery-generar-dom.css`,
                 urlOutput: `${markdownShikiHtml}/clase-24`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase24JqueryGenerarDom = {
         ],
         headerTitle: 'Clase 24 - 4. jQuery generar DOM',
         styles: [
-            { href: `${styles}/pages/clase-24/clase-24-styles.css` },
+            { href: `${styles}/pages/clase-24/04-jquery-generar-dom.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
