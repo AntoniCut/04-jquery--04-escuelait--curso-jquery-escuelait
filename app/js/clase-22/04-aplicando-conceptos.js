@@ -85,7 +85,7 @@
     const fuenteOriginalEjemplo7 = $resultEjemplo7.css('font-size') || '1.5rem';
 
     /** @type {JQuery<HTMLElement>} - `Contenedor de la demo` */
-    const $demo = $('.deferred');
+    const $demo = $('.demo__deferred');
 
 
     /*

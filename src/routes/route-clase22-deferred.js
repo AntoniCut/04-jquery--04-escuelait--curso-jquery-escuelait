@@ -61,7 +61,7 @@ export const routeClase22Deferred = {
             {
                 fileName: '01-deferred-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-22/clase-22-styles.css`,
+                urlInput: `${styles}/pages/clase-22/01-deferred.css`,
                 urlOutput: `${markdownShikiHtml}/clase-22`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase22Deferred = {
         ],
         headerTitle: 'Clase 22 - 1. Deferred',
         styles: [
-            { href: `${styles}/pages/clase-22/clase-22-styles.css` },
+            { href: `${styles}/pages/clase-22/01-deferred.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

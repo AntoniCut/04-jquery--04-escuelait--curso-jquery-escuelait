@@ -10,7 +10,7 @@
 
 
     <!--  -----  Contenido de la Práctica, Aqui se renderiza la logica de la Página  -----  -->
-    <div class="deferred">
+    <div class="demo__deferred">
 
         <h3 class="deferred__title">
             Aplicando conceptos
@@ -27,7 +27,7 @@
             <p class="deferred__hint">
                 Al cargar, espera a <kbd>esPar(2)</kbd> y a la peticion de <kbd>_partial-01.html</kbd>.
             </p>
-            <div class="deferred__output" id="result-ejemplo-1" role="status" aria-live="polite"></div>
+            <div class="deferred__output deferred__output--partial" id="result-ejemplo-1" role="status" aria-live="polite"></div>
         </section>
 
         <section class="deferred__panel" id="ejemplo-2">
@@ -54,7 +54,7 @@
             <p class="deferred__hint">
                 Muestra las notificaciones de progreso antes del resultado final.
             </p>
-            <div class="deferred__output" id="result-ejemplo-4" role="status" aria-live="polite"></div>
+            <div class="deferred__output deferred__output--lines" id="result-ejemplo-4" role="status" aria-live="polite"></div>
         </section>
 
         <section class="deferred__panel" id="ejemplo-5">
@@ -72,7 +72,7 @@
                     readonly
                 >
             </label>
-            <p class="deferred__hint" id="result-ejemplo-5"></p>
+            <p class="deferred__hint deferred__hint--slot" id="result-ejemplo-5"></p>
         </section>
 
         <section class="deferred__panel" id="ejemplo-6">
@@ -115,7 +115,7 @@
             <p class="deferred__hint">
                 Varios callbacks registrados sobre la misma promesa de <kbd>esPar(2)</kbd>.
             </p>
-            <div class="deferred__output" id="result-ejemplo-8" role="status" aria-live="polite"></div>
+            <div class="deferred__output deferred__output--lines" id="result-ejemplo-8" role="status" aria-live="polite"></div>
         </section>
 
     </div>

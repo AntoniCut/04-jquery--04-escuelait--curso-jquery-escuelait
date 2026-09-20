@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------  *
+    *  -----  01-deferred.scss  --  /src/scss/pages/clase-22/01-deferred.scss  -----  *
+    *  -----------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-22-common' as c22;
+
+
+[data-component-page="deferredDescription"] {
+    @include c22.description-slot;
+}
+
+[data-component-page="deferredDemo"] {
+    min-height: 40rem;
+
+    @include c22.tablet {
+        min-height: 36rem;
+    }
+}
+
+
+.demo__deferred {
+    @include c22.block;
+
+    min-height: 40rem;
+
+    @include c22.tablet {
+        min-height: 36rem;
+    }
+}
+
+
+.deferred {
+    @include c22.deferred;
+}

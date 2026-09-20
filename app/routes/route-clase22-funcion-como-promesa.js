@@ -61,7 +61,7 @@ export const routeClase22FuncionComoPromesa = {
             {
                 fileName: '03-funcion-como-promesa-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-22/clase-22-styles.css`,
+                urlInput: `${styles}/pages/clase-22/03-funcion-como-promesa.css`,
                 urlOutput: `${markdownShikiHtml}/clase-22`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase22FuncionComoPromesa = {
         ],
         headerTitle: 'Clase 22 - 3. Función como Promesa',
         styles: [
-            { href: `${styles}/pages/clase-22/clase-22-styles.css` },
+            { href: `${styles}/pages/clase-22/03-funcion-como-promesa.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

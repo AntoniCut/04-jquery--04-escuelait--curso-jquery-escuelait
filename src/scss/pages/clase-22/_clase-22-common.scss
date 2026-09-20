@@ -1,0 +1,365 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-22-common.scss  --  /src/scss/pages/clase-22/_clase-22-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use '../../base/mixins' as mix;
+
+
+$ink: #102a43;
+$muted: #486581;
+$title: #312e81;
+$accent: #4338ca;
+$accent-deep: #7c3aed;
+$danger: #991b1b;
+$label: #334e68;
+$border: #d9e2ec;
+$placeholder: #9fb3c8;
+$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+$gradient-card: linear-gradient(145deg, #ffffff 0%, #f5f3ff 100%);
+$gradient-sample: linear-gradient(145deg, #f5f3ff 0%, #ede9fe 100%);
+
+
+@mixin mobile {
+    @include mix.mobile {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin desktop-sm {
+    @include mix.desktopSM {
+        @content;
+    }
+}
+
+
+@mixin description-slot {
+    min-height: 42rem;
+}
+
+
+@mixin block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+
+    @include mix.mobile {
+        gap: 1.6rem;
+    }
+
+    @include mix.tablet {
+        gap: 2rem;
+    }
+}
+
+
+@mixin title {
+    margin: 0 0 0.4rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $ink;
+    border-bottom: 3px solid transparent;
+    border-image: $gradient-accent 1;
+
+    @include mix.mobile {
+        font-size: 1.7rem;
+    }
+
+    @include mix.tablet {
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+}
+
+
+@mixin hint {
+    margin: 0;
+    font-size: 1.35rem;
+    color: $muted;
+    line-height: 1.6;
+
+    kbd {
+        font-size: 1.15rem;
+    }
+
+    @include mix.mobile {
+        font-size: 1.4rem;
+
+        kbd {
+            font-size: 1.2rem;
+        }
+    }
+
+    @include mix.tablet {
+        font-size: 1.5rem;
+
+        kbd {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.4rem;
+    background: $gradient-card;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 10px 40px rgba(67, 56, 202, 0.08);
+    border: 1px solid rgba(67, 56, 202, 0.14);
+
+    @include mix.mobile {
+        padding: 1.6rem;
+    }
+
+    @include mix.tablet {
+        padding: 2rem 2.4rem;
+        border-radius: 16px;
+    }
+}
+
+
+@mixin btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    min-width: 8.8rem;
+    min-height: 4.4rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background: $gradient-accent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+    &:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(67, 56, 202, 0.35);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba(124, 58, 237, 0.35);
+        outline-offset: 3px;
+    }
+
+    @include mix.tablet {
+        padding: 1.2rem 2.4rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+@mixin deferred {
+    &__title {
+        @include title;
+    }
+
+    &__hint {
+        @include hint;
+
+        &--slot {
+            min-height: 2.4rem;
+        }
+    }
+
+    &__panel {
+        @include card;
+
+        min-height: 16rem;
+    }
+
+    &__panel-title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $title;
+
+        @include mix.tablet {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__button {
+        @include btn;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $label;
+        letter-spacing: 0.02em;
+
+        @include mix.tablet {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        min-height: 4.4rem;
+        padding: 1.1rem 1.4rem;
+        font-size: 1.6rem;
+        color: $ink;
+        background: #fff;
+        border: 2px solid $border;
+        border-radius: 8px;
+        transition: all 250ms ease;
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: $placeholder;
+        }
+
+        &:hover {
+            border-color: #bcccdc;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $accent;
+            box-shadow: 0 0 0 4px rgba(67, 56, 202, 0.12);
+        }
+
+        &[readonly] {
+            background: #f8fafc;
+        }
+
+        @include mix.tablet {
+            max-width: 32rem;
+            padding: 1.2rem 1.6rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__output {
+        display: block;
+        width: 100%;
+        min-height: 8rem;
+        padding: 1.2rem 1.4rem;
+        overflow: auto;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $accent;
+        line-height: 1.6;
+        background: $gradient-sample;
+        border-left: 4px solid $accent;
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        &--lines {
+            min-height: 18rem;
+        }
+
+        &--partial {
+            min-height: 32rem;
+        }
+
+        &--partials {
+            min-height: 64rem;
+        }
+
+        &--stack {
+            min-height: 92rem;
+        }
+
+        h2 {
+            margin: 0 0 0.6rem;
+            font-size: 1.6rem;
+            color: $title;
+        }
+
+        p {
+            margin: 0 0 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $label;
+        }
+
+        ul {
+            margin: 0 0 1rem;
+            padding-left: 1.8rem;
+        }
+
+        li {
+            margin: 0 0 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $label;
+        }
+
+        kbd {
+            font-size: 1.25rem;
+        }
+
+        &:empty::before {
+            content: 'Esperando resultado...';
+            color: $placeholder;
+            font-weight: 500;
+        }
+
+        @include mix.tablet {
+            padding: 1.6rem 2rem;
+            font-size: 1.5rem;
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            p {
+                font-size: 1.45rem;
+            }
+        }
+    }
+
+    &__msg {
+        margin: 0 0 0.6rem;
+        min-height: 2.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.5;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--error {
+            color: $danger;
+        }
+
+        @include mix.tablet {
+            font-size: 1.5rem;
+        }
+    }
+}

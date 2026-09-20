@@ -62,7 +62,7 @@ export const routeClase22AplicandoConceptos = {
             {
                 fileName: '04-aplicando-conceptos-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-22/clase-22-styles.css`,
+                urlInput: `${styles}/pages/clase-22/04-aplicando-conceptos.css`,
                 urlOutput: `${markdownShikiHtml}/clase-22`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -90,7 +90,7 @@ export const routeClase22AplicandoConceptos = {
         ],
         headerTitle: 'Clase 22 - 4. Aplicando conceptos',
         styles: [
-            { href: `${styles}/pages/clase-22/clase-22-styles.css` },
+            { href: `${styles}/pages/clase-22/04-aplicando-conceptos.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

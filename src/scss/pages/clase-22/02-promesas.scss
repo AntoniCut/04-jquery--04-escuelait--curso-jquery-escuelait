@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------  *
+    *  -----  02-promesas.scss  --  /src/scss/pages/clase-22/02-promesas.scss  -----  *
+    *  -----------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-22-common' as c22;
+
+
+[data-component-page="promesasDescription"] {
+    @include c22.description-slot;
+}
+
+[data-component-page="promesasDemo"] {
+    min-height: 240rem;
+
+    @include c22.tablet {
+        min-height: 220rem;
+    }
+}
+
+
+.demo__deferred {
+    @include c22.block;
+
+    min-height: 240rem;
+
+    @include c22.tablet {
+        min-height: 220rem;
+    }
+}
+
+
+.deferred {
+    @include c22.deferred;
+}

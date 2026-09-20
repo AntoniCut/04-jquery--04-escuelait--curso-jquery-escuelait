@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  03-funcion-como-promesa.scss  --  /src/scss/pages/clase-22/03-funcion-como-promesa.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-22-common' as c22;
+
+
+[data-component-page="funcionComoPromesaDescription"] {
+    @include c22.description-slot;
+}
+
+[data-component-page="funcionComoPromesaDemo"] {
+    min-height: 44rem;
+
+    @include c22.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.demo__deferred {
+    @include c22.block;
+
+    min-height: 44rem;
+
+    @include c22.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.deferred {
+    @include c22.deferred;
+}
