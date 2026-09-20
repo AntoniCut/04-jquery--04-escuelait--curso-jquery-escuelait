@@ -28,7 +28,7 @@
 
     /** @type {JQuery<HTMLDivElement>} - `Contenedor de la animacion` */
     const $animateContainer = /** @type {JQuery<HTMLDivElement>} */ (
-        $('.main__section-practica .animate__container')
+        $('.demo__loop .loop__track')
     );
 
 

@@ -61,7 +61,7 @@ export const routeClase23ValidarFormulario = {
             {
                 fileName: '01-validar-formulario-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-23/clase-23-styles.css`,
+                urlInput: `${styles}/pages/clase-23/01-validar-formulario.css`,
                 urlOutput: `${markdownShikiHtml}/clase-23`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase23ValidarFormulario = {
         ],
         headerTitle: 'Clase 23 - 1. Validar Formulario',
         styles: [
-            { href: `${styles}/pages/clase-23/clase-23-styles.css` },
+            { href: `${styles}/pages/clase-23/01-validar-formulario.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

@@ -1,0 +1,38 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+    *  -----  03-animaciones-en-bucle-forma-2.scss  --  /src/scss/pages/clase-23/03-animaciones-en-bucle-forma-2.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-23-common' as c23;
+
+
+[data-component-page="animacionesEnBucleForma2Description"] {
+    @include c23.description-slot;
+}
+
+[data-component-page="animacionesEnBucleForma2Demo"] {
+    min-height: 56rem;
+
+    @include c23.tablet {
+        min-height: 52rem;
+    }
+}
+
+
+.demo__loop {
+    @include c23.block;
+    @include c23.loop-stage;
+
+    min-height: 56rem;
+
+    @include c23.tablet {
+        min-height: 52rem;
+    }
+}
+
+
+.loop {
+    @include c23.loop;
+}

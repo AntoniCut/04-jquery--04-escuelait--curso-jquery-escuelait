@@ -61,7 +61,7 @@ export const routeClase23AnimacionesEnBucleForma1 = {
             {
                 fileName: '02-animaciones-en-bucle-forma-1-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-23/clase-23-styles.css`,
+                urlInput: `${styles}/pages/clase-23/02-animaciones-en-bucle-forma-1.css`,
                 urlOutput: `${markdownShikiHtml}/clase-23`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase23AnimacionesEnBucleForma1 = {
         ],
         headerTitle: 'Clase 23 - 2. Animaciones en Bucle Forma 1',
         styles: [
-            { href: `${styles}/pages/clase-23/clase-23-styles.css` },
+            { href: `${styles}/pages/clase-23/02-animaciones-en-bucle-forma-1.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

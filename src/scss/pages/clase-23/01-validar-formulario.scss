@@ -1,0 +1,37 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  01-validar-formulario.scss  --  /src/scss/pages/clase-23/01-validar-formulario.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-23-common' as c23;
+
+
+[data-component-page="validarFormularioDescription"] {
+    @include c23.description-slot;
+}
+
+[data-component-page="validarFormularioDemo"] {
+    min-height: 72rem;
+
+    @include c23.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.demo__form-ajax {
+    @include c23.block;
+
+    min-height: 72rem;
+
+    @include c23.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.form-ajax {
+    @include c23.form-ajax;
+}
