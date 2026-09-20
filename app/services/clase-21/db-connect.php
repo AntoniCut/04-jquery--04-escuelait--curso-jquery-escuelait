@@ -31,11 +31,11 @@
 
         mysqli_report(MYSQLI_REPORT_OFF);
 
-        $host = getenv('DB_HOST') ?: '127.0.0.1';
-        $user = getenv('DB_USER') ?: 'root';
-        $pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
-        $db   = getenv('DB_NAME') ?: 'jquery_escuelait_classicmodels';
-        $port = (int) (getenv('DB_PORT') ?: 3306);
+        $host = env_get('DB_HOST') ?: '127.0.0.1';
+        $user = env_get('DB_USER') ?: 'root';
+        $pass = env_get('DB_PASS') ?? '';
+        $db   = env_get('DB_NAME') ?: 'jquery_escuelait_classicmodels';
+        $port = (int) (env_get('DB_PORT') ?: 3306);
 
         $conn = mysqli_connect($host, $user, $pass, $db, $port);
 
