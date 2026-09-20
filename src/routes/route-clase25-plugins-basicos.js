@@ -61,7 +61,7 @@ export const routeClase25PluginsBasicos = {
             {
                 fileName: '01-plugins-basicos-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-25/clase-25-styles.css`,
+                urlInput: `${styles}/pages/clase-25/01-plugins-basicos.css`,
                 urlOutput: `${markdownShikiHtml}/clase-25`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase25PluginsBasicos = {
         ],
         headerTitle: 'Clase 25 - 1. Plugins básicos',
         styles: [
-            { href: `${styles}/pages/clase-25/clase-25-styles.css` },
+            { href: `${styles}/pages/clase-25/01-plugins-basicos.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

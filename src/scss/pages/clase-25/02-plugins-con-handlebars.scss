@@ -1,0 +1,116 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  02-plugins-con-handlebars.scss  --  /src/scss/pages/clase-25/02-plugins-con-handlebars.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-25-common' as c25;
+
+
+[data-component-page="pluginsConHandlebarsDescription"] {
+    @include c25.description-slot;
+}
+
+[data-component-page="pluginsConHandlebarsDemo"] {
+    min-height: 72rem;
+
+    @include c25.tablet {
+        min-height: 56rem;
+    }
+}
+
+
+.demo__tpl {
+    @include c25.block;
+
+    min-height: 72rem;
+
+    script {
+        display: none;
+    }
+
+    @include c25.tablet {
+        min-height: 56rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-content: start;
+    }
+}
+
+
+.tpl {
+    &__title {
+        @include c25.title;
+
+        @include c25.tablet {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__hint {
+        @include c25.hint;
+
+        @include c25.tablet {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        min-height: 22rem;
+    }
+
+    &__panel-title {
+        @include c25.card-title;
+    }
+
+    &__preview {
+        @include c25.sample;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 16rem;
+        overflow: auto;
+
+        h4,
+        p {
+            margin: 0 0 0.8rem;
+            color: c25.$ink;
+        }
+
+        h4 {
+            font-size: 1.6rem;
+
+            @include c25.tablet {
+                font-size: 1.8rem;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+
+            @include c25.tablet {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__preview-placeholder {
+        margin: 0;
+        min-height: 2.4rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: c25.$accent;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+
+        @include c25.tablet {
+            font-size: 1.5rem;
+        }
+    }
+}

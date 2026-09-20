@@ -62,7 +62,7 @@ export const routeClase25PluginsConHandlebars = {
             {
                 fileName: '02-plugins-con-handlebars-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-25/clase-25-styles.css`,
+                urlInput: `${styles}/pages/clase-25/02-plugins-con-handlebars.css`,
                 urlOutput: `${markdownShikiHtml}/clase-25`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -76,7 +76,7 @@ export const routeClase25PluginsConHandlebars = {
         ],
         headerTitle: 'Clase 25 - 2. Plugins con Handlebars',
         styles: [
-            { href: `${styles}/pages/clase-25/clase-25-styles.css` },
+            { href: `${styles}/pages/clase-25/02-plugins-con-handlebars.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

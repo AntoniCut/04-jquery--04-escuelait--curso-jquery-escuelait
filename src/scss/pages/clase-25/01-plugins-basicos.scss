@@ -1,0 +1,113 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  01-plugins-basicos.scss  --  /src/scss/pages/clase-25/01-plugins-basicos.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-25-common' as c25;
+
+
+[data-component-page="pluginsBasicosDescription"] {
+    @include c25.description-slot;
+}
+
+[data-component-page="pluginsBasicosDemo"] {
+    min-height: 140rem;
+
+    @include c25.tablet {
+        min-height: 118rem;
+    }
+}
+
+
+.demo__plugins {
+    @include c25.block;
+
+    min-height: 140rem;
+
+    @include c25.tablet {
+        min-height: 118rem;
+    }
+}
+
+
+.plugins {
+    &__title {
+        @include c25.title;
+    }
+
+    &__hint {
+        @include c25.hint;
+    }
+
+    &__card {
+        @include c25.card;
+
+        min-height: 16rem;
+
+        &--combo {
+            min-height: 22rem;
+        }
+    }
+
+    &__card-title {
+        @include c25.card-title;
+    }
+
+    &__card-hint {
+        @include c25.card-hint;
+    }
+
+    &__sample {
+        @include c25.sample;
+
+        &--grow {
+            min-height: 8.8rem;
+            overflow: auto;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        min-height: 4.8rem;
+        align-items: center;
+
+        @include c25.tablet {
+            gap: 1.2rem;
+        }
+    }
+
+    &__btn {
+        @include c25.btn;
+
+        flex: 1 1 12rem;
+        max-width: 100%;
+
+        @include c25.tablet {
+            flex: 0 0 auto;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: c25.$label;
+
+        @include c25.tablet {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__color {
+        width: 6.4rem;
+        height: 4.4rem;
+        padding: 0.2rem;
+        border: 2px solid c25.$border;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+    }
+}
