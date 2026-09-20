@@ -15,21 +15,24 @@
 [data-component-page="pluginHilightDemo"] {
     min-height: 124rem;
 
-    @include c26.from-tablet {
+    @include c26.tablet {
+        min-height: 108rem;
+    }
+}
+
+
+.demo__hilight {
+    @include c26.block;
+
+    min-height: 124rem;
+
+    @include c26.tablet {
         min-height: 108rem;
     }
 }
 
 
 .hilight {
-    @include c26.block;
-
-    min-height: 124rem;
-
-    @include c26.from-tablet {
-        min-height: 108rem;
-    }
-
     &__title {
         @include c26.title;
     }

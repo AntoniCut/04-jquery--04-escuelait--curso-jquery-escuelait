@@ -15,21 +15,24 @@
 [data-component-page="extendDemo"] {
     min-height: 220rem;
 
-    @include c26.from-tablet {
+    @include c26.tablet {
+        min-height: 180rem;
+    }
+}
+
+
+.demo__extend {
+    @include c26.block;
+
+    min-height: 220rem;
+
+    @include c26.tablet {
         min-height: 180rem;
     }
 }
 
 
 .extend {
-    @include c26.block;
-
-    min-height: 220rem;
-
-    @include c26.from-tablet {
-        min-height: 180rem;
-    }
-
     &__title {
         @include c26.title;
     }
@@ -45,10 +48,14 @@
         min-height: 208rem;
         align-content: start;
 
-        @include c26.from-tablet {
-            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        @include c26.tablet {
+            grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
             gap: 1.6rem;
             min-height: 168rem;
+        }
+
+        @include c26.desktop-sm {
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
         }
     }
 
@@ -59,7 +66,7 @@
         min-height: 14rem;
         padding: 1.4rem 1.6rem;
 
-        @include c26.from-tablet {
+        @include c26.tablet {
             padding: 1.6rem 2rem;
         }
     }
@@ -69,7 +76,7 @@
 
         font-size: 1.3rem;
 
-        @include c26.from-tablet {
+        @include c26.tablet {
             font-size: 1.4rem;
         }
     }
@@ -87,7 +94,7 @@
         border-left: 4px solid c26.$accent;
         border-radius: 8px;
 
-        @include c26.from-tablet {
+        @include c26.tablet {
             padding: 1.2rem 1.6rem;
             font-size: 1.3rem;
         }
