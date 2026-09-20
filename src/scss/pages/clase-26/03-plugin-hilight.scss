@@ -1,0 +1,66 @@
+/*
+    *  -----------------------------------------------------------------------------------------  *
+    *  -----  03-plugin-hilight.scss  --  /src/scss/pages/clase-26/03-plugin-hilight.scss  -----  *
+    *  -----------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-26-common' as c26;
+
+
+[data-component-page="pluginHilightDescription"] {
+    @include c26.description-slot;
+}
+
+[data-component-page="pluginHilightDemo"] {
+    min-height: 124rem;
+
+    @include c26.from-tablet {
+        min-height: 108rem;
+    }
+}
+
+
+.hilight {
+    @include c26.block;
+
+    min-height: 124rem;
+
+    @include c26.from-tablet {
+        min-height: 108rem;
+    }
+
+    &__title {
+        @include c26.title;
+    }
+
+    &__hint {
+        @include c26.hint;
+    }
+
+    &__card {
+        @include c26.card;
+
+        min-height: 16rem;
+    }
+
+    &__card-title {
+        @include c26.card-title;
+    }
+
+    &__card-hint {
+        @include c26.card-hint;
+    }
+
+    &__sample {
+        @include c26.sample;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    &__log {
+        @include c26.log;
+    }
+}

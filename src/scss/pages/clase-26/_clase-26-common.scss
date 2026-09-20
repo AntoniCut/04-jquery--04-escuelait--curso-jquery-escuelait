@@ -1,0 +1,203 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-26-common.scss  --  /src/scss/pages/clase-26/_clase-26-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use '../../base/mixins' as mix;
+
+
+$ink: #1a1a2e;
+$muted: #4a5568;
+$title: #312e81;
+$accent: #667eea;
+$accent-deep: #764ba2;
+$danger: #e74c3c;
+$danger-text: #b00020;
+$label: #3d4152;
+$border: #e1e4eb;
+$border-soft: #eef0f5;
+$gradient-accent: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+$gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+$gradient-sample: linear-gradient(145deg, #f8f9fc 0%, #eef0f7 100%);
+
+
+@mixin from-tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin description-slot {
+    min-height: 42rem;
+}
+
+
+@mixin block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+
+    @include mix.tablet {
+        gap: 2rem;
+    }
+}
+
+
+@mixin title {
+    margin: 0 0 0.4rem;
+    padding-bottom: 0.8rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: $ink;
+    border-bottom: 3px solid transparent;
+    border-image: $gradient-accent 1;
+
+    @include mix.tablet {
+        padding-bottom: 1rem;
+        font-size: 2rem;
+    }
+}
+
+
+@mixin hint {
+    margin: 0;
+    font-size: 1.4rem;
+    color: $muted;
+    line-height: 1.6;
+
+    kbd {
+        font-size: 1.2rem;
+    }
+
+    @include mix.tablet {
+        font-size: 1.5rem;
+
+        kbd {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    background: $gradient-card;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 40px rgba(102, 126, 234, 0.08);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+
+    @include mix.tablet {
+        padding: 2.4rem 3rem;
+        border-radius: 16px;
+    }
+}
+
+
+@mixin card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $title;
+
+    @include mix.tablet {
+        font-size: 1.6rem;
+    }
+}
+
+
+@mixin card-hint {
+    margin: 0;
+    font-size: 1.3rem;
+    color: $muted;
+    line-height: 1.6;
+
+    kbd {
+        font-size: 1.15rem;
+    }
+
+    @include mix.tablet {
+        font-size: 1.4rem;
+
+        kbd {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+@mixin sample {
+    min-height: 6.4rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: $ink;
+    background: $gradient-sample;
+    border-left: 4px solid $accent;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    @include mix.tablet {
+        padding: 1.6rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+@mixin log {
+    min-height: 2.8rem;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $accent;
+    line-height: 1.6;
+
+    @include mix.tablet {
+        font-size: 1.4rem;
+    }
+}
+
+
+@mixin btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.8rem;
+    min-height: 4.4rem;
+    padding: 1rem 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    background: $gradient-accent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+    &:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+    }
+
+    @include mix.tablet {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+}

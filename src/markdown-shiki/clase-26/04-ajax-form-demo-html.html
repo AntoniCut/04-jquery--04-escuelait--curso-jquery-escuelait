@@ -1,0 +1,364 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">--></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"main__demo"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;</span><span style="color:#569CD6">div</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">h3</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">            Plugins ajaxForm y basicValidation</span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">h3</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">            Los dos plugins se encadenan sobre el mismo formulario. Cada</span></span>
+<span class="line"><span style="color:#D4D4D4">            tarjeta cambia una opción para ver cómo se fusiona con los</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">defaults</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">.</span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajaxFormValidationLog"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__log"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">            &#x3C;!--  *****  feedback del callback onInvalid  *****  --></span></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-default-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-default-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Con valores por defecto</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Sin opciones: usa </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">action</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">, </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">method</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4"> y</span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">data-ajaxform-target</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4"> del formulario.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formDefault"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#9CDCFE">                data-ajaxform-target</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"#resultadoDefault"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreDefault"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreDefault"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Ana"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailDefault"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailDefault"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ana@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoDefault"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  respuesta de enviar.php  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-target-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-target-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Solo target</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                El destino se indica en las opciones con </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">target</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formTarget"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreTarget"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreTarget"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Luis"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailTarget"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailTarget"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"luis@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoTarget"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  respuesta de enviar.php  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-get-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-get-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Con type GET</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                La opción </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">type</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4"> sobrescribe el</span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">method</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4"> del formulario.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formGet"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreGet"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreGet"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Marta"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailGet"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailGet"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"marta@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoGet"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  respuesta de enviar.php  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-success-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-success-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Con onSuccess</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Callback con la respuesta cuando PHP devuelve</span></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">ok: true</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formSuccess"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreSuccess"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreSuccess"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Paco"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailSuccess"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailSuccess"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"paco@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoSuccess"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  respuesta de enviar.php  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajaxFormLog"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__log"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  feedback del callback onSuccess  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-error-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-error-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Con onError</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                La opción </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4">url</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">kbd</span><span style="color:#808080">></span><span style="color:#D4D4D4"> apunta a un archivo inexistente</span></span>
+<span class="line"><span style="color:#D4D4D4">                para forzar el fallo de Ajax.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formError"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreError"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreError"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Eva"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailError"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailError"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"eva@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoError"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output error-message"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  feedback del callback onError  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;</span><span style="color:#569CD6">section</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card"</span><span style="color:#9CDCFE"> aria-labelledby</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-always-title"</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">h4</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-title"</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form-always-title"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Con onAlways</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">h4</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__card-hint"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                Se ejecuta al terminar la petición, vaya bien o mal.</span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">form</span></span>
+<span class="line"><span style="color:#9CDCFE">                id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"formAlways"</span></span>
+<span class="line"><span style="color:#9CDCFE">                class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__form"</span></span>
+<span class="line"><span style="color:#9CDCFE">                action</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"</span></span>
+<span class="line"><span style="color:#9CDCFE">                method</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"post"</span></span>
+<span class="line"><span style="color:#808080">            ></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreAlways"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Nombre</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombreAlways"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nombre"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"text"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"Nuria"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">label</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__label"</span><span style="color:#9CDCFE"> for</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailAlways"</span><span style="color:#808080">></span><span style="color:#D4D4D4">Email</span><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">label</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">input</span></span>
+<span class="line"><span style="color:#9CDCFE">                        id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"emailAlways"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__input basic-validation"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        name</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"email"</span></span>
+<span class="line"><span style="color:#9CDCFE">                        value</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"nuria@ejemplo.com"</span></span>
+<span class="line"><span style="color:#808080">                    ></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">                &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__field ajax-form__field--actions"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;</span><span style="color:#569CD6">button</span><span style="color:#9CDCFE"> type</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"submit"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__submit"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#D4D4D4">                        Enviar</span></span>
+<span class="line"><span style="color:#808080">                    &#x3C;/</span><span style="color:#569CD6">button</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#808080">                &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">form</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"resultadoAlways"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__output"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  respuesta de enviar.php  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">            &#x3C;</span><span style="color:#569CD6">p</span><span style="color:#9CDCFE"> id</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajaxFormAlwaysLog"</span><span style="color:#9CDCFE"> class</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"ajax-form__log"</span><span style="color:#808080">></span></span>
+<span class="line"><span style="color:#6A9955">                &#x3C;!--  *****  feedback del callback onAlways  *****  --></span></span>
+<span class="line"><span style="color:#808080">            &#x3C;/</span><span style="color:#569CD6">p</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">        &#x3C;/</span><span style="color:#569CD6">section</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">    &#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#808080">&#x3C;/</span><span style="color:#569CD6">div</span><span style="color:#808080">></span></span>
+<span class="line"></span></code></pre>

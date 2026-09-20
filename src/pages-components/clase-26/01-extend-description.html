@@ -1,0 +1,82 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  01-extend-description.html  --  /src/pages-components/clase-26/01-extend-description.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '{}'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">$.extend</p>
+                <h2 class="description-page__hero-title">Extend</h2>
+                <p class="description-page__hero-subtitle">merge · deep · defaults</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                Fusiona dos objetos con <kbd>$.extend</kbd> de tres formas
+                distintas y pinta el JSON resultante: copia superficial,
+                copia profunda y fusión que muta el destino.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> entender el patrón
+                <kbd>$.extend({}, defaults, options)</kbd> que usan todos
+                los plugins de esta clase.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.extend({}, a, b)</kbd> devuelve un objeto
+                        nuevo y no modifica ni <kbd>a</kbd> ni
+                        <kbd>b</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        En la copia superficial los objetos anidados se
+                        sustituyen, así que <kbd>p33</kbd> se pierde.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.extend(true, {}, a, b)</kbd> hace copia
+                        profunda y fusiona los objetos anidados, así que
+                        <kbd>p33</kbd> se conserva.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.extend(a, b)</kbd> muta <kbd>a</kbd>: es
+                        justo lo que hay que evitar al gestionar las
+                        opciones de un plugin.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

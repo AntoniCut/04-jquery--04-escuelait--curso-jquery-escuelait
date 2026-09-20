@@ -1,0 +1,80 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------------  *
+    *  -----  02-plugins-fontsizer-advanced.scss  --  /src/scss/pages/clase-26/02-plugins-fontsizer-advanced.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-26-common' as c26;
+
+
+[data-component-page="pluginsFontsizerAdvancedDescription"] {
+    @include c26.description-slot;
+}
+
+[data-component-page="pluginsFontsizerAdvancedDemo"] {
+    min-height: 62rem;
+}
+
+
+.sizer {
+    @include c26.block;
+
+    min-height: 62rem;
+
+    &__title {
+        @include c26.title;
+    }
+
+    &__hint {
+        @include c26.hint;
+    }
+
+    &__card {
+        @include c26.card;
+
+        min-height: 26rem;
+    }
+
+    &__card-title {
+        @include c26.card-title;
+    }
+
+    &__card-hint {
+        @include c26.card-hint;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        min-height: 4.8rem;
+        align-items: center;
+
+        @include c26.from-tablet {
+            gap: 1.2rem;
+        }
+    }
+
+    &__btn {
+        @include c26.btn;
+
+        flex: 1 1 12rem;
+        max-width: 100%;
+
+        @include c26.from-tablet {
+            flex: 0 0 auto;
+        }
+    }
+
+    &__sample {
+        @include c26.sample;
+
+        min-height: 8.8rem;
+        overflow: auto;
+    }
+
+    &__log {
+        @include c26.log;
+    }
+}

@@ -1,0 +1,185 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/**</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@typedef</span><span style="color:#4EC9B0"> {Object}</span><span style="color:#4EC9B0"> ExtendDemoObject</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> [propiedad1]</span><span style="color:#6A9955"> - Solo esta en el objeto destino.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {number}</span><span style="color:#9CDCFE"> propiedad2</span><span style="color:#6A9955"> - Esta en los dos objetos y se sobreescribe.</span></span>
+<span class="line"><span style="color:#6A9955"> * </span><span style="color:#569CD6">@property</span><span style="color:#4EC9B0"> {{ p31?: number, p32?: number, p33?: number }}</span><span style="color:#9CDCFE"> propiedad3</span><span style="color:#6A9955"> - Objeto anidado para ver la diferencia entre extend superficial y profundo.</span></span>
+<span class="line"><span style="color:#6A9955"> */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  01-extend.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Referencias al HTML  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `Contenedor de salida de los casos` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $output</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'#output'</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Objetos base  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ExtendDemoObject}</span><span style="color:#6A9955"> - `objeto destino del ejemplo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> object1</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"><span style="color:#9CDCFE">        propiedad1:</span><span style="color:#B5CEA8"> 100</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        propiedad2:</span><span style="color:#B5CEA8"> 250</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        propiedad3:</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            p33:</span><span style="color:#B5CEA8"> 330</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {ExtendDemoObject}</span><span style="color:#6A9955"> - `objeto origen del ejemplo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> object2</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"><span style="color:#9CDCFE">        propiedad2:</span><span style="color:#B5CEA8"> 200</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        propiedad3:</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            p31:</span><span style="color:#B5CEA8"> 310</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">            p32:</span><span style="color:#B5CEA8"> 320</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Funciones  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `write(text, objeto)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Pinta un titulo y el valor JSON de un dato en el contenedor de salida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> text</span><span style="color:#6A9955"> - Titulo descriptivo del caso.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {*}</span><span style="color:#9CDCFE"> objeto</span><span style="color:#6A9955"> - Valor a serializar y mostrar.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> write</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">text</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objeto</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `Bloque de cada caso` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $bloque</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#DCDCAA">            $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'&#x3C;article>'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'extend__case'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLHeadingElement>}</span><span style="color:#6A9955"> - `Titulo del caso` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $titulo</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLHeadingElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#DCDCAA">            $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'&#x3C;h4>'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'extend__case-title'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">text</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `JSON del valor a mostrar` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> serializado</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">objeto</span><span style="color:#D4D4D4"> === </span><span style="color:#569CD6">undefined</span></span>
+<span class="line"><span style="color:#D4D4D4">            ? </span><span style="color:#CE9178">'undefined'</span></span>
+<span class="line"><span style="color:#D4D4D4">            : </span><span style="color:#4FC1FF">JSON</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">stringify</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">objeto</span><span style="color:#D4D4D4">, </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLPreElement>}</span><span style="color:#6A9955"> - `Valor serializado` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $valor</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLPreElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#DCDCAA">            $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'&#x3C;pre>'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'extend__case-value'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">serializado</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $bloque</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$titulo</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">$valor</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $output</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$bloque</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  vaciar la salida para no duplicar casos al volver a la ruta  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $output</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">empty</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Objetos originales  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 original'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 - Propiedad 1'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 - Propiedad 2'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 - Propiedad 3'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 - Propiedad 3 - p33'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p33</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 original'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 - Propiedad 2'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 - Propiedad 3'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 - Propiedad 3 - p31'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p31</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 - Propiedad 3 - p32'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p32</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Extend superficial sobre copia (no muta origenes)  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  patron tipico de opciones de plugin: destino vacio  -----</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> objectShallow</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">extend</span><span style="color:#D4D4D4">({}, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - resultado'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - Propiedad 1 (se conserva)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - Propiedad 2 (se sobreescribe)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - Propiedad 3 (objeto anidado sustituido)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - p31'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p31</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - p32'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p32</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend superficial - p33 (se pierde)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectShallow</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p33</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Extend profundo sobre copia  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> objectDeep</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">extend</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">, {}, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - resultado'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - Propiedad 1 (se conserva)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - Propiedad 2 (se sobreescribe)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - Propiedad 3 (objetos anidados fusionados)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - p31'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p31</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - p32'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p32</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Extend profundo - p33 (se conserva)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">objectDeep</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p33</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /*</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  -----  Extend superficial mutando el destino  -----  *</span></span>
+<span class="line"><span style="color:#6A9955">        *  ---------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#6A9955">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">extend</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado con $.extend(object1, object2)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - Propiedad 1'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - Propiedad 2'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - Propiedad 3'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - p31'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p31</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - p32'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p32</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 1 mutado - p33 (se pierde)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object1</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">propiedad3</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">p33</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">    write</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Objeto 2 (no cambia)'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">object2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

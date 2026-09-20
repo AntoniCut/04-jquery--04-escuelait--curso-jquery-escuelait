@@ -1,0 +1,179 @@
+<!--
+    *  ----------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  00-variables-gestion-opciones-plugins.html  --  /src/pages/clase-26/00-variables-gestion-opciones-plugins.html  -----  *
+    *  ----------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__container">
+
+    <section class="main__description">
+        
+        <article class="description-page">
+
+            <header class="description-page__hero" style="--hero-mark: '{}'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.extend</p>
+                    <h2 class="description-page__hero-title">Variables gestión de opciones en plugins</h2>
+                    <p class="description-page__hero-subtitle">defaults · options · settings</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Los plugins de la clase 25 tenían los valores fijos en
+                    el código. Aquí se convierten en configurables: el
+                    plugin declara unos <kbd>defaults</kbd> y los fusiona
+                    con las <kbd>options</kbd> que recibe.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> dominar el patrón
+                    <kbd>$.extend({}, defaults, options)</kbd> y los
+                    callbacks de configuración.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            <kbd>$.extend</kbd> fusiona objetos: en
+                            superficial o en profundo con
+                            <kbd>true</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            El destino debe ser <kbd>{}</kbd> para no
+                            mutar los <kbd>defaults</kbd> del plugin.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Las opciones también pueden ser funciones:
+                            <kbd>onFormatted</kbd>,
+                            <kbd>onSuccess</kbd>,
+                            <kbd>onError</kbd>.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cuatro prácticas: el método <kbd>$.extend</kbd> y tres
+                    plugins configurables.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y comparar el
+                    caso con defaults frente al caso con opciones.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            <kbd>$.extend</kbd> superficial, profundo y
+                            mutando el objeto destino.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase26Extend"
+                            data-route="route-clase26-extend"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Plugin <kbd>fontSizerAdvanced</kbd> con
+                            <kbd>target</kbd> y
+                            <kbd>onFontResized</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase26PluginsFontsizerAdvanced"
+                            data-route="route-clase26-plugins-fontsizer-advanced"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Plugin <kbd>hilight</kbd> con
+                            <kbd>defaults</kbd> públicos y
+                            <kbd>onFormatted</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase26PluginHilight"
+                            data-route="route-clase26-plugin-hilight"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Plugins <kbd>ajaxForm</kbd> y
+                            <kbd>basicValidation</kbd> encadenados sobre
+                            un formulario.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase26AjaxForm"
+                            data-route="route-clase26-ajax-form"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </article>
+    </section>
+
+</div>

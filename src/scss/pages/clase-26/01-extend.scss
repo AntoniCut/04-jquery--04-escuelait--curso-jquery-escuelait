@@ -1,0 +1,95 @@
+/*
+    *  -------------------------------------------------------------------------  *
+    *  -----  01-extend.scss  --  /src/scss/pages/clase-26/01-extend.scss  -----  *
+    *  -------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-26-common' as c26;
+
+
+[data-component-page="extendDescription"] {
+    @include c26.description-slot;
+}
+
+[data-component-page="extendDemo"] {
+    min-height: 220rem;
+
+    @include c26.from-tablet {
+        min-height: 180rem;
+    }
+}
+
+
+.extend {
+    @include c26.block;
+
+    min-height: 220rem;
+
+    @include c26.from-tablet {
+        min-height: 180rem;
+    }
+
+    &__title {
+        @include c26.title;
+    }
+
+    &__hint {
+        @include c26.hint;
+    }
+
+    &__output {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        min-height: 208rem;
+        align-content: start;
+
+        @include c26.from-tablet {
+            grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+            gap: 1.6rem;
+            min-height: 168rem;
+        }
+    }
+
+    &__case {
+        @include c26.card;
+
+        gap: 0.8rem;
+        min-height: 14rem;
+        padding: 1.4rem 1.6rem;
+
+        @include c26.from-tablet {
+            padding: 1.6rem 2rem;
+        }
+    }
+
+    &__case-title {
+        @include c26.card-title;
+
+        font-size: 1.3rem;
+
+        @include c26.from-tablet {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__case-value {
+        margin: 0;
+        padding: 1rem 1.2rem;
+        font-family: monospace;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: c26.$ink;
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: c26.$gradient-sample;
+        border-left: 4px solid c26.$accent;
+        border-radius: 8px;
+
+        @include c26.from-tablet {
+            padding: 1.2rem 1.6rem;
+            font-size: 1.3rem;
+        }
+    }
+}

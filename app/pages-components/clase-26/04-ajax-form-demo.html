@@ -1,0 +1,367 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  04-ajax-form-demo.html  --  /src/pages-components/clase-26/04-ajax-form-demo.html  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+
+    <div class="ajax-form">
+
+        <h3 class="ajax-form__title">
+            Plugins ajaxForm y basicValidation
+        </h3>
+
+        <p class="ajax-form__hint">
+            Los dos plugins se encadenan sobre el mismo formulario. Cada
+            tarjeta cambia una opción para ver cómo se fusiona con los
+            <kbd>defaults</kbd>.
+        </p>
+
+        <p id="ajaxFormValidationLog" class="ajax-form__log">
+            <!--  *****  feedback del callback onInvalid  *****  -->
+        </p>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-default-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-default-title">
+                Con valores por defecto
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                Sin opciones: usa <kbd>action</kbd>, <kbd>method</kbd> y
+                <kbd>data-ajaxform-target</kbd> del formulario.
+            </p>
+
+            <form
+                id="formDefault"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+                data-ajaxform-target="#resultadoDefault"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreDefault">Nombre</label>
+                    <input
+                        id="nombreDefault"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Ana"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailDefault">Email</label>
+                    <input
+                        id="emailDefault"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="ana@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoDefault" class="ajax-form__output">
+                <!--  *****  respuesta de enviar.php  *****  -->
+            </p>
+
+        </section>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-target-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-target-title">
+                Solo target
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                El destino se indica en las opciones con <kbd>target</kbd>.
+            </p>
+
+            <form
+                id="formTarget"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreTarget">Nombre</label>
+                    <input
+                        id="nombreTarget"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Luis"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailTarget">Email</label>
+                    <input
+                        id="emailTarget"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="luis@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoTarget" class="ajax-form__output">
+                <!--  *****  respuesta de enviar.php  *****  -->
+            </p>
+
+        </section>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-get-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-get-title">
+                Con type GET
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                La opción <kbd>type</kbd> sobrescribe el
+                <kbd>method</kbd> del formulario.
+            </p>
+
+            <form
+                id="formGet"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreGet">Nombre</label>
+                    <input
+                        id="nombreGet"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Marta"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailGet">Email</label>
+                    <input
+                        id="emailGet"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="marta@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoGet" class="ajax-form__output">
+                <!--  *****  respuesta de enviar.php  *****  -->
+            </p>
+
+        </section>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-success-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-success-title">
+                Con onSuccess
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                Callback con la respuesta cuando PHP devuelve
+                <kbd>ok: true</kbd>.
+            </p>
+
+            <form
+                id="formSuccess"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreSuccess">Nombre</label>
+                    <input
+                        id="nombreSuccess"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Paco"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailSuccess">Email</label>
+                    <input
+                        id="emailSuccess"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="paco@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoSuccess" class="ajax-form__output">
+                <!--  *****  respuesta de enviar.php  *****  -->
+            </p>
+
+            <p id="ajaxFormLog" class="ajax-form__log">
+                <!--  *****  feedback del callback onSuccess  *****  -->
+            </p>
+
+        </section>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-error-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-error-title">
+                Con onError
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                La opción <kbd>url</kbd> apunta a un archivo inexistente
+                para forzar el fallo de Ajax.
+            </p>
+
+            <form
+                id="formError"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreError">Nombre</label>
+                    <input
+                        id="nombreError"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Eva"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailError">Email</label>
+                    <input
+                        id="emailError"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="eva@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoError" class="ajax-form__output error-message">
+                <!--  *****  feedback del callback onError  *****  -->
+            </p>
+
+        </section>
+
+
+        <section class="ajax-form__card" aria-labelledby="ajax-form-always-title">
+
+            <h4 class="ajax-form__card-title" id="ajax-form-always-title">
+                Con onAlways
+            </h4>
+
+            <p class="ajax-form__card-hint">
+                Se ejecuta al terminar la petición, vaya bien o mal.
+            </p>
+
+            <form
+                id="formAlways"
+                class="ajax-form__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-26/enviar.php"
+                method="post"
+            >
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="nombreAlways">Nombre</label>
+                    <input
+                        id="nombreAlways"
+                        class="ajax-form__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Nuria"
+                    >
+                </p>
+
+                <p class="ajax-form__field">
+                    <label class="ajax-form__label" for="emailAlways">Email</label>
+                    <input
+                        id="emailAlways"
+                        class="ajax-form__input basic-validation"
+                        name="email"
+                        type="email"
+                        value="nuria@ejemplo.com"
+                    >
+                </p>
+
+                <p class="ajax-form__field ajax-form__field--actions">
+                    <button type="submit" class="ajax-form__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="resultadoAlways" class="ajax-form__output">
+                <!--  *****  respuesta de enviar.php  *****  -->
+            </p>
+
+            <p id="ajaxFormAlwaysLog" class="ajax-form__log">
+                <!--  *****  feedback del callback onAlways  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+
+</div>

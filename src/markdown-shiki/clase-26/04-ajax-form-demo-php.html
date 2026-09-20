@@ -1,0 +1,33 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">        *  -----  enviar</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  --  /src/services/clase-</span><span style="color:#B5CEA8">26</span><span style="color:#D4D4D4">/enviar</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  -----  *</span></span>
+<span class="line"><span style="color:#D4D4D4">        *  ---------------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#D4D4D4">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">    header</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Content-Type: application/json; charset=utf-8'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  datos recibidos por GET o POST  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $nombre</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'nombre'</span><span style="color:#D4D4D4">]) ? </span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'nombre'</span><span style="color:#D4D4D4">]) : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $email</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'email'</span><span style="color:#D4D4D4">]) ? </span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'email'</span><span style="color:#D4D4D4">]) : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  la validación de servidor exige nombre y email  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $ok</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$nombre</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">$email</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$ok</span></span>
+<span class="line"><span style="color:#D4D4D4">        ? </span><span style="color:#CE9178">'Recibido: '</span><span style="color:#D4D4D4"> .</span><span style="color:#9CDCFE"> $nombre</span><span style="color:#D4D4D4"> .</span><span style="color:#CE9178"> ' &#x3C;'</span><span style="color:#D4D4D4"> .</span><span style="color:#9CDCFE"> $email</span><span style="color:#D4D4D4"> .</span><span style="color:#CE9178"> '>'</span></span>
+<span class="line"><span style="color:#D4D4D4">        : </span><span style="color:#CE9178">'Faltan nombre o email'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  enviar la respuesta como JSON  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    echo</span><span style="color:#DCDCAA"> json_encode</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#DCDCAA">        array</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#CE9178">            'ok'</span><span style="color:#D4D4D4"> => </span><span style="color:#9CDCFE">$ok</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">            'mensaje'</span><span style="color:#D4D4D4"> => </span><span style="color:#9CDCFE">$mensaje</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">        ),</span></span>
+<span class="line"><span style="color:#D4D4D4">        JSON_UNESCAPED_UNICODE</span></span>
+<span class="line"><span style="color:#D4D4D4">    );</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">?></span></span>
+<span class="line"></span></code></pre>

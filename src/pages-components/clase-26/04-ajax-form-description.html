@@ -1,0 +1,93 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------  *
+    *  -----  04-ajax-form-description.html  --  /src/pages-components/clase-26/04-ajax-form-description.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '⇅'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">ajaxForm</p>
+                <h2 class="description-page__hero-title">Ajax Form</h2>
+                <p class="description-page__hero-subtitle">options · atributos · callbacks</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                Dos plugins encadenados sobre el mismo formulario:
+                <kbd>basicValidation</kbd> valida los campos al enviar y
+                <kbd>ajaxForm</kbd> manda los datos a
+                <kbd>enviar.php</kbd> sin recargar la página.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> fusionar tres niveles de
+                configuración: <kbd>defaults</kbd>, atributos del
+                formulario y <kbd>options</kbd>.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Sin opciones, el plugin lee <kbd>action</kbd>,
+                        <kbd>method</kbd> y
+                        <kbd>data-ajaxform-target</kbd> del formulario.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>options</kbd> va en último lugar del
+                        <kbd>$.extend</kbd>, así que gana a los atributos
+                        del formulario.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>onSuccess</kbd>, <kbd>onError</kbd> y
+                        <kbd>onAlways</kbd> se enganchan a
+                        <kbd>done</kbd>, <kbd>fail</kbd> y
+                        <kbd>always</kbd> de <kbd>$.ajax</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        PHP devuelve <kbd>{ ok, mensaje }</kbd>: si
+                        <kbd>ok</kbd> es <kbd>false</kbd> también se
+                        llama a <kbd>onError</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>basicValidation</kbd> cancela el
+                        <kbd>submit</kbd> si algún
+                        <kbd>.basic-validation</kbd> está vacío.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

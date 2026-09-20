@@ -1,0 +1,83 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+    *  -----  03-plugin-hilight-description.html  --  /src/pages-components/clase-26/03-plugin-hilight-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '¶'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">hilight</p>
+                <h2 class="description-page__hero-title">Plugin hilight</h2>
+                <p class="description-page__hero-subtitle">defaults públicos · wrapInner</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                El plugin <kbd>hilight</kbd> resalta cada elemento: aplica
+                color de texto, color de fondo y envuelve el contenido en
+                <kbd>&lt;strong&gt;</kbd>. Los cinco casos pasan un
+                subconjunto distinto de opciones.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> ver que las opciones no indicadas
+                se rellenan con los <kbd>defaults</kbd> y que estos se
+                pueden exponer fuera del plugin.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Los <kbd>defaults</kbd> viven fuera de
+                        <kbd>$.fn.hilight</kbd>, así que se declaran una
+                        sola vez.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Si solo se pasa <kbd>foreground</kbd>, el
+                        <kbd>background</kbd> sigue siendo el del default.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>onFormatted</kbd> se llama con
+                        <kbd>call(this)</kbd>, así que el callback accede
+                        al elemento ya resaltado.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.extend($.fn.hilight, { defaults })</kbd>
+                        publica los defaults para poder consultarlos o
+                        cambiarlos desde fuera.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

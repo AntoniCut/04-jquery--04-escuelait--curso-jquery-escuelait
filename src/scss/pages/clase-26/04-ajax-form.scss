@@ -1,0 +1,178 @@
+/*
+    *  -------------------------------------------------------------------------------  *
+    *  -----  04-ajax-form.scss  --  /src/scss/pages/clase-26/04-ajax-form.scss  -----  *
+    *  -------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-26-common' as c26;
+
+
+[data-component-page="ajaxFormDescription"] {
+    @include c26.description-slot;
+}
+
+[data-component-page="ajaxFormDemo"] {
+    min-height: 300rem;
+
+    @include c26.from-tablet {
+        min-height: 268rem;
+    }
+}
+
+
+.ajax-form {
+    @include c26.block;
+
+    min-height: 300rem;
+
+    @include c26.from-tablet {
+        min-height: 268rem;
+    }
+
+    &__title {
+        @include c26.title;
+    }
+
+    &__hint {
+        @include c26.hint;
+    }
+
+    &__card {
+        @include c26.card;
+
+        min-height: 40rem;
+    }
+
+    &__card-title {
+        @include c26.card-title;
+    }
+
+    &__card-hint {
+        @include c26.card-hint;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        width: 100%;
+        margin: 0;
+
+        @include c26.from-tablet {
+            gap: 1.6rem;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        min-height: 7.2rem;
+        margin: 0;
+
+        &--actions {
+            min-height: 6rem;
+            padding-top: 1rem;
+            border-top: 1px solid c26.$border-soft;
+
+            @include c26.from-tablet {
+                flex-direction: row;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: c26.$label;
+        letter-spacing: 0.02em;
+
+        @include c26.from-tablet {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1.1rem 1.4rem;
+        font-size: 1.6rem;
+        color: c26.$ink;
+        background: #fff;
+        border: 2px solid c26.$border;
+        border-radius: 8px;
+        transition: all 250ms ease;
+
+        &:hover {
+            border-color: #c5c9d6;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: c26.$accent;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+        }
+
+        //  -----  clase que añade el plugin basicValidation  -----
+        &.is-invalid {
+            border-color: c26.$danger;
+            background: #fff8f8;
+
+            &:focus {
+                border-color: c26.$danger;
+                box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.12);
+            }
+        }
+
+        @include c26.from-tablet {
+            padding: 1.2rem 1.6rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__submit {
+        @include c26.btn;
+
+        width: 100%;
+        min-width: 14rem;
+        padding: 1.2rem 2rem;
+
+        @include c26.from-tablet {
+            width: auto;
+            padding: 1.2rem 3rem;
+        }
+    }
+
+    &__output {
+        @include c26.sample;
+
+        min-height: 5.6rem;
+        font-weight: 500;
+    }
+
+    &__log {
+        @include c26.log;
+    }
+}
+
+
+/*
+    -----------------------------------------
+    -----  mensajes de los plugins  ---------
+    -----------------------------------------
+    Clases que inyectan ajaxForm y
+    basicValidation en tiempo de ejecucion.
+*/
+
+.basic-validation-error {
+    display: block;
+    min-height: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: c26.$danger-text;
+}
+
+.error-message {
+    color: c26.$danger-text;
+    border-left-color: c26.$danger;
+}

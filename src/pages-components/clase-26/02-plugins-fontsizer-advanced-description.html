@@ -1,0 +1,83 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  02-plugins-fontsizer-advanced-description.html  --  /src/pages-components/clase-26/02-plugins-fontsizer-advanced-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: 'Aa'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">$.fn</p>
+                <h2 class="description-page__hero-title">Plugin fontSizer advanced</h2>
+                <p class="description-page__hero-subtitle">options · defaults · callback</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                Reescribe el <kbd>fontSizer</kbd> de la clase 25 para que
+                reciba un objeto de opciones. El destino a animar y el
+                callback final dejan de estar fijos en el código del
+                plugin.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> sustituir los valores hardcodeados
+                por <kbd>settings</kbd> obtenidos con
+                <kbd>$.extend({}, defaults, options)</kbd>.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Sin opciones, <kbd>target</kbd> vale
+                        <kbd>#fontSizer</kbd> y
+                        <kbd>onFontResized</kbd> es una función vacía.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Con opciones, <kbd>target</kbd> pasa a ser
+                        <kbd>#divFontSizer</kbd> y se ejecuta el callback.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.when(...).done(...)</kbd> espera a que
+                        termine la animación antes de llamar a
+                        <kbd>onFontResized</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El callback se invoca con <kbd>call</kbd> para que
+                        <kbd>this</kbd> sea el elemento que dispara el
+                        plugin.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

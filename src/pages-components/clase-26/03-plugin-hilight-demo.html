@@ -1,0 +1,114 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  03-plugin-hilight-demo.html  --  /src/pages-components/clase-26/03-plugin-hilight-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+
+    <div class="hilight">
+
+        <h3 class="hilight__title">
+            Plugin hilight
+        </h3>
+
+        <p class="hilight__hint">
+            Cada tarjeta pasa un subconjunto distinto de opciones. Lo que
+            no se pasa se toma de <kbd>$.fn.hilight.defaults</kbd>.
+        </p>
+
+
+        <section class="hilight__card" aria-labelledby="hilight-default-title">
+
+            <h4 class="hilight__card-title" id="hilight-default-title">
+                Con valores por defecto
+            </h4>
+
+            <p class="hilight__card-hint">
+                Sin opciones: texto rojo sobre fondo amarillo.
+            </p>
+
+            <p class="hilight__sample">
+                Hola <span class="hilight-default">Mundo</span>
+            </p>
+
+        </section>
+
+
+        <section class="hilight__card" aria-labelledby="hilight-foreground-title">
+
+            <h4 class="hilight__card-title" id="hilight-foreground-title">
+                Solo foreground
+            </h4>
+
+            <p class="hilight__card-hint">
+                Se conserva el fondo amarillo del default.
+            </p>
+
+            <p class="hilight__sample">
+                Hola <span class="hilight-foreground">Mundo</span>
+            </p>
+
+        </section>
+
+
+        <section class="hilight__card" aria-labelledby="hilight-background-title">
+
+            <h4 class="hilight__card-title" id="hilight-background-title">
+                Solo background
+            </h4>
+
+            <p class="hilight__card-hint">
+                Se conserva el texto rojo del default.
+            </p>
+
+            <p class="hilight__sample">
+                Hola <span class="hilight-background">Mundo</span>
+            </p>
+
+        </section>
+
+
+        <section class="hilight__card" aria-labelledby="hilight-colors-title">
+
+            <h4 class="hilight__card-title" id="hilight-colors-title">
+                Foreground y background
+            </h4>
+
+            <p class="hilight__card-hint">
+                Las dos opciones de color a la vez.
+            </p>
+
+            <p class="hilight__sample">
+                Hola <span class="hilight-colors">Mundo</span>
+            </p>
+
+        </section>
+
+
+        <section class="hilight__card" aria-labelledby="hilight-callback-title">
+
+            <h4 class="hilight__card-title" id="hilight-callback-title">
+                Con onFormatted
+            </h4>
+
+            <p class="hilight__card-hint">
+                Colores personalizados y callback al terminar el resaltado.
+            </p>
+
+            <p class="hilight__sample">
+                Hola <span class="hilight-callback">Mundo</span>
+            </p>
+
+            <p id="hilightLog" class="hilight__log">
+                <!--  *****  feedback del callback onFormatted  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+
+</div>

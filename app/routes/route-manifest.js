@@ -150,6 +150,12 @@ export const routeManifest = [
     { id: 'clase25', path: 'clase25-jquery-plugins', file: 'route-clase25' },
     { id: 'clase25PluginsBasicos', path: 'clase25-jquery-plugins/01-plugins-basicos', file: 'route-clase25-plugins-basicos' },
     { id: 'clase25PluginsConHandlebars', path: 'clase25-jquery-plugins/02-plugins-con-handlebars', file: 'route-clase25-plugins-con-handlebars' },
+
+    { id: 'clase26', path: 'clase26-variables-gestion-opciones-plugins', file: 'route-clase26' },
+    { id: 'clase26Extend', path: 'clase26-variables-gestion-opciones-plugins/01-extend', file: 'route-clase26-extend' },
+    { id: 'clase26PluginsFontsizerAdvanced', path: 'clase26-variables-gestion-opciones-plugins/02-plugins-fontsizer-advanced', file: 'route-clase26-plugins-fontsizer-advanced' },
+    { id: 'clase26PluginHilight', path: 'clase26-variables-gestion-opciones-plugins/03-plugin-hilight', file: 'route-clase26-plugin-hilight' },
+    { id: 'clase26AjaxForm', path: 'clase26-variables-gestion-opciones-plugins/04-ajax-form', file: 'route-clase26-ajax-form' },
     
     { id: '404NotFoundPage', path: '404', file: 'route-404-not-found-page' },
 

@@ -1,0 +1,98 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  02-plugins-fontsizer-advanced-demo.html  --  /src/pages-components/clase-26/02-plugins-fontsizer-advanced-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+
+    <div class="sizer">
+
+        <h3 class="sizer__title">
+            Plugin fontSizerAdvanced
+        </h3>
+
+        <p class="sizer__hint">
+            El mismo plugin con y sin opciones. Las opciones se fusionan
+            con los <kbd>defaults</kbd> mediante <kbd>$.extend</kbd>.
+        </p>
+
+
+        <section class="sizer__card" aria-labelledby="sizer-default-title">
+
+            <h4 class="sizer__card-title" id="sizer-default-title">
+                Con valores por defecto
+            </h4>
+
+            <p class="sizer__card-hint">
+                Sin opciones: anima el destino <kbd>#fontSizer</kbd>.
+            </p>
+
+            <div class="sizer__actions">
+                <button
+                    type="button"
+                    class="font-sizer-default sizer__btn"
+                    data-fontsizer="-=1"
+                >
+                    -1 px
+                </button>
+                <button
+                    type="button"
+                    class="font-sizer-default sizer__btn"
+                    data-fontsizer="+=1"
+                >
+                    +1 px
+                </button>
+            </div>
+
+            <div id="fontSizer" class="sizer__sample">
+                Div con el plugin fontSizerAdvanced usando los valores por defecto.
+            </div>
+
+        </section>
+
+
+        <section class="sizer__card" aria-labelledby="sizer-settings-title">
+
+            <h4 class="sizer__card-title" id="sizer-settings-title">
+                Con settings personalizados
+            </h4>
+
+            <p class="sizer__card-hint">
+                Con opciones: anima <kbd>#divFontSizer</kbd> y ejecuta
+                <kbd>onFontResized</kbd>.
+            </p>
+
+            <div class="sizer__actions">
+                <button
+                    type="button"
+                    class="font-sizer sizer__btn"
+                    data-fontsizer="-=1"
+                >
+                    -1 px
+                </button>
+                <button
+                    type="button"
+                    class="font-sizer sizer__btn"
+                    data-fontsizer="+=1"
+                >
+                    +1 px
+                </button>
+            </div>
+
+            <div id="divFontSizer" class="sizer__sample">
+                Div con el plugin fontSizerAdvanced usando settings.
+            </div>
+
+            <p id="fontSizerLog" class="sizer__log">
+                <!--  *****  feedback del callback onFontResized  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+
+</div>
