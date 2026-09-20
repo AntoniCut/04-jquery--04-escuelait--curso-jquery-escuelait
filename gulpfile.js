@@ -247,13 +247,39 @@ export const cleanApp = () => deleteAsync(['app']);
 
 
 /**
+ * --------------------------------------
+ * -----  `cleanMarkdownShiki()`  -----
+ * --------------------------------------
+ * - Elimina src/markdown-shiki/.
+ * - Esa carpeta la regenera generateShiki a partir
+ *   de las rutas; si no se limpia, quedan HTML
+ *   huérfanos de ejercicios borrados.
+ */
+
+export const cleanMarkdownShiki = () => deleteAsync([paths.src.markdownShikiDir]);
+
+
+
+/**
+ * ---------------------------
+ * -----  `resetDev()`  ------
+ * ---------------------------
+ * - Vacía app/ y src/markdown-shiki/ para que
+ *   copyAll no deje archivos que ya no existen en src/.
+ */
+
+export const resetDev = parallel(cleanApp, cleanMarkdownShiki);
+
+
+
+/**
  * -----------------------
  * -----  `clean()`  -----
  * -----------------------
- * - Elimina en paralelo dist/ y app/.
+ * - Elimina en paralelo dist/, app/ y markdown-shiki.
  */
 
-export const clean = parallel(cleanDist, cleanApp);
+export const clean = parallel(cleanDist, cleanApp, cleanMarkdownShiki);
 
 
 
@@ -714,6 +740,18 @@ const copyAll = series(
 
 
 
+/**
+ * -----------------------------
+ * -----  `refresh()`  ---------
+ * -----------------------------
+ * - Resetea destinos y vuelve a copiar/compilar
+ *   src/ → app/ sin quedar a la escucha.
+ */
+
+export const refresh = series(resetDev, copyAll);
+
+
+
 /*
     ---------------------------------
     -----  👀  --  DEV / WATCH  -----
@@ -755,9 +793,15 @@ const watchTask = () => {
 watchTask.displayName = 'watch';
 
 
+/** Solo observa src/. El reset y la copia inicial van en `refresh` / `dev`. */
+export const watchSrc = () => watchTask();
 
-/** Genera app/ y queda escuchando cambios. El servidor se levanta con `pnpm run server`. */
-export const dev = series(copyAll, watchTask);
+watchSrc.displayName = 'watchSrc';
+
+
+
+/** Resetea destinos, genera app/ y queda escuchando cambios. El servidor se levanta con `pnpm run server`. */
+export const dev = series(resetDev, copyAll, watchTask);
 
 
 
@@ -890,12 +934,12 @@ export function addTsNoCheck(cb) {
  * -----  🚀  --  BUILD  -----
  * ---------------------------
  * Build de producción: clean → copy/compile → minify.
- * 1. Limpia dist/ y app/.
+ * 1. Limpia dist/, app/ y markdown-shiki.
  * 2. Copia y compila src/ → app/.
  * 3. Minifica app/ → dist/.
  */
 export const build = series(
-    parallel(cleanDist, cleanApp),
+    parallel(cleanDist, cleanApp, cleanMarkdownShiki),
     copyAll,
     parallel(minifyAllJs, minifyAllCss, minifyRootIndex, minifyHtml, minifyServices, copyStaticAssetsToDist, copyRootAssetsToDist),
 );
