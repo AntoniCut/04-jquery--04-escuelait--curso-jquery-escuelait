@@ -62,7 +62,7 @@ export const routeClase20SelectCombinado = {
             {
                 fileName: '04-select-combinado-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-20/clase-20-styles.css`,
+                urlInput: `${styles}/pages/clase-20/04-select-combinado.css`,
                 urlOutput: `${markdownShikiHtml}/clase-20`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -83,7 +83,7 @@ export const routeClase20SelectCombinado = {
         ],
         headerTitle: 'Clase 20 - Select Combinado',
         styles: [
-            { href: `${styles}/pages/clase-20/clase-20-styles.css` },
+            { href: `${styles}/pages/clase-20/04-select-combinado.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

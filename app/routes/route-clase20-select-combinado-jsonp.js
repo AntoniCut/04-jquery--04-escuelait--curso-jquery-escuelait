@@ -62,7 +62,7 @@ export const routeClase20SelectCombinadoJsonp = {
             {
                 fileName: '05-select-combinado-jsonp-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-20/clase-20-styles.css`,
+                urlInput: `${styles}/pages/clase-20/05-select-combinado-jsonp.css`,
                 urlOutput: `${markdownShikiHtml}/clase-20`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -83,7 +83,7 @@ export const routeClase20SelectCombinadoJsonp = {
         ],
         headerTitle: 'Clase 20 - Select Combinado JSONP',
         styles: [
-            { href: `${styles}/pages/clase-20/clase-20-styles.css` },
+            { href: `${styles}/pages/clase-20/05-select-combinado-jsonp.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

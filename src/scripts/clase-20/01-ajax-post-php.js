@@ -72,7 +72,7 @@
      */
 
     const mostrarLoading = () => {
-        $loading.show();
+        $loading.addClass('is-visible');
         $infoSalida.hide();
     };
 
@@ -85,7 +85,7 @@
      */
 
     const ocultarLoading = () => {
-        $loading.hide();
+        $loading.removeClass('is-visible');
     };
 
 

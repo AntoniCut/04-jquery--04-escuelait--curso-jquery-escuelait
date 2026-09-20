@@ -1,0 +1,37 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  05-select-combinado-jsonp.scss  --  /src/scss/pages/clase-20/05-select-combinado-jsonp.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-20-common' as c20;
+
+
+[data-component-page="selectCombinadoJsonpDescription"] {
+    @include c20.description-slot;
+}
+
+[data-component-page="selectCombinadoJsonpDemo"] {
+    min-height: 48rem;
+
+    @include c20.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.demo__ajax-low {
+    @include c20.block;
+
+    min-height: 48rem;
+
+    @include c20.tablet {
+        min-height: 40rem;
+    }
+}
+
+
+.ajax-low {
+    @include c20.ajax-low;
+}

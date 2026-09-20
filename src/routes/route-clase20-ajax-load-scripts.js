@@ -61,7 +61,7 @@ export const routeClase20AjaxLoadScripts = {
             {
                 fileName: '02-ajax-load-scripts-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-20/clase-20-styles.css`,
+                urlInput: `${styles}/pages/clase-20/02-ajax-load-scripts.css`,
                 urlOutput: `${markdownShikiHtml}/clase-20`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -75,7 +75,7 @@ export const routeClase20AjaxLoadScripts = {
         ],
         headerTitle: 'Clase 20 - Ajax Load Scripts',
         styles: [
-            { href: `${styles}/pages/clase-20/clase-20-styles.css` },
+            { href: `${styles}/pages/clase-20/02-ajax-load-scripts.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

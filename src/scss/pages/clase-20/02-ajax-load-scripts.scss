@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  02-ajax-load-scripts.scss  --  /src/scss/pages/clase-20/02-ajax-load-scripts.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-20-common' as c20;
+
+
+[data-component-page="ajaxLoadScriptsDescription"] {
+    @include c20.description-slot;
+}
+
+[data-component-page="ajaxLoadScriptsDemo"] {
+    min-height: 44rem;
+
+    @include c20.tablet {
+        min-height: 36rem;
+    }
+}
+
+
+.demo__ajax-low {
+    @include c20.block;
+
+    min-height: 44rem;
+
+    @include c20.tablet {
+        min-height: 36rem;
+    }
+}
+
+
+.ajax-low {
+    @include c20.ajax-low;
+}

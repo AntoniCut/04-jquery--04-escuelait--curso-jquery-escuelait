@@ -62,7 +62,7 @@ export const routeClase20AjaxPostPhp = {
             {
                 fileName: '01-ajax-post-php-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-20/clase-20-styles.css`,
+                urlInput: `${styles}/pages/clase-20/01-ajax-post-php.css`,
                 urlOutput: `${markdownShikiHtml}/clase-20`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -83,7 +83,7 @@ export const routeClase20AjaxPostPhp = {
         ],
         headerTitle: 'Clase 20 - Ajax POST PHP',
         styles: [
-            { href: `${styles}/pages/clase-20/clase-20-styles.css` },
+            { href: `${styles}/pages/clase-20/01-ajax-post-php.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

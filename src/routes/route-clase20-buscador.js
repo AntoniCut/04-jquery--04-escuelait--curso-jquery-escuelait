@@ -62,7 +62,7 @@ export const routeClase20Buscador = {
             {
                 fileName: '03-buscador-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-20/clase-20-styles.css`,
+                urlInput: `${styles}/pages/clase-20/03-buscador.css`,
                 urlOutput: `${markdownShikiHtml}/clase-20`,
                 target: '[data-shiki="codeCss"]',
             },
@@ -83,7 +83,7 @@ export const routeClase20Buscador = {
         ],
         headerTitle: 'Clase 20 - Buscador',
         styles: [
-            { href: `${styles}/pages/clase-20/clase-20-styles.css` },
+            { href: `${styles}/pages/clase-20/03-buscador.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

@@ -73,7 +73,7 @@
      */
 
     const mostrarLoading = () => {
-        $loading.show();
+        $loading.addClass('is-visible');
         $infoSalida.hide();
         $respuesta.find('table, .ajax-low__source').remove();
     };
@@ -87,7 +87,7 @@
      */
 
     const ocultarLoading = () => {
-        $loading.hide();
+        $loading.removeClass('is-visible');
     };
 
 
