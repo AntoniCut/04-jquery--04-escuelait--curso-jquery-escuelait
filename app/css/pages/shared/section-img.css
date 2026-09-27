@@ -99,6 +99,36 @@
 .section__card-img:nth-child(20) {
   animation-delay: 0.8s;
 }
+.section__card-img:nth-child(21) {
+  animation-delay: 0.84s;
+}
+.section__card-img:nth-child(22) {
+  animation-delay: 0.88s;
+}
+.section__card-img:nth-child(23) {
+  animation-delay: 0.92s;
+}
+.section__card-img:nth-child(24) {
+  animation-delay: 0.96s;
+}
+.section__card-img:nth-child(25) {
+  animation-delay: 1s;
+}
+.section__card-img:nth-child(26) {
+  animation-delay: 1.04s;
+}
+.section__card-img:nth-child(27) {
+  animation-delay: 1.08s;
+}
+.section__card-img:nth-child(28) {
+  animation-delay: 1.12s;
+}
+.section__card-img:nth-child(29) {
+  animation-delay: 1.16s;
+}
+.section__card-img:nth-child(30) {
+  animation-delay: 1.2s;
+}
 .section__card-img:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 34px rgba(2, 132, 199, 0.16);

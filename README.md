@@ -143,13 +143,12 @@ curso-jquery-escuelait/
 │   │   └── clase-27/                 # enviar.php (advancedValidation)
 │   ├── effects/
 │   ├── libs/                         # jQuery, jQuery UI
-│   ├── plugins/
-│   └── pdfs/
+│   └── plugins/
 │
 ├── app/                              # Build intermedio (dev, Gulp)
 ├── dist/                             # Build de producción (Gulp)
 │
-├── assets/                           # img, fonts, favicon
+├── assets/                           # img, fonts, favicon, pdf
 ├── server/                           # dev-server, preview-server, stop-dev
 ├── deploy.sh                         # Deploy automatizado al VPS
 ├── types/
