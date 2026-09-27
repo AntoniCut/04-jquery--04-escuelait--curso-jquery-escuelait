@@ -1,0 +1,82 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  06-metodo-destroy-demo.html  --  /src/pages-components/clase-27/06-metodo-destroy-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__destroy">
+
+        <h3 class="destroy__title">
+            Método destroy
+        </h3>
+
+        <p class="destroy__hint">
+            Antes de destruir, un envío vacío se queda en la página.
+            Después, el formulario se envía sin validar.
+        </p>
+
+        <section class="destroy__card" aria-labelledby="destroy-title">
+
+            <h4 class="destroy__card-title" id="destroy-title">
+                Apagar la instancia
+            </h4>
+
+            <p class="destroy__card-hint">
+                Envía vacío, pulsa Destruir y vuelve a enviar. La
+                segunda vez abre <kbd>enviar.php</kbd>.
+            </p>
+
+            <form
+                id="formDestroy"
+                class="destroy__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="destroy__field">
+                    <label class="destroy__label" for="nombreDestroy">Nombre</label>
+                    <input
+                        id="nombreDestroy"
+                        class="destroy__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        autocomplete="name"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="destroy__field">
+                    <label class="destroy__label" for="telefonoDestroy">Teléfono</label>
+                    <input
+                        id="telefonoDestroy"
+                        class="destroy__input basic-validation"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="destroy__field destroy__field--actions">
+                    <button type="button" id="btnDestroy" class="destroy__submit">
+                        Destruir
+                    </button>
+                    <button type="submit" class="destroy__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="destroyLog" class="destroy__log">
+                <!--  *****  feedback del hook onDestroy  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+</div>

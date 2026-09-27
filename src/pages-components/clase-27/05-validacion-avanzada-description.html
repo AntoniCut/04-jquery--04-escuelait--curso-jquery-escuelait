@@ -1,0 +1,74 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  05-validacion-avanzada-description.html  --  /src/pages-components/clase-27/05-validacion-avanzada-description.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '.*'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">data-*</p>
+                <h2 class="description-page__hero-title">Validación avanzada</h2>
+                <p class="description-page__hero-subtitle">regex · minlength · maxlength</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                Los campos con clase <kbd>.advanced-validation</kbd>
+                leen sus reglas de atributos
+                <kbd>data-advanced-validation-*</kbd>: obligatorio,
+                expresión regular, mínimo y máximo.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> mostrar bajo el campo el primer
+                mensaje que falle, sin enviar el formulario.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El nombre solo admite letras, entre 3 y 10
+                        caracteres.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El teléfono solo admite dígitos, entre 9 y 15.
+                        El atributo <kbd>data-advanced-validation</kbd>
+                        lo marca como obligatorio.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>validate</kbd> devuelve una promesa:
+                        <kbd>done</kbd> si pasa y <kbd>fail</kbd> si hay
+                        errores.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

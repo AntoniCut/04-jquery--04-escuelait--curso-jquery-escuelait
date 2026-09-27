@@ -1,0 +1,215 @@
+<!--
+    *  ----------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  00-tecnicas-desarrollo-plugins-complejos.html  --  /src/pages/clase-27/00-tecnicas-desarrollo-plugins-complejos.html  -----  *
+    *  ----------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__container">
+
+    <section class="main__description">
+
+        <article class="description-page">
+
+            <header class="description-page__hero" style="--hero-mark: 'fn'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">$.fn</p>
+                    <h2 class="description-page__hero-title">Técnicas para desarrollo de plugins complejos</h2>
+                    <p class="description-page__hero-subtitle">instancia · métodos · hooks</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Los plugins de la clase 26 se limitaban a un
+                    <kbd>$.fn</kbd> que recorría la colección. Aquí el
+                    plugin guarda una instancia por elemento, esconde la
+                    lógica privada y solo revela unos métodos públicos.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> aplicar el boilerplate de
+                    Jonathan Nicol al plugin
+                    <kbd>advancedValidation</kbd>.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Cada formulario guarda su instancia en
+                            <kbd>$.data</kbd> con la clave
+                            <kbd>plugin_advancedValidation</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Si el primer argumento es un string, el
+                            plugin llama a un método público:
+                            <kbd>validate</kbd>, <kbd>isValid</kbd>,
+                            <kbd>option</kbd> o <kbd>destroy</kbd>.
+                        </p>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <p class="description-page__feature-text">
+                            Los hooks <kbd>onInit</kbd>,
+                            <kbd>onValidating</kbd>,
+                            <kbd>onIsValid</kbd>,
+                            <kbd>onIsNotValid</kbd> y
+                            <kbd>onValidated</kbd> reciben el formulario
+                            como <kbd>this</kbd>.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Demos de esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Seis prácticas sobre el mismo plugin: defaults,
+                    hooks, métodos públicos y validación por atributos.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y ver una
+                    pieza del ciclo de vida de la instancia.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 1
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Sin opciones: valida los campos
+                            <kbd>.basic-validation</kbd> al enviar.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27ValoresPorDefecto"
+                            data-route="route-clase27-valores-por-defecto"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 2
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Hooks de inicio, validación y resultado.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27Hooks"
+                            data-route="route-clase27-hooks"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 3
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El método <kbd>isValid</kbd> lee el flag de
+                            la última validación.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27MetodoIsValid"
+                            data-route="route-clase27-metodo-isvalid"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 4
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El método <kbd>option</kbd> lee y cambia
+                            <kbd>message</kbd>.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27MetodoOption"
+                            data-route="route-clase27-metodo-option"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 5
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Campos <kbd>.advanced-validation</kbd> con
+                            regex, mínimo y máximo.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27ValidacionAvanzada"
+                            data-route="route-clase27-validacion-avanzada"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            Demo 6
+                        </h4>
+                        <p class="description-page__feature-text">
+                            <kbd>destroy</kbd> quita la validación y el
+                            formulario vuelve a enviarse solo.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase27MetodoDestroy"
+                            data-route="route-clase27-metodo-destroy"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </article>
+    </section>
+
+</div>

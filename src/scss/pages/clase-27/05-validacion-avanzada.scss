@@ -1,0 +1,94 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  05-validacion-avanzada.scss  --  /src/scss/pages/clase-27/05-validacion-avanzada.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-27-common' as c27;
+
+
+[data-component-page="advancedDescription"] {
+    @include c27.description-slot;
+}
+
+[data-component-page="advancedDemo"] {
+    min-height: 74rem;
+
+    @include c27.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.demo__advanced {
+    @include c27.block;
+
+    min-height: 74rem;
+
+    @include c27.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.advanced {
+    &__title {
+        @include c27.title;
+    }
+
+    &__hint {
+        @include c27.hint;
+    }
+
+    &__card {
+        @include c27.card;
+
+        min-height: 54rem;
+    }
+
+    &__card-title {
+        @include c27.card-title;
+    }
+
+    &__card-hint {
+        @include c27.card-hint;
+    }
+
+    &__form {
+        @include c27.form;
+    }
+
+    &__field {
+        @include c27.field;
+
+        &--actions {
+            @include c27.actions;
+
+            min-height: 11rem;
+
+            @include c27.tablet {
+                min-height: 6rem;
+            }
+        }
+    }
+
+    &__label {
+        @include c27.label;
+    }
+
+    &__input {
+        @include c27.control;
+    }
+
+    &__submit {
+        @include c27.btn;
+    }
+
+    &__log {
+        @include c27.log;
+    }
+}
+
+
+@include c27.plugin-feedback;

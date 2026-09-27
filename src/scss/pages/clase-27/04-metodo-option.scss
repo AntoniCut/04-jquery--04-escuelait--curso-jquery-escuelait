@@ -1,0 +1,94 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  04-metodo-option.scss  --  /src/scss/pages/clase-27/04-metodo-option.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-27-common' as c27;
+
+
+[data-component-page="optionDescription"] {
+    @include c27.description-slot;
+}
+
+[data-component-page="optionDemo"] {
+    min-height: 72rem;
+
+    @include c27.tablet {
+        min-height: 62rem;
+    }
+}
+
+
+.demo__option {
+    @include c27.block;
+
+    min-height: 72rem;
+
+    @include c27.tablet {
+        min-height: 62rem;
+    }
+}
+
+
+.option {
+    &__title {
+        @include c27.title;
+    }
+
+    &__hint {
+        @include c27.hint;
+    }
+
+    &__card {
+        @include c27.card;
+
+        min-height: 52rem;
+    }
+
+    &__card-title {
+        @include c27.card-title;
+    }
+
+    &__card-hint {
+        @include c27.card-hint;
+    }
+
+    &__form {
+        @include c27.form;
+    }
+
+    &__field {
+        @include c27.field;
+
+        &--actions {
+            @include c27.actions;
+
+            min-height: 16rem;
+
+            @include c27.tablet {
+                min-height: 6rem;
+            }
+        }
+    }
+
+    &__label {
+        @include c27.label;
+    }
+
+    &__input {
+        @include c27.control;
+    }
+
+    &__submit {
+        @include c27.btn;
+    }
+
+    &__log {
+        @include c27.log;
+    }
+}
+
+
+@include c27.plugin-feedback;

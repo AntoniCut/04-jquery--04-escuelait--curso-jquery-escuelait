@@ -1,0 +1,74 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  02-hooks-description.html  --  /src/pages-components/clase-27/02-hooks-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '↻'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">hook()</p>
+                <h2 class="description-page__hero-title">Hooks</h2>
+                <p class="description-page__hero-subtitle">onInit · onValidating · onValidated</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                Los hooks no son eventos de jQuery. Son funciones
+                guardadas en las opciones y el plugin las llama con
+                <kbd>this</kbd> apuntando al formulario.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> leer el orden
+                <kbd>onInit</kbd>, <kbd>onValidating</kbd>,
+                <kbd>onIsValid</kbd> o <kbd>onIsNotValid</kbd>, y
+                <kbd>onValidated</kbd>.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>onInit</kbd> se dispara al crear la
+                        instancia, antes de pulsar Validar.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>validate</kbd> encadena la promesa con
+                        <kbd>done</kbd>, <kbd>fail</kbd> y
+                        <kbd>always</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El formulario se queda en la página para poder
+                        leer los tres mensajes.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

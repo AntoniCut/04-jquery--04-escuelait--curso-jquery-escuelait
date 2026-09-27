@@ -1,0 +1,88 @@
+<!--
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  02-hooks-demo.html  --  /src/pages-components/clase-27/02-hooks-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__hooks">
+
+        <h3 class="hooks__title">
+            Hooks del plugin
+        </h3>
+
+        <p class="hooks__hint">
+            <kbd>onInit</kbd> al crear el plugin.
+            <kbd>onValidating</kbd>, <kbd>onIsValid</kbd>,
+            <kbd>onIsNotValid</kbd> y <kbd>onValidated</kbd> al validar.
+        </p>
+
+        <section class="hooks__card" aria-labelledby="hooks-title">
+
+            <h4 class="hooks__card-title" id="hooks-title">
+                Con hooks
+            </h4>
+
+            <p class="hooks__card-hint">
+                Pulsa Validar con los campos vacíos y otra vez después
+                de rellenarlos.
+            </p>
+
+            <form
+                id="formHooks"
+                class="hooks__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="hooks__field">
+                    <label class="hooks__label" for="nombreHooks">Nombre</label>
+                    <input
+                        id="nombreHooks"
+                        class="hooks__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        autocomplete="name"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="hooks__field">
+                    <label class="hooks__label" for="telefonoHooks">Teléfono</label>
+                    <input
+                        id="telefonoHooks"
+                        class="hooks__input basic-validation"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="hooks__field hooks__field--actions">
+                    <button type="button" id="btnValidateHooks" class="hooks__submit">
+                        Validar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="hooksInit" class="hooks__log">
+                <!--  *****  feedback del hook onInit  *****  -->
+            </p>
+
+            <p id="hooksState" class="hooks__log">
+                <!--  *****  feedback de onValidating, onIsValid y onIsNotValid  *****  -->
+            </p>
+
+            <p id="hooksDone" class="hooks__log">
+                <!--  *****  feedback del hook onValidated  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+</div>

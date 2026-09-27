@@ -1,0 +1,89 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------------  *
+    *  -----  01-valores-por-defecto-demo.html  --  /src/pages-components/clase-27/01-valores-por-defecto-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__defaults">
+
+        <h3 class="defaults__title">
+            Plugin con valores por defecto
+        </h3>
+
+        <p class="defaults__hint">
+            Sin opciones: al enviar, valida los campos con
+            <kbd>data-basic-validation-required</kbd>. El comentario
+            lleva la clase <kbd>.basic-validation</kbd> pero no el data
+            attribute, así que no se exige.
+        </p>
+
+        <section class="defaults__card" aria-labelledby="defaults-title">
+
+            <h4 class="defaults__card-title" id="defaults-title">
+                Con valores por defecto
+            </h4>
+
+            <p class="defaults__card-hint">
+                Vacía el nombre o el teléfono y pulsa Enviar para ver el
+                mensaje reservado bajo el campo.
+            </p>
+
+            <form
+                id="formDefault"
+                class="defaults__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="defaults__field">
+                    <label class="defaults__label" for="nombreDefault">Nombre</label>
+                    <input
+                        id="nombreDefault"
+                        class="defaults__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Ana"
+                        autocomplete="name"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="defaults__field">
+                    <label class="defaults__label" for="telefonoDefault">Teléfono</label>
+                    <input
+                        id="telefonoDefault"
+                        class="defaults__input basic-validation"
+                        name="telefono"
+                        type="tel"
+                        value="600111222"
+                        autocomplete="tel"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="defaults__field">
+                    <label class="defaults__label" for="comentarioDefault">Comentario</label>
+                    <textarea
+                        id="comentarioDefault"
+                        class="defaults__textarea basic-validation"
+                        name="comentario"
+                        rows="3"
+                    ></textarea>
+                </p>
+
+                <p class="defaults__field defaults__field--actions">
+                    <button type="submit" class="defaults__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</div>

@@ -1,0 +1,88 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  01-valores-por-defecto.scss  --  /src/scss/pages/clase-27/01-valores-por-defecto.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-27-common' as c27;
+
+
+[data-component-page="defaultsDescription"] {
+    @include c27.description-slot;
+}
+
+[data-component-page="defaultsDemo"] {
+    min-height: 72rem;
+
+    @include c27.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.demo__defaults {
+    @include c27.block;
+
+    min-height: 72rem;
+
+    @include c27.tablet {
+        min-height: 64rem;
+    }
+}
+
+
+.defaults {
+    &__title {
+        @include c27.title;
+    }
+
+    &__hint {
+        @include c27.hint;
+    }
+
+    &__card {
+        @include c27.card;
+
+        min-height: 52rem;
+    }
+
+    &__card-title {
+        @include c27.card-title;
+    }
+
+    &__card-hint {
+        @include c27.card-hint;
+    }
+
+    &__form {
+        @include c27.form;
+    }
+
+    &__field {
+        @include c27.field;
+
+        &--actions {
+            @include c27.actions;
+        }
+    }
+
+    &__label {
+        @include c27.label;
+    }
+
+    &__input {
+        @include c27.control;
+    }
+
+    &__textarea {
+        @include c27.textarea;
+    }
+
+    &__submit {
+        @include c27.btn;
+    }
+}
+
+
+@include c27.plugin-feedback;

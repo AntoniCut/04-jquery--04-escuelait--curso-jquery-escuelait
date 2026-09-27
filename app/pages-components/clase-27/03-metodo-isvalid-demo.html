@@ -1,0 +1,81 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  03-metodo-isvalid-demo.html  --  /src/pages-components/clase-27/03-metodo-isvalid-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__isvalid">
+
+        <h3 class="isvalid__title">
+            Método isValid
+        </h3>
+
+        <p class="isvalid__hint">
+            El botón llama a <kbd>validate</kbd> y después a
+            <kbd>isValid</kbd>.
+        </p>
+
+        <section class="isvalid__card" aria-labelledby="isvalid-title">
+
+            <h4 class="isvalid__card-title" id="isvalid-title">
+                Comprobar el flag
+            </h4>
+
+            <p class="isvalid__card-hint">
+                Borra un campo y pulsa Comprobar. El párrafo de abajo
+                ya reserva su altura.
+            </p>
+
+            <form
+                id="formIsValid"
+                class="isvalid__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="isvalid__field">
+                    <label class="isvalid__label" for="nombreIsValid">Nombre</label>
+                    <input
+                        id="nombreIsValid"
+                        class="isvalid__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        value="Luis"
+                        autocomplete="name"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="isvalid__field">
+                    <label class="isvalid__label" for="telefonoIsValid">Teléfono</label>
+                    <input
+                        id="telefonoIsValid"
+                        class="isvalid__input basic-validation"
+                        name="telefono"
+                        type="tel"
+                        value="600333444"
+                        autocomplete="tel"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="isvalid__field isvalid__field--actions">
+                    <button type="button" id="btnIsValid" class="isvalid__submit">
+                        Comprobar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="isValidLog" class="isvalid__log">
+                <!--  *****  resultado del método isValid  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+</div>

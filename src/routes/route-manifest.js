@@ -156,7 +156,15 @@ export const routeManifest = [
     { id: 'clase26PluginsFontsizerAdvanced', path: 'clase26-variables-gestion-opciones-plugins/02-plugins-fontsizer-advanced', file: 'route-clase26-plugins-fontsizer-advanced' },
     { id: 'clase26PluginHilight', path: 'clase26-variables-gestion-opciones-plugins/03-plugin-hilight', file: 'route-clase26-plugin-hilight' },
     { id: 'clase26AjaxForm', path: 'clase26-variables-gestion-opciones-plugins/04-ajax-form', file: 'route-clase26-ajax-form' },
-    
+
+    { id: 'clase27', path: 'clase27-tecnicas-desarrollo-plugins-complejos', file: 'route-clase27' },
+    { id: 'clase27ValoresPorDefecto', path: 'clase27-tecnicas-desarrollo-plugins-complejos/01-valores-por-defecto', file: 'route-clase27-valores-por-defecto' },
+    { id: 'clase27Hooks', path: 'clase27-tecnicas-desarrollo-plugins-complejos/02-hooks', file: 'route-clase27-hooks' },
+    { id: 'clase27MetodoIsValid', path: 'clase27-tecnicas-desarrollo-plugins-complejos/03-metodo-isvalid', file: 'route-clase27-metodo-isvalid' },
+    { id: 'clase27MetodoOption', path: 'clase27-tecnicas-desarrollo-plugins-complejos/04-metodo-option', file: 'route-clase27-metodo-option' },
+    { id: 'clase27ValidacionAvanzada', path: 'clase27-tecnicas-desarrollo-plugins-complejos/05-validacion-avanzada', file: 'route-clase27-validacion-avanzada' },
+    { id: 'clase27MetodoDestroy', path: 'clase27-tecnicas-desarrollo-plugins-complejos/06-metodo-destroy', file: 'route-clase27-metodo-destroy' },
+
     { id: '404NotFoundPage', path: '404', file: 'route-404-not-found-page' },
 
     

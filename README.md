@@ -122,12 +122,12 @@ curso-jquery-escuelait/
 │   ├── main.js                       # Entrada de la SPA
 │   ├── pages/                        # Página de cada ruta (layout principal)
 │   │   ├── 00-home.html
-│   │   ├── clase-01/ … clase-23/
+│   │   ├── clase-01/ … clase-27/
 │   │   └── 404/
 │   ├── pages-components/             # Fragmentos de página (demo + description)
-│   │   └── clase-01/ … clase-23/
+│   │   └── clase-01/ … clase-27/
 │   ├── markdown-shiki/               # HTML resaltado con Shiki (generado)
-│   │   └── clase-01/ … clase-23/
+│   │   └── clase-01/ … clase-27/
 │   ├── scripts/                      # JS por clase
 │   ├── scss/                         # Estilos SCSS → app/css/
 │   ├── components/                   # Layout reutilizable (header, navbar, footer…)
@@ -138,7 +138,9 @@ curso-jquery-escuelait/
 │   │   ├── clase-16/
 │   │   ├── clase-18/
 │   │   ├── clase-20/                 # buscar.php, products.json, SQL…
-│   │   └── clase-21/                 # login.php, login-auth, register-auth, SQL…
+│   │   ├── clase-21/                 # login.php, login-auth, register-auth, SQL…
+│   │   ├── clase-26/                 # enviar.php (ajaxForm)
+│   │   └── clase-27/                 # enviar.php (advancedValidation)
 │   ├── effects/
 │   ├── libs/                         # jQuery, jQuery UI
 │   ├── plugins/
@@ -346,15 +348,15 @@ Clases implementadas en la SPA (menú lateral `layout-aside-left.html`):
 | 21 | Práctica 1 Formulario Login |
 | 22 | Deferred y Promesas |
 | 23 | Dudas y conceptos 3 |
+| 24 | Template system |
+| 25 | jQuery plugins |
+| 26 | Variables gestión de opciones en plugins |
+| 27 | Técnicas para desarrollo de plugins complejos |
 
 Clases previstas en el temario (aún no implementadas en la SPA):
 
 | Clase | Tema |
 |---|---|
-| 24 | Template system |
-| 25 | jQuery plugins |
-| 26 | Variables gestión de opciones en plugins |
-| 27 | Técnicas para desarrollos de plugins complejos |
 | 28 | Librerías de componentes: jQuery UI |
 | 29 | Usando jQuery UI |
 | 30 | Práctica 2 |

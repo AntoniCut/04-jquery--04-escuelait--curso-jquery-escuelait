@@ -1,0 +1,73 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+    *  -----  06-metodo-destroy-description.html  --  /src/pages-components/clase-27/06-metodo-destroy-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '×'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">destroy</p>
+                <h2 class="description-page__hero-title">Método destroy</h2>
+                <p class="description-page__hero-subtitle">off · removeData · onDestroy</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                <kbd>destroy</kbd> quita el listener de
+                <kbd>submit</kbd>, borra los mensajes y elimina la
+                instancia de <kbd>$.data</kbd>. Después el formulario
+                se envía sin validar.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> comparar un envío vacío antes y
+                después de destruir el plugin.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Antes de destruir, un envío vacío se queda en
+                        la página y marca los campos.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>onDestroy</kbd> avisa cuando la instancia
+                        ya no existe.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El listener usa el namespace
+                        <kbd>submit.advancedValidation</kbd> para poder
+                        quitar solo el del plugin.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

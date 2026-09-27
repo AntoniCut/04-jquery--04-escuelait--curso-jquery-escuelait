@@ -1,0 +1,72 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+    *  -----  03-metodo-isvalid-description.html  --  /src/pages-components/clase-27/03-metodo-isvalid-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '✓'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">isValid</p>
+                <h2 class="description-page__hero-title">Método isValid</h2>
+                <p class="description-page__hero-subtitle">$.data · flag · getter</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                <kbd>validate</kbd> guarda el resultado en
+                <kbd>$.data</kbd> del formulario.
+                <kbd>isValid</kbd> solo lee ese flag: no vuelve a
+                recorrer los campos.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> llamar a los dos métodos públicos
+                y pintar <kbd>true</kbd> o <kbd>false</kbd>.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Antes de validar, <kbd>isValid</kbd> devuelve
+                        <kbd>undefined</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Un getter rompe el encadenamiento: el valor que
+                        sale ya no es la colección jQuery.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        El botón no envía el formulario. Solo comprueba
+                        el estado de la instancia.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

@@ -1,0 +1,88 @@
+/*
+    *  -----------------------------------------------------------------------------------------  *
+    *  -----  03-metodo-isvalid.scss  --  /src/scss/pages/clase-27/03-metodo-isvalid.scss  -----  *
+    *  -----------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-27-common' as c27;
+
+
+[data-component-page="isValidDescription"] {
+    @include c27.description-slot;
+}
+
+[data-component-page="isValidDemo"] {
+    min-height: 68rem;
+
+    @include c27.tablet {
+        min-height: 58rem;
+    }
+}
+
+
+.demo__isvalid {
+    @include c27.block;
+
+    min-height: 68rem;
+
+    @include c27.tablet {
+        min-height: 58rem;
+    }
+}
+
+
+.isvalid {
+    &__title {
+        @include c27.title;
+    }
+
+    &__hint {
+        @include c27.hint;
+    }
+
+    &__card {
+        @include c27.card;
+
+        min-height: 48rem;
+    }
+
+    &__card-title {
+        @include c27.card-title;
+    }
+
+    &__card-hint {
+        @include c27.card-hint;
+    }
+
+    &__form {
+        @include c27.form;
+    }
+
+    &__field {
+        @include c27.field;
+
+        &--actions {
+            @include c27.actions;
+        }
+    }
+
+    &__label {
+        @include c27.label;
+    }
+
+    &__input {
+        @include c27.control;
+    }
+
+    &__submit {
+        @include c27.btn;
+    }
+
+    &__log {
+        @include c27.log;
+    }
+}
+
+
+@include c27.plugin-feedback;

@@ -1,0 +1,74 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  01-valores-por-defecto-description.html  --  /src/pages-components/clase-27/01-valores-por-defecto-description.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '{}'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">defaults</p>
+                <h2 class="description-page__hero-title">Valores por defecto</h2>
+                <p class="description-page__hero-subtitle">init · $.extend · submit</p>
+            </div>
+        </header>
+
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Que hace este ejercicio
+            </h3>
+
+            <p class="description-page__intro-text">
+                El formulario se inicializa sin opciones.
+                <kbd>advancedValidation()</kbd> fusiona los
+                <kbd>defaults</kbd> y, al enviar, valida los campos con
+                <kbd>data-basic-validation-required</kbd>.
+            </p>
+
+            <p class="description-page__intro-note">
+                <kbd> Objetivo: </kbd> ver que el comentario no se exige
+                porque no lleva el data attribute.
+            </p>
+
+        </section>
+
+        <section class="description-page__features">
+
+            <div class="description-page__features-grid">
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        <kbd>$.extend({}, defaults, options)</kbd> crea
+                        un objeto nuevo y no muta los defaults del
+                        plugin.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Si la validación pasa, el plugin llama al
+                        <kbd>submit</kbd> nativo y el navegador abre
+                        <kbd>enviar.php</kbd>.
+                    </p>
+                </article>
+
+                <article class="description-page__feature">
+                    <p class="description-page__feature-text">
+                        Si falta un campo obligatorio, el envío se
+                        cancela y aparece el mensaje bajo el input.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </article>
+
+</div>

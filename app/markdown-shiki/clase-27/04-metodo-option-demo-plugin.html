@@ -1,0 +1,510 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">(</span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `nombre del plugin y clave de la instancia en $.data` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> pluginName</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'advancedValidation'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `clave de la instancia guardada en el elemento` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> dataKey</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'plugin_'</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">pluginName</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `clase del mensaje bajo campos .advanced-validation` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> advancedErrorMessageClass</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'advanced-validation-error-message'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `defaults {}`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Valores por defecto del plugin.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Required&#x3C;AdvancedValidationOptions>}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> defaults</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"><span style="color:#9CDCFE">        selector:</span><span style="color:#CE9178"> '.basic-validation, .advanced-validation'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        errorClass:</span><span style="color:#CE9178"> 'is-invalid'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        message:</span><span style="color:#CE9178"> 'Campo obligatorio'</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#DCDCAA">        onInit</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {},</span></span>
+<span class="line"><span style="color:#DCDCAA">        onDestroy</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {},</span></span>
+<span class="line"><span style="color:#DCDCAA">        onValidating</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {},</span></span>
+<span class="line"><span style="color:#DCDCAA">        onIsValid</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {},</span></span>
+<span class="line"><span style="color:#DCDCAA">        onIsNotValid</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {},</span></span>
+<span class="line"><span style="color:#DCDCAA">        onValidated</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {}</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `createPlugin(element, options)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Crea la instancia del plugin con el revealing module.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {HTMLFormElement}</span><span style="color:#9CDCFE"> element</span><span style="color:#6A9955"> - Formulario que dispara el plugin.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {AdvancedValidationOptions}</span><span style="color:#9CDCFE"> [options]</span><span style="color:#6A9955"> - Opciones del plugin.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {AdvancedValidationApi}</span><span style="color:#6A9955"> - Métodos públicos de la instancia.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> createPlugin</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">element</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">options</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement}</span><span style="color:#6A9955"> - `formulario que dispara el plugin` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> el</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">element</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#6A9955"> - `formulario envuelto` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $el</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">el</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Required&#x3C;AdvancedValidationOptions>}</span><span style="color:#6A9955"> - `opciones fusionadas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> settings</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">extend</span><span style="color:#D4D4D4">({}, </span><span style="color:#9CDCFE">defaults</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">options</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `isValid()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {boolean | undefined}</span><span style="color:#6A9955"> - Resultado de la última validación.</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> isValid</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#6A9955">  /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {boolean | undefined}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'basic-validation-isvalid'</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">        </span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `setIsValid(value)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {boolean}</span><span style="color:#9CDCFE"> value</span><span style="color:#6A9955"> - Resultado de la validación.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> setIsValid</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'basic-validation-isvalid'</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `getAdvancedFieldErrorMessage($field)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * - Reglas `data-advanced-validation-*` en campos `.advanced-validation`.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement | HTMLTextAreaElement>}</span><span style="color:#9CDCFE"> $field</span><span style="color:#6A9955"> - Campo a validar.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string | null}</span><span style="color:#6A9955"> - Mensaje de error o `null` si es válido.</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> getAdvancedFieldErrorMessage</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `valor del campo` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> value</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">() ?? </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `mensaje genérico` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> fallbackMessage</span><span style="color:#D4D4D4"> =</span></span>
+<span class="line"><span style="color:#9CDCFE">                $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-message'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                || </span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">message</span></span>
+<span class="line"><span style="color:#D4D4D4">                || </span><span style="color:#CE9178">'Campo inválido'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {boolean}</span><span style="color:#6A9955"> - `campo obligatorio` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> isRequired</span><span style="color:#D4D4D4"> =</span></span>
+<span class="line"><span style="color:#DCDCAA">                Boolean</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'advanced-validation-required'</span><span style="color:#D4D4D4">))</span></span>
+<span class="line"><span style="color:#D4D4D4">                || </span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">].</span><span style="color:#DCDCAA">hasAttribute</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo es obligatorio y está vacío, se devuelve el mensaje de error requerido  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">isRequired</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#9CDCFE"> $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-message-required'</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">fallbackMessage</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo está vacío, se devuelve null  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#569CD6"> null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string | undefined}</span><span style="color:#6A9955"> - `patrón regex` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> regexPattern</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-regex'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo tiene un patrón regex, se valida  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">regexPattern</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  se intenta validar el campo con el patrón regex  -----</span></span>
+<span class="line"><span style="color:#C586C0">                try</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#569CD6">new</span><span style="color:#DCDCAA"> RegExp</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">regexPattern</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">test</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#C586C0">                        return</span><span style="color:#9CDCFE"> $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-message-regex'</span><span style="color:#D4D4D4">) || </span><span style="color:#9CDCFE">fallbackMessage</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si el campo no coincide con el patrón regex, se devuelve el mensaje de error de regex  -----</span></span>
+<span class="line"><span style="color:#C586C0">                catch</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#9CDCFE"> fallbackMessage</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string | undefined}</span><span style="color:#6A9955"> - `longitud mínima` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> minlengthAttr</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-minlength'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo tiene una longitud mínima, se valida  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">minlengthAttr</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">undefined</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">minlengthAttr</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> minlength</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">minlengthAttr</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si la longitud mínima es menor que la longitud del campo, se devuelve el mensaje de error de longitud mínima  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">minlength</span><span style="color:#D4D4D4">) &#x26;&#x26; </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> &#x3C; </span><span style="color:#9CDCFE">minlength</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#9CDCFE"> $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-message-minlength'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                        || </span><span style="color:#CE9178">`Introduce al menos </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">minlength</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> caracteres.`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string | undefined}</span><span style="color:#6A9955"> - `longitud máxima` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> maxlengthAttr</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-maxlength'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo tiene una longitud máxima, se valida  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">maxlengthAttr</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">undefined</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">maxlengthAttr</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> maxlength</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">maxlengthAttr</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">Number</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">isNaN</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">maxlength</span><span style="color:#D4D4D4">) &#x26;&#x26; </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> > </span><span style="color:#9CDCFE">maxlength</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#9CDCFE"> $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'data-advanced-validation-message-maxlength'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                        || </span><span style="color:#CE9178">`Introduce como máximo </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">maxlength</span><span style="color:#569CD6">}</span><span style="color:#CE9178"> caracteres.`</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  si el campo no cumple ninguna regla, se devuelve null  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#569CD6"> null</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `clearBasicFieldFeedback($field)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * -----------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#9CDCFE"> $field</span><span style="color:#6A9955"> - Campo básico.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> clearBasicFieldFeedback</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">removeClass</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">errorClass</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">next</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'span.basic-validation-error'</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `clearAdvancedFieldFeedback($field)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#9CDCFE"> $field</span><span style="color:#6A9955"> - Campo avanzado.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> clearAdvancedFieldFeedback</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">removeClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'advanced-validation-error'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">next</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`span.</span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">advancedErrorMessageClass</span><span style="color:#569CD6">}</span><span style="color:#CE9178">`</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `showAdvancedFieldError($field, message)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#9CDCFE"> $field</span><span style="color:#6A9955"> - Campo inválido.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> message</span><span style="color:#6A9955"> - Texto bajo el input.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> showAdvancedFieldError</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">message</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'advanced-validation-error'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLSpanElement>}</span><span style="color:#6A9955"> - `mensaje bajo el campo` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $error</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'&#x3C;span>'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">advancedErrorMessageClass</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'role'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'alert'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">message</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">after</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$error</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `validateFields()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * - Valida campos `.basic-validation` (obligatorios) y `.advanced-validation` (reglas data-*).</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {JQuery.Promise&#x3C;void>}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> validateFields</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery.Deferred&#x3C;void>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> deferred</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">Deferred</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            setIsValid</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">selector</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> () {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement | HTMLTextAreaElement>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> $field</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement | HTMLTextAreaElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si el campo contiene la clase .advanced-validation, se valida  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">hasClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'advanced-validation'</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">                    clearAdvancedFieldFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string | null}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                    const</span><span style="color:#4FC1FF"> advancedMessage</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">getAdvancedFieldErrorMessage</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  si el campo tiene un mensaje de error, se marca como inválido  -----</span></span>
+<span class="line"><span style="color:#C586C0">                    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">advancedMessage</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">null</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#DCDCAA">                        setIsValid</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#DCDCAA">                        showAdvancedFieldError</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">advancedMessage</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  si el campo no tiene un mensaje de error, se continúa  -----</span></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">                clearBasicFieldFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {boolean}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> required</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Boolean</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'basic-validation-required'</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si el campo no es obligatorio, se continúa  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">required</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                    return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> value</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">() ?? </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si el campo está vacío, se marca como inválido  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D4D4D4">                    </span></span>
+<span class="line"><span style="color:#DCDCAA">                    setIsValid</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">                    $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">errorClass</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLSpanElement>}</span><span style="color:#6A9955"> - `mensaje bajo el campo` */</span></span>
+<span class="line"><span style="color:#569CD6">                    const</span><span style="color:#4FC1FF"> $error</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'&#x3C;span>'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                        .</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'basic-validation-error'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                        .</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'role'</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'alert'</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                        .</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">message</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                    $field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">after</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$error</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">isValid</span><span style="color:#D4D4D4">()) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                deferred</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">resolve</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">            } </span><span style="color:#C586C0">else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">                deferred</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">reject</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> deferred</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">promise</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `hook(hookName)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {keyof AdvancedValidationOptions}</span><span style="color:#9CDCFE"> hookName</span><span style="color:#6A9955"> - Nombre del callback.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void | JQuery.Promise&#x3C;void>}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> hook</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">hookName</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> callback</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">hookName</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> callback</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">'function'</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#9CDCFE"> callback</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">call</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">el</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `validate()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {JQuery.Promise&#x3C;void>}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> validate</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> $</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">when</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">validateFields</span><span style="color:#D4D4D4">(), </span><span style="color:#DCDCAA">hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onValidating'</span><span style="color:#D4D4D4">))</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">done</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onIsValid'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                })</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">fail</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onIsNotValid'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                })</span></span>
+<span class="line"><span style="color:#D4D4D4">                .</span><span style="color:#DCDCAA">always</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onValidated'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                });</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `option(key, value)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * - Lee o escribe una opción de la instancia (`message`, `errorClass`, `selector`, hooks, etc.).</span></span>
+<span class="line"><span style="color:#6A9955">         * - Escritura: `$('#form').advancedValidation('option', 'message', 'Texto')`.</span></span>
+<span class="line"><span style="color:#6A9955">         * - Lectura: `$('#form').advancedValidation('option', 'message')`.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@template</span><span style="color:#4EC9B0"> {keyof AdvancedValidationOptions}</span><span style="color:#9CDCFE"> K</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {K}</span><span style="color:#9CDCFE"> key</span><span style="color:#6A9955"> - Nombre de la opción en `AdvancedValidationOptions`.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {AdvancedValidationOptions[K]}</span><span style="color:#9CDCFE"> [value]</span><span style="color:#6A9955"> - Nuevo valor; si se omite, solo lectura.</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {AdvancedValidationOptions[K] | void}</span><span style="color:#6A9955"> Valor al leer; `undefined` al escribir.</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> option</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">key</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">undefined</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Record&#x3C;keyof AdvancedValidationOptions, AdvancedValidationOptions[keyof AdvancedValidationOptions]>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> writableSettings</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Record&#x3C;keyof AdvancedValidationOptions, AdvancedValidationOptions[keyof AdvancedValidationOptions]>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span></span>
+<span class="line"><span style="color:#9CDCFE">                    settings</span></span>
+<span class="line"><span style="color:#D4D4D4">                );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                writableSettings</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">key</span><span style="color:#D4D4D4">] = </span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#9CDCFE"> settings</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">key</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `destroy()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> destroy</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">off</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'submit.'</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">pluginName</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">settings</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">selector</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> () {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> $field</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">hasClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'advanced-validation'</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    clearAdvancedFieldFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                } </span><span style="color:#C586C0">else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#DCDCAA">                    clearBasicFieldFeedback</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$field</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">removeData</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'basic-validation-isvalid'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onDestroy'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">removeData</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">dataKey</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `init()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * ----------------------</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#DCDCAA"> init</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">            $el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'submit.'</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">pluginName</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">event</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">                event</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">                validate</span><span style="color:#D4D4D4">()</span></span>
+<span class="line"><span style="color:#D4D4D4">                    .</span><span style="color:#DCDCAA">done</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">                        el</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">submit</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">                    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">            hook</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'onInit'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#DCDCAA">        init</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">            option</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">            destroy</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">            isValid</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">            validate</span></span>
+<span class="line"><span style="color:#D4D4D4">        };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `advancedValidation(options)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Registra el plugin en la colección jQuery (`$.fn.advancedValidation`).</span></span>
+<span class="line"><span style="color:#6A9955">     * - Objeto u omisión: crea una instancia por formulario (`createPlugin`).</span></span>
+<span class="line"><span style="color:#6A9955">     * - String: llama a un método público (`validate`, `isValid`, `option`, `destroy`).</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {AdvancedValidationOptions | string}</span><span style="color:#9CDCFE"> [options]</span><span style="color:#6A9955"> - Opciones o nombre del método.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@this</span><span style="color:#4EC9B0"> {JQuery}</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {AdvancedValidationCallResult}</span><span style="color:#6A9955"> Cadena jQuery o valor devuelto por el método.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> advancedValidation</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">options</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#569CD6"> arguments</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">] === </span><span style="color:#CE9178">'string'</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> methodName</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">arguments</span><span style="color:#D4D4D4">[</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {unknown[]}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> args</span><span style="color:#D4D4D4"> = </span><span style="color:#4EC9B0">Array</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">prototype</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">slice</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">call</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">arguments</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {AdvancedValidationCallResult}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> returnVal</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#569CD6">            this</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> () {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {AdvancedValidationApi | undefined}</span><span style="color:#6A9955"> */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> instance</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">dataKey</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">instance</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> instance</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">methodName</span><span style="color:#D4D4D4">] === </span><span style="color:#CE9178">'function'</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    returnVal</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">instance</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">methodName</span><span style="color:#D4D4D4">].</span><span style="color:#DCDCAA">apply</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">instance</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">args</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                } </span><span style="color:#C586C0">else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#C586C0">                    throw</span><span style="color:#569CD6"> new</span><span style="color:#DCDCAA"> Error</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'Method '</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">methodName</span><span style="color:#D4D4D4"> + </span><span style="color:#CE9178">' does not exist on jQuery.'</span><span style="color:#D4D4D4"> + </span><span style="color:#9CDCFE">pluginName</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">returnVal</span><span style="color:#D4D4D4"> !== </span><span style="color:#569CD6">undefined</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#9CDCFE"> returnVal</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#569CD6"> this</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> options</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">'string'</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#569CD6"> this</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> () {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">dataKey</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#9CDCFE">                    $</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#569CD6">                        this</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">                        dataKey</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#DCDCAA">                        createPlugin</span><span style="color:#D4D4D4">(</span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">this</span><span style="color:#D4D4D4">), </span><span style="color:#9CDCFE">options</span><span style="color:#D4D4D4">)</span></span>
+<span class="line"><span style="color:#D4D4D4">                    );</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">fn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">advancedValidation</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {AdvancedValidationPlugin}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">advancedValidation</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    </span></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `$.fn.advancedValidation.defaults`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Opciones por defecto; se fusionan con `$.extend` al crear la instancia.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {Required&#x3C;AdvancedValidationOptions>}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#9CDCFE">    $</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">fn</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">advancedValidation</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">defaults</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">defaults</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

@@ -1,0 +1,85 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  04-metodo-option-demo.html  --  /src/pages-components/clase-27/04-metodo-option-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__option">
+
+        <h3 class="option__title">
+            Método option
+        </h3>
+
+        <p class="option__hint">
+            Lee y cambia <kbd>message</kbd>. Enviar con un campo vacío
+            muestra el texto vigente.
+        </p>
+
+        <section class="option__card" aria-labelledby="option-title">
+
+            <h4 class="option__card-title" id="option-title">
+                Leer y escribir una opción
+            </h4>
+
+            <p class="option__card-hint">
+                El mensaje por defecto es <kbd>Campo obligatorio</kbd>.
+                Cámbialo y deja un campo vacío antes de enviar.
+            </p>
+
+            <form
+                id="formOption"
+                class="option__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="option__field">
+                    <label class="option__label" for="nombreOption">Nombre</label>
+                    <input
+                        id="nombreOption"
+                        class="option__input basic-validation"
+                        name="nombre"
+                        type="text"
+                        autocomplete="name"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="option__field">
+                    <label class="option__label" for="telefonoOption">Teléfono</label>
+                    <input
+                        id="telefonoOption"
+                        class="option__input basic-validation"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        data-basic-validation-required="true"
+                    >
+                </p>
+
+                <p class="option__field option__field--actions">
+                    <button type="button" id="btnOptionRead" class="option__submit">
+                        Leer mensaje
+                    </button>
+                    <button type="button" id="btnOptionWrite" class="option__submit">
+                        Cambiar mensaje
+                    </button>
+                    <button type="submit" class="option__submit">
+                        Enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="optionLog" class="option__log">
+                <!--  *****  valor leído de la opción message  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+</div>

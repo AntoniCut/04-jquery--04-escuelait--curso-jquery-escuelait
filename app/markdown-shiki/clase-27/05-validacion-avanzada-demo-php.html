@@ -1,0 +1,87 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">        *  -----  enviar</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  --  /src/services/clase-</span><span style="color:#B5CEA8">27</span><span style="color:#D4D4D4">/enviar</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  -----  *</span></span>
+<span class="line"><span style="color:#D4D4D4">        *  ---------------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#D4D4D4">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $nombre</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'nombre'</span><span style="color:#D4D4D4">]) ? </span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'nombre'</span><span style="color:#D4D4D4">]) : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $telefono</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'telefono'</span><span style="color:#D4D4D4">]) ? </span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'telefono'</span><span style="color:#D4D4D4">]) : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $comentario</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'comentario'</span><span style="color:#D4D4D4">]) ? </span><span style="color:#DCDCAA">trim</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_POST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'comentario'</span><span style="color:#D4D4D4">]) : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $ok</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$nombre</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">$telefono</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $mensaje</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$ok</span></span>
+<span class="line"><span style="color:#D4D4D4">        ? </span><span style="color:#CE9178">'Todo Ok: '</span><span style="color:#D4D4D4"> .</span><span style="color:#9CDCFE"> $nombre</span><span style="color:#D4D4D4"> .</span><span style="color:#CE9178"> ' — '</span><span style="color:#D4D4D4"> .</span><span style="color:#9CDCFE"> $telefono</span></span>
+<span class="line"><span style="color:#D4D4D4">        : </span><span style="color:#CE9178">'Algo no ha ido bien'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">    $volver</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">'/escuelait/curso-jquery-escuelait/clase27-tecnicas-desarrollo-plugins-complejos'</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_SERVER</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'HTTP_REFERER'</span><span style="color:#D4D4D4">])) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9CDCFE">        $partes</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">parse_url</span><span style="color:#D4D4D4">((</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_SERVER</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'HTTP_REFERER'</span><span style="color:#D4D4D4">]);</span></span>
+<span class="line"><span style="color:#9CDCFE">        $ruta</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$partes</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'path'</span><span style="color:#D4D4D4">]) ? (</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$partes</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">'path'</span><span style="color:#D4D4D4">] : </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">str_contains</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$ruta</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">'clase27-tecnicas-desarrollo-plugins-complejos'</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"><span style="color:#9CDCFE">            $volver</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$ruta</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">?></span></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;!doctype html></span></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;html lang=</span><span style="color:#CE9178">"es"</span><span style="color:#D4D4D4">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;head></span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;meta charset=</span><span style="color:#CE9178">"UTF-8"</span><span style="color:#D4D4D4"> /></span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;meta name=</span><span style="color:#CE9178">"viewport"</span><span style="color:#D4D4D4"> content=</span><span style="color:#CE9178">"width=device-width, initial-scale=1.0"</span><span style="color:#D4D4D4"> /></span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;title>Clase </span><span style="color:#B5CEA8">27</span><span style="color:#D4D4D4"> - Advanced Validation - Resultado&#x3C;/title></span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;style></span></span>
+<span class="line"><span style="color:#D4D4D4">        body {</span></span>
+<span class="line"><span style="color:#D4D4D4">            margin: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            min-height: </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">vh;</span></span>
+<span class="line"><span style="color:#D4D4D4">            display: grid;</span></span>
+<span class="line"><span style="color:#D4D4D4">            place-items: center;</span></span>
+<span class="line"><span style="color:#D4D4D4">            font-family: system-ui, sans-serif;</span></span>
+<span class="line"><span style="color:#D4D4D4">            background: </span><span style="color:#6A9955">#f8f9fc;</span></span>
+<span class="line"><span style="color:#D4D4D4">            color: </span><span style="color:#6A9955">#1a1a2e;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        main {</span></span>
+<span class="line"><span style="color:#D4D4D4">            width: </span><span style="color:#DCDCAA">min</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">40</span><span style="color:#D4D4D4">rem, </span><span style="color:#DCDCAA">calc</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">% - </span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">rem));</span></span>
+<span class="line"><span style="color:#D4D4D4">            padding: </span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">rem;</span></span>
+<span class="line"><span style="color:#D4D4D4">            background: </span><span style="color:#6A9955">#fff;</span></span>
+<span class="line"><span style="color:#D4D4D4">            border-radius: </span><span style="color:#B5CEA8">16</span><span style="color:#D4D4D4">px;</span></span>
+<span class="line"><span style="color:#D4D4D4">            box-shadow: </span><span style="color:#B5CEA8">0</span><span style="color:#B5CEA8"> 10</span><span style="color:#D4D4D4">px </span><span style="color:#B5CEA8">40</span><span style="color:#D4D4D4">px </span><span style="color:#DCDCAA">rgba</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">102</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">126</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">234</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">0.12</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        h1 {</span></span>
+<span class="line"><span style="color:#D4D4D4">            margin: </span><span style="color:#B5CEA8">0</span><span style="color:#B5CEA8"> 0</span><span style="color:#B5CEA8"> 1</span><span style="color:#D4D4D4">rem;</span></span>
+<span class="line"><span style="color:#D4D4D4">            font-size: </span><span style="color:#B5CEA8">1.6</span><span style="color:#D4D4D4">rem;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        p {</span></span>
+<span class="line"><span style="color:#D4D4D4">            margin: </span><span style="color:#B5CEA8">0</span><span style="color:#B5CEA8"> 0</span><span style="color:#B5CEA8"> 1</span><span style="color:#D4D4D4">rem;</span></span>
+<span class="line"><span style="color:#D4D4D4">            line-height: </span><span style="color:#B5CEA8">1.5</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        a {</span></span>
+<span class="line"><span style="color:#D4D4D4">            color: </span><span style="color:#6A9955">#4c51bf;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;/style></span></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;/head></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;body></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;main></span></span>
+<span class="line"><span style="color:#D4D4D4">        &#x3C;h1>&#x3C;?php </span><span style="color:#DCDCAA">echo</span><span style="color:#DCDCAA"> htmlspecialchars</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$mensaje</span><span style="color:#D4D4D4">, ENT_QUOTES, </span><span style="color:#CE9178">'UTF-8'</span><span style="color:#D4D4D4">); ?>&#x3C;/h1></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        &#x3C;?php </span><span style="color:#C586C0">if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$comentario</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">''</span><span style="color:#D4D4D4">) { ?></span></span>
+<span class="line"><span style="color:#D4D4D4">            &#x3C;p>Comentario: &#x3C;?php </span><span style="color:#DCDCAA">echo</span><span style="color:#DCDCAA"> htmlspecialchars</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$comentario</span><span style="color:#D4D4D4">, ENT_QUOTES, </span><span style="color:#CE9178">'UTF-8'</span><span style="color:#D4D4D4">); ?>&#x3C;/p></span></span>
+<span class="line"><span style="color:#D4D4D4">        &#x3C;?php } ?></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">        &#x3C;p>&#x3C;a href=</span><span style="color:#CE9178">"&#x3C;?php echo htmlspecialchars(</span><span style="color:#9CDCFE">$volver</span><span style="color:#CE9178">, ENT_QUOTES, 'UTF-8'); ?>"</span><span style="color:#D4D4D4">>Volver al ejercicio&#x3C;/a>&#x3C;/p></span></span>
+<span class="line"><span style="color:#D4D4D4">    &#x3C;/main></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;/body></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">&#x3C;/html></span></span>
+<span class="line"></span></code></pre>

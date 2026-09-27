@@ -1,0 +1,94 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------------  *
+    *  -----  05-validacion-avanzada-demo.html  --  /src/pages-components/clase-27/05-validacion-avanzada-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="demo__advanced">
+
+        <h3 class="advanced__title">
+            Validación avanzada
+        </h3>
+
+        <p class="advanced__hint">
+            Campos con clase <kbd>.advanced-validation</kbd> y atributos
+            <kbd>data-advanced-validation-*</kbd>. El mensaje aparece
+            bajo cada campo inválido.
+        </p>
+
+        <section class="advanced__card" aria-labelledby="advanced-title">
+
+            <h4 class="advanced__card-title" id="advanced-title">
+                Regex y longitud
+            </h4>
+
+            <p class="advanced__card-hint">
+                Prueba un nombre con números o un teléfono corto. El
+                hueco del mensaje ya está reservado.
+            </p>
+
+            <form
+                id="formAdvanced"
+                class="advanced__form"
+                action="/escuelait/curso-jquery-escuelait/app/services/clase-27/enviar.php"
+                method="post"
+            >
+
+                <p class="advanced__field">
+                    <label class="advanced__label" for="nombreAdvanced">Nombre</label>
+                    <input
+                        id="nombreAdvanced"
+                        class="advanced__input advanced-validation"
+                        name="nombre"
+                        type="text"
+                        autocomplete="name"
+                        data-advanced-validation-required="true"
+                        data-advanced-validation-regex="^[a-zA-Z]+$"
+                        data-advanced-validation-minlength="3"
+                        data-advanced-validation-maxlength="10"
+                        data-advanced-validation-message-required="El nombre es obligatorio."
+                        data-advanced-validation-message-regex="Solo letras, sin números ni espacios."
+                    >
+                </p>
+
+                <p class="advanced__field">
+                    <label class="advanced__label" for="telefonoAdvanced">Teléfono</label>
+                    <input
+                        id="telefonoAdvanced"
+                        class="advanced__input advanced-validation"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        data-advanced-validation
+                        data-advanced-validation-regex="^[0-9]+$"
+                        data-advanced-validation-minlength="9"
+                        data-advanced-validation-maxlength="15"
+                        data-advanced-validation-message-required="El teléfono es obligatorio."
+                        data-advanced-validation-message-regex="Solo dígitos numéricos."
+                        data-advanced-validation-message-minlength="El teléfono debe tener al menos 9 dígitos."
+                    >
+                </p>
+
+                <p class="advanced__field advanced__field--actions">
+                    <button type="submit" class="advanced__submit">
+                        Enviar
+                    </button>
+                    <button type="button" id="btnValidateAdvanced" class="advanced__submit">
+                        Validar sin enviar
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="advancedLog" class="advanced__log">
+                <!--  *****  resultado de validar sin enviar  *****  -->
+            </p>
+
+        </section>
+
+    </div>
+
+</div>
