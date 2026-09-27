@@ -46,7 +46,7 @@ export const routeClase07 = {
         },
         headerTitle: 'Clase 7 - Manipulación Básica de Elementos',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
