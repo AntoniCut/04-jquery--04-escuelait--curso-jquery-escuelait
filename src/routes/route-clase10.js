@@ -46,7 +46,7 @@ export const routeClase10 = {
         },
         headerTitle: 'Clase 10 - Manipulación Avanzada del Contenido',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
