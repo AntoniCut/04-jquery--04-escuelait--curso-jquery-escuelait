@@ -175,4 +175,744 @@
         </article>
     </section>
 
+    <header class="section__header">
+        <h2 class="section__title" title="Selectores y traversing">
+            Clase 8 - Selectores y traversing - Diapositivas
+        </h2>
+    </header>
+
+    <section class="main__images" aria-label="Diapositivas de selectores jQuery y traversing">
+
+        <div class="section__content-img">
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-01-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-01-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-01.png"
+                        class="card__img"
+                        alt="Selección y alcance. Los selectores en jQuery y cómo alcanzar elementos atravesando el DOM"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-02-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-02-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-02.png"
+                        class="card__img"
+                        alt="Resumen del API de jQuery en api.jquery.com"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-03-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-03-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-03.png"
+                        class="card__img"
+                        alt="Selectores: seleccionar elementos con los estándares CSS1, CSS2 y CSS3"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-04-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-04-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-04.png"
+                        class="card__img"
+                        alt="Documentación de selectores en api.jquery.com"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-05-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-05-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-05.png"
+                        class="card__img"
+                        alt="Selectores disponibles en CSS1, CSS2 y CSS3"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-06-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-06-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-06.png"
+                        class="card__img"
+                        alt="Selectores básicos: identificador y clase"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-07-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-07-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-07.png"
+                        class="card__img"
+                        alt="Varios selectores a la vez y selector de contexto"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-08-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-08-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-08.png"
+                        class="card__img"
+                        alt="Selectores de jerarquía: descendientes a cualquier nivel e hijos directos"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-09-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-09-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-09.png"
+                        class="card__img"
+                        alt="Filtros básicos: primer y último elemento"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-10-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-10-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-10.png"
+                        class="card__img"
+                        alt="Filtros hijos: first-child selecciona el primer hijo de cada padre"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-11-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-11-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-11.png"
+                        class="card__img"
+                        alt="Filtros de contenido: contains y empty"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-12-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-12-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-12.png"
+                        class="card__img"
+                        alt="Filtros de visibilidad: visible y hidden"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-13-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-13-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-13.png"
+                        class="card__img"
+                        alt="Filtros de atributo: tiene atributo o un valor concreto"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-14-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-14-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-14.png"
+                        class="card__img"
+                        alt="Selectores de formulario: input y text"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-15-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-15-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-15.png"
+                        class="card__img"
+                        alt="Filtros de formulario: checked y option selected"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-16-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-16-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-16.png"
+                        class="card__img"
+                        alt="Caracteres especiales en selectores, escapados con dos barras invertidas"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-17-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-17-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-17.png"
+                        class="card__img"
+                        alt="Traversing: acceder de unos elementos a otros a través del árbol del DOM"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-18-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-18-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-18.png"
+                        class="card__img"
+                        alt="Documentación de traversing en api.jquery.com"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-19-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-19-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-19.png"
+                        class="card__img"
+                        alt="eq() reduce la colección a un elemento según su índice"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-20-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-20-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-20.png"
+                        class="card__img"
+                        alt="children() obtiene los hijos, con un filtro opcional"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-21-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-21-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-21.png"
+                        class="card__img"
+                        alt="filter() se queda con los elementos que casan con el selector"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-22-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-22-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-22.png"
+                        class="card__img"
+                        alt="find() obtiene los descendientes que casan con un selector"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-23-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-23-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-23.png"
+                        class="card__img"
+                        alt="next() obtiene el hermano siguiente"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-24-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-24-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-24.png"
+                        class="card__img"
+                        alt="parent() obtiene el padre, con un filtro opcional"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-25-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-25-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-25.png"
+                        class="card__img"
+                        alt="siblings() obtiene los hermanos, con un filtro opcional"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-26-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-26-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-26.png"
+                        class="card__img"
+                        alt="not() elimina de la colección los elementos del selector"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-27-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-27-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-27.png"
+                        class="card__img"
+                        alt="Buenas prácticas con selectores"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-28-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-28-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-28.png"
+                        class="card__img"
+                        alt="Cachear el objeto jQuery en lugar de repetir el selector"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-29-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-29-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-29.png"
+                        class="card__img"
+                        alt="Encadenar métodos sobre el mismo objeto jQuery"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-30-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-30-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-30.png"
+                        class="card__img"
+                        alt="Rendimiento: no todos los selectores son igual de rápidos"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-31-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-31-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-31.png"
+                        class="card__img"
+                        alt="Partir de un contexto para acotar la búsqueda"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-32-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-32-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-32.png"
+                        class="card__img"
+                        alt="Las funciones de traversing también ayudan a optimizar la selección"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+            <article class="section__card-img">
+                <picture>
+                    <source
+                        type="image/avif"
+                        srcset="
+                            ../../../assets/img/clase-08/diapositiva-33-280x247.avif  280w,
+                            ../../../assets/img/clase-08/diapositiva-33-560x494.avif  560w
+                        "
+                        sizes="(max-width: 600px) 280px, 560px"
+                    >
+                    <img
+                        src="../../../assets/img/clase-08/diapositiva-33.png"
+                        class="card__img"
+                        alt="Test de rendimiento entre un selector CSS y métodos de traversing"
+                        width="1200"
+                        height="675"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </picture>
+            </article>
+
+        </div>
+
+    </section>
+
 </div>

@@ -129,6 +129,36 @@
 .section__card-img:nth-child(30) {
   animation-delay: 1.2s;
 }
+.section__card-img:nth-child(31) {
+  animation-delay: 1.24s;
+}
+.section__card-img:nth-child(32) {
+  animation-delay: 1.28s;
+}
+.section__card-img:nth-child(33) {
+  animation-delay: 1.32s;
+}
+.section__card-img:nth-child(34) {
+  animation-delay: 1.36s;
+}
+.section__card-img:nth-child(35) {
+  animation-delay: 1.4s;
+}
+.section__card-img:nth-child(36) {
+  animation-delay: 1.44s;
+}
+.section__card-img:nth-child(37) {
+  animation-delay: 1.48s;
+}
+.section__card-img:nth-child(38) {
+  animation-delay: 1.52s;
+}
+.section__card-img:nth-child(39) {
+  animation-delay: 1.56s;
+}
+.section__card-img:nth-child(40) {
+  animation-delay: 1.6s;
+}
 .section__card-img:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 34px rgba(2, 132, 199, 0.16);

@@ -44,7 +44,7 @@
     animation: section-img-rise 0.45s ease forwards;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-    @for $i from 1 through 30 {
+    @for $i from 1 through 40 {
         &:nth-child(#{$i}) {
             animation-delay: #{0.04 * $i}s;
         }

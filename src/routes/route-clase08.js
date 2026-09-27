@@ -46,7 +46,7 @@ export const routeClase08 = {
         },
         headerTitle: 'Clase 8 - Selectores jQuery y Traversing',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
