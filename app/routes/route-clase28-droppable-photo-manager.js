@@ -33,8 +33,8 @@ const {
 export const routeClase28DroppablePhotoManager = {
         id: 'clase28DroppablePhotoManager',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 18. Gestor de fotos',
-        path: '/clase28-libreria-de-componentes-jquery-ui/18-droppable-photo-manager',
+        pageTitle: 'Clase 28 - 03. Interacción Droppable - 05. Gestor de fotos',
+        path: '/clase28-libreria-de-componentes-jquery-ui/03-interaccion-droppable/05-photo-manager',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DroppablePhotoManager = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 18. Gestor de fotos',
+        headerTitle: 'Clase 28 - 03. Interacción Droppable - 05. Gestor de fotos',
         styles: [
             { href: `${styles}/pages/clase-28/18-droppable-photo-manager.css` },
         ],

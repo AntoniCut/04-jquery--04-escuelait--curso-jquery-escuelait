@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableAnimate = {
         id: 'clase28ResizableAnimate',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 21. Animar',
-        path: '/clase28-libreria-de-componentes-jquery-ui/21-resizable-animate',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 02. Animar',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/02-animate',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableAnimate = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 21. Animar',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 02. Animar',
         styles: [
             { href: `${styles}/pages/clase-28/21-resizable-animate.css` },
         ],

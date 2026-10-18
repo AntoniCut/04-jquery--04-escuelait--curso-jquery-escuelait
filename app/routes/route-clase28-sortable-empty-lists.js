@@ -33,8 +33,8 @@ const {
 export const routeClase28SortableEmptyLists = {
         id: 'clase28SortableEmptyLists',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 37. Listas vacías',
-        path: '/clase28-libreria-de-componentes-jquery-ui/37-sortable-empty-lists',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 05. Listas vacías',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/05-empty-lists',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortableEmptyLists = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 37. Listas vacías',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 05. Listas vacías',
         styles: [
             { href: `${styles}/pages/clase-28/37-sortable-empty-lists.css` },
         ],

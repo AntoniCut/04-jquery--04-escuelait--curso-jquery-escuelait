@@ -33,8 +33,8 @@ const {
 export const routeClase28SortableConnectLists = {
         id: 'clase28SortableConnectLists',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 34. Conectar listas',
-        path: '/clase28-libreria-de-componentes-jquery-ui/34-sortable-connect-lists',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 02. Conectar listas',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/02-connect-lists',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortableConnectLists = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 34. Conectar listas',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 02. Conectar listas',
         styles: [
             { href: `${styles}/pages/clase-28/34-sortable-connect-lists.css` },
         ],

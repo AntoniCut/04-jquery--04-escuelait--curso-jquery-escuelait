@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableAspectRatio = {
         id: 'clase28ResizableAspectRatio',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 25. Conservar la proporción',
-        path: '/clase28-libreria-de-componentes-jquery-ui/25-resizable-aspect-ratio',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 06. Conservar la proporción',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/06-aspect-ratio',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableAspectRatio = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 25. Conservar la proporción',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 06. Conservar la proporción',
         styles: [
             { href: `${styles}/pages/clase-28/25-resizable-aspect-ratio.css` },
         ],

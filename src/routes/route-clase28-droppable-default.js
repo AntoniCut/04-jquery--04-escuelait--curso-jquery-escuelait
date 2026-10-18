@@ -33,8 +33,8 @@ const {
 export const routeClase28DroppableDefault = {
         id: 'clase28DroppableDefault',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 14. Funcionalidad por defecto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/14-droppable-default',
+        pageTitle: 'Clase 28 - 03. Interacción Droppable - 01. Funcionalidad por defecto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/03-interaccion-droppable/01-default',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DroppableDefault = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 14. Funcionalidad por defecto',
+        headerTitle: 'Clase 28 - 03. Interacción Droppable - 01. Funcionalidad por defecto',
         styles: [
             { href: `${styles}/pages/clase-28/14-droppable-default.css` },
         ],

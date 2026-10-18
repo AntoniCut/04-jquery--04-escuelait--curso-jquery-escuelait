@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableSnapToGrid = {
         id: 'clase28ResizableSnapToGrid',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 26. Ajuste a la rejilla',
-        path: '/clase28-libreria-de-componentes-jquery-ui/26-resizable-snap-to-grid',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 07. Ajuste a la rejilla',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/07-snap-to-grid',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableSnapToGrid = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 26. Ajuste a la rejilla',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 07. Ajuste a la rejilla',
         styles: [
             { href: `${styles}/pages/clase-28/26-resizable-snap-to-grid.css` },
         ],

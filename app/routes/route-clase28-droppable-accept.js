@@ -33,8 +33,8 @@ const {
 export const routeClase28DroppableAccept = {
         id: 'clase28DroppableAccept',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 15. Aceptar',
-        path: '/clase28-libreria-de-componentes-jquery-ui/15-droppable-accept',
+        pageTitle: 'Clase 28 - 03. Interacción Droppable - 02. Aceptar',
+        path: '/clase28-libreria-de-componentes-jquery-ui/03-interaccion-droppable/02-accept',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DroppableAccept = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 15. Aceptar',
+        headerTitle: 'Clase 28 - 03. Interacción Droppable - 02. Aceptar',
         styles: [
             { href: `${styles}/pages/clase-28/15-droppable-accept.css` },
         ],

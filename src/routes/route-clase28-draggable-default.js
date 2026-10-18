@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableDefault = {
         id: 'clase28DraggableDefault',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 4. Funcionalidad por defecto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/04-draggable-default',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 01. Funcionalidad por defecto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/01-default',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableDefault = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 4. Funcionalidad por defecto',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 01. Funcionalidad por defecto',
         styles: [
             { href: `${styles}/pages/clase-28/04-draggable-default.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28SortableDefault = {
         id: 'clase28SortableDefault',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 33. Funcionalidad por defecto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/33-sortable-default',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 01. Funcionalidad por defecto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/01-default',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortableDefault = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 33. Funcionalidad por defecto',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 01. Funcionalidad por defecto',
         styles: [
             { href: `${styles}/pages/clase-28/33-sortable-default.css` },
         ],

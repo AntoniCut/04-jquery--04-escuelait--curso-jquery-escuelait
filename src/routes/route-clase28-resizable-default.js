@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableDefault = {
         id: 'clase28ResizableDefault',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 20. Funcionalidad por defecto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/20-resizable-default',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 01. Funcionalidad por defecto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/01-default',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableDefault = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 20. Funcionalidad por defecto',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 01. Funcionalidad por defecto',
         styles: [
             { href: `${styles}/pages/clase-28/20-resizable-default.css` },
         ],

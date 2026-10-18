@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableConstraintMovement = {
         id: 'clase28DraggableConstraintMovement',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 6. Limitar el movimiento',
-        path: '/clase28-libreria-de-componentes-jquery-ui/06-draggable-constraint-movement',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 03. Limitar el movimiento',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/03-constraint-movement',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableConstraintMovement = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 6. Limitar el movimiento',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 03. Limitar el movimiento',
         styles: [
             { href: `${styles}/pages/clase-28/06-draggable-constraint-movement.css` },
         ],

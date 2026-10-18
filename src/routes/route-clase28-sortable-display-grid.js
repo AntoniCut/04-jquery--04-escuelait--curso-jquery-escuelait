@@ -33,8 +33,8 @@ const {
 export const routeClase28SortableDisplayGrid = {
         id: 'clase28SortableDisplayGrid',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 35. Mostrar en rejilla',
-        path: '/clase28-libreria-de-componentes-jquery-ui/35-sortable-display-grid',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 03. Mostrar en rejilla',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/03-display-grid',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortableDisplayGrid = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 35. Mostrar en rejilla',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 03. Mostrar en rejilla',
         styles: [
             { href: `${styles}/pages/clase-28/35-sortable-display-grid.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28SelectableSerialize = {
         id: 'clase28SelectableSerialize',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 32. Serializar la selección',
-        path: '/clase28-libreria-de-componentes-jquery-ui/32-selectable-serialize',
+        pageTitle: 'Clase 28 - 05. Interacción Selectable - 03. Serializar la selección',
+        path: '/clase28-libreria-de-componentes-jquery-ui/05-interaccion-selectable/03-serialize',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SelectableSerialize = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 32. Serializar la selección',
+        headerTitle: 'Clase 28 - 05. Interacción Selectable - 03. Serializar la selección',
         styles: [
             { href: `${styles}/pages/clase-28/32-selectable-serialize.css` },
         ],

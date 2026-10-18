@@ -33,8 +33,8 @@ const {
 export const routeClase28DroppableRevert = {
         id: 'clase28DroppableRevert',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 17. Volver a la posición',
-        path: '/clase28-libreria-de-componentes-jquery-ui/17-droppable-revert',
+        pageTitle: 'Clase 28 - 03. Interacción Droppable - 04. Volver a la posición',
+        path: '/clase28-libreria-de-componentes-jquery-ui/03-interaccion-droppable/04-revert',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DroppableRevert = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 17. Volver a la posición',
+        headerTitle: 'Clase 28 - 03. Interacción Droppable - 04. Volver a la posición',
         styles: [
             { href: `${styles}/pages/clase-28/17-droppable-revert.css` },
         ],

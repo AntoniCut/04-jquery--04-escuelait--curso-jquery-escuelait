@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableCursorStyle = {
         id: 'clase28DraggableCursorStyle',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 7. Estilo del cursor',
-        path: '/clase28-libreria-de-componentes-jquery-ui/07-draggable-cursor-style',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 04. Estilo del cursor',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/04-cursor-style',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableCursorStyle = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 7. Estilo del cursor',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 04. Estilo del cursor',
         styles: [
             { href: `${styles}/pages/clase-28/07-draggable-cursor-style.css` },
         ],

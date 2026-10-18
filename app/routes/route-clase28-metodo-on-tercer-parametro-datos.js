@@ -33,8 +33,8 @@ const {
 export const routeClase28MetodoOnTercerParametroDatos = {
         id: 'clase28MetodoOnTercerParametroDatos',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 3. Método on con datos',
-        path: '/clase28-libreria-de-componentes-jquery-ui/03-metodo-on-tercer-parametro-datos',
+        pageTitle: 'Clase 28 - 01. Método on() - 03. Método on con datos',
+        path: '/clase28-libreria-de-componentes-jquery-ui/01-metodo-on/03-tercer-parametro-datos',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28MetodoOnTercerParametroDatos = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 3. Método on con datos',
+        headerTitle: 'Clase 28 - 01. Método on() - 03. Método on con datos',
         styles: [
             { href: `${styles}/pages/clase-28/03-metodo-on-tercer-parametro-datos.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28SelectableDisplayGrid = {
         id: 'clase28SelectableDisplayGrid',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 31. Mostrar en rejilla',
-        path: '/clase28-libreria-de-componentes-jquery-ui/31-selectable-display-grid',
+        pageTitle: 'Clase 28 - 05. Interacción Selectable - 02. Mostrar en rejilla',
+        path: '/clase28-libreria-de-componentes-jquery-ui/05-interaccion-selectable/02-display-grid',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SelectableDisplayGrid = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 31. Mostrar en rejilla',
+        headerTitle: 'Clase 28 - 05. Interacción Selectable - 02. Mostrar en rejilla',
         styles: [
             { href: `${styles}/pages/clase-28/31-selectable-display-grid.css` },
         ],

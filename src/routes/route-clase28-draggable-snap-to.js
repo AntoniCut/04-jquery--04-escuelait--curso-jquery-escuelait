@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableSnapTo = {
         id: 'clase28DraggableSnapTo',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 12. Ajuste a un elemento o a una rejilla',
-        path: '/clase28-libreria-de-componentes-jquery-ui/12-draggable-snap-to',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 09. Ajuste a un elemento o a una rejilla',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/09-snap-to',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableSnapTo = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 12. Ajuste a un elemento o a una rejilla',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 09. Ajuste a un elemento o a una rejilla',
         styles: [
             { href: `${styles}/pages/clase-28/12-draggable-snap-to.css` },
         ],

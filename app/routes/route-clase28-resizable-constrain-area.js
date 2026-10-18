@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableConstrainArea = {
         id: 'clase28ResizableConstrainArea',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 22. Limitar el área',
-        path: '/clase28-libreria-de-componentes-jquery-ui/22-resizable-constrain-area',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 03. Limitar el área',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/03-constrain-area',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableConstrainArea = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 22. Limitar el área',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 03. Limitar el área',
         styles: [
             { href: `${styles}/pages/clase-28/22-resizable-constrain-area.css` },
         ],

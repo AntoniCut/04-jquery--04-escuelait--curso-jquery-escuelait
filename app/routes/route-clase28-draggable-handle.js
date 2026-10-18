@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableHandle = {
         id: 'clase28DraggableHandle',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 9. Asas',
-        path: '/clase28-libreria-de-componentes-jquery-ui/09-draggable-handle',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 06. Asas',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/06-handle',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableHandle = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 9. Asas',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 06. Asas',
         styles: [
             { href: `${styles}/pages/clase-28/09-draggable-handle.css` },
         ],

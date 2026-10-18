@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableTextarea = {
         id: 'clase28ResizableTextarea',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 28. Área de texto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/28-resizable-textarea',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 09. Área de texto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/09-textarea',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableTextarea = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 28. Área de texto',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 09. Área de texto',
         styles: [
             { href: `${styles}/pages/clase-28/28-resizable-textarea.css` },
         ],

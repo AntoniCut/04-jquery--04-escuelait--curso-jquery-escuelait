@@ -33,8 +33,8 @@ const {
 export const routeClase28MetodoOnConDelegacion = {
         id: 'clase28MetodoOnConDelegacion',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 2. Método on con delegación',
-        path: '/clase28-libreria-de-componentes-jquery-ui/02-metodo-on-con-delegacion',
+        pageTitle: 'Clase 28 - 01. Método on() - 02. Método on con delegación',
+        path: '/clase28-libreria-de-componentes-jquery-ui/01-metodo-on/02-con-delegacion',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28MetodoOnConDelegacion = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 2. Método on con delegación',
+        headerTitle: 'Clase 28 - 01. Método on() - 02. Método on con delegación',
         styles: [
             { href: `${styles}/pages/clase-28/02-metodo-on-con-delegacion.css` },
         ],

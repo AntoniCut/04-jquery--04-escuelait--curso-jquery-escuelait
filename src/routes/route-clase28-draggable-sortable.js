@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableSortable = {
         id: 'clase28DraggableSortable',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 10. Draggable y Sortable',
-        path: '/clase28-libreria-de-componentes-jquery-ui/10-draggable-sortable',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 07. Draggable y Sortable',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/07-sortable',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableSortable = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 10. Draggable y Sortable',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 07. Draggable y Sortable',
         styles: [
             { href: `${styles}/pages/clase-28/10-draggable-sortable.css` },
         ],

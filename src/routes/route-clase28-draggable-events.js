@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableEvents = {
         id: 'clase28DraggableEvents',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 8. Eventos',
-        path: '/clase28-libreria-de-componentes-jquery-ui/08-draggable-events',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 05. Eventos',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/05-events',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableEvents = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 8. Eventos',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 05. Eventos',
         styles: [
             { href: `${styles}/pages/clase-28/08-draggable-events.css` },
         ],

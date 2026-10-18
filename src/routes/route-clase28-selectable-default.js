@@ -33,8 +33,8 @@ const {
 export const routeClase28SelectableDefault = {
         id: 'clase28SelectableDefault',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 30. Funcionalidad por defecto',
-        path: '/clase28-libreria-de-componentes-jquery-ui/30-selectable-default',
+        pageTitle: 'Clase 28 - 05. Interacción Selectable - 01. Funcionalidad por defecto',
+        path: '/clase28-libreria-de-componentes-jquery-ui/05-interaccion-selectable/01-default',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SelectableDefault = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 30. Funcionalidad por defecto',
+        headerTitle: 'Clase 28 - 05. Interacción Selectable - 01. Funcionalidad por defecto',
         styles: [
             { href: `${styles}/pages/clase-28/30-selectable-default.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28SortablePortlets = {
         id: 'clase28SortablePortlets',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 39. Paneles',
-        path: '/clase28-libreria-de-componentes-jquery-ui/39-sortable-portlets',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 07. Paneles',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/07-portlets',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortablePortlets = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 39. Paneles',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 07. Paneles',
         styles: [
             { href: `${styles}/pages/clase-28/39-sortable-portlets.css` },
         ],

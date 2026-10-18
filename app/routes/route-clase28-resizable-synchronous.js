@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableSynchronous = {
         id: 'clase28ResizableSynchronous',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 27. Cambio de tamaño simultáneo',
-        path: '/clase28-libreria-de-componentes-jquery-ui/27-resizable-synchronous',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 08. Cambio de tamaño simultáneo',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/08-synchronous',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableSynchronous = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 27. Cambio de tamaño simultáneo',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 08. Cambio de tamaño simultáneo',
         styles: [
             { href: `${styles}/pages/clase-28/27-resizable-synchronous.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableVisualFeedback = {
         id: 'clase28ResizableVisualFeedback',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 29. Respuesta visual',
-        path: '/clase28-libreria-de-componentes-jquery-ui/29-resizable-visual-feedback',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 10. Respuesta visual',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/10-visual-feedback',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableVisualFeedback = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 29. Respuesta visual',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 10. Respuesta visual',
         styles: [
             { href: `${styles}/pages/clase-28/29-resizable-visual-feedback.css` },
         ],

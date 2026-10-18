@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableMaxMin = {
         id: 'clase28ResizableMaxMin',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 24. Tamaño máximo y mínimo',
-        path: '/clase28-libreria-de-componentes-jquery-ui/24-resizable-max-min',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 05. Tamaño máximo y mínimo',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/05-max-min',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableMaxMin = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 24. Tamaño máximo y mínimo',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 05. Tamaño máximo y mínimo',
         styles: [
             { href: `${styles}/pages/clase-28/24-resizable-max-min.css` },
         ],

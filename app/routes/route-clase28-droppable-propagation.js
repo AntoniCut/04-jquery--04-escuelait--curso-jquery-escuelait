@@ -33,8 +33,8 @@ const {
 export const routeClase28DroppablePropagation = {
         id: 'clase28DroppablePropagation',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 16. Evitar la propagación',
-        path: '/clase28-libreria-de-componentes-jquery-ui/16-droppable-propagation',
+        pageTitle: 'Clase 28 - 03. Interacción Droppable - 03. Evitar la propagación',
+        path: '/clase28-libreria-de-componentes-jquery-ui/03-interaccion-droppable/03-propagation',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DroppablePropagation = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 16. Evitar la propagación',
+        headerTitle: 'Clase 28 - 03. Interacción Droppable - 03. Evitar la propagación',
         styles: [
             { href: `${styles}/pages/clase-28/16-droppable-propagation.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28ResizableHelper = {
         id: 'clase28ResizableHelper',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 23. Contorno auxiliar',
-        path: '/clase28-libreria-de-componentes-jquery-ui/23-resizable-helper',
+        pageTitle: 'Clase 28 - 04. Interacción Resizable - 04. Contorno auxiliar',
+        path: '/clase28-libreria-de-componentes-jquery-ui/04-interaccion-resizable/04-helper',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28ResizableHelper = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 23. Contorno auxiliar',
+        headerTitle: 'Clase 28 - 04. Interacción Resizable - 04. Contorno auxiliar',
         styles: [
             { href: `${styles}/pages/clase-28/23-resizable-helper.css` },
         ],

@@ -33,8 +33,8 @@ const {
 export const routeClase28SortablePlaceholder = {
         id: 'clase28SortablePlaceholder',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 36. Hueco al soltar',
-        path: '/clase28-libreria-de-componentes-jquery-ui/36-sortable-placeholder',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 04. Hueco al soltar',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/04-placeholder',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortablePlaceholder = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 36. Hueco al soltar',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 04. Hueco al soltar',
         styles: [
             { href: `${styles}/pages/clase-28/36-sortable-placeholder.css` },
         ],

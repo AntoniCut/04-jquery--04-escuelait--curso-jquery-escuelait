@@ -33,8 +33,8 @@ const {
 export const routeClase28SortableItems = {
         id: 'clase28SortableItems',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 38. Incluir o excluir elementos',
-        path: '/clase28-libreria-de-componentes-jquery-ui/38-sortable-items',
+        pageTitle: 'Clase 28 - 06. Interacción Sortable - 06. Incluir o excluir elementos',
+        path: '/clase28-libreria-de-componentes-jquery-ui/06-interaccion-sortable/06-items',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28SortableItems = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 38. Incluir o excluir elementos',
+        headerTitle: 'Clase 28 - 06. Interacción Sortable - 06. Incluir o excluir elementos',
         styles: [
             { href: `${styles}/pages/clase-28/38-sortable-items.css` },
         ],

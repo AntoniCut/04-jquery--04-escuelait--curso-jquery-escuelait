@@ -33,8 +33,8 @@ const {
 export const routeClase28DraggableScroll = {
         id: 'clase28DraggableScroll',
         favicon: favicon,
-        pageTitle: 'Clase 28 - 5. Desplazamiento automático',
-        path: '/clase28-libreria-de-componentes-jquery-ui/05-draggable-scroll',
+        pageTitle: 'Clase 28 - 02. Interacción Draggable - 02. Desplazamiento automático',
+        path: '/clase28-libreria-de-componentes-jquery-ui/02-interaccion-draggable/02-scroll',
         components: {
             "#layoutHeader": layoutHeader,
             "#btnNavbar": btnNavbar,
@@ -73,7 +73,7 @@ export const routeClase28DraggableScroll = {
                 target: '[data-shiki="codeJs"]',
             },
         ],
-        headerTitle: 'Clase 28 - 5. Desplazamiento automático',
+        headerTitle: 'Clase 28 - 02. Interacción Draggable - 02. Desplazamiento automático',
         styles: [
             { href: `${styles}/pages/clase-28/05-draggable-scroll.css` },
         ],
