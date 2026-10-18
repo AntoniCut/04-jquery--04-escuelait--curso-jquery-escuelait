@@ -1,0 +1,59 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  19-droppable-visual-feedback.scss  --  /src/scss/pages/clase-28/19-droppable-visual-feedback.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drop-feedback', 44rem);
+
+.drop-feedback__drag,
+.drop-feedback__drop {
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+    padding: 0.85rem;
+}
+
+.drop-feedback__drag {
+    width: min(100%, 11rem);
+    min-height: 8rem;
+    cursor: move;
+}
+
+.drop-feedback__drop {
+    width: min(100%, 12rem);
+    min-height: 9rem;
+}
+
+.drop-feedback__drop.ui-state-highlight {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.drop-feedback__drop.ui-state-hover,
+.drop-feedback__drop.ui-state-active {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}
+
+.drop-feedback__label {
+    clear: both;
+    margin: 1.25rem 0 0.75rem;
+    font-size: 1.05rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.drop-feedback__drop.ui-state-default {
+    color: var(--ink);
+    background: var(--card);
+    border-color: var(--accent);
+    border-style: dashed;
+}

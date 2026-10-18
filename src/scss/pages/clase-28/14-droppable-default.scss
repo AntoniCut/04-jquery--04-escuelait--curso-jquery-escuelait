@@ -1,0 +1,42 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  14-droppable-default.scss  --  /src/scss/pages/clase-28/14-droppable-default.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drop-default', 32rem);
+
+.drop-default__drag,
+.drop-default__drop {
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+    padding: 0.85rem;
+}
+
+.drop-default__drag {
+    width: min(100%, 11rem);
+    min-height: 8rem;
+    cursor: move;
+}
+
+.drop-default__drop {
+    width: min(100%, 12rem);
+    min-height: 9rem;
+}
+
+.drop-default__drop.ui-state-highlight {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.drop-default__drop.ui-state-hover,
+.drop-default__drop.ui-state-active {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}

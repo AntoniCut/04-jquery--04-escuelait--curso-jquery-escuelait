@@ -1,0 +1,43 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  08-draggable-events.scss  --  /src/scss/pages/clase-28/08-draggable-events.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-events', 36rem);
+
+.drag-events__box {
+    width: min(100%, 24rem);
+    min-height: 16rem;
+    padding: 0.85rem 1rem 0.35rem;
+}
+
+.drag-events__list {
+    margin: 0.85rem 0 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.drag-events__item {
+    min-height: 2.6rem;
+    margin: 0.65rem 0;
+    padding: 0.55rem 0.7rem;
+
+    .ui-icon {
+        float: left;
+        margin-top: 0.15rem;
+        margin-right: 0.35rem;
+    }
+
+    .count {
+        display: inline-block;
+        min-width: 1.5rem;
+        font-weight: 650;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+    }
+}

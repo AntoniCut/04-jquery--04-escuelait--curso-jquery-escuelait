@@ -1,0 +1,42 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  27-resizable-synchronous.scss  --  /src/scss/pages/clase-28/27-resizable-synchronous.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-sync', 44rem);
+
+.resize-sync__box {
+    width: min(100%, 12rem);
+    height: 12rem;
+    padding: 0.85rem;
+}
+
+.resize-sync__heading {
+    margin: 0;
+    text-align: center;
+}
+
+.ui-resizable-helper {
+    border: 2px dotted var(--accent);
+}
+
+.ui-resizable-ghost {
+    border: 1px dotted var(--accent);
+    opacity: 0.55;
+}
+
+.resize-sync__box--second {
+    clear: both;
+    margin-top: 1rem;
+}
+
+.resize-sync__heading.ui-state-active {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}

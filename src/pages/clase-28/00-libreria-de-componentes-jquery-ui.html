@@ -1,0 +1,794 @@
+<!--
+    *  --------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  00-libreria-de-componentes-jquery-ui.html  --  /src/pages/clase-28/00-libreria-de-componentes-jquery-ui.html  -----  *
+    *  --------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__container">
+
+    <section class="main__description">
+
+        <article class="description-page">
+
+            <header class="description-page__hero" style="--hero-mark: 'ui'">
+                <div class="description-page__hero-badge">
+                    <p class="description-page__hero-tag" aria-hidden="true">UI</p>
+                    <h2 class="description-page__hero-title">Librería de componentes jQuery UI</h2>
+                    <p class="description-page__hero-subtitle">on · drag · drop · resize</p>
+                </div>
+            </header>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Que se hace en esta clase
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Primero el método on, con y sin delegación.
+                    Después las interacciones de jQuery UI: arrastrar,
+                    soltar, cambiar el tamaño, seleccionar y reordenar.
+                </p>
+
+                <p class="description-page__intro-note">
+                    <kbd> Objetivo: </kbd> abrir cada demo y probar el
+                    widget con el ratón.
+                </p>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Método on
+                </h3>
+
+                <p class="description-page__intro-text">
+                    El mismo clic, enlazado al párrafo que ya existe, delegado en el contenedor o con datos en el tercer argumento.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            1. Método on sin delegación
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El clic se enlaza solo a los párrafos que ya existen. El clon no recibe ese manejador.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28MetodoOnSinDelegacion"
+                            data-route="route-clase28-metodo-on-sin-delegacion"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            2. Método on con delegación
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El clic se delega en el origen y en el destino. El párrafo clonado también se pone en negrita.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28MetodoOnConDelegacion"
+                            data-route="route-clase28-metodo-on-con-delegacion"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            3. Método on con datos
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El tercer argumento de .on() es un objeto de datos. El manejador lo lee en evento.data y el párrafo clonado también lo recibe.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28MetodoOnTercerParametroDatos"
+                            data-route="route-clase28-metodo-on-tercer-parametro-datos"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Draggable
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Mover un elemento con el ratón. Las demos siguen las de jqueryui.com/draggable.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            4. Funcionalidad por defecto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Activa el arrastre en cualquier elemento del DOM. Mueve el objeto con el ratón y suéltalo en cualquier punto de la ventana.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableDefault"
+                            data-route="route-clase28-draggable-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            5. Desplazamiento automático
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El documento se desplaza solo cuando el elemento sale del área visible. scroll lo activa. scrollSensitivity y scrollSpeed ajustan el momento y la velocidad.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableScroll"
+                            data-route="route-clase28-draggable-scroll"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            6. Limitar el movimiento
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Limita el recorrido de cada elemento. axis lo deja en el eje x o en el eje y. containment lo encierra en un elemento padre o en un selector.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableConstraintMovement"
+                            data-route="route-clase28-draggable-constraint-movement"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            7. Estilo del cursor
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Coloca el cursor mientras arrastras. Por defecto aparece en el centro. cursorAt indica otro punto y cursor cambia el aspecto.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableCursorStyle"
+                            data-route="route-clase28-draggable-cursor-style"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            8. Eventos
+                        </h4>
+                        <p class="description-page__feature-text">
+                            start se dispara al empezar el arrastre, drag mientras se mueve y stop al soltar.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableEvents"
+                            data-route="route-clase28-draggable-events"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            9. Asas
+                        </h4>
+                        <p class="description-page__feature-text">
+                            handle indica el selector por el que sí se puede arrastrar el objeto. cancel indica el selector que anula el arrastre.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableHandle"
+                            data-route="route-clase28-draggable-handle"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            10. Draggable y Sortable
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Un elemento draggable puede soltarse dentro de una lista sortable y pasar a formar parte de ella.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableSortable"
+                            data-route="route-clase28-draggable-sortable"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            11. Volver a la posición
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Con revert, el elemento —o su helper— regresa al sitio de origen al soltarlo.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableRevert"
+                            data-route="route-clase28-draggable-revert"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            12. Ajuste a un elemento o a una rejilla
+                        </h4>
+                        <p class="description-page__feature-text">
+                            snap pega el elemento al borde de otro. snapMode elige el borde interior, el exterior o ambos. grid mueve el elemento en pasos.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableSnapTo"
+                            data-route="route-clase28-draggable-snap-to"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            13. Respuesta visual
+                        </h4>
+                        <p class="description-page__feature-text">
+                            helper puede ser el original, un clon o una función. opacity controla la transparencia. stack deja encima el último elemento soltado.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DraggableVisualFeedback"
+                            data-route="route-clase28-draggable-visual-feedback"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Droppable
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Zonas donde soltar un elemento arrastrable. Las demos siguen las de jqueryui.com/droppable.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            14. Funcionalidad por defecto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Cualquier elemento del DOM puede ser un destino de elementos arrastrables. Al soltar encima se dispara drop.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppableDefault"
+                            data-route="route-clase28-droppable-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            15. Aceptar
+                        </h4>
+                        <p class="description-page__feature-text">
+                            accept indica qué elemento admite el destino. El otro se arrastra, pero al soltarlo no cuenta.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppableAccept"
+                            data-route="route-clase28-droppable-accept"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            16. Evitar la propagación
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Si los destinos están anidados, el padre también recibe el evento. Con greedy: true solo cuenta el hijo que está bajo el cursor.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppablePropagation"
+                            data-route="route-clase28-droppable-propagation"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            17. Volver a la posición
+                        </h4>
+                        <p class="description-page__feature-text">
+                            revert devuelve el elemento a su sitio al terminar el arrastre. valid vuelve si el destino lo aceptó. invalid vuelve si no hubo un destino válido.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppableRevert"
+                            data-route="route-clase28-droppable-revert"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            18. Gestor de fotos
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Puedes borrar una foto arrastrándola a la papelera o con su icono. Vuelve a la galería si la arrastras de vuelta o con el icono de recuperar.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppablePhotoManager"
+                            data-route="route-clase28-droppable-photo-manager"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            19. Respuesta visual
+                        </h4>
+                        <p class="description-page__feature-text">
+                            El destino puede cambiar de aspecto al pasar el cursor por encima o en cuanto empieza un arrastre que acepta.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28DroppableVisualFeedback"
+                            data-route="route-clase28-droppable-visual-feedback"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Resizable
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Cambiar el tamaño con el borde o el asa. Las demos siguen las de jqueryui.com/resizable.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            20. Funcionalidad por defecto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Cualquier elemento puede cambiar de tamaño. Arrastra el borde derecho, el inferior o el asa de la esquina.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableDefault"
+                            data-route="route-clase28-resizable-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            21. Animar
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Con animate: true el elemento no sigue el borde mientras arrastras. Al soltar, anima hasta el tamaño del contorno.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableAnimate"
+                            data-route="route-clase28-resizable-animate"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            22. Limitar el área
+                        </h4>
+                        <p class="description-page__feature-text">
+                            containment limita el cambio de tamaño a un elemento padre o a un selector, como document.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableConstrainArea"
+                            data-route="route-clase28-resizable-constrain-area"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            23. Contorno auxiliar
+                        </h4>
+                        <p class="description-page__feature-text">
+                            helper muestra solo un contorno mientras cambias el tamaño. El valor es una clase CSS.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableHelper"
+                            data-route="route-clase28-resizable-helper"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            24. Tamaño máximo y mínimo
+                        </h4>
+                        <p class="description-page__feature-text">
+                            maxHeight, maxWidth, minHeight y minWidth marcan los límites. Esta caja no baja de 200×150 ni pasa de 350×250.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableMaxMin"
+                            data-route="route-clase28-resizable-max-min"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            25. Conservar la proporción
+                        </h4>
+                        <p class="description-page__feature-text">
+                            aspectRatio conserva la proporción. true usa la proporción actual. Un número, como 16 / 9, fija otra.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableAspectRatio"
+                            data-route="route-clase28-resizable-aspect-ratio"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            26. Ajuste a la rejilla
+                        </h4>
+                        <p class="description-page__feature-text">
+                            grid encaja el tamaño en una rejilla. Aquí cada paso mide 50 píxeles.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableSnapToGrid"
+                            data-route="route-clase28-resizable-snap-to-grid"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            27. Cambio de tamaño simultáneo
+                        </h4>
+                        <p class="description-page__feature-text">
+                            alsoResize cambia el tamaño de otros elementos a la vez. Se le pasa un selector compartido.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableSynchronous"
+                            data-route="route-clase28-resizable-synchronous"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            28. Área de texto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Resizable también sirve en un textarea, para dejar más sitio al escribir. El asa es la esquina sureste.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableTextarea"
+                            data-route="route-clase28-resizable-textarea"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            29. Respuesta visual
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Con ghost: true, mientras cambias el tamaño se ve una copia semitransparente en lugar del propio elemento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28ResizableVisualFeedback"
+                            data-route="route-clase28-resizable-visual-feedback"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Selectable
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Elegir elementos sueltos o con un recuadro. Las demos siguen las de jqueryui.com/selectable.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            30. Funcionalidad por defecto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Dibuja un recuadro con el cursor para seleccionar varios elementos. Con Ctrl, o Cmd, sumas elementos que no están juntos.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SelectableDefault"
+                            data-route="route-clase28-selectable-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            31. Mostrar en rejilla
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Para mostrarlos en rejilla, dales el mismo tamaño y colócalos en una cuadrícula con CSS.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SelectableDisplayGrid"
+                            data-route="route-clase28-selectable-display-grid"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            32. Serializar la selección
+                        </h4>
+                        <p class="description-page__feature-text">
+                            En el evento stop se recogen los índices de los elementos con la clase ui-selected y se muestran como resultado.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SelectableSerialize"
+                            data-route="route-clase28-selectable-serialize"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="description-page__intro">
+
+                <h3 class="description-page__features-title">
+                    Sortable
+                </h3>
+
+                <p class="description-page__intro-text">
+                    Reordenar elementos en una lista, una rejilla o entre columnas. Las demos siguen las de jqueryui.com/sortable.
+                </p>
+
+            </section>
+
+            <section class="description-page__features">
+
+                <div class="description-page__features-grid">
+
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            33. Funcionalidad por defecto
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Arrastra un elemento a otro hueco de la lista. El resto se aparta para dejarle sitio.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortableDefault"
+                            data-route="route-clase28-sortable-default"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            34. Conectar listas
+                        </h4>
+                        <p class="description-page__feature-text">
+                            connectWith permite mover elementos de una lista a otra. Lo habitual es agrupar las listas con una clase y pasar esa clase.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortableConnectLists"
+                            data-route="route-clase28-sortable-connect-lists"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            35. Mostrar en rejilla
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Para ordenarlos en rejilla, dales el mismo tamaño y colócalos en una cuadrícula con CSS.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortableDisplayGrid"
+                            data-route="route-clase28-sortable-display-grid"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            36. Hueco al soltar
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Al arrastrar, los demás dejan un hueco. placeholder le pone una clase a ese hueco para que se vea. forcePlaceholderSize le copia el tamaño del elemento.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortablePlaceholder"
+                            data-route="route-clase28-sortable-placeholder"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            37. Listas vacías
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Por defecto se puede soltar en una lista vacía. Con dropOnEmpty: false los elementos de la lista del centro no entran en la lista vacía.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortableEmptyLists"
+                            data-route="route-clase28-sortable-empty-lists"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            38. Incluir o excluir elementos
+                        </h4>
+                        <p class="description-page__feature-text">
+                            items indica qué elementos se pueden ordenar. Los que quedan fuera tampoco sirven como destino. cancel impide arrastrarlos, pero siguen siendo un destino válido.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortableItems"
+                            data-route="route-clase28-sortable-items"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+                    <article class="description-page__feature">
+                        <h4 class="description-page__feature-title">
+                            39. Paneles
+                        </h4>
+                        <p class="description-page__feature-text">
+                            Estos paneles se ordenan por la cabecera. connectWith permite pasarlos de una columna a otra. El botón de la cabecera los pliega y no inicia el arrastre.
+                        </p>
+                        <a
+                            class="description-page__feature-link"
+                            href="#"
+                            data-id="clase28SortablePortlets"
+                            data-route="route-clase28-sortable-portlets"
+                        >
+                            Ir a la demo
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </article>
+    </section>
+
+</div>

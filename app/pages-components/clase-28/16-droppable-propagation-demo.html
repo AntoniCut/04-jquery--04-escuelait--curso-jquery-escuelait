@@ -1,0 +1,40 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+    *  -----  16-droppable-propagation-demo.html  --  /src/pages-components/clase-28/16-droppable-propagation-demo.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drop-greedy">
+
+        <h3 class="drop-greedy__title">Evitar la propagación</h3>
+
+        <p class="drop-greedy__hint">Si los destinos están anidados, el padre también recibe el evento. Con greedy: true solo cuenta el hijo que está bajo el cursor.</p>
+
+        <div class="drop-greedy__stage">
+                    <div id="draggable" class="drop-greedy__drag ui-widget-content">
+                        <p>Arrástrame hasta el destino</p>
+                    </div>
+                    <div id="droppable" class="drop-greedy__zone ui-widget-header">
+                        <p>Destino exterior</p>
+                        <div id="droppable-inner" class="drop-greedy__inner ui-widget-header">
+                            <p>Destino interior, sin greedy</p>
+                        </div>
+                    </div>
+                    <div id="droppable2" class="drop-greedy__zone ui-widget-header">
+                        <p>Destino exterior</p>
+                        <div id="droppable2-inner" class="drop-greedy__inner ui-widget-header">
+                            <p>Destino interior, con greedy</p>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="drop-greedy__note">
+            <p class="drop-greedy__note-text">Soltar en el interior de cada pareja y comparar quién se marca.</p>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,23 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  09-draggable-handle.scss  --  /src/scss/pages/clase-28/09-draggable-handle.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-handle', 32rem);
+
+.drag-handle__box {
+    width: min(100%, 16rem);
+    min-height: 8.5rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}
+
+.drag-handle__grip {
+    cursor: move;
+}

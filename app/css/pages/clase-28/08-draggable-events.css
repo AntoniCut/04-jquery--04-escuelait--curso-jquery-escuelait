@@ -1,0 +1,149 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  08-draggable-events.scss  --  /src/scss/pages/clase-28/08-draggable-events.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-28-common.scss  --  /src/scss/pages/clase-28/_clase-28-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ------------------------------------------------------------------  *
+    *  -----  _mixins.scss  --  /src/styles/scss/base/_mixins.scss  -----  *
+    *  ------------------------------------------------------------------  *
+*/
+/*
+    *  --------------------------------------------------------------------------  *
+    *  -----  _variables.scss  --  /src/styles/scss/base/_variables.scss  -------  *
+    *  --------------------------------------------------------------------------  *
+ */
+.main__demo {
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d7dee7;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0769ad;
+  --accent-press: #054e82;
+  --tint: #f3f8fc;
+  --header: #e7f3fb;
+}
+
+[data-component-page=description] {
+  min-height: 28rem;
+}
+@media (min-width: 768px) {
+  [data-component-page=description] {
+    min-height: 24rem;
+  }
+}
+
+[data-component-page=demo],
+.drag-events {
+  min-height: 36rem;
+}
+
+.drag-events {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .drag-events {
+    gap: 1.6rem;
+  }
+}
+
+.drag-events__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #1c2430;
+}
+@media (min-width: 768px) {
+  .drag-events__title {
+    font-size: 1.8rem;
+  }
+}
+
+.drag-events__hint {
+  margin: 0;
+  max-width: 65ch;
+  color: #5c6775;
+  line-height: 1.55;
+}
+.drag-events__hint code {
+  padding: 0.08em 0.35em;
+  font-size: 0.92em;
+  color: #1c2430;
+  background: #e7eef5;
+  border-radius: 0.3rem;
+}
+
+.drag-events__stage {
+  display: flow-root;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+}
+@media (min-width: 480px) {
+  .drag-events__stage {
+    padding: 1.25rem;
+  }
+}
+.drag-events__stage p {
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.drag-events__note {
+  max-width: 65ch;
+}
+
+.drag-events__note-text {
+  margin: 0;
+  color: #5c6775;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drag-events__button {
+    transition: none;
+  }
+}
+.drag-events__box {
+  width: min(100%, 24rem);
+  min-height: 16rem;
+  padding: 0.85rem 1rem 0.35rem;
+}
+
+.drag-events__list {
+  margin: 0.85rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.drag-events__item {
+  min-height: 2.6rem;
+  margin: 0.65rem 0;
+  padding: 0.55rem 0.7rem;
+}
+.drag-events__item .ui-icon {
+  float: left;
+  margin-top: 0.15rem;
+  margin-right: 0.35rem;
+}
+.drag-events__item .count {
+  display: inline-block;
+  min-width: 1.5rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}/*# sourceMappingURL=08-draggable-events.css.map */

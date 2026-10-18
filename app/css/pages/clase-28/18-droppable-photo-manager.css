@@ -1,0 +1,229 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------  *
+    *  -----  18-droppable-photo-manager.scss  --  /src/scss/pages/clase-28/18-droppable-photo-manager.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-28-common.scss  --  /src/scss/pages/clase-28/_clase-28-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ------------------------------------------------------------------  *
+    *  -----  _mixins.scss  --  /src/styles/scss/base/_mixins.scss  -----  *
+    *  ------------------------------------------------------------------  *
+*/
+/*
+    *  --------------------------------------------------------------------------  *
+    *  -----  _variables.scss  --  /src/styles/scss/base/_variables.scss  -------  *
+    *  --------------------------------------------------------------------------  *
+ */
+.main__demo {
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d7dee7;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0769ad;
+  --accent-press: #054e82;
+  --tint: #f3f8fc;
+  --header: #e7f3fb;
+}
+
+[data-component-page=description] {
+  min-height: 28rem;
+}
+@media (min-width: 768px) {
+  [data-component-page=description] {
+    min-height: 24rem;
+  }
+}
+
+[data-component-page=demo],
+.photos {
+  min-height: 52rem;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .photos {
+    gap: 1.6rem;
+  }
+}
+
+.photos__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #1c2430;
+}
+@media (min-width: 768px) {
+  .photos__title {
+    font-size: 1.8rem;
+  }
+}
+
+.photos__hint {
+  margin: 0;
+  max-width: 65ch;
+  color: #5c6775;
+  line-height: 1.55;
+}
+.photos__hint code {
+  padding: 0.08em 0.35em;
+  font-size: 0.92em;
+  color: #1c2430;
+  background: #e7eef5;
+  border-radius: 0.3rem;
+}
+
+.photos__stage {
+  display: flow-root;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+}
+@media (min-width: 480px) {
+  .photos__stage {
+    padding: 1.25rem;
+  }
+}
+.photos__stage p {
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.photos__note {
+  max-width: 65ch;
+}
+
+.photos__note-text {
+  margin: 0;
+  color: #5c6775;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photos__button {
+    transition: none;
+  }
+}
+.photos__board {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .photos__board {
+    grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+    align-items: start;
+  }
+}
+
+.photos__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.65rem;
+  min-height: 8rem;
+  margin: 0;
+  padding: 0.15rem;
+  list-style: none;
+  border-radius: 0.75rem;
+}
+
+.photos__item {
+  width: 6.75rem;
+  min-height: 8.5rem;
+  margin: 0;
+  padding: 0.45rem 0.45rem 0.35rem;
+  text-align: center;
+}
+
+.photos__caption {
+  margin: 0 0 0.4rem;
+  padding: 0.35rem 0.4rem;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  cursor: move;
+}
+
+.photos__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  cursor: move;
+}
+
+.photos__icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.4rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.photos__icon.ui-icon-zoomin {
+  float: left;
+}
+.photos__icon.ui-icon-trash, .photos__icon.ui-icon-refresh {
+  float: right;
+}
+
+.photos__trash {
+  min-height: 12rem;
+  padding: 0.85rem;
+}
+
+.photos__trash-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.4rem;
+  margin: 0;
+}
+.photos__trash-title .ui-icon {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
+.photos__trash .photos__list {
+  margin-top: 0.75rem;
+  min-height: 6rem;
+}
+
+.photos__trash .photos__caption {
+  display: none;
+}
+
+#gallery.custom-state-active {
+  background: var(--paper);
+  outline: 2px dashed var(--accent);
+  outline-offset: -2px;
+}
+
+#trash.ui-state-highlight {
+  background: #d6ebf8;
+  border-color: var(--accent);
+}
+
+.ui-dialog {
+  max-width: calc(100vw - 2rem);
+}
+
+.ui-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+}/*# sourceMappingURL=18-droppable-photo-manager.css.map */

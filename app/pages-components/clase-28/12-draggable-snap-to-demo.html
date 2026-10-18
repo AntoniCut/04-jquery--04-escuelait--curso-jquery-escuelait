@@ -1,0 +1,43 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  12-draggable-snap-to-demo.html  --  /src/pages-components/clase-28/12-draggable-snap-to-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drag-snap">
+
+        <h3 class="drag-snap__title">Ajuste a un elemento o a una rejilla</h3>
+
+        <p class="drag-snap__hint">snap pega el elemento al borde de otro. snapMode elige el borde interior, el exterior o ambos. grid mueve el elemento en pasos.</p>
+
+        <div class="drag-snap__stage">
+                    <div id="snaptarget" class="drag-snap__target ui-widget-header">
+                        <p>Soy un objetivo de ajuste</p>
+                    </div>
+                    <div id="draggable" class="drag-snap__box ui-widget-content">
+                        <p>Por defecto (snap: true) me ajusto a los demás elementos arrastrables</p>
+                    </div>
+                    <div id="draggable2" class="drag-snap__box ui-widget-content">
+                        <p>Solo me ajusto a la caja grande</p>
+                    </div>
+                    <div id="draggable3" class="drag-snap__box ui-widget-content">
+                        <p>Solo me ajusto al borde exterior de la caja grande</p>
+                    </div>
+                    <div id="draggable4" class="drag-snap__box ui-widget-content">
+                        <p>Me muevo en una rejilla de 20 × 20</p>
+                    </div>
+                    <div id="draggable5" class="drag-snap__box ui-widget-content">
+                        <p>Me muevo en una rejilla de 80 × 80</p>
+                    </div>
+        </div>
+
+        <div class="drag-snap__note">
+            <p class="drag-snap__note-text">Acercar una caja al objetivo o moverla a saltos de rejilla.</p>
+        </div>
+
+    </div>
+
+</div>

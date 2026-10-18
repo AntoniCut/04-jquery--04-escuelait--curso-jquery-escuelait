@@ -1,0 +1,24 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  10-draggable-sortable.scss  --  /src/scss/pages/clase-28/10-draggable-sortable.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-sort', 40rem);
+
+.drag-sort__list {
+    list-style: none;
+    margin: 0 0 0.75rem;
+    padding: 0;
+    min-height: 3rem;
+}
+
+.drag-sort__item {
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem;
+    width: min(100%, 16rem);
+}

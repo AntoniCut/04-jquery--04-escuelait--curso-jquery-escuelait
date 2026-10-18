@@ -1,0 +1,48 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  32-selectable-serialize.scss  --  /src/scss/pages/clase-28/32-selectable-serialize.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('select-result', 40rem);
+
+.select-result__list .ui-selecting {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}
+
+.select-result__list .ui-selected {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.select-result__feedback {
+    min-height: 2.4rem;
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+}
+
+.select-result__value {
+    display: inline-block;
+    min-width: 6rem;
+    min-height: 1.4rem;
+    font-weight: 650;
+}
+
+.select-result__list {
+    width: min(100%, 24rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.select-result__item {
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem;
+}

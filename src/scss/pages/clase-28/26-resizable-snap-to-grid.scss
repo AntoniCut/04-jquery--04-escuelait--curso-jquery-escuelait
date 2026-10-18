@@ -1,0 +1,31 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  26-resizable-snap-to-grid.scss  --  /src/scss/pages/clase-28/26-resizable-snap-to-grid.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-grid', 32rem);
+
+.resize-grid__box {
+    width: min(100%, 12rem);
+    height: 12rem;
+    padding: 0.85rem;
+}
+
+.resize-grid__heading {
+    margin: 0;
+    text-align: center;
+}
+
+.ui-resizable-helper {
+    border: 2px dotted var(--accent);
+}
+
+.ui-resizable-ghost {
+    border: 1px dotted var(--accent);
+    opacity: 0.55;
+}

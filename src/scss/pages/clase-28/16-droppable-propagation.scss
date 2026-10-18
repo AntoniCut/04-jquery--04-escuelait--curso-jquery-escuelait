@@ -1,0 +1,50 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  16-droppable-propagation.scss  --  /src/scss/pages/clase-28/16-droppable-propagation.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drop-greedy', 48rem);
+
+.drop-greedy__drag {
+    width: min(100%, 11rem);
+    min-height: 3.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    cursor: move;
+}
+
+.drop-greedy__zone {
+    float: left;
+    width: min(100%, 18rem);
+    min-height: 10rem;
+    margin: 0 0.75rem 0.75rem 0;
+    padding: 0.75rem;
+}
+
+.drop-greedy__inner {
+    width: min(100%, 14rem);
+    min-height: 4.75rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+}
+
+.drop-greedy__zone.ui-state-active,
+.drop-greedy__inner.ui-state-active,
+.drop-greedy__zone.ui-state-hover,
+.drop-greedy__inner.ui-state-hover {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}
+
+.drop-greedy__zone.ui-state-highlight,
+.drop-greedy__inner.ui-state-highlight {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}

@@ -1,0 +1,30 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  36-sortable-placeholder.scss  --  /src/scss/pages/clase-28/36-sortable-placeholder.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('sort-placeholder', 40rem);
+
+.sort-placeholder__list {
+    width: min(100%, 24rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sort-placeholder__item {
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem;
+    cursor: grab;
+}
+
+.sort-placeholder__list .ui-sortable-placeholder {
+    min-height: 2.75rem;
+    background: #d6ebf8;
+    border: 1px dashed var(--accent);
+}

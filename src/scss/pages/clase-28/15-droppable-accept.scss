@@ -1,0 +1,42 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  15-droppable-accept.scss  --  /src/scss/pages/clase-28/15-droppable-accept.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drop-accept', 36rem);
+
+.drop-accept__drag,
+.drop-accept__drop {
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+    padding: 0.85rem;
+}
+
+.drop-accept__drag {
+    width: min(100%, 11rem);
+    min-height: 8rem;
+    cursor: move;
+}
+
+.drop-accept__drop {
+    width: min(100%, 12rem);
+    min-height: 9rem;
+}
+
+.drop-accept__drop.ui-state-highlight {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.drop-accept__drop.ui-state-hover,
+.drop-accept__drop.ui-state-active {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}

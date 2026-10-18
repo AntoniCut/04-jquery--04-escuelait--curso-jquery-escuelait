@@ -1,0 +1,22 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  24-resizable-max-min.scss  --  /src/scss/pages/clase-28/24-resizable-max-min.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-limits', 36rem);
+
+.resize-limits__box {
+    width: min(100%, 200px);
+    height: 150px;
+    padding: 0.85rem;
+}
+
+.resize-limits__heading {
+    margin: 0;
+    text-align: center;
+}

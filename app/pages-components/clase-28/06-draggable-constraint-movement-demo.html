@@ -1,0 +1,41 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  06-draggable-constraint-movement-demo.html  --  /src/pages-components/clase-28/06-draggable-constraint-movement-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drag-axis">
+
+        <h3 class="drag-axis__title">Limitar el movimiento</h3>
+
+        <p class="drag-axis__hint">Limita el recorrido de cada elemento. axis lo deja en el eje x o en el eje y. containment lo encierra en un elemento padre o en un selector.</p>
+
+        <div class="drag-axis__stage">
+                    <h4 class="drag-axis__label">A lo largo de un eje</h4>
+                    <div id="draggable" class="drag-axis__box ui-widget-content">
+                        <p>Solo puedo moverme en vertical</p>
+                    </div>
+                    <div id="draggable2" class="drag-axis__box drag-axis__box--x ui-widget-content">
+                        <p>Solo puedo moverme en horizontal</p>
+                    </div>
+                    <h4 class="drag-axis__label">O dentro de otro elemento</h4>
+                    <div id="containment-wrapper" class="drag-axis__wrap">
+                        <div id="draggable3" class="drag-axis__box drag-axis__box--inner ui-widget-content">
+                            <p>Estoy dentro de la caja</p>
+                        </div>
+                        <div class="drag-axis__box drag-axis__box--inner ui-widget-content">
+                            <p id="draggable4" class="drag-axis__chip ui-widget-header">Estoy dentro de mi padre</p>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="drag-axis__note">
+            <p class="drag-axis__note-text">Probar el eje vertical, el horizontal y las dos cajas del recinto.</p>
+        </div>
+
+    </div>
+
+</div>

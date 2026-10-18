@@ -1,0 +1,63 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+    *  -----  06-draggable-constraint-movement.scss  --  /src/scss/pages/clase-28/06-draggable-constraint-movement.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-axis', 52rem);
+
+.drag-axis__label {
+    clear: both;
+    margin: 1.25rem 0 0.75rem;
+    font-size: 1.05rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.drag-axis__box {
+    width: min(100%, 12rem);
+    min-height: 6.5rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 1rem 0;
+    cursor: n-resize;
+
+    &--x {
+        cursor: e-resize;
+    }
+
+    &--inner {
+        width: min(100%, 16rem);
+        min-height: 9rem;
+        margin: 0;
+        float: none;
+        cursor: move;
+    }
+}
+
+.drag-axis__wrap {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 18rem;
+    padding: 0.85rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+}
+
+.drag-axis__chip {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    cursor: move;
+}

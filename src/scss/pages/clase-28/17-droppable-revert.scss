@@ -1,0 +1,42 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  17-droppable-revert.scss  --  /src/scss/pages/clase-28/17-droppable-revert.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drop-revert', 36rem);
+
+.drop-revert__drag,
+.drop-revert__drop {
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+    padding: 0.85rem;
+}
+
+.drop-revert__drag {
+    width: min(100%, 11rem);
+    min-height: 8rem;
+    cursor: move;
+}
+
+.drop-revert__drop {
+    width: min(100%, 12rem);
+    min-height: 9rem;
+}
+
+.drop-revert__drop.ui-state-highlight {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.drop-revert__drop.ui-state-hover,
+.drop-revert__drop.ui-state-active {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}

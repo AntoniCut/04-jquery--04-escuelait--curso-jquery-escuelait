@@ -1,0 +1,38 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  33-sortable-default.scss  --  /src/scss/pages/clase-28/33-sortable-default.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('sort-default', 40rem);
+
+.sort-default__list {
+    width: min(100%, 24rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sort-default__item {
+    position: relative;
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem 0.7rem 2.1rem;
+    cursor: grab;
+
+    .ui-icon {
+        position: absolute;
+        top: 50%;
+        left: 0.5rem;
+        margin-top: -8px;
+    }
+}
+
+.ui-sortable-placeholder {
+    min-height: 2.75rem;
+    background: #d6ebf8;
+    border: 1px dashed var(--accent);
+}

@@ -1,0 +1,35 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  30-selectable-default.scss  --  /src/scss/pages/clase-28/30-selectable-default.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('select-default', 40rem);
+
+.select-default__list .ui-selecting {
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+}
+
+.select-default__list .ui-selected {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent-press);
+}
+
+.select-default__list {
+    width: min(100%, 24rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.select-default__item {
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem;
+}

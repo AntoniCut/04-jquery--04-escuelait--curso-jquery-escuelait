@@ -1,0 +1,22 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  25-resizable-aspect-ratio.scss  --  /src/scss/pages/clase-28/25-resizable-aspect-ratio.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-ratio', 32rem);
+
+.resize-ratio__box {
+    width: min(100%, 16rem);
+    height: 9rem;
+    padding: 0.85rem;
+}
+
+.resize-ratio__heading {
+    margin: 0;
+    text-align: center;
+}

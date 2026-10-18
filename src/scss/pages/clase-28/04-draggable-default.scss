@@ -1,0 +1,17 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  04-draggable-default.scss  --  /src/scss/pages/clase-28/04-draggable-default.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-default', 32rem);
+
+.drag-default__box {
+    width: min(100%, 11rem);
+    min-height: 11rem;
+    padding: 0.85rem;
+}

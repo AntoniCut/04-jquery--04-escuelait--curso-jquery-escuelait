@@ -30,14 +30,25 @@ const jqueryUIWidgetDeps = {
         '../jquery-ui/ui/data.js',
         '../jquery-ui/ui/plugin.js',
         '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/disable-selection.js',
         '../jquery-ui/ui/widgets/mouse.js',
         '../jquery-ui/ui/widgets/draggable.js',
+    ],
+
+    droppable: [
+        '../jquery-ui/ui/data.js',
+        '../jquery-ui/ui/plugin.js',
+        '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/widgets/mouse.js',
+        '../jquery-ui/ui/widgets/draggable.js',
+        '../jquery-ui/ui/widgets/droppable.js',
     ],
 
     sortable: [
         '../jquery-ui/ui/data.js',
         '../jquery-ui/ui/plugin.js',
         '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/disable-selection.js',
         '../jquery-ui/ui/widgets/mouse.js',
         '../jquery-ui/ui/widgets/sortable.js',
     ],
@@ -46,14 +57,26 @@ const jqueryUIWidgetDeps = {
         '../jquery-ui/ui/data.js',
         '../jquery-ui/ui/plugin.js',
         '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/disable-selection.js',
         '../jquery-ui/ui/widgets/mouse.js',
         '../jquery-ui/ui/widgets/resizable.js',
+    ],
+
+    selectable: [
+        '../jquery-ui/ui/data.js',
+        '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/disable-selection.js',
+        '../jquery-ui/ui/widgets/mouse.js',
+        '../jquery-ui/ui/widgets/selectable.js',
     ],
 
     dialog: [
         '../jquery-ui/ui/data.js',
         '../jquery-ui/ui/plugin.js',
         '../jquery-ui/ui/scroll-parent.js',
+        '../jquery-ui/ui/disable-selection.js',
+        '../jquery-ui/ui/focusable.js',
+        '../jquery-ui/ui/tabbable.js',
         '../jquery-ui/ui/widgets/mouse.js',
         '../jquery-ui/ui/widgets/draggable.js',
         '../jquery-ui/ui/widgets/resizable.js',
@@ -121,7 +144,7 @@ export const loadJQueryUICoreModules = () => {
  *   una vez que el DOM de la página ya está renderizado.
  * - Carga automáticamente los módulos core de jQuery UI si no están cargados.
  * - Singleton: evita re-importar un widget que ya fue cargado en la sesión.
- * @param {string} name - Nombre del widget ('tooltip', 'draggable', 'sortable', 'dialog', 'datepicker', 'resizable').
+ * @param {string} name - Nombre del widget ('tooltip', 'draggable', 'droppable', 'sortable', 'dialog', 'datepicker', 'resizable', 'selectable').
  * @returns {Promise<void>}
  */
 

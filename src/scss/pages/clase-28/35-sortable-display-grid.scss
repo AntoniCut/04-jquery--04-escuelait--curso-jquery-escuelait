@@ -1,0 +1,30 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  35-sortable-display-grid.scss  --  /src/scss/pages/clase-28/35-sortable-display-grid.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('sort-grid', 36rem);
+
+.sort-grid__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sort-grid__item {
+    display: grid;
+    place-items: center;
+    min-height: 5rem;
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 650;
+    cursor: grab;
+}

@@ -1,0 +1,39 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  38-sortable-items-demo.html  --  /src/pages-components/clase-28/38-sortable-items-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="sort-items">
+
+        <h3 class="sort-items__title">Incluir o excluir elementos</h3>
+
+        <p class="sort-items__hint">items indica qué elementos se pueden ordenar. Los que quedan fuera tampoco sirven como destino. cancel impide arrastrarlos, pero siguen siendo un destino válido.</p>
+
+        <div class="sort-items__stage">
+                    <h4 class="sort-items__label">Qué elementos se pueden ordenar</h4>
+                    <ul id="sortable1" class="sort-items__list">
+                        <li class="sort-items__item ui-state-default">Elemento 1</li>
+                        <li class="sort-items__item ui-state-default ui-state-disabled">No se ordena ni es un destino</li>
+                        <li class="sort-items__item ui-state-default ui-state-disabled">No se ordena ni es un destino</li>
+                        <li class="sort-items__item ui-state-default">Elemento 4</li>
+                    </ul>
+                    <h4 class="sort-items__label">Cancelar el arrastre y seguir siendo destino</h4>
+                    <ul id="sortable2" class="sort-items__list">
+                        <li class="sort-items__item ui-state-default">Elemento 1</li>
+                        <li class="sort-items__item ui-state-default ui-state-disabled">No se puede arrastrar</li>
+                        <li class="sort-items__item ui-state-default ui-state-disabled">No se puede arrastrar</li>
+                        <li class="sort-items__item ui-state-default">Elemento 4</li>
+                    </ul>
+        </div>
+
+        <div class="sort-items__note">
+            <p class="sort-items__note-text">Comparar la lista que excluye destinos con la que solo cancela el arrastre.</p>
+        </div>
+
+    </div>
+
+</div>

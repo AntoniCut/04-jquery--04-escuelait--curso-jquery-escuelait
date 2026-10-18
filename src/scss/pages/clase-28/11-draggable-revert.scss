@@ -1,0 +1,19 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  11-draggable-revert.scss  --  /src/scss/pages/clase-28/11-draggable-revert.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-revert', 32rem);
+
+.drag-revert__box {
+    width: min(100%, 12rem);
+    min-height: 7rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}

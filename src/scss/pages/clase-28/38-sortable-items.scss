@@ -1,0 +1,37 @@
+/*
+    *  -----------------------------------------------------------------------------------------  *
+    *  -----  38-sortable-items.scss  --  /src/scss/pages/clase-28/38-sortable-items.scss  -----  *
+    *  -----------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('sort-items', 44rem);
+
+.sort-items__label {
+    margin: 1.25rem 0 0.75rem;
+    font-size: 1.05rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.sort-items__list {
+    width: min(100%, 28rem);
+    margin: 0 0 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.sort-items__item {
+    margin: 0 0 0.5rem;
+    padding: 0.7rem 0.85rem;
+    cursor: grab;
+
+    &.ui-state-disabled {
+        cursor: not-allowed;
+    }
+}

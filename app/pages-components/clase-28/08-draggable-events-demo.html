@@ -1,0 +1,33 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------  *
+    *  -----  08-draggable-events-demo.html  --  /src/pages-components/clase-28/08-draggable-events-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drag-events">
+
+        <h3 class="drag-events__title">Eventos</h3>
+
+        <p class="drag-events__hint">start se dispara al empezar el arrastre, drag mientras se mueve y stop al soltar.</p>
+
+        <div class="drag-events__stage">
+                    <div id="draggable" class="drag-events__box ui-widget ui-widget-content">
+                        <p>Arrástrame para disparar la cadena de eventos.</p>
+                        <ul class="drag-events__list ui-helper-reset">
+                            <li id="event-start" class="drag-events__item ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span><code>start</code> invocado <span class="count">0</span> veces</li>
+                            <li id="event-drag" class="drag-events__item ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrow-4"></span><code>drag</code> invocado <span class="count">0</span> veces</li>
+                            <li id="event-stop" class="drag-events__item ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span><code>stop</code> invocado <span class="count">0</span> veces</li>
+                        </ul>
+                    </div>
+        </div>
+
+        <div class="drag-events__note">
+            <p class="drag-events__note-text">Arrastrar la caja y ver cómo sube cada contador.</p>
+        </div>
+
+    </div>
+
+</div>

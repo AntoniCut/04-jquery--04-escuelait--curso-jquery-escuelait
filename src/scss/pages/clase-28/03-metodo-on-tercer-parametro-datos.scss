@@ -1,0 +1,39 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  03-metodo-on-tercer-parametro-datos.scss  --  /src/scss/pages/clase-28/03-metodo-on-tercer-parametro-datos.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('clone-data', 36rem);
+
+.clone-data__panel {
+    margin: 0 0 1rem;
+    padding: 1rem 1.05rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+
+    &--target {
+        min-height: 4.75rem;
+
+        &:empty::before {
+            content: "El clon aparece aquí";
+            color: var(--muted);
+        }
+    }
+}
+
+.clone-data__text {
+    margin: 0;
+    min-height: 1.5rem;
+    cursor: pointer;
+}
+
+.clone-data__button {
+    @include c28.button;
+    margin: 0 0 1rem;
+}

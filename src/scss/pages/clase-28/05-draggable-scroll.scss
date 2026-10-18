@@ -1,0 +1,24 @@
+/*
+    *  ---------------------------------------------------------------------------------------------  *
+    *  -----  05-draggable-scroll.scss  --  /src/scss/pages/clase-28/05-draggable-scroll.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-scroll', 78rem);
+
+.drag-scroll__box {
+    width: min(100%, 14rem);
+    min-height: 8rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}
+
+.drag-scroll__spacer {
+    clear: both;
+    height: 40rem;
+}

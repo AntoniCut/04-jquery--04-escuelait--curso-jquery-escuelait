@@ -1,0 +1,19 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  07-draggable-cursor-style.scss  --  /src/scss/pages/clase-28/07-draggable-cursor-style.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-cursor', 36rem);
+
+.drag-cursor__box {
+    width: min(100%, 12.5rem);
+    min-height: 8.75rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}

@@ -1,0 +1,26 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  12-draggable-snap-to.scss  --  /src/scss/pages/clase-28/12-draggable-snap-to.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-snap', 56rem);
+
+.drag-snap__box {
+    width: min(100%, 16rem);
+    min-height: 6.5rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}
+
+.drag-snap__target {
+    clear: both;
+    min-height: 9rem;
+    margin-bottom: 1rem;
+    padding: 0.85rem;
+}

@@ -1,0 +1,36 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  13-draggable-visual-feedback.scss  --  /src/scss/pages/clase-28/13-draggable-visual-feedback.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('drag-feedback', 48rem);
+
+.drag-feedback__label {
+    clear: both;
+    margin: 1.25rem 0 0.75rem;
+    font-size: 1.05rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.drag-feedback__box {
+    width: min(100%, 12rem);
+    min-height: 7.5rem;
+    padding: 0.85rem;
+    float: left;
+    margin: 0 0.75rem 0.75rem 0;
+}
+
+.drag-feedback__set {
+    clear: both;
+    float: left;
+    width: 100%;
+    min-height: 8rem;
+}

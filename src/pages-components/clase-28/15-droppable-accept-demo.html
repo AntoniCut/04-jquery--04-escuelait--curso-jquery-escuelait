@@ -1,0 +1,34 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------  *
+    *  -----  15-droppable-accept-demo.html  --  /src/pages-components/clase-28/15-droppable-accept-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drop-accept">
+
+        <h3 class="drop-accept__title">Aceptar</h3>
+
+        <p class="drop-accept__hint">accept indica qué elemento admite el destino. El otro se arrastra, pero al soltarlo no cuenta.</p>
+
+        <div class="drop-accept__stage">
+                    <div id="draggable-nonvalid" class="drop-accept__drag ui-widget-content">
+                        <p>Puedo arrastrarme, pero no me acepta</p>
+                    </div>
+                    <div id="draggable" class="drop-accept__drag ui-widget-content">
+                        <p>Arrástrame hasta el destino</p>
+                    </div>
+                    <div id="droppable" class="drop-accept__drop ui-widget-header">
+                        <p><code>accept: "#draggable"</code></p>
+                    </div>
+        </div>
+
+        <div class="drop-accept__note">
+            <p class="drop-accept__note-text">Soltar la caja válida y ver que la otra no marca el destino.</p>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------------------------  *
+    *  -----  13-draggable-visual-feedback-demo.html  --  /src/pages-components/clase-28/13-draggable-visual-feedback-demo.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="drag-feedback">
+
+        <h3 class="drag-feedback__title">Respuesta visual</h3>
+
+        <p class="drag-feedback__hint">helper puede ser el original, un clon o una función. opacity controla la transparencia. stack deja encima el último elemento soltado.</p>
+
+        <div class="drag-feedback__stage">
+                    <h4 class="drag-feedback__label">Con helper</h4>
+                    <div id="draggable" class="drag-feedback__box ui-widget-content">
+                        <p>Original</p>
+                    </div>
+                    <div id="draggable2" class="drag-feedback__box ui-widget-content">
+                        <p>Clon semitransparente</p>
+                    </div>
+                    <div id="draggable3" class="drag-feedback__box ui-widget-content">
+                        <p>Helper propio, junto con cursorAt</p>
+                    </div>
+                    <h4 class="drag-feedback__label">Apilados</h4>
+                    <div id="set" class="drag-feedback__set">
+                        <div class="drag-feedback__box ui-widget-content">
+                            <p>Somos arrastrables…</p>
+                        </div>
+                        <div class="drag-feedback__box ui-widget-content">
+                            <p>…y el z-index cambia solo…</p>
+                        </div>
+                        <div class="drag-feedback__box ui-widget-content">
+                            <p>…con la opción stack.</p>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="drag-feedback__note">
+            <p class="drag-feedback__note-text">Comparar el original, el clon, el helper propio y el grupo apilado.</p>
+        </div>
+
+    </div>
+
+</div>

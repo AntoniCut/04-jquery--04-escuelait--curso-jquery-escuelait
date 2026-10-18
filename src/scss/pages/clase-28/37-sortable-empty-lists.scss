@@ -1,0 +1,42 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  37-sortable-empty-lists.scss  --  /src/scss/pages/clase-28/37-sortable-empty-lists.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('sort-empty', 44rem);
+
+.sort-empty__board {
+    display: grid;
+    gap: 0.75rem;
+
+    @include c28.tablet {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+    }
+}
+
+.sort-empty__list {
+    min-height: 16rem;
+    margin: 0;
+    padding: 0.65rem 0.65rem 0.15rem;
+    list-style: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+
+    &:empty::before {
+        content: "Lista vacía";
+        color: var(--muted);
+    }
+}
+
+.sort-empty__item {
+    margin: 0 0 0.5rem;
+    padding: 0.65rem 0.75rem;
+    cursor: grab;
+}

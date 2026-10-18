@@ -1,0 +1,35 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------------  *
+    *  -----  22-resizable-constrain-area.scss  --  /src/scss/pages/clase-28/22-resizable-constrain-area.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-area', 40rem);
+
+.resize-area__frame {
+    width: min(100%, 22rem);
+    height: 22rem;
+    padding: 0.85rem;
+}
+
+.resize-area__heading {
+    margin: 0 0 0.75rem;
+    text-align: center;
+}
+
+.resize-area__box {
+    width: min(100%, 9rem);
+    height: 9rem;
+    padding: 0.85rem;
+    color: var(--ink);
+    background: #d6ebf8;
+    border-color: var(--accent);
+
+    .resize-area__heading {
+        margin: 0;
+    }
+}

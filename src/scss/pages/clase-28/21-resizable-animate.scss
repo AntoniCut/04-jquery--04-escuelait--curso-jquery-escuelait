@@ -1,0 +1,31 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  21-resizable-animate.scss  --  /src/scss/pages/clase-28/21-resizable-animate.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-28-common' as c28;
+
+
+@include c28.frame('resize-animate', 32rem);
+
+.resize-animate__box {
+    width: min(100%, 12rem);
+    height: 12rem;
+    padding: 0.85rem;
+}
+
+.resize-animate__heading {
+    margin: 0;
+    text-align: center;
+}
+
+.ui-resizable-helper {
+    border: 2px dotted var(--accent);
+}
+
+.ui-resizable-ghost {
+    border: 1px dotted var(--accent);
+    opacity: 0.55;
+}
