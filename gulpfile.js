@@ -61,10 +61,15 @@ const paths = {
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'keycode.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'position.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'unique-id.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'disable-selection.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'focusable.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'tabbable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'mouse.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'draggable.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'droppable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'sortable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'resizable.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'selectable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'button.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'dialog.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'datepicker.js'),
@@ -588,7 +593,7 @@ export const copyVendorJQuery = createCopyTask('copyVendorJQuery', {
 });
 
 
-/** Copia únicamente los módulos de jQuery UI usados por draggable y tooltip a app/libs/jquery-module/jquery-ui/. */
+/** Copia los módulos de jQuery UI que carga el selector de temas y la clase 28. */
 export const copyVendorJQueryUI = createCopyTask('copyVendorJQueryUI', {
     glob: paths.vendor.jqueryUIUi,
     checkPath: paths.vendor.jqueryUIUiDir,
