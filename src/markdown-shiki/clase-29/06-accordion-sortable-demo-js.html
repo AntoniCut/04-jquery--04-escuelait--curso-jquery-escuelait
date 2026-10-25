@@ -1,0 +1,55 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  06-accordion-sortable.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `acordeón que también se ordena` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $acordeon</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#accordion"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alSoltar(evento, ui)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Quita el foco de la cabecera y actualiza el acordeón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Fin del arrastre.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQueryUI.SortableUIParams}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Panel que se ha soltado.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alSoltar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  el evento de soltar no navega  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  cerrar el estado de foco de la cabecera arrastrada  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">children</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"h3"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">triggerHandler</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"focusout"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  reconstruir los paneles en el orden nuevo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $acordeon</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">accordion</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"refresh"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  abrir paneles por la cabecera de cada grupo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $acordeon</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">accordion</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        header:</span><span style="color:#CE9178"> "> div > h3"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ordenar los grupos en vertical por la cabecera  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $acordeon</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">sortable</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        axis:</span><span style="color:#CE9178"> "y"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        handle:</span><span style="color:#CE9178"> "h3"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        stop:</span><span style="color:#9CDCFE"> alSoltar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

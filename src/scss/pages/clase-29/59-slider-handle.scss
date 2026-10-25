@@ -1,0 +1,26 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  59-slider-handle.scss  --  /src/scss/pages/clase-29/59-slider-handle.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('slider-handle', 28rem);
+
+#slider {
+    margin: 1.4rem 1.4rem 1rem;
+}
+
+#custom-handle {
+    width: 2.4rem;
+    height: 1.5rem;
+    top: 50%;
+    margin-top: -0.75rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+}
+

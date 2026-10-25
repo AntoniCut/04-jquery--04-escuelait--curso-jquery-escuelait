@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  31-datepicker-button-bar.scss  --  /src/scss/pages/clase-29/31-datepicker-button-bar.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-button-bar', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

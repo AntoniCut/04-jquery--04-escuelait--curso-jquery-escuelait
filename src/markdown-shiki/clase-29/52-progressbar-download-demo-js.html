@@ -1,0 +1,135 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  52-progressbar-download.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `ventana de la descarga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $dialogo</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#dialog"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLDivElement>}</span><span style="color:#6A9955"> - `barra de la descarga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $barra</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#progressbar"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLParagraphElement>}</span><span style="color:#6A9955"> - `estado de la descarga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $estado</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#estado"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLButtonElement>}</span><span style="color:#6A9955"> - `botón que inicia la descarga` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $descargar</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#descargar"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `identificador del avance` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> temporizador</span><span style="color:#D4D4D4"> = </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `avanzar()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sube la barra y se detiene al llegar al final.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> avanzar</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `valor actual` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> actual</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">Number</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$barra</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">progressbar</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">)) || </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `siguiente valor` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> siguiente</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">Math</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">min</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">actual</span><span style="color:#D4D4D4"> + </span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  actualizar la barra  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $barra</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">progressbar</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">siguiente</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si la descarga ha terminado, dejar el texto final  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">siguiente</span><span style="color:#D4D4D4"> >= </span><span style="color:#B5CEA8">100</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  indicar que la descarga está completa  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Descarga completa."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no programar otro avance  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  programar el siguiente avance  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        temporizador</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">avanzar</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">80</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alCerrar()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Detiene el avance y deja la barra en carga.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alCerrar</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  detener el avance  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">temporizador</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  volver a la carga para la próxima apertura  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $barra</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">progressbar</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">, </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  recuperar el texto de carga  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Preparando…"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alDescargar(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Reinicia la barra y abre la ventana.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en iniciar descarga.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alDescargar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no salir de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  detener un avance anterior  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">temporizador</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  mostrar la carga antes de conocer el avance  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $barra</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">progressbar</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">, </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  indicar que la descarga se está preparando  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Preparando…"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  abrir la ventana  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $dialogo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">dialog</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"open"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  dejar la carga un momento y luego empezar a avanzar  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        temporizador</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  indicar que la descarga está en curso  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Descargando…"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  dar el primer paso  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            avanzar</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">2000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  preparar la barra en carga  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $barra</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">progressbar</span><span style="color:#D4D4D4">({ </span><span style="color:#9CDCFE">value:</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  preparar la ventana cerrada  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $dialogo</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">dialog</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        autoOpen:</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        modal:</span><span style="color:#569CD6"> true</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        width:</span><span style="color:#B5CEA8"> 360</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        close:</span><span style="color:#9CDCFE"> alCerrar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  iniciar la descarga al pulsar el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $descargar</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alDescargar</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

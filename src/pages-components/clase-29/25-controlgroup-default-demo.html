@@ -1,0 +1,64 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+    *  -----  25-controlgroup-default-demo.html  --  /src/pages-components/clase-29/25-controlgroup-default-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="controlgroup-default">
+
+        <h3 class="controlgroup-default__title">Funcionalidad por defecto</h3>
+
+        <p class="controlgroup-default__hint">El mismo formulario en horizontal y en vertical.</p>
+
+        <div class="controlgroup-default__stage">
+            <h2>Horizontal</h2>
+            <div class="controlgroup">
+            <label for="h-tipo" class="ui-controlgroup-label">Coche</label>
+            <select id="h-tipo">
+            <option>Compacto</option>
+            <option>Mediano</option>
+            <option>Grande</option>
+            <option>SUV</option>
+            <option>Lujo</option>
+            <option>Furgoneta</option>
+            </select>
+            <label for="h-auto">Automático</label>
+            <input type="checkbox" id="h-auto">
+            <label for="h-seguro">Seguro</label>
+            <input type="checkbox" id="h-seguro">
+            <label for="h-cantidad" class="ui-controlgroup-label">Coches</label>
+            <input id="h-cantidad" class="ui-spinner-input" value="1">
+            <button type="button" id="h-reservar">Reservar</button>
+            </div>
+            <h2>Vertical</h2>
+            <div class="controlgroup-vertical">
+            <label for="v-tipo" class="ui-controlgroup-label">Coche</label>
+            <select id="v-tipo">
+            <option>Compacto</option>
+            <option>Mediano</option>
+            <option>Grande</option>
+            <option>SUV</option>
+            <option>Lujo</option>
+            <option>Furgoneta</option>
+            </select>
+            <label for="v-auto">Automático</label>
+            <input type="checkbox" id="v-auto">
+            <label for="v-seguro">Seguro</label>
+            <input type="checkbox" id="v-seguro">
+            <label for="v-cantidad" class="ui-controlgroup-label">Coches</label>
+            <input id="v-cantidad" class="ui-spinner-input" value="1">
+            <button type="button" id="v-reservar">Reservar</button>
+            </div>
+            <p id="resultado" class="nota">Pulsa Reservar.</p>
+        </div>
+
+        <div class="controlgroup-default__note">
+            <p class="controlgroup-default__note-text">El mismo formulario en horizontal y en vertical. &lt;code&gt;direction: "vertical"&lt;/code&gt; apila los controles.</p>
+        </div>
+
+    </div>
+
+</div>

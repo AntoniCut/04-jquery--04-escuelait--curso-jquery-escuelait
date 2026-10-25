@@ -1,0 +1,22 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  22-checkboxradio-no-icons.scss  --  /src/scss/pages/clase-29/22-checkboxradio-no-icons.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('checkboxradio-no-icons', 28rem);
+
+.escenario fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.escenario label {
+    margin: 0 0.45rem 0.7rem 0;
+}
+

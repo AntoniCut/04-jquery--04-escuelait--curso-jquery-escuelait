@@ -1,0 +1,21 @@
+/*
+    *  -------------------------------------------------------------------------------  *
+    *  -----  76-tabs-ajax.scss  --  /src/scss/pages/clase-29/76-tabs-ajax.scss  -----  *
+    *  -------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('tabs-ajax', 32rem);
+
+#tabs {
+    max-width: 40rem;
+}
+
+#tabs .ui-tabs-panel,
+#panel-local {
+    min-height: 8rem;
+}
+

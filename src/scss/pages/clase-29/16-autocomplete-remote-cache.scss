@@ -1,0 +1,16 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  16-autocomplete-remote-cache.scss  --  /src/scss/pages/clase-29/16-autocomplete-remote-cache.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('autocomplete-remote-cache', 26rem);
+
+.campo input {
+    width: min(100%, 22rem);
+}
+

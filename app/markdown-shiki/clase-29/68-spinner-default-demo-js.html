@@ -1,0 +1,169 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  68-spinner-default.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `control numérico` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $spinner</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#spinner"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLButtonElement>}</span><span style="color:#6A9955"> - `botones de la demo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $botones</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">".acciones button"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLParagraphElement>}</span><span style="color:#6A9955"> - `valor anunciado` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $resultado</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#resultado"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alAlternar(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Activa o desactiva el control.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alAlternar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no salir de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si está desactivado, activarlo  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"option"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"disabled"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  activar el control  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"enable"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  anunciar que está activo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Control activo."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no seguir  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  desactivar el control  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"disable"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anunciar que está desactivado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Control desactivado."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alWidget(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Quita el widget o lo vuelve a crear.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alWidget</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no salir de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si el widget existe, quitarlo  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"instance"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  volver al campo de texto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"destroy"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  anunciar que el widget se ha quitado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Widget quitado."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no volver a crearlo  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  crear de nuevo el control  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anunciar que el widget vuelve a existir  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Widget creado."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alLeer(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Escribe el valor actual.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alLeer</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no salir de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si el widget no existe, avisar  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"instance"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  indicar que no hay control  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No hay widget."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no leer un valor  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  publicar el valor  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">`Valor: </span><span style="color:#569CD6">${</span><span style="color:#9CDCFE">$spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">)</span><span style="color:#569CD6">}</span><span style="color:#CE9178">.`</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alFijar(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Pone el valor en 5.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alFijar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no salir de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si el widget no existe, avisar  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">$spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"instance"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  indicar que no hay control  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"No hay widget."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no fijar el valor  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  fijar el valor en 5  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"value"</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">5</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  publicar el valor fijado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $resultado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Valor fijado en 5."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  crear el control numérico  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $spinner</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">spinner</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  aplicar el tema a los botones  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $botones</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">button</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  activar o desactivar el control  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#alternar"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alAlternar</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  quitar o crear el widget  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#widget"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alWidget</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  leer el valor  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#leer"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alLeer</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  fijar el valor en 5  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    $</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#fijar"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alFijar</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

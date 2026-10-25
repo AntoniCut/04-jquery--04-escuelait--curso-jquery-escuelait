@@ -1,0 +1,130 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  85-tooltip-forms.scss  --  /src/scss/pages/clase-29/85-tooltip-forms.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-29-common.scss  --  /src/scss/pages/clase-29/_clase-29-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ------------------------------------------------------------------  *
+    *  -----  _mixins.scss  --  /src/styles/scss/base/_mixins.scss  -----  *
+    *  ------------------------------------------------------------------  *
+*/
+/*
+    *  --------------------------------------------------------------------------  *
+    *  -----  _variables.scss  --  /src/styles/scss/base/_variables.scss  -------  *
+    *  --------------------------------------------------------------------------  *
+ */
+.main__demo {
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d7dee7;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0769ad;
+  --accent-press: #054e82;
+  --tint: #f3f8fc;
+  --header: #e7f3fb;
+}
+
+[data-component-page=description] {
+  min-height: 28rem;
+}
+@media (min-width: 768px) {
+  [data-component-page=description] {
+    min-height: 24rem;
+  }
+}
+
+[data-component-page=demo],
+.tooltip-forms {
+  min-height: 28rem;
+}
+
+.tooltip-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .tooltip-forms {
+    gap: 1.6rem;
+  }
+}
+
+.tooltip-forms__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #1c2430;
+}
+@media (min-width: 768px) {
+  .tooltip-forms__title {
+    font-size: 1.8rem;
+  }
+}
+
+.tooltip-forms__hint {
+  margin: 0;
+  max-width: 65ch;
+  color: #5c6775;
+  line-height: 1.55;
+}
+.tooltip-forms__hint code {
+  padding: 0.08em 0.35em;
+  font-size: 0.92em;
+  color: #1c2430;
+  background: #e7eef5;
+  border-radius: 0.3rem;
+}
+
+.tooltip-forms__stage {
+  display: flow-root;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+}
+@media (min-width: 480px) {
+  .tooltip-forms__stage {
+    padding: 1.25rem;
+  }
+}
+.tooltip-forms__stage p {
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.tooltip-forms__note {
+  max-width: 65ch;
+}
+
+.tooltip-forms__note-text {
+  margin: 0;
+  color: #5c6775;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip-forms__button {
+    transition: none;
+  }
+}
+.campo {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 18rem;
+  margin: 0 0 0.85rem;
+}
+
+.campo input {
+  width: 100%;
+}/*# sourceMappingURL=85-tooltip-forms.css.map */

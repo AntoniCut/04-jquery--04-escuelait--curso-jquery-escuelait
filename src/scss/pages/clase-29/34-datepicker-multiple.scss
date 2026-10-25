@@ -1,0 +1,16 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  34-datepicker-multiple.scss  --  /src/scss/pages/clase-29/34-datepicker-multiple.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-multiple', 42rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

@@ -1,0 +1,133 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  12-autocomplete-multiple.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `etiquetas de programación` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> etiquetas</span><span style="color:#D4D4D4"> = [</span></span>
+<span class="line"><span style="color:#CE9178">        "ActionScript"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "AppleScript"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Asp"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "BASIC"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "C"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "C++"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Clojure"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "COBOL"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "ColdFusion"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Erlang"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Fortran"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Groovy"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Haskell"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Java"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "JavaScript"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Lisp"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Perl"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "PHP"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Python"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Ruby"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Scala"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Scheme"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `campo de varias etiquetas` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $etiquetas</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#etiquetas"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `partir(valor)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Separa las etiquetas escritas por comas.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> valor</span><span style="color:#6A9955"> - Texto del campo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string[]}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> partir</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">valor</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  separar por comas y espacios  -----</span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> valor</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">split</span><span style="color:#D4D4D4">(</span><span style="color:#D16969">/,\s</span><span style="color:#D7BA7D">*</span><span style="color:#D16969">/</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alBuscar(peticion, responder)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Filtra usando solo el fragmento posterior a la última coma.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ term: string }}</span><span style="color:#9CDCFE"> peticion</span><span style="color:#6A9955"> - Texto del campo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {(coincidencias: string[]) => void}</span><span style="color:#9CDCFE"> responder</span><span style="color:#6A9955"> - Recibe las coincidencias.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alBuscar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">responder</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `fragmento que se está escribiendo` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> termino</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">partir</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">term</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">pop</span><span style="color:#D4D4D4">() || </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `fragmento en minúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> filtro</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">termino</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si el fragmento está vacío, no sugerir  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">filtro</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  vaciar la lista  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            responder</span><span style="color:#D4D4D4">([]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no seguir filtrando  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  sugerir etiquetas que contienen el fragmento  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">        responder</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">etiquetas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">etiqueta</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> etiqueta</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">().</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">filtro</span><span style="color:#D4D4D4">)));</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alElegir(evento, ui)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sustituye el último fragmento por la etiqueta elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Elección en la lista.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQueryUI.AutocompleteUIParams}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Etiqueta elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {boolean}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alElegir</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no dejar el valor por defecto del autocompletado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `etiquetas ya escritas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> partes</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">partir</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$etiquetas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">()));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  quitar el fragmento incompleto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">pop</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  añadir la etiqueta elegida  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  dejar una coma lista para la siguiente  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  volver a componer el campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $etiquetas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">", "</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  indicar que el valor ya está escrito  -----</span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  completar una etiqueta distinta tras cada coma  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $etiquetas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        source:</span><span style="color:#9CDCFE"> alBuscar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#DCDCAA">        focus</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        select:</span><span style="color:#9CDCFE"> alElegir</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

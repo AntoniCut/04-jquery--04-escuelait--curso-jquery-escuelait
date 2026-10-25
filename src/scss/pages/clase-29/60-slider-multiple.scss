@@ -1,0 +1,37 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  60-slider-multiple.scss  --  /src/scss/pages/clase-29/60-slider-multiple.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('slider-multiple', 36rem);
+
+.eje {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.85rem 0 0.35rem;
+}
+
+#volumen,
+#brillo,
+#zoom {
+    margin: 0 0.6rem 0.4rem;
+}
+
+.ecualizador {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1.1rem;
+    margin: 0.35rem 0.4rem 0.15rem;
+}
+
+.ecualizador > span {
+    width: 0.8em;
+    height: 7.5rem;
+}
+

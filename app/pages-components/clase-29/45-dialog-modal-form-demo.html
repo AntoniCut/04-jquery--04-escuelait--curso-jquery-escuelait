@@ -1,0 +1,40 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  45-dialog-modal-form-demo.html  --  /src/pages-components/clase-29/45-dialog-modal-form-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="dialog-modal-form">
+
+        <h3 class="dialog-modal-form__title">Formulario modal</h3>
+
+        <p class="dialog-modal-form__hint">El formulario vive dentro de la ventana.</p>
+
+        <div class="dialog-modal-form__stage">
+            <button type="button" id="abrir">Crear cuenta</button>
+            <p id="resultado" class="nota">Todavía no hay una cuenta.</p>
+            <div id="dialog" title="Nueva cuenta">
+            <form id="cuenta">
+            <p class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name">
+            </p>
+            <p class="campo">
+            <label for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" autocomplete="email">
+            </p>
+            <p id="aviso" class="nota"></p>
+            </form>
+            </div>
+        </div>
+
+        <div class="dialog-modal-form__note">
+            <p class="dialog-modal-form__note-text">El formulario vive dentro de la ventana. Si falta el nombre o el correo, el aviso queda en la propia ventana.</p>
+        </div>
+
+    </div>
+
+</div>

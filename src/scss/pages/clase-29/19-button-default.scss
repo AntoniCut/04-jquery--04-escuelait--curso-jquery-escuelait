@@ -1,0 +1,28 @@
+/*
+    *  -----------------------------------------------------------------------------------------  *
+    *  -----  19-button-default.scss  --  /src/scss/pages/clase-29/19-button-default.scss  -----  *
+    *  -----------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('button-default', 20rem);
+
+.escenario h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+}
+
+.escenario section + section {
+    margin-top: 1.25rem;
+}
+
+.escenario .ui-button,
+.escenario button,
+.escenario input,
+.escenario a.ui-button {
+    margin: 0 0.5rem 0.5rem 0;
+}
+

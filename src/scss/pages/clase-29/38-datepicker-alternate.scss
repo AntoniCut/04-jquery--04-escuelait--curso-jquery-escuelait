@@ -1,0 +1,16 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  38-datepicker-alternate.scss  --  /src/scss/pages/clase-29/38-datepicker-alternate.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-alternate', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

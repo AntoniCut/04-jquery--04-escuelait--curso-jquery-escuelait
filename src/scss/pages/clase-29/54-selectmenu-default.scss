@@ -1,0 +1,27 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  54-selectmenu-default.scss  --  /src/scss/pages/clase-29/54-selectmenu-default.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('selectmenu-default', 34rem);
+
+.campo {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0 0 0.9rem;
+    max-width: 20rem;
+}
+
+.campo label {
+    font-weight: 650;
+}
+
+.lista-larga {
+    max-height: 12rem;
+}
+

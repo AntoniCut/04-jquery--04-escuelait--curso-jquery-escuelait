@@ -1,0 +1,23 @@
+/*
+    *  -------------------------------------------------------------------------------------  *
+    *  -----  73-spinner-time.scss  --  /src/scss/pages/clase-29/73-spinner-time.scss  -----  *
+    *  -------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('spinner-time', 28rem);
+
+.campo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.campo input {
+    width: 4.5rem;
+}
+

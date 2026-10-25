@@ -1,0 +1,30 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  68-spinner-default.scss  --  /src/scss/pages/clase-29/68-spinner-default.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('spinner-default', 28rem);
+
+.campo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 0.85rem;
+}
+
+.campo input {
+    width: 6rem;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+

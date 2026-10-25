@@ -1,0 +1,17 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  66-slider-vertical-range.scss  --  /src/scss/pages/clase-29/66-slider-vertical-range.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('slider-vertical-range', 36rem);
+
+#slider {
+    height: 12rem;
+    margin: 0.5rem 0 0 0.6rem;
+}
+

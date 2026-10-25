@@ -1,0 +1,19 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  81-tooltip-default.scss  --  /src/scss/pages/clase-29/81-tooltip-default.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('tooltip-default', 28rem);
+
+.campo {
+    display: grid;
+    gap: 0.35rem;
+    max-width: 12rem;
+    margin-top: 0.85rem;
+}
+

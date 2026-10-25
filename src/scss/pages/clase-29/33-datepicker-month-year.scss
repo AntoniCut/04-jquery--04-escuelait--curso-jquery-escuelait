@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  33-datepicker-month-year.scss  --  /src/scss/pages/clase-29/33-datepicker-month-year.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-month-year', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  83-tooltip-content.scss  --  /src/scss/pages/clase-29/83-tooltip-content.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('tooltip-content', 28rem);
+
+.termino {
+    margin-right: 1rem;
+}
+

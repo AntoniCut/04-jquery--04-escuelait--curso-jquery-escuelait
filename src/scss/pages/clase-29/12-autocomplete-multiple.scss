@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  12-autocomplete-multiple.scss  --  /src/scss/pages/clase-29/12-autocomplete-multiple.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('autocomplete-multiple', 26rem);
+
+.campo input {
+    width: min(100%, 22rem);
+}
+

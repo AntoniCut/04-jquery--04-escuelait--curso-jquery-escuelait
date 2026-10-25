@@ -1,0 +1,27 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  51-progressbar-label.scss  --  /src/scss/pages/clase-29/51-progressbar-label.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('progressbar-label', 20rem);
+
+#progressbar {
+    position: relative;
+    height: 1.8rem;
+}
+
+.progress-label {
+    position: absolute;
+    left: 50%;
+    top: 0.2rem;
+    margin: 0;
+    font-weight: 650;
+    text-shadow: 1px 1px 0 #fff;
+    transform: translateX(-50%);
+}
+

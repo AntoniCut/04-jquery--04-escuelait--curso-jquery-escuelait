@@ -1,0 +1,299 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  10-autocomplete-combobox.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSelectElement}</span><span style="color:#6A9955"> - `lista original` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> select</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSelectElement}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getElementById</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"lenguaje"</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLLabelElement}</span><span style="color:#6A9955"> - `etiqueta del campo` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> etiqueta</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLLabelElement}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">querySelector</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"label[for='lenguaje']"</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement}</span><span style="color:#6A9955"> - `botón que enseña el select` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> mostrarSelect</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">getElementById</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mostrar-select"</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLSpanElement}</span><span style="color:#6A9955"> - `contenedor del campo y del botón` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> envoltorio</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"span"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el contenedor de la lista combinada  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    envoltorio</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"custom-combobox"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  colocar el contenedor detrás del select  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    select</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">insertAdjacentElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"afterend"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">envoltorio</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  ocultar el select nativo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    select</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">hidden</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLInputElement}</span><span style="color:#6A9955"> - `campo donde se escribe` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> entrada</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"input"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  usar un campo de texto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"text"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el campo para la etiqueta  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"lenguaje-texto"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  unir el campo con el botón por la izquierda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">className</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  dejar el título libre para el aviso de error  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  colocar el campo en el contenedor  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    envoltorio</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">entrada</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  apuntar la etiqueta al campo visible  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    etiqueta</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">htmlFor</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">id</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLButtonElement}</span><span style="color:#6A9955"> - `botón que abre toda la lista` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> boton</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">document</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">createElement</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"button"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  evitar que el botón envíe un formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">type</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"button"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  no detener el tabulador en el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">tabIndex</span><span style="color:#D4D4D4"> = -</span><span style="color:#B5CEA8">1</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  describir el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Mostrar todos"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  dejar el texto para el lector de pantalla  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">textContent</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Mostrar todos"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  colocar el botón junto al campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    envoltorio</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">boton</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `campo donde se escribe` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $entrada</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">entrada</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLButtonElement>}</span><span style="color:#6A9955"> - `botón de la lista` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $boton</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">boton</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLButtonElement>}</span><span style="color:#6A9955"> - `botón que enseña el select` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $mostrarSelect</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">mostrarSelect</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `si la lista ya estaba abierta al pulsar el botón` */</span></span>
+<span class="line"><span style="color:#569CD6">    let</span><span style="color:#9CDCFE"> listaAbierta</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `opciones []`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - `opciones del select`</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> opcionesLista</span><span style="color:#D4D4D4"> = [...</span><span style="color:#9CDCFE">select</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">options</span><span style="color:#D4D4D4">].</span><span style="color:#DCDCAA">map</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">opcion</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> ({</span></span>
+<span class="line"><span style="color:#9CDCFE">        label:</span><span style="color:#9CDCFE"> opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">text</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        value:</span><span style="color:#9CDCFE"> opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">text</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        option:</span><span style="color:#9CDCFE"> opcion</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    }));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alBuscar(peticion, responder)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Filtra las opciones por el texto escrito.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ term: string }}</span><span style="color:#9CDCFE"> peticion</span><span style="color:#6A9955"> - Texto escrito.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {(coincidencias: { label: string, value: string, option: HTMLOptionElement }[]) => void}</span><span style="color:#9CDCFE"> responder</span><span style="color:#6A9955"> - Recibe las coincidencias.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alBuscar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">responder</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `texto buscado en minúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> filtro</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">term</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  devolver las opciones con valor cuyo texto contiene lo escrito  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">        responder</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">opcionesLista</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">opcion</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">option</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">label</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">().</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">filtro</span><span style="color:#D4D4D4">)));</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alElegir(evento, ui)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Marca en el select la opción elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Elección en la lista.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ item: { option: HTMLOptionElement } }}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Opción elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alElegir</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  la elección ya queda escrita por el autocompletado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  escribir el nombre en el campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">option</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">text</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  marcar la opción en el select  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">option</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">selected</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alCambiar(evento, ui)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Vacía el campo si el texto no coincide con ninguna opción.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Salida del campo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ item?: { option: HTMLOptionElement } }}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Opción elegida, si la hay.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alCambiar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  el cambio no navega  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no corregir una opción elegida en la lista  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  conservar la elección  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `texto escrito en minúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> escrito</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `opción con el mismo texto` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> coincidencia</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">opcionesLista</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">opcion</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">option</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4"> &#x26;&#x26; </span><span style="color:#9CDCFE">opcion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">label</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">() === </span><span style="color:#9CDCFE">escrito</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  aceptar el texto que coincide sin distinguir mayúsculas  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">coincidencia</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  marcar esa opción en el select  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            coincidencia</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">option</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">selected</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  conservar el texto  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  quitar el texto que no existe  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  volver a la opción vacía  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        select</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  explicar el fallo en la ayuda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"Ese texto no coincide con ninguna opción"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  mostrar la ayuda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"open"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  cerrar la ayuda al cabo de un momento  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  ocultar la ayuda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"close"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  dejar el título libre  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            entrada</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">title</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">2500</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  filtrar las opciones y avisar si el texto no existe  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        delay:</span><span style="color:#B5CEA8"> 0</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        minLength:</span><span style="color:#B5CEA8"> 0</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        source:</span><span style="color:#9CDCFE"> alBuscar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        select:</span><span style="color:#9CDCFE"> alElegir</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        change:</span><span style="color:#9CDCFE"> alCambiar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  preparar la ayuda del campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        classes:</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#CE9178">            "ui-tooltip"</span><span style="color:#9CDCFE">:</span><span style="color:#CE9178"> "ui-state-highlight"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">        },</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  mostrar el botón con el icono de desplegar  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $boton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">button</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        icon:</span><span style="color:#CE9178"> "ui-icon-triangle-1-s"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        showLabel:</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  unir el botón con el campo por la derecha  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">remove</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"ui-corner-all"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el botón de la lista  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    boton</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">classList</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">add</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"custom-combobox-toggle"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"ui-corner-right"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  mostrar la ayuda del botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $boton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alRecordar()`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Recuerda si la lista estaba abierta antes del clic.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alRecordar</span><span style="color:#D4D4D4"> = () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  guardar el estado de la lista  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        listaAbierta</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"widget"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">is</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">":visible"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alMostrar(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Abre la lista completa si estaba cerrada.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alMostrar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  el botón no envía el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  llevar el foco al campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">focus</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si ya estaba abierta, el foco la cierra  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">listaAbierta</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no volver a abrirla  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  mostrar todas las opciones  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"search"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  anotar si la lista está abierta  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $boton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"mousedown"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alRecordar</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  abrir la lista completa al pulsar el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $boton</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alMostrar</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alAlternarSelect(evento)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Muestra u oculta el select original.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery.TriggeredEvent}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Clic en el botón.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alAlternarSelect</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  el botón no envía el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  alternar la lista original  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        select</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">hidden</span><span style="color:#D4D4D4"> = !</span><span style="color:#9CDCFE">select</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">hidden</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  enseñar el select al pulsar el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $mostrarSelect</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"click"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">alAlternarSelect</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

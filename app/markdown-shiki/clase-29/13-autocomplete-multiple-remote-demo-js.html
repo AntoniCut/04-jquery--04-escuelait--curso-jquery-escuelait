@@ -1,0 +1,149 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  13-autocomplete-multiple-remote.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `ciudades para la búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> ciudades</span><span style="color:#D4D4D4"> = [</span></span>
+<span class="line"><span style="color:#CE9178">        "Madrid"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Barcelona"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Valencia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Sevilla"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Zaragoza"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Málaga"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Murcia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Palma"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Bilbao"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Alicante"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Córdoba"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Valladolid"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Vigo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Gijón"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Granada"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "A Coruña"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Vitoria"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Oviedo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Salamanca"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Santander"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Logroño"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Pamplona"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Donostia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Toledo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `campo de varias ciudades` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $ciudades</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#ciudades"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLParagraphElement>}</span><span style="color:#6A9955"> - `aviso de la búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $estado</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#estado"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `partir(valor)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Separa las ciudades escritas por comas.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string}</span><span style="color:#9CDCFE"> valor</span><span style="color:#6A9955"> - Texto del campo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {string[]}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> partir</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">valor</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  separar por comas y espacios  -----</span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#9CDCFE"> valor</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">split</span><span style="color:#D4D4D4">(</span><span style="color:#D16969">/,\s</span><span style="color:#D7BA7D">*</span><span style="color:#D16969">/</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alBuscar(peticion, responder)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Busca el último fragmento y responde tras una espera.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ term: string }}</span><span style="color:#9CDCFE"> peticion</span><span style="color:#6A9955"> - Texto del campo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {(coincidencias: string[]) => void}</span><span style="color:#9CDCFE"> responder</span><span style="color:#6A9955"> - Recibe las coincidencias.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alBuscar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">responder</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `fragmento que se está escribiendo` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> termino</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">partir</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">term</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">pop</span><span style="color:#D4D4D4">() || </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `fragmento en minúsculas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> filtro</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">termino</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si el fragmento está vacío, no buscar  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">filtro</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  vaciar la lista  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            responder</span><span style="color:#D4D4D4">([]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no lanzar la espera  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  avisar de que la búsqueda está en curso  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Buscando…"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  imitar la espera de un origen remoto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  publicar las ciudades que coinciden  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            responder</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">ciudades</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">ciudad</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> ciudad</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">().</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">filtro</span><span style="color:#D4D4D4">)));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  quitar el aviso de búsqueda  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Escribe otra ciudad tras la coma."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">300</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alElegir(evento, ui)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sustituye el último fragmento por la ciudad elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {Event}</span><span style="color:#9CDCFE"> evento</span><span style="color:#6A9955"> - Elección en la lista.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQueryUI.AutocompleteUIParams}</span><span style="color:#9CDCFE"> ui</span><span style="color:#6A9955"> - Ciudad elegida.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {boolean}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alElegir</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  no dejar el valor por defecto del autocompletado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `ciudades ya escritas` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> partes</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">partir</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$ciudades</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">()));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  quitar el fragmento incompleto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">pop</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  añadir la ciudad elegida  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">ui</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">item</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">value</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  dejar una coma lista para la siguiente  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">push</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  volver a componer el campo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $ciudades</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">val</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">partes</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">join</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">", "</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  indicar que el valor ya está escrito  -----</span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  completar ciudades separadas por comas  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $ciudades</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        minLength:</span><span style="color:#B5CEA8"> 2</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        source:</span><span style="color:#9CDCFE"> alBuscar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#DCDCAA">        focus</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        select:</span><span style="color:#9CDCFE"> alElegir</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

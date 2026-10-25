@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  26-controlgroup-split.scss  --  /src/scss/pages/clase-29/26-controlgroup-split.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('controlgroup-split', 28rem);
+
+#dividido {
+    display: inline-flex;
+}
+

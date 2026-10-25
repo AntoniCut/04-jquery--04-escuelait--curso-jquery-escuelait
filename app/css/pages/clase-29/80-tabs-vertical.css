@@ -1,0 +1,153 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  80-tabs-vertical.scss  --  /src/scss/pages/clase-29/80-tabs-vertical.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-29-common.scss  --  /src/scss/pages/clase-29/_clase-29-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ------------------------------------------------------------------  *
+    *  -----  _mixins.scss  --  /src/styles/scss/base/_mixins.scss  -----  *
+    *  ------------------------------------------------------------------  *
+*/
+/*
+    *  --------------------------------------------------------------------------  *
+    *  -----  _variables.scss  --  /src/styles/scss/base/_variables.scss  -------  *
+    *  --------------------------------------------------------------------------  *
+ */
+.main__demo {
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d7dee7;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0769ad;
+  --accent-press: #054e82;
+  --tint: #f3f8fc;
+  --header: #e7f3fb;
+}
+
+[data-component-page=description] {
+  min-height: 28rem;
+}
+@media (min-width: 768px) {
+  [data-component-page=description] {
+    min-height: 24rem;
+  }
+}
+
+[data-component-page=demo],
+.tabs-vertical {
+  min-height: 34rem;
+}
+
+.tabs-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .tabs-vertical {
+    gap: 1.6rem;
+  }
+}
+
+.tabs-vertical__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #1c2430;
+}
+@media (min-width: 768px) {
+  .tabs-vertical__title {
+    font-size: 1.8rem;
+  }
+}
+
+.tabs-vertical__hint {
+  margin: 0;
+  max-width: 65ch;
+  color: #5c6775;
+  line-height: 1.55;
+}
+.tabs-vertical__hint code {
+  padding: 0.08em 0.35em;
+  font-size: 0.92em;
+  color: #1c2430;
+  background: #e7eef5;
+  border-radius: 0.3rem;
+}
+
+.tabs-vertical__stage {
+  display: flow-root;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+}
+@media (min-width: 480px) {
+  .tabs-vertical__stage {
+    padding: 1.25rem;
+  }
+}
+.tabs-vertical__stage p {
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.tabs-vertical__note {
+  max-width: 65ch;
+}
+
+.tabs-vertical__note-text {
+  margin: 0;
+  color: #5c6775;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs-vertical__button {
+    transition: none;
+  }
+}
+.ui-tabs-vertical {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(0, 1fr);
+  max-width: 46rem;
+}
+
+.ui-tabs-vertical .ui-tabs-nav {
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0.35rem;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li {
+  display: block;
+  float: none;
+  clear: left;
+  width: 100%;
+  margin: 0 0 0.25rem;
+  border-bottom-width: 1px;
+  border-right-width: 0;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li a {
+  display: block;
+  float: none;
+  width: 100%;
+}
+
+.ui-tabs-vertical .ui-tabs-panel {
+  float: none;
+  width: auto;
+}/*# sourceMappingURL=80-tabs-vertical.css.map */

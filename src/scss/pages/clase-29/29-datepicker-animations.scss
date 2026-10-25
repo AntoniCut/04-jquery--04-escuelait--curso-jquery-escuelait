@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  29-datepicker-animations.scss  --  /src/scss/pages/clase-29/29-datepicker-animations.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-animations', 32rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

@@ -1,0 +1,16 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  14-autocomplete-remote.scss  --  /src/scss/pages/clase-29/14-autocomplete-remote.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('autocomplete-remote', 26rem);
+
+.campo input {
+    width: min(100%, 22rem);
+}
+

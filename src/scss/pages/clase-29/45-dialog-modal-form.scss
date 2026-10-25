@@ -1,0 +1,26 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  45-dialog-modal-form.scss  --  /src/scss/pages/clase-29/45-dialog-modal-form.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('dialog-modal-form', 22rem);
+
+.campo {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0 0 0.85rem;
+}
+
+.campo label {
+    font-weight: 650;
+}
+
+.campo input {
+    width: 100%;
+}
+

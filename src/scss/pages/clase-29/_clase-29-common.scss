@@ -1,0 +1,183 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-29-common.scss  --  /src/scss/pages/clase-29/_clase-29-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use '../../base/mixins' as mix;
+
+
+$ink: #1c2430;
+$muted: #5c6775;
+$line: #d7dee7;
+$paper: #f4f7fb;
+$card: #ffffff;
+$accent: #0769ad;
+$accent-press: #054e82;
+
+
+@mixin mobile {
+    @include mix.mobile {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+
+    @include mobile {
+        gap: 1.6rem;
+    }
+}
+
+
+@mixin title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 650;
+    color: $ink;
+
+    @include tablet {
+        font-size: 1.8rem;
+    }
+}
+
+
+@mixin hint {
+    margin: 0;
+    max-width: 65ch;
+    color: $muted;
+    line-height: 1.55;
+
+    code {
+        padding: 0.08em 0.35em;
+        font-size: 0.92em;
+        color: $ink;
+        background: #e7eef5;
+        border-radius: 0.3rem;
+    }
+}
+
+
+@mixin stage {
+    display: flow-root;
+    min-height: 14rem;
+    padding: 1rem;
+    background: $card;
+    border: 1px solid $line;
+    border-radius: 0.75rem;
+
+    @include mobile {
+        padding: 1.25rem;
+    }
+
+    p {
+        margin: 0;
+        line-height: 1.45;
+        overflow-wrap: break-word;
+    }
+}
+
+
+@mixin note {
+    max-width: 65ch;
+}
+
+
+@mixin note-text {
+    margin: 0;
+    color: $muted;
+    line-height: 1.55;
+}
+
+
+@mixin button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.7rem 1.15rem;
+    font: inherit;
+    font-weight: 650;
+    color: #ffffff;
+    background: $accent;
+    border: 0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+
+    &:hover {
+        background: $accent-press;
+    }
+}
+
+
+@mixin frame($block, $height) {
+    .main__demo {
+        --ink: #{$ink};
+        --muted: #{$muted};
+        --line: #{$line};
+        --paper: #{$paper};
+        --card: #{$card};
+        --accent: #{$accent};
+        --accent-press: #{$accent-press};
+        --tint: #f3f8fc;
+        --header: #e7f3fb;
+    }
+
+    [data-component-page="description"] {
+        min-height: 28rem;
+
+        @include tablet {
+            min-height: 24rem;
+        }
+    }
+
+    [data-component-page="demo"],
+    .#{$block} {
+        min-height: $height;
+    }
+
+    .#{$block} {
+        @include block;
+    }
+
+    .#{$block}__title {
+        @include title;
+    }
+
+    .#{$block}__hint {
+        @include hint;
+    }
+
+    .#{$block}__stage {
+        @include stage;
+    }
+
+    .#{$block}__note {
+        @include note;
+    }
+
+    .#{$block}__note-text {
+        @include note-text;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .#{$block}__button {
+            transition: none;
+        }
+    }
+}

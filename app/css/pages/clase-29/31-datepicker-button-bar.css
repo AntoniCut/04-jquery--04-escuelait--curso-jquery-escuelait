@@ -1,0 +1,123 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------  *
+    *  -----  31-datepicker-button-bar.scss  --  /src/scss/pages/clase-29/31-datepicker-button-bar.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-29-common.scss  --  /src/scss/pages/clase-29/_clase-29-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+/*
+    *  ------------------------------------------------------------------  *
+    *  -----  _mixins.scss  --  /src/styles/scss/base/_mixins.scss  -----  *
+    *  ------------------------------------------------------------------  *
+*/
+/*
+    *  --------------------------------------------------------------------------  *
+    *  -----  _variables.scss  --  /src/styles/scss/base/_variables.scss  -------  *
+    *  --------------------------------------------------------------------------  *
+ */
+.main__demo {
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --line: #d7dee7;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0769ad;
+  --accent-press: #054e82;
+  --tint: #f3f8fc;
+  --header: #e7f3fb;
+}
+
+[data-component-page=description] {
+  min-height: 28rem;
+}
+@media (min-width: 768px) {
+  [data-component-page=description] {
+    min-height: 24rem;
+  }
+}
+
+[data-component-page=demo],
+.datepicker-button-bar {
+  min-height: 20rem;
+}
+
+.datepicker-button-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  .datepicker-button-bar {
+    gap: 1.6rem;
+  }
+}
+
+.datepicker-button-bar__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: #1c2430;
+}
+@media (min-width: 768px) {
+  .datepicker-button-bar__title {
+    font-size: 1.8rem;
+  }
+}
+
+.datepicker-button-bar__hint {
+  margin: 0;
+  max-width: 65ch;
+  color: #5c6775;
+  line-height: 1.55;
+}
+.datepicker-button-bar__hint code {
+  padding: 0.08em 0.35em;
+  font-size: 0.92em;
+  color: #1c2430;
+  background: #e7eef5;
+  border-radius: 0.3rem;
+}
+
+.datepicker-button-bar__stage {
+  display: flow-root;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #d7dee7;
+  border-radius: 0.75rem;
+}
+@media (min-width: 480px) {
+  .datepicker-button-bar__stage {
+    padding: 1.25rem;
+  }
+}
+.datepicker-button-bar__stage p {
+  margin: 0;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.datepicker-button-bar__note {
+  max-width: 65ch;
+}
+
+.datepicker-button-bar__note-text {
+  margin: 0;
+  color: #5c6775;
+  line-height: 1.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .datepicker-button-bar__button {
+    transition: none;
+  }
+}
+.campo input {
+  width: min(100%, 16rem);
+}/*# sourceMappingURL=31-datepicker-button-bar.css.map */

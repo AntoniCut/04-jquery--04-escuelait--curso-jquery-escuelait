@@ -88,6 +88,65 @@ const jqueryUIWidgetDeps = {
         '../jquery-ui/ui/widgets/datepicker.js',
     ],
 
+    button: [
+        '../jquery-ui/ui/widgets/button.js',
+    ],
+
+    checkboxradio: [
+        '../jquery-ui/ui/labels.js',
+        '../jquery-ui/ui/form-reset-mixin.js',
+        '../jquery-ui/ui/widgets/checkboxradio.js',
+    ],
+
+    controlgroup: [
+        '../jquery-ui/ui/widgets/controlgroup.js',
+    ],
+
+    menu: [
+        '../jquery-ui/ui/widgets/menu.js',
+    ],
+
+    autocomplete: [
+        '../jquery-ui/ui/widgets/menu.js',
+        '../jquery-ui/ui/widgets/autocomplete.js',
+    ],
+
+    accordion: [
+        '../jquery-ui/ui/widgets/accordion.js',
+    ],
+
+    progressbar: [
+        '../jquery-ui/ui/widgets/progressbar.js',
+    ],
+
+    selectmenu: [
+        '../jquery-ui/ui/labels.js',
+        '../jquery-ui/ui/form-reset-mixin.js',
+        '../jquery-ui/ui/widgets/menu.js',
+        '../jquery-ui/ui/widgets/selectmenu.js',
+    ],
+
+    slider: [
+        '../jquery-ui/ui/widgets/mouse.js',
+        '../jquery-ui/ui/widgets/slider.js',
+    ],
+
+    spinner: [
+        '../jquery-ui/ui/widgets/button.js',
+        '../jquery-ui/ui/widgets/spinner.js',
+    ],
+
+    tabs: [
+        '../jquery-ui/ui/widgets/tabs.js',
+    ],
+
+    effects: [
+        '../jquery-ui/ui/effect.js',
+        '../jquery-ui/ui/effects/effect-blind.js',
+        '../jquery-ui/ui/effects/effect-fade.js',
+        '../jquery-ui/ui/effects/effect-fold.js',
+    ],
+
 };
 
 
@@ -144,7 +203,7 @@ export const loadJQueryUICoreModules = () => {
  *   una vez que el DOM de la página ya está renderizado.
  * - Carga automáticamente los módulos core de jQuery UI si no están cargados.
  * - Singleton: evita re-importar un widget que ya fue cargado en la sesión.
- * @param {string} name - Nombre del widget ('tooltip', 'draggable', 'droppable', 'sortable', 'dialog', 'datepicker', 'resizable', 'selectable').
+ * @param {string} name - Nombre del widget ('tooltip', 'draggable', 'droppable', 'sortable', 'dialog', 'datepicker', 'resizable', 'selectable', 'button', 'checkboxradio', 'controlgroup', 'menu', 'autocomplete', 'accordion', 'progressbar', 'selectmenu', 'slider', 'spinner', 'tabs', 'effects').
  * @returns {Promise<void>}
  */
 

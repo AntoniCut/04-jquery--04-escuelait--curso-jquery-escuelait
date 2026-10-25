@@ -1,0 +1,21 @@
+/*
+    *  ---------------------------------------------------------------------------------  *
+    *  -----  49-menu-icons.scss  --  /src/scss/pages/clase-29/49-menu-icons.scss  -----  *
+    *  ---------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('menu-icons', 34rem);
+
+#menu {
+    width: min(100%, 14rem);
+}
+
+.ui-menu .ui-icon {
+    float: left;
+    margin-right: 0.35rem;
+}
+

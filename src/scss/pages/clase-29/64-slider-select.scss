@@ -1,0 +1,23 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  64-slider-select.scss  --  /src/scss/pages/clase-29/64-slider-select.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('slider-select', 28rem);
+
+.campo {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0 0 1rem;
+    max-width: 8rem;
+}
+
+#slider {
+    margin: 0 0.6rem;
+}
+

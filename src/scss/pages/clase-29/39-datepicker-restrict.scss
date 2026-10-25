@@ -1,0 +1,16 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  39-datepicker-restrict.scss  --  /src/scss/pages/clase-29/39-datepicker-restrict.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-restrict', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

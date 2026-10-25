@@ -1,0 +1,634 @@
+<!--
+    *  --------------------------------------------------------------------------------------------------------------  *
+    *  -----  layout-aside-clase-29.html  --  /src/components/layout/pages/clase-29/layout-aside-clase-29.html  -----  *
+    *  --------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="aside-right__container">
+
+    <div class="aside__title">
+        <h3> Clase 29 </h3>
+        <p class="aside__subtitle"> Usando jQuery UI </p>
+    </div>
+
+    <nav class="aside-right__nav" aria-label="Ejercicios de la Clase 29">
+
+        <ul class="aside__list">
+            <li class="aside__item">
+                <a href="#" data-id="clase29" data-route="route-clase29">
+                    <span class="aside__item-num">00</span>
+                    <span class="aside__item-label">Introducción</span>
+                </a>
+            </li>
+        </ul>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Accordion</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionDefault" data-route="route-clase29-accordion-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionCollapse" data-route="route-clase29-accordion-collapse">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Contraer el contenido</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionIcons" data-route="route-clase29-accordion-icons">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Iconos personalizados</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionFillSpace" data-route="route-clase29-accordion-fill-space">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Rellenar el espacio</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionNoAutoHeight" data-route="route-clase29-accordion-no-auto-height">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Sin altura automática</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AccordionSortable" data-route="route-clase29-accordion-sortable">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Ordenable</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Autocomplete</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteDefault" data-route="route-clase29-autocomplete-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteAccentFolding" data-route="route-clase29-autocomplete-accent-folding">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Ignorar acentos</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteCategories" data-route="route-clase29-autocomplete-categories">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Categorías</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteCombobox" data-route="route-clase29-autocomplete-combobox">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Lista combinada</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteCustomData" data-route="route-clase29-autocomplete-custom-data">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Datos y presentación propios</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteMultiple" data-route="route-clase29-autocomplete-multiple">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Varios valores</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteMultipleRemote" data-route="route-clase29-autocomplete-multiple-remote">
+                        <span class="aside__item-num">07</span>
+                        <span class="aside__item-label">Varios valores en remoto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteRemote" data-route="route-clase29-autocomplete-remote">
+                        <span class="aside__item-num">08</span>
+                        <span class="aside__item-label">Origen remoto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteRemoteJsonp" data-route="route-clase29-autocomplete-remote-jsonp">
+                        <span class="aside__item-num">09</span>
+                        <span class="aside__item-label">Origen remoto JSONP</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteRemoteCache" data-route="route-clase29-autocomplete-remote-cache">
+                        <span class="aside__item-num">10</span>
+                        <span class="aside__item-label">Origen remoto con caché</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteScrollable" data-route="route-clase29-autocomplete-scrollable">
+                        <span class="aside__item-num">11</span>
+                        <span class="aside__item-label">Resultados con desplazamiento</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29AutocompleteXml" data-route="route-clase29-autocomplete-xml">
+                        <span class="aside__item-num">12</span>
+                        <span class="aside__item-label">XML leído una vez</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Button</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ButtonDefault" data-route="route-clase29-button-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ButtonIcons" data-route="route-clase29-button-icons">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Iconos</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Checkboxradio</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29CheckboxradioDefault" data-route="route-clase29-checkboxradio-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29CheckboxradioNoIcons" data-route="route-clase29-checkboxradio-no-icons">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Sin iconos</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29CheckboxradioProduct" data-route="route-clase29-checkboxradio-product">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Selector de producto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29CheckboxradioRadio" data-route="route-clase29-checkboxradio-radio">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Grupo de radios</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Controlgroup</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ControlgroupDefault" data-route="route-clase29-controlgroup-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ControlgroupSplit" data-route="route-clase29-controlgroup-split">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Botón dividido</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ControlgroupToolbar" data-route="route-clase29-controlgroup-toolbar">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Barra de herramientas</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Datepicker</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerDefault" data-route="route-clase29-datepicker-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerAnimations" data-route="route-clase29-datepicker-animations">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Animaciones</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerOtherMonths" data-route="route-clase29-datepicker-other-months">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Días de otros meses</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerButtonBar" data-route="route-clase29-datepicker-button-bar">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Barra de botones</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerInline" data-route="route-clase29-datepicker-inline">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">En línea</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerMonthYear" data-route="route-clase29-datepicker-month-year">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Menús de mes y año</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerMultiple" data-route="route-clase29-datepicker-multiple">
+                        <span class="aside__item-num">07</span>
+                        <span class="aside__item-label">Varios meses</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerFormat" data-route="route-clase29-datepicker-format">
+                        <span class="aside__item-num">08</span>
+                        <span class="aside__item-label">Formato de fecha</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerIcon" data-route="route-clase29-datepicker-icon">
+                        <span class="aside__item-num">09</span>
+                        <span class="aside__item-label">Icono para abrir</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerLocalize" data-route="route-clase29-datepicker-localize">
+                        <span class="aside__item-num">10</span>
+                        <span class="aside__item-label">Calendario en español</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerAlternate" data-route="route-clase29-datepicker-alternate">
+                        <span class="aside__item-num">11</span>
+                        <span class="aside__item-label">Campo alternativo</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerRestrict" data-route="route-clase29-datepicker-restrict">
+                        <span class="aside__item-num">12</span>
+                        <span class="aside__item-label">Limitar el rango</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerRange" data-route="route-clase29-datepicker-range">
+                        <span class="aside__item-num">13</span>
+                        <span class="aside__item-label">Elegir un rango</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DatepickerWeek" data-route="route-clase29-datepicker-week">
+                        <span class="aside__item-num">14</span>
+                        <span class="aside__item-label">Semana del año</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Dialog</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DialogDefault" data-route="route-clase29-dialog-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DialogAnimation" data-route="route-clase29-dialog-animation">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Animación</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DialogModalConfirmation" data-route="route-clase29-dialog-modal-confirmation">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Confirmación modal</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DialogModalForm" data-route="route-clase29-dialog-modal-form">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Formulario modal</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29DialogModalMessage" data-route="route-clase29-dialog-modal-message">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Mensaje modal</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Menu</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29MenuDefault" data-route="route-clase29-menu-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29MenuCategories" data-route="route-clase29-menu-categories">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Categorías</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29MenuIcons" data-route="route-clase29-menu-icons">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Iconos</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Progressbar</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ProgressbarDefault" data-route="route-clase29-progressbar-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ProgressbarLabel" data-route="route-clase29-progressbar-label">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Etiqueta propia</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ProgressbarDownload" data-route="route-clase29-progressbar-download">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Diálogo de descarga</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29ProgressbarIndeterminate" data-route="route-clase29-progressbar-indeterminate">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Valor indeterminado</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Selectmenu</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SelectmenuDefault" data-route="route-clase29-selectmenu-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SelectmenuRendering" data-route="route-clase29-selectmenu-rendering">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Presentación propia</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SelectmenuProduct" data-route="route-clase29-selectmenu-product">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Selección de producto</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Slider</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderDefault" data-route="route-clase29-slider-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderColorpicker" data-route="route-clase29-slider-colorpicker">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Selector de color</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderHandle" data-route="route-clase29-slider-handle">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Asa propia</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderMultiple" data-route="route-clase29-slider-multiple">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Varios deslizadores</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderRange" data-route="route-clase29-slider-range">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Rango</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderRangeMax" data-route="route-clase29-slider-range-max">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Rango con máximo fijo</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderRangeMin" data-route="route-clase29-slider-range-min">
+                        <span class="aside__item-num">07</span>
+                        <span class="aside__item-label">Rango con mínimo fijo</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderSelect" data-route="route-clase29-slider-select">
+                        <span class="aside__item-num">08</span>
+                        <span class="aside__item-label">Unido a un select</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderSnap" data-route="route-clase29-slider-snap">
+                        <span class="aside__item-num">09</span>
+                        <span class="aside__item-label">Ajuste a incrementos</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderVerticalRange" data-route="route-clase29-slider-vertical-range">
+                        <span class="aside__item-num">10</span>
+                        <span class="aside__item-label">Rango vertical</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SliderVertical" data-route="route-clase29-slider-vertical">
+                        <span class="aside__item-num">11</span>
+                        <span class="aside__item-label">Vertical</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Spinner</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerDefault" data-route="route-clase29-spinner-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerCurrency" data-route="route-clase29-spinner-currency">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Moneda</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerDecimal" data-route="route-clase29-spinner-decimal">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Decimal</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerMap" data-route="route-clase29-spinner-map">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Mapa</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerOverflow" data-route="route-clase29-spinner-overflow">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Desbordamiento</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29SpinnerTime" data-route="route-clase29-spinner-time">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Hora</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Tabs</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsDefault" data-route="route-clase29-tabs-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsCollapse" data-route="route-clase29-tabs-collapse">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Contraer el contenido</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsAjax" data-route="route-clase29-tabs-ajax">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Contenido por Ajax</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsMouseover" data-route="route-clase29-tabs-mouseover">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Abrir al pasar el ratón</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsManipulation" data-route="route-clase29-tabs-manipulation">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Manipulación simple</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsSortable" data-route="route-clase29-tabs-sortable">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Ordenables</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TabsVertical" data-route="route-clase29-tabs-vertical">
+                        <span class="aside__item-num">07</span>
+                        <span class="aside__item-label">Pestañas verticales</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="aside__group">
+            <h4 class="aside__group-label">Tooltip</h4>
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipDefault" data-route="route-clase29-tooltip-default">
+                        <span class="aside__item-num">01</span>
+                        <span class="aside__item-label">Funcionalidad por defecto</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipAnimation" data-route="route-clase29-tooltip-animation">
+                        <span class="aside__item-num">02</span>
+                        <span class="aside__item-label">Animación propia</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipContent" data-route="route-clase29-tooltip-content">
+                        <span class="aside__item-num">03</span>
+                        <span class="aside__item-label">Contenido propio</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipStyle" data-route="route-clase29-tooltip-style">
+                        <span class="aside__item-num">04</span>
+                        <span class="aside__item-label">Estilo propio</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipForms" data-route="route-clase29-tooltip-forms">
+                        <span class="aside__item-num">05</span>
+                        <span class="aside__item-label">Formularios</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipTrack" data-route="route-clase29-tooltip-track">
+                        <span class="aside__item-num">06</span>
+                        <span class="aside__item-label">Seguir el ratón</span>
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="#" data-id="clase29TooltipPlayer" data-route="route-clase29-tooltip-player">
+                        <span class="aside__item-num">07</span>
+                        <span class="aside__item-label">Reproductor</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+
+</div>

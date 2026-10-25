@@ -1,0 +1,18 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  04-accordion-fill-space.scss  --  /src/scss/pages/clase-29/04-accordion-fill-space.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('accordion-fill-space', 40rem);
+
+#accordion-resizer {
+    height: 18rem;
+    max-width: 40rem;
+    padding: 0.65rem;
+}
+

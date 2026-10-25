@@ -1,0 +1,114 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  16-autocomplete-remote-cache.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** - `ciudades para la búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> ciudades</span><span style="color:#D4D4D4"> = [</span></span>
+<span class="line"><span style="color:#CE9178">        "Madrid"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Barcelona"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Valencia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Sevilla"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Zaragoza"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Málaga"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Murcia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Palma"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Bilbao"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Alicante"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Córdoba"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Valladolid"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Vigo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Gijón"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Granada"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "A Coruña"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Vitoria"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Oviedo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Salamanca"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Santander"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Logroño"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Pamplona"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Donostia"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#CE9178">        "Toledo"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    ];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `cache {}`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - `coincidencias ya calculadas`</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> cache</span><span style="color:#D4D4D4"> = {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `campo de ciudad` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $ciudad</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#ciudad"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLParagraphElement>}</span><span style="color:#6A9955"> - `aviso de la búsqueda` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $estado</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#estado"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `alBuscar(peticion, responder)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ---------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Responde desde la caché o calcula las coincidencias.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {{ term: string }}</span><span style="color:#9CDCFE"> peticion</span><span style="color:#6A9955"> - Texto escrito.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {(coincidencias: string[]) => void}</span><span style="color:#9CDCFE"> responder</span><span style="color:#6A9955"> - Recibe las coincidencias.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> alBuscar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">responder</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `clave de la caché` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> clave</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">peticion</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">term</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  si ese texto ya se buscó, usar la caché  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">cache</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">clave</span><span style="color:#D4D4D4">]) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  avisar de que la lista sale de la caché  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Lista servida desde la caché."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  devolver las coincidencias guardadas  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            responder</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">cache</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">clave</span><span style="color:#D4D4D4">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no volver a calcular  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  avisar de que la búsqueda está en curso  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Buscando…"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  imitar la espera de un origen remoto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `ciudades que coinciden` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> coincidencias</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">ciudades</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">filter</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">ciudad</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#9CDCFE"> ciudad</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">toLowerCase</span><span style="color:#D4D4D4">().</span><span style="color:#DCDCAA">includes</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">clave</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  guardar el resultado para la próxima vez  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            cache</span><span style="color:#D4D4D4">[</span><span style="color:#9CDCFE">clave</span><span style="color:#D4D4D4">] = </span><span style="color:#9CDCFE">coincidencias</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  publicar las coincidencias  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            responder</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">coincidencias</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  avisar de que el resultado queda guardado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $estado</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Resultado guardado en la caché."</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#B5CEA8">300</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  buscar a partir de dos letras y recordar el resultado  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $ciudad</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">autocomplete</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        minLength:</span><span style="color:#B5CEA8"> 2</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#9CDCFE">        source:</span><span style="color:#9CDCFE"> alBuscar</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

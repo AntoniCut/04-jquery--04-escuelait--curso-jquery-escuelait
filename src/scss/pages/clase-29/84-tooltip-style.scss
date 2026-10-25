@@ -1,0 +1,20 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  84-tooltip-style.scss  --  /src/scss/pages/clase-29/84-tooltip-style.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('tooltip-style', 28rem);
+
+.aviso {
+    color: #ffffff;
+    background: #0769ad;
+    background-image: none;
+    border: 0;
+    border-radius: 0.5rem;
+}
+

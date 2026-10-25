@@ -64,6 +64,14 @@ const paths = {
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'disable-selection.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'focusable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'tabbable.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'labels.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'form-reset-mixin.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'jquery-var-for-color.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'vendor', 'jquery-color', 'jquery.color.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'effect.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'effects', 'effect-blind.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'effects', 'effect-fade.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'effects', 'effect-fold.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'mouse.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'draggable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'droppable.js'),
@@ -71,9 +79,19 @@ const paths = {
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'resizable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'selectable.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'button.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'checkboxradio.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'controlgroup.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'dialog.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'datepicker.js'),
             path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'tooltip.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'accordion.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'menu.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'autocomplete.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'progressbar.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'selectmenu.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'slider.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'spinner.js'),
+            path.posix.join('node_modules', 'jquery-ui', 'ui', 'widgets', 'tabs.js'),
         ],
     },
 
@@ -593,7 +611,7 @@ export const copyVendorJQuery = createCopyTask('copyVendorJQuery', {
 });
 
 
-/** Copia los módulos de jQuery UI que carga el selector de temas y la clase 28. */
+/** Copia los módulos de jQuery UI que cargan el selector de temas y las clases 28 y 29. */
 export const copyVendorJQueryUI = createCopyTask('copyVendorJQueryUI', {
     glob: paths.vendor.jqueryUIUi,
     checkPath: paths.vendor.jqueryUIUiDir,

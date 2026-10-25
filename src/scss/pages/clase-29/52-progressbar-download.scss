@@ -1,0 +1,21 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  52-progressbar-download.scss  --  /src/scss/pages/clase-29/52-progressbar-download.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('progressbar-download', 20rem);
+
+#progressbar {
+    height: 1.4rem;
+    margin-top: 0.75rem;
+}
+
+#estado {
+    margin: 0;
+}
+

@@ -1,0 +1,89 @@
+/*
+    *  ----------------------------------------------------------------------------------------------------------------  *
+    *  -----  route-clase29-autocomplete-categories.js  --  /src/routes/route-clase29-autocomplete-categories.js  -----  *
+    *  ----------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+import { paths } from './paths.js';
+
+/// <reference path="../../../types/route.d.js" />
+
+
+/** - Desestructuracion de paths */
+const {
+    favicon,
+    layoutHeader,
+    btnNavbar,
+    btnNavbarThemesJQueryUI,
+    layoutNavbar,
+    layoutNavbarThemesUI,
+    layoutAsideLeft,
+    layoutAsidePages,
+    pages,
+    pagesComponents,
+    layoutFooter,
+    styles,
+    scripts,
+    markdownShikiHtml,
+} = paths;
+
+
+/** @type {Route} */
+export const routeClase29AutocompleteCategories = {
+        id: 'clase29AutocompleteCategories',
+        favicon: favicon,
+        pageTitle: 'Clase 29 - 02. Autocomplete - 03. Categorías',
+        path: '/clase29-usando-jquery-ui/02-autocomplete/03-categories',
+        components: {
+            "#layoutHeader": layoutHeader,
+            "#btnNavbar": btnNavbar,
+            "#btnNavbarThemesJQueryUI": btnNavbarThemesJQueryUI,
+            "#layoutNavbar": layoutNavbar,
+            "#layoutNavbarThemesUI": layoutNavbarThemesUI,
+            "#layoutAsideLeft": layoutAsideLeft,
+            "#layoutMain": `${pages}/clase-29/09-autocomplete-categories.html`,
+            "#layoutAsideRight": `${layoutAsidePages}/clase-29/layout-aside-clase-29.html`,
+            "#layoutFooter": layoutFooter,
+        },
+        pagesComponents: [
+            { url: `${pagesComponents}/clase-29/09-autocomplete-categories-description.html`, target: '[data-component-page="description"]' },
+            { url: `${pagesComponents}/clase-29/09-autocomplete-categories-demo.html`, target: '[data-component-page="demo"]' },
+        ],
+        MarkdownShikiHtml: [
+            {
+                fileName: '09-autocomplete-categories-demo-html.html',
+                fileExtension: 'html',
+                urlInput: `${pagesComponents}/clase-29/09-autocomplete-categories-demo.html`,
+                urlOutput: `${markdownShikiHtml}/clase-29`,
+                target: '[data-shiki="codeHtml"]',
+            },
+            {
+                fileName: '09-autocomplete-categories-demo-css.html',
+                fileExtension: 'css',
+                urlInput: `${styles}/pages/clase-29/09-autocomplete-categories.css`,
+                urlOutput: `${markdownShikiHtml}/clase-29`,
+                target: '[data-shiki="codeCss"]',
+            },
+            {
+                fileName: '09-autocomplete-categories-demo-js.html',
+                fileExtension: 'js',
+                urlInput: `${scripts}/clase-29/09-autocomplete-categories.js`,
+                urlOutput: `${markdownShikiHtml}/clase-29`,
+                target: '[data-shiki="codeJs"]',
+            },
+        ],
+        headerTitle: 'Clase 29 - 02. Autocomplete - 03. Categorías',
+        styles: [
+            { href: `${styles}/pages/clase-29/09-autocomplete-categories.css` },
+        ],
+        scripts: [
+            { src: `${scripts}/tooltips.js` },
+            { src: `${scripts}/clase-29/09-autocomplete-categories.js` },
+        ],
+        libs: [
+            { name: 'tooltip' },
+            { name: 'menu' },
+            { name: 'autocomplete' },
+        ],
+};

@@ -1,0 +1,16 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  32-datepicker-inline.scss  --  /src/scss/pages/clase-29/32-datepicker-inline.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-inline', 42rem);
+
+#datepicker {
+    display: inline-block;
+}
+

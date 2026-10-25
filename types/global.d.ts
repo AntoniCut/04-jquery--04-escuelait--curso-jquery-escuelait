@@ -7,6 +7,7 @@
 //  -----  Referencias a otros archivos de tipos  -----  //
 /// <reference path="./dom.d.ts" />
 /// <reference path="./plugins.d.ts" />
+/// <reference path="./jquery-ui-1.14.d.ts" />
 
 
 //  -----  Declaración de tipos globales  -----  //

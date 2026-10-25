@@ -1,0 +1,25 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  25-controlgroup-default.scss  --  /src/scss/pages/clase-29/25-controlgroup-default.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('controlgroup-default', 28rem);
+
+.escenario h2 {
+    margin: 1rem 0 0.65rem;
+    font-size: 1.05rem;
+}
+
+.escenario h2:first-child {
+    margin-top: 0;
+}
+
+.controlgroup-vertical {
+    width: 12rem;
+}
+

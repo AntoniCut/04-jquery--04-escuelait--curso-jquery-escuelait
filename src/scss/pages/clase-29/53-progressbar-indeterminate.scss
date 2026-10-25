@@ -1,0 +1,31 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------------------  *
+    *  -----  53-progressbar-indeterminate.scss  --  /src/scss/pages/clase-29/53-progressbar-indeterminate.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('progressbar-indeterminate', 20rem);
+
+#progressbar {
+    height: 1.4rem;
+}
+
+#progressbar .ui-progressbar-value {
+    background-color: #ccc;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.acciones button {
+    margin: 0;
+}
+

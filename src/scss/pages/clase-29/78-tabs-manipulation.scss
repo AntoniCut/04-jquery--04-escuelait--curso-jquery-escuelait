@@ -1,0 +1,23 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  78-tabs-manipulation.scss  --  /src/scss/pages/clase-29/78-tabs-manipulation.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('tabs-manipulation', 32rem);
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#tabs {
+    max-width: 40rem;
+}
+

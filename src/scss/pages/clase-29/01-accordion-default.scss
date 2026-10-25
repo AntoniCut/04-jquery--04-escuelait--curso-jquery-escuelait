@@ -1,0 +1,16 @@
+/*
+    *  -----------------------------------------------------------------------------------------------  *
+    *  -----  01-accordion-default.scss  --  /src/scss/pages/clase-29/01-accordion-default.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('accordion-default', 32rem);
+
+#accordion {
+    max-width: 40rem;
+}
+

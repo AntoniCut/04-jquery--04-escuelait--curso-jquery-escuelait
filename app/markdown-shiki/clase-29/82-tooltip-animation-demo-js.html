@@ -1,0 +1,44 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../types/global.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  marcar el arranque de la demo en la consola  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  identificar el script de la demo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">warn</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'-----  82-tooltip-animation.js  -----'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  cerrar el aviso de arranque  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    console</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">log</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">'</span><span style="color:#D7BA7D">\n</span><span style="color:#CE9178">'</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLAnchorElement>}</span><span style="color:#6A9955"> - `ayuda con animación de entrada` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $entrada</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#entrada"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLAnchorElement>}</span><span style="color:#6A9955"> - `ayuda con animación de salida` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $salida</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#salida"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLAnchorElement>}</span><span style="color:#6A9955"> - `ayuda con las dos animaciones` */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#4FC1FF"> $ambas</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#ambas"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  deslizar la ayuda al abrirla  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $entrada</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        show:</span><span style="color:#D4D4D4"> { </span><span style="color:#9CDCFE">effect:</span><span style="color:#CE9178"> "slideDown"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">delay:</span><span style="color:#B5CEA8"> 200</span><span style="color:#D4D4D4"> },</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  fundir la ayuda al cerrarla  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $salida</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        hide:</span><span style="color:#D4D4D4"> { </span><span style="color:#9CDCFE">effect:</span><span style="color:#CE9178"> "fade"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">duration:</span><span style="color:#B5CEA8"> 400</span><span style="color:#D4D4D4"> },</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  animar la entrada y la salida  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $ambas</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">tooltip</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"><span style="color:#9CDCFE">        show:</span><span style="color:#D4D4D4"> { </span><span style="color:#9CDCFE">effect:</span><span style="color:#CE9178"> "slideDown"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">delay:</span><span style="color:#B5CEA8"> 150</span><span style="color:#D4D4D4"> },</span></span>
+<span class="line"><span style="color:#9CDCFE">        hide:</span><span style="color:#D4D4D4"> { </span><span style="color:#9CDCFE">effect:</span><span style="color:#CE9178"> "fade"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">duration:</span><span style="color:#B5CEA8"> 300</span><span style="color:#D4D4D4"> },</span></span>
+<span class="line"><span style="color:#D4D4D4">    });</span></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

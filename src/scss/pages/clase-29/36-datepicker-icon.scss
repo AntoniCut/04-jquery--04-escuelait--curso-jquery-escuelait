@@ -1,0 +1,20 @@
+/*
+    *  -------------------------------------------------------------------------------------------  *
+    *  -----  36-datepicker-icon.scss  --  /src/scss/pages/clase-29/36-datepicker-icon.scss  -----  *
+    *  -------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-icon', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+
+.ui-datepicker-trigger {
+    margin-left: 0.45rem;
+}
+

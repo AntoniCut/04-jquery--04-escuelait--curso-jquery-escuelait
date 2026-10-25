@@ -1,0 +1,16 @@
+/*
+    *  -------------------------------------------------------------------------------------------------  *
+    *  -----  28-datepicker-default.scss  --  /src/scss/pages/clase-29/28-datepicker-default.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-default', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

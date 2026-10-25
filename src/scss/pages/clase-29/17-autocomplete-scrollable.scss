@@ -1,0 +1,22 @@
+/*
+    *  -----------------------------------------------------------------------------------------------------------  *
+    *  -----  17-autocomplete-scrollable.scss  --  /src/scss/pages/clase-29/17-autocomplete-scrollable.scss  -----  *
+    *  -----------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('autocomplete-scrollable', 26rem);
+
+.campo input {
+    width: min(100%, 22rem);
+}
+
+.ui-autocomplete {
+    max-height: 10rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+

@@ -1,0 +1,22 @@
+/*
+    *  -------------------------------------------------------------------------------------------------------------  *
+    *  -----  11-autocomplete-custom-data.scss  --  /src/scss/pages/clase-29/11-autocomplete-custom-data.scss  -----  *
+    *  -------------------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('autocomplete-custom-data', 26rem);
+
+.campo input {
+    width: min(100%, 22rem);
+}
+
+.ui-autocomplete .proyecto-desc {
+    display: block;
+    color: #5c6775;
+    font-size: 0.92rem;
+}
+

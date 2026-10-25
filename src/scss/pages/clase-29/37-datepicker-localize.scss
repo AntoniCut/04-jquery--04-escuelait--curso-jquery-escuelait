@@ -1,0 +1,16 @@
+/*
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  37-datepicker-localize.scss  --  /src/scss/pages/clase-29/37-datepicker-localize.scss  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-29-common' as c29;
+
+
+@include c29.frame('datepicker-localize', 20rem);
+
+.campo input {
+    width: min(100%, 16rem);
+}
+

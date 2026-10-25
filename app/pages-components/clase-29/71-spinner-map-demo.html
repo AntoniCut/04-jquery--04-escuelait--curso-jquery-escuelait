@@ -1,0 +1,36 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------  *
+    *  -----  71-spinner-map-demo.html  --  /src/pages-components/clase-29/71-spinner-map-demo.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="spinner-map">
+
+        <h3 class="spinner-map__title">Mapa</h3>
+
+        <p class="spinner-map__hint">Latitud y longitud mueven el centro del mapa de Google.</p>
+
+        <div class="spinner-map__stage">
+            <div class="coordenadas">
+            <p class="campo">
+            <label for="latitud">Latitud</label>
+            <input id="latitud" value="40.4">
+            </p>
+            <p class="campo">
+            <label for="longitud">Longitud</label>
+            <input id="longitud" value="-3.7">
+            </p>
+            </div>
+            <iframe id="mapa" title="Mapa de Google" src="https://maps.google.com/maps?q=40.4,-3.7&z=8&hl=es&output=embed"></iframe>
+        </div>
+
+        <div class="spinner-map__note">
+            <p class="spinner-map__note-text">Latitud y longitud mueven el centro del mapa de Google. La latitud va de −90 a 90 y la longitud de −180 a 180.</p>
+        </div>
+
+    </div>
+
+</div>
