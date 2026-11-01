@@ -1,5 +1,5 @@
 <pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#569CD6">    *</span><span style="color:#569CD6">                                                                               *</span></span>
-<span class="line"><span style="color:#569CD6">    *</span><span style="color:#D4D4D4">      Galeria de diapositivas / imagenes en columnas (clases introductorias).  </span><span style="color:#569CD6">*</span></span>
+<span class="line"><span style="color:#569CD6">    *</span><span style="color:#D4D4D4">      Galeria de diapositivas. --rows lee por filas (clases 6, 7, 8 y 10).     </span><span style="color:#569CD6">*</span></span>
 <span class="line"><span style="color:#569CD6">    *</span><span style="color:#D4D4D4">  ---------------------------------------------------------------------------  </span><span style="color:#569CD6">*</span></span>
 <span class="line"><span style="color:#569CD6">*</span><span style="color:#D4D4D4">/</span></span>
 <span class="line"><span style="color:#D7BA7D">.section__content-img</span><span style="color:#D4D4D4"> {</span></span>
@@ -13,6 +13,22 @@
 <span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">768px</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"><span style="color:#D7BA7D">  .section__content-img</span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"><span style="color:#9CDCFE">    column-count</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">  }</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#6A9955">/* - `clases 6, 7, 8 y 10: lectura de izquierda a derecha` */</span></span>
+<span class="line"><span style="color:#D7BA7D">.section__content-img.section__content-img--rows</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  display</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">grid</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  grid-template-columns</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">minmax</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1fr</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#9CDCFE">  row-gap</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">2rem</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">  column-count</span><span style="color:#D4D4D4">: </span><span style="color:#CE9178">unset</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"><span style="color:#D7BA7D">.section__content-img.section__content-img--rows</span><span style="color:#D7BA7D"> .section__card-img</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">  margin-bottom</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#C586C0">@media</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">min-width</span><span style="color:#D4D4D4">: </span><span style="color:#B5CEA8">768px</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#D7BA7D">  .section__content-img.section__content-img--rows</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"><span style="color:#9CDCFE">    grid-template-columns</span><span style="color:#D4D4D4">: </span><span style="color:#DCDCAA">repeat</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">, </span><span style="color:#DCDCAA">minmax</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">, </span><span style="color:#B5CEA8">1fr</span><span style="color:#D4D4D4">));</span></span>
 <span class="line"><span style="color:#D4D4D4">  }</span></span>
 <span class="line"><span style="color:#D4D4D4">}</span></span>
 <span class="line"><span style="color:#D7BA7D">.section__card-img</span><span style="color:#D4D4D4"> {</span></span>
