@@ -1,6 +1,6 @@
 /*
     *  ------------------------------------------------------------------------------------------------------  *
-    *  -----  route-clase28-resizable-textarea.js  --  /src/routes/route-clase28-resizable-textarea.js  -----  *
+    *  -----  route-clase09-resizable-textarea.js  --  /src/routes/route-clase09-resizable-textarea.js  -----  *
     *  ------------------------------------------------------------------------------------------------------  *
 */
 
@@ -42,44 +42,44 @@ export const routeClase28ResizableTextarea = {
             "#layoutNavbar": layoutNavbar,
             "#layoutNavbarThemesUI": layoutNavbarThemesUI,
             "#layoutAsideLeft": layoutAsideLeft,
-            "#layoutMain": `${pages}/clase-28/28-resizable-textarea.html`,
+            "#layoutMain": `${pages}/clase-28/04-interaccion-resizable/09-resizable-textarea.html`,
             "#layoutAsideRight": `${layoutAsidePages}/clase-28/layout-aside-clase-28.html`,
             "#layoutFooter": layoutFooter,
         },
         pagesComponents: [
-            { url: `${pagesComponents}/clase-28/28-resizable-textarea-description.html`, target: '[data-component-page="description"]' },
-            { url: `${pagesComponents}/clase-28/28-resizable-textarea-demo.html`, target: '[data-component-page="demo"]' },
+            { url: `${pagesComponents}/clase-28/04-interaccion-resizable/09-resizable-textarea-description.html`, target: '[data-component-page="description"]' },
+            { url: `${pagesComponents}/clase-28/04-interaccion-resizable/09-resizable-textarea-demo.html`, target: '[data-component-page="demo"]' },
         ],
         MarkdownShikiHtml: [
             {
-                fileName: '28-resizable-textarea-demo-html.html',
+                fileName: '09-resizable-textarea-demo-html.html',
                 fileExtension: 'html',
-                urlInput: `${pagesComponents}/clase-28/28-resizable-textarea-demo.html`,
+                urlInput: `${pagesComponents}/clase-28/04-interaccion-resizable/09-resizable-textarea-demo.html`,
                 urlOutput: `${markdownShikiHtml}/clase-28`,
                 target: '[data-shiki="codeHtml"]',
             },
             {
-                fileName: '28-resizable-textarea-demo-css.html',
+                fileName: '09-resizable-textarea-demo-css.html',
                 fileExtension: 'css',
-                urlInput: `${styles}/pages/clase-28/28-resizable-textarea.css`,
+                urlInput: `${styles}/pages/clase-28/04-interaccion-resizable/09-resizable-textarea.css`,
                 urlOutput: `${markdownShikiHtml}/clase-28`,
                 target: '[data-shiki="codeCss"]',
             },
             {
-                fileName: '28-resizable-textarea-demo-js.html',
+                fileName: '09-resizable-textarea-demo-js.html',
                 fileExtension: 'js',
-                urlInput: `${scripts}/clase-28/28-resizable-textarea.js`,
+                urlInput: `${scripts}/clase-28/04-interaccion-resizable/09-resizable-textarea.js`,
                 urlOutput: `${markdownShikiHtml}/clase-28`,
                 target: '[data-shiki="codeJs"]',
             },
         ],
         headerTitle: 'Clase 28 - 04. Interacción Resizable - 09. Área de texto',
         styles: [
-            { href: `${styles}/pages/clase-28/28-resizable-textarea.css` },
+            { href: `${styles}/pages/clase-28/04-interaccion-resizable/09-resizable-textarea.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
-            { src: `${scripts}/clase-28/28-resizable-textarea.js` },
+            { src: `${scripts}/clase-28/04-interaccion-resizable/09-resizable-textarea.js` },
         ],
         libs: [
             { name: 'tooltip' },
