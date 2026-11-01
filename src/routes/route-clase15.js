@@ -75,6 +75,7 @@ export const routeClase15 = {
         ],
         headerTitle: 'Clase 15 - JSON',
         styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
             { href: `${styles}/pages/clase-15/00-json.css` },
         ],
         scripts: [

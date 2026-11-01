@@ -3,7 +3,7 @@
     *  -----  section-img.scss  --  /src/scss/pages/shared/section-img.scss  -----  *
     *  ---------------------------------------------------------------------------  *
     *                                                                               *
-    *      Galeria de diapositivas / imagenes en columnas (clases introductorias).  *
+    *      Galeria de diapositivas. --rows lee por filas (clases 6 a 8 y 10 a 16).  *
     *  ---------------------------------------------------------------------------  *
 */
 
@@ -21,6 +21,26 @@
 @media (min-width: 768px) {
     .section__content-img {
         column-count: 2;
+    }
+}
+
+
+/* - `clases 6 a 8 y 10 a 16: lectura de izquierda a derecha` */
+.section__content-img.section__content-img--rows {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2rem;
+    column-count: unset;
+
+    .section__card-img {
+        margin-bottom: 0;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .section__content-img.section__content-img--rows {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 

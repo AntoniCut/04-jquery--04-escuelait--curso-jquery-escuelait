@@ -45,7 +45,9 @@ export const routeClase16 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 16 - AJAX Interfaz Alto Nivel',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],
