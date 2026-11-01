@@ -11,6 +11,8 @@ pnpm-lock.yaml
 # Deploy local (IP y rutas del VPS)
 deploy.sh
 
+# Carpeta de aplicación
+app/
 # Carpeta de distribución / compilados
 dist/
 
