@@ -3,6 +3,8 @@
 Proyecto de prácticas del curso **jQuery** impartido por Miguel Ángel Alvarez en [EscuelaIT](https://escuela.it).  
 Implementado como una **SPA** (Single Page Application) con enrutamiento propio, servidor de desarrollo con live reload y pipeline de build con Gulp.
 
+Convenciones para editar demos, rutas y títulos: [AGENTS.md](./AGENTS.md).
+
 ---
 
 ## Índice
@@ -20,6 +22,7 @@ Implementado como una **SPA** (Single Page Application) con enrutamiento propio,
 11. [Despliegue (producción — Nginx)](#11-despliegue-producción--nginx)
 12. [Despliegue al VPS con deploy.sh](#12-despliegue-al-vps-con-deploysh)
 13. [Autor](#13-autor)
+14. [Guía para agentes](#14-guía-para-agentes)
 
 ---
 
@@ -122,16 +125,17 @@ curso-jquery-escuelait/
 │   ├── main.js                       # Entrada de la SPA
 │   ├── pages/                        # Página de cada ruta (layout principal)
 │   │   ├── 00-home.html
-│   │   ├── clase-01/ … clase-27/
+│   │   ├── clase-01/ … clase-27/     # archivos sueltos en la carpeta de la clase
+│   │   ├── clase-28/ … clase-29/     # una carpeta por sección (01-accordion/, …)
 │   │   └── 404/
 │   ├── pages-components/             # Fragmentos de página (demo + description)
-│   │   └── clase-01/ … clase-27/
-│   ├── markdown-shiki/               # HTML resaltado con Shiki (generado)
-│   │   └── clase-01/ … clase-27/
-│   ├── scripts/                      # JS por clase
+│   │   └── clase-01/ … clase-29/
+│   ├── markdown-shiki/               # HTML resaltado con Shiki (generado, plano por clase)
+│   │   └── clase-01/ … clase-29/
+│   ├── scripts/                      # JS por clase (misma jerarquía que pages)
 │   ├── scss/                         # Estilos SCSS → app/css/
 │   ├── components/                   # Layout reutilizable (header, navbar, footer…)
-│   ├── routes/                       # Definición de rutas SPA
+│   ├── routes/                       # Una ruta por ejercicio + route-manifest.js
 │   ├── spa/                          # Motor SPA (.load)
 │   ├── services/                     # PHP / JSON / SQL (AJAX)
 │   │   ├── load-env.php              # Carga .env (producción / fallback)
@@ -140,7 +144,8 @@ curso-jquery-escuelait/
 │   │   ├── clase-20/                 # buscar.php, products.json, SQL…
 │   │   ├── clase-21/                 # login.php, login-auth, register-auth, SQL…
 │   │   ├── clase-26/                 # enviar.php (ajaxForm)
-│   │   └── clase-27/                 # enviar.php (advancedValidation)
+│   │   ├── clase-27/                 # enviar.php (advancedValidation)
+│   │   └── clase-29/                 # paneles remotos (tabs)
 │   ├── effects/
 │   ├── libs/                         # jQuery, jQuery UI
 │   └── plugins/
@@ -153,6 +158,7 @@ curso-jquery-escuelait/
 ├── deploy.sh                         # Deploy automatizado al VPS
 ├── types/
 │
+├── AGENTS.md                         # Convenciones para editar el curso
 ├── generate-markdown-shiki.js        # Genera src/markdown-shiki/
 ├── gulpfile.js
 ├── .env.example
@@ -351,27 +357,32 @@ Clases implementadas en la SPA (menú lateral `layout-aside-left.html`):
 | 25 | jQuery plugins |
 | 26 | Variables gestión de opciones en plugins |
 | 27 | Técnicas para desarrollo de plugins complejos |
+| 28 | Librería de componentes: jQuery UI |
+| 29 | Usando jQuery UI |
 
-Clases previstas en el temario (aún no implementadas en la SPA):
+Clase prevista en el temario (aún no implementada en la SPA):
 
 | Clase | Tema |
 |---|---|
-| 28 | Librerías de componentes: jQuery UI |
-| 29 | Usando jQuery UI |
 | 30 | Práctica 2 |
+
+En las clases 01–27 los archivos cuelgan directamente de `clase-XX/`. En las clases 28 y 29 hay una carpeta por sección (`04-checkboxradio/`, `02-interaccion-draggable/`, …) y el número del ejercicio se reinicia en cada sección.
 
 Cada demo suele repartirse así:
 
 ```
-src/pages/clase-XX/…html              → página / slots
-src/pages-components/clase-XX/…       → description + demo
-src/components/layout/pages/clase-XX/ → aside de ejercicios (layout-aside-clase-XX.html)
-src/scripts/clase-XX/…js              → lógica jQuery
-src/scss/pages/clase-XX/…             → estilos
+src/pages/clase-XX/[sección/]….html
+src/pages-components/clase-XX/[sección/]…-description.html y …-demo.html
+src/components/layout/pages/clase-XX/layout-aside-clase-XX.html
+src/scripts/clase-XX/[sección/]….js
+src/scss/pages/clase-XX/[sección/]….scss
 src/services/clase-XX/…               → PHP/JSON si aplica
 src/routes/route-claseXX-….js         → ruta SPA + MarkdownShikiHtml
-src/markdown-shiki/clase-XX/…         → código resaltado (generado)
+src/routes/route-manifest.js          → id, path y archivo (lazy load)
+src/markdown-shiki/clase-XX/…         → código resaltado (generado, sin subcarpetas)
 ```
+
+Detalle de títulos, banners y el alta de un ejercicio: [AGENTS.md](./AGENTS.md).
 
 ---
 
@@ -546,3 +557,14 @@ La terminal SSH del panel de Hostinger sirve para **administrar el servidor** (v
 
 **Antonio Francisco Cutillas García** — [AntonyDev](https://antonydev.tech)  
 Licencia: ISC
+
+---
+
+## 14. Guía para agentes
+
+Las reglas para tocar demos, rutas, títulos y el manifiesto están en [AGENTS.md](./AGENTS.md). Resumen:
+
+- El código se edita en `src/`. `app/` y `dist/` los genera Gulp.
+- Las clases 28 y 29 agrupan cada widget o interacción en su carpeta (`01-accordion/03-….html`).
+- Un ejercicio nuevo necesita página, fragmentos, script, SCSS, ruta, entrada en `route-manifest.js` y enlace en el aside de la clase.
+- Los títulos de esas clases nombran la sección: `Clase 29 - 04. Checkboxradio - 03. Selector de producto`.
