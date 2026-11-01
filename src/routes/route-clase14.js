@@ -45,7 +45,9 @@ export const routeClase14 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 14 - Cola de Efectos',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],

@@ -46,7 +46,7 @@ export const routeClase11 = {
         },
         headerTitle: 'Clase 11 - Eventos en jQuery',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

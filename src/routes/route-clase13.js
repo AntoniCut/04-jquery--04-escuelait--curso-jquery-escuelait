@@ -46,7 +46,7 @@ export const routeClase13 = {
         },
         headerTitle: 'Clase 13 - Efectos y Animaciones',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

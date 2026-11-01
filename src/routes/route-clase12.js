@@ -46,7 +46,7 @@ export const routeClase12 = {
         },
         headerTitle: 'Clase 12 - Eventos de Teclado y Ratón',
         styles: [
-
+            { href: `${styles}/pages/shared/section-img.css` },
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
