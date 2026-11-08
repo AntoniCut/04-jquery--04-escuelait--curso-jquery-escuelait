@@ -45,7 +45,9 @@ export const routeClase17 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 17 - Dudas y Conceptos Parte 2',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],

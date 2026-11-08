@@ -3,7 +3,7 @@
     *  -----  section-img.scss  --  /src/scss/pages/shared/section-img.scss  -----  *
     *  ---------------------------------------------------------------------------  *
     *                                                                               *
-    *      Galeria de diapositivas. --rows lee por filas (clases 6 a 8 y 10 a 16).  *
+    *      Galeria de diapositivas en filas: clases 6-8, 10-21 y 30.                *
     *  ---------------------------------------------------------------------------  *
 */
 
@@ -25,7 +25,7 @@
 }
 
 
-/* - `clases 6 a 8 y 10 a 16: lectura de izquierda a derecha` */
+/* - `clases 6 a 8, 10 a 21 y 30: lectura de izquierda a derecha` */
 .section__content-img.section__content-img--rows {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

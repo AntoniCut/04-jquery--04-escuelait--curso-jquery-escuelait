@@ -45,7 +45,9 @@ export const routeClase20 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 20 - Ajax Low Level',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],

@@ -45,7 +45,9 @@ export const routeClase19 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 19 - Eventos Avanzados',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],

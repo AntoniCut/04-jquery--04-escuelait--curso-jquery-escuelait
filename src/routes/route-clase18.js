@@ -45,7 +45,9 @@ export const routeClase18 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 18 - Formularios Ajax',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],

@@ -45,7 +45,9 @@ export const routeClase21 = {
             "#layoutFooter": layoutFooter,
         },
         headerTitle: 'Clase 21 - Práctica 1 Formulario Login',
-        styles: [],
+        styles: [
+            { href: `${styles}/pages/shared/section-img.css` },
+        ],
         scripts: [
             { src: `${scripts}/tooltips.js` },
         ],
