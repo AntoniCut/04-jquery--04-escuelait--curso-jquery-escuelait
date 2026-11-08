@@ -1,0 +1,42 @@
+/*
+    *  -----------------------------------------------------------------------------  *
+    *  -----  02-opciones.scss  --  /src/scss/pages/clase-30/02-opciones.scss  -----  *
+    *  -----------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-30-common' as c30;
+
+
+@include c30.frame('smartform', 56rem);
+
+
+.description-page__sample {
+    margin: 0;
+    padding: 1.2rem 1.6rem;
+    overflow: auto;
+    color: #1c2430;
+    font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+    font-size: 1.6rem;
+    line-height: 1.55;
+    background: #ffffff;
+    border: 1px solid #d7dee7;
+    border-radius: 0.8rem;
+
+    code {
+        padding: 0;
+        font-size: 0.92em;
+        color: inherit;
+        background: transparent;
+        border-radius: 0;
+    }
+}
+
+
+[data-component-page="description"] {
+    min-height: 64rem;
+
+    @include c30.tablet {
+        min-height: 56rem;
+    }
+}

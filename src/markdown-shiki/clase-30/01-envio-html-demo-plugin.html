@@ -1,0 +1,376 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">*/</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">/// </span><span style="color:#808080">&#x3C;</span><span style="color:#569CD6">reference</span><span style="color:#9CDCFE"> path</span><span style="color:#D4D4D4">=</span><span style="color:#CE9178">"../../../../types/plugins.d.ts"</span><span style="color:#808080"> /></span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">//  -----  registrar el plugin en jquery  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `mostrarErrores(capa, textos)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * --------------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sustituye el contenido de la capa por una lista de textos.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery}</span><span style="color:#9CDCFE"> capa</span><span style="color:#6A9955"> - Capa de mensaje del formulario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string[]}</span><span style="color:#9CDCFE"> textos</span><span style="color:#6A9955"> - Fallos devueltos por el php.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> mostrarErrores</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">textos</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `lista de fallos` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> $lista</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"&#x3C;ul>"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  un ítem por cada texto  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        textos</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">forEach</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `línea del fallo` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $item</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"&#x3C;li>"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  texto del fallo, sin html  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $item</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  añadir la línea a la lista  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $lista</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$item</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  vaciar la capa  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        capa</span></span>
+<span class="line"><span style="color:#D4D4D4">            .</span><span style="color:#DCDCAA">empty</span><span style="color:#D4D4D4">()</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  mostrar la lista  -----</span></span>
+<span class="line"><span style="color:#D4D4D4">            .</span><span style="color:#DCDCAA">append</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$lista</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `enviar(formulario)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Pide texto o JSON, cancela la espera y avisa con los eventos del formulario.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#9CDCFE"> formulario</span><span style="color:#6A9955"> - Formulario que se envía.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> enviar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste | undefined}</span><span style="color:#6A9955"> - `ajustes guardados en este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> ajuste</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  la ruta nueva ya quitó este formulario  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no hay url que pedir  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  pedir la respuesta al php  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">ajax</span><span style="color:#D4D4D4">({</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `dirección guardada en el formulario` */</span></span>
+<span class="line"><span style="color:#9CDCFE">            url:</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">url</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `campos serializados` */</span></span>
+<span class="line"><span style="color:#9CDCFE">            data:</span><span style="color:#9CDCFE"> formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">serialize</span><span style="color:#D4D4D4">(),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `get o post, según el ajuste` */</span></span>
+<span class="line"><span style="color:#9CDCFE">            type:</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">metodo</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `texto en la fase 1 y json en el resto` */</span></span>
+<span class="line"><span style="color:#9CDCFE">            dataType:</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"text"</span><span style="color:#D4D4D4"> : </span><span style="color:#CE9178">"json"</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `avisar, bloquear el botón, cancelar la espera y disparar el evento` */</span></span>
+<span class="line"><span style="color:#DCDCAA">            beforeSend</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  texto de espera  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Enviando..."</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">css</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"color"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"#999"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  impedir otro envío  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">":submit"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">prop</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"disabled"</span><span style="color:#D4D4D4">, </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | undefined}</span><span style="color:#6A9955"> - `espera pendiente de este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> retardo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"retardo"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  cancelar el autoguardado pendiente  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">retardo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  avisar de que el envío empieza  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trigger</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"comienzoenvio"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /**</span></span>
+<span class="line"><span style="color:#6A9955">             * - Escribe el texto o lista los fallos del json.</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {string | SmartformRespuesta}</span><span style="color:#9CDCFE"> respuesta</span><span style="color:#6A9955"> - Cuerpo devuelto por el php.</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">             */</span></span>
+<span class="line"><span style="color:#DCDCAA">            success</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">respuesta</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  fase 1: escribir el texto y dejar el color de espera  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  mostrar el texto recibido  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                    ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">respuesta</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#6A9955">                //  -----  fases 2 a 4: leer el json  -----</span></span>
+<span class="line"><span style="color:#C586C0">                else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformRespuesta}</span><span style="color:#6A9955"> - `json del php` */</span></span>
+<span class="line"><span style="color:#569CD6">                    const</span><span style="color:#4FC1FF"> json</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformRespuesta}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">respuesta</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  si la respuesta trae fallos, listarlos en rojo  -----</span></span>
+<span class="line"><span style="color:#C586C0">                    if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">json</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">valido</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                        //  -----  construir la lista de textos  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                        mostrarErrores</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">json</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">errores</span><span style="color:#D4D4D4"> || []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                        //  -----  marcar la capa en rojo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                        ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">css</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"color"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"red"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }</span></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  si todo llegó, confirmarlo  -----</span></span>
+<span class="line"><span style="color:#C586C0">                    else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                        //  -----  texto de éxito  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                        ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Todo correcto"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">css</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"color"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"#666"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                    }</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `avisar si la petición falla` */</span></span>
+<span class="line"><span style="color:#DCDCAA">            error</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  mensaje de fallo en rojo  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">text</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Error..."</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">css</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"color"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"red"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** - `volver a permitir el envío, contar la espera y disparar el evento` */</span></span>
+<span class="line"><span style="color:#DCDCAA">            complete</span><span style="color:#9CDCFE">:</span><span style="color:#D4D4D4"> () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  habilitar el botón  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">":submit"</span><span style="color:#D4D4D4">).</span><span style="color:#DCDCAA">prop</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"disabled"</span><span style="color:#D4D4D4">, </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  volver a contar la espera, si este formulario la tiene  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                autosave</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  avisar de que el envío terminó  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">trigger</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"finalizoenvio"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `autosave(formulario)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * ------------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Deja un envío pendiente con los segundos de ese formulario.</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sale si la llamada no pasó segundos o si el checkbox está apagado.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#9CDCFE"> formulario</span><span style="color:#6A9955"> - Formulario que se enviará solo.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {void}</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> autosave</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | undefined}</span><span style="color:#6A9955"> - `espera que ya estaba pendiente` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> previo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"retardo"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  una sola espera por formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">previo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste | undefined}</span><span style="color:#6A9955"> - `ajustes guardados en el formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> ajuste</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  sin ajustes o sin segundos no hay autoguardado  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4"> || </span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">"number"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  la fase 1 y la fase 2 se envían solo a mano  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> - `interruptor del autoguardado` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> interruptor</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLInputElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">find</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"[name='autosave']"</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  apagado: no dejar otra espera  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">interruptor</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">length</span><span style="color:#D4D4D4"> &#x26;&#x26; !</span><span style="color:#9CDCFE">interruptor</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">prop</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"checked"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  el checkbox cortó el autoguardado  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `identificador de la espera` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> retardo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | undefined}</span><span style="color:#6A9955"> - `nodo de este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> nodo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">get</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  la ruta nueva ya sacó el formulario o sus ajustes  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">nodo</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">nodo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">isConnected</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  no enviar un formulario que ya no está  -----</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  enviar cuando vence la espera  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">            enviar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">        }, </span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4"> * </span><span style="color:#B5CEA8">1000</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  recordar la espera para poder cancelarla  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"retardo"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">retardo</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /**</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * -----  `smartform(opciones)`  -----</span></span>
+<span class="line"><span style="color:#6A9955">     * -----------------------------------</span></span>
+<span class="line"><span style="color:#6A9955">     * - Sin argumento escribe el texto del PHP en `#mensaje`.</span></span>
+<span class="line"><span style="color:#6A9955">     * - Con opciones envía JSON. Con `segundos` además autoguarda.</span></span>
+<span class="line"><span style="color:#6A9955">     * - No es una flecha: `this` tiene que ser la colección jQuery.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@param</span><span style="color:#4EC9B0"> {SmartformOpciones}</span><span style="color:#9CDCFE"> [opciones]</span><span style="color:#6A9955"> - Url, capa, método y segundos.</span></span>
+<span class="line"><span style="color:#6A9955">     * </span><span style="color:#569CD6">@return</span><span style="color:#4EC9B0"> {JQuery}</span><span style="color:#6A9955"> - Cadena para encadenar métodos.</span></span>
+<span class="line"><span style="color:#6A9955">     */</span></span>
+<span class="line"><span style="color:#9CDCFE">    $</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">fn</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">smartform</span><span style="color:#D4D4D4"> = </span><span style="color:#569CD6">function</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">opciones</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /** - `true cuando la llamada no trae opciones: fase 1 en texto` */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> texto</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">opciones</span><span style="color:#D4D4D4"> === </span><span style="color:#569CD6">undefined</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        /**</span></span>
+<span class="line"><span style="color:#6A9955">         * -----------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * -----  `conf {}`  -----</span></span>
+<span class="line"><span style="color:#6A9955">         * -----------------------</span></span>
+<span class="line"><span style="color:#6A9955">         * - `opciones de esta llamada, fusionadas con los valores por defecto`</span></span>
+<span class="line"><span style="color:#6A9955">         * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformOpciones}</span></span>
+<span class="line"><span style="color:#6A9955">         */</span></span>
+<span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> conf</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">extend</span><span style="color:#D4D4D4">(</span></span>
+<span class="line"><span style="color:#D4D4D4">            {</span></span>
+<span class="line"><span style="color:#6A9955">                /** - `si no hay url, se usa el action` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                url:</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `si no hay capa, se crea un párrafo` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                capaMensaje:</span><span style="color:#569CD6"> false</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `post salvo que se pida get` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                metodo:</span><span style="color:#CE9178"> "post"</span></span>
+<span class="line"><span style="color:#D4D4D4">            },</span></span>
+<span class="line"><span style="color:#9CDCFE">            opciones</span></span>
+<span class="line"><span style="color:#D4D4D4">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  preparar cada formulario con su propio ajuste  -----</span></span>
+<span class="line"><span style="color:#569CD6">        this</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">each</span><span style="color:#D4D4D4">((</span><span style="color:#9CDCFE">_</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">elemento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#6A9955"> - `formulario que se envía` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> $elem</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLFormElement>}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">elemento</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {string}</span><span style="color:#6A9955"> - `dirección de envío de este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> url</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {JQuery&#x3C;HTMLElement>}</span><span style="color:#6A9955"> - `capa de mensaje de este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> $capa</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"#mensaje"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {"get" | "post"}</span><span style="color:#6A9955"> - `post, salvo que la opción pida get` */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> metodo</span><span style="color:#D4D4D4"> = </span><span style="color:#CE9178">"post"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {number | undefined}</span><span style="color:#6A9955"> - `espera del autoguardado, si la llamada la pasó` */</span></span>
+<span class="line"><span style="color:#569CD6">            let</span><span style="color:#9CDCFE"> segundos</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  fase 1: texto, capa fija y post  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">texto</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  usar el action del formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                url</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"action"</span><span style="color:#D4D4D4">) || </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#6A9955">            //  -----  fases 2 a 4: json, capa y método de las opciones  -----</span></span>
+<span class="line"><span style="color:#C586C0">            else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformOpciones}</span><span style="color:#6A9955"> - `opciones que pidió esta llamada` */</span></span>
+<span class="line"><span style="color:#569CD6">                const</span><span style="color:#4FC1FF"> pedidas</span><span style="color:#D4D4D4"> = </span><span style="color:#6A9955">/** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformOpciones}</span><span style="color:#6A9955"> */</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">opciones</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  url pedida, o el action si no hay  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                url</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">conf</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">url</span><span style="color:#D4D4D4"> ? </span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">conf</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">url</span><span style="color:#D4D4D4">) : (</span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">attr</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"action"</span><span style="color:#D4D4D4">) || </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  párrafo nuevo, por si no pidieron capa  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                $capa</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"&#x3C;p>"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  la capa creada reserva el mismo alto que el mensaje de la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                $capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">addClass</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform__message"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si no pidieron capa, insertar el párrafo en el formulario  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">conf</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capaMensaje</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  colocar el párrafo al principio  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                    $capa</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">prependTo</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#6A9955">                //  -----  si pidieron capa, usar ese elemento  -----</span></span>
+<span class="line"><span style="color:#C586C0">                else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  resolver el selector de la capa  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                    $capa</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">$</span><span style="color:#D4D4D4">(</span><span style="color:#DCDCAA">String</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">conf</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">capaMensaje</span><span style="color:#D4D4D4">));</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  post, salvo que la opción pida get  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                metodo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">conf</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">metodo</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"get"</span><span style="color:#D4D4D4"> ? </span><span style="color:#CE9178">"get"</span><span style="color:#D4D4D4"> : </span><span style="color:#CE9178">"post"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  guardar los segundos solo si la llamada los pasó  -----</span></span>
+<span class="line"><span style="color:#C586C0">                if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> pedidas</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"number"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  espera de este formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                    segundos</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">pedidas</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">                }</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /**</span></span>
+<span class="line"><span style="color:#6A9955">             * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">             * -----  `ajuste {}`  -----</span></span>
+<span class="line"><span style="color:#6A9955">             * -------------------------</span></span>
+<span class="line"><span style="color:#6A9955">             * - `url, capa, método, modo y segundos de este formulario`</span></span>
+<span class="line"><span style="color:#6A9955">             * </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste}</span></span>
+<span class="line"><span style="color:#6A9955">             */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> ajuste</span><span style="color:#D4D4D4"> = {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `dirección de este formulario` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                url</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `capa de mensaje de este formulario` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                capa:</span><span style="color:#9CDCFE"> $capa</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `get o post` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                metodo</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `true cuando la respuesta es texto` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                texto</span><span style="color:#D4D4D4">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                /** - `espera del autoguardado, si la llamada la pasó` */</span></span>
+<span class="line"><span style="color:#9CDCFE">                segundos</span></span>
+<span class="line"><span style="color:#D4D4D4">            };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  guardar los ajustes en el formulario  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $elem</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">, </span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  interceptar el envío del navegador  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">            $elem</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"submit"</span><span style="color:#D4D4D4">, (</span><span style="color:#9CDCFE">evento</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  no recargar la página  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                evento</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">preventDefault</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  enviar este formulario  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                enviar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  programar el autoguardado solo si pasaron segundos  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> segundos</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">"number"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  encender o apagar la espera con el checkbox  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">                $elem</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">on</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"change"</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"[name='autosave']"</span><span style="color:#D4D4D4">, () </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                    //  -----  armar la espera, o cancelarla si quedó apagado  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                    autosave</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">                });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  dejar el primer autoguardado pendiente  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">                autosave</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$elem</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
+<span class="line"><span style="color:#D4D4D4">        });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  permitir encadenar la colección  -----</span></span>
+<span class="line"><span style="color:#C586C0">        return</span><span style="color:#569CD6"> this</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">})(</span><span style="color:#9CDCFE">jQuery</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span></code></pre>

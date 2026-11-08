@@ -97,6 +97,59 @@ declare global {
 
 
     /**
+     * -------------------------------------------
+     * -----  interface `SmartformOpciones`  -----
+     * -------------------------------------------
+     * Opciones de `smartform` (clase 30).
+     * Se fusionan con los valores por defecto mediante `$.extend`.
+     */
+    interface SmartformOpciones {
+        /** URL de envío. Si se omite o es `false`, se usa el `action` del formulario. */
+        url?: string | false;
+        /** Selector de la capa de mensaje. Si se omite o es `false`, el plugin crea un párrafo. */
+        capaMensaje?: string | false;
+        /** Método HTTP. Solo `get` se respeta; cualquier otro valor se envía por post. */
+        metodo?: string;
+        /** Segundos del autoguardado. Lo usan las fases 3 y 4. */
+        segundos?: number;
+    }
+
+
+    /**
+     * --------------------------------------------
+     * -----  interface `SmartformRespuesta`  -----
+     * --------------------------------------------
+     * JSON que devuelve `guardar-con-json.php`.
+     */
+    interface SmartformRespuesta {
+        /** `true` cuando los cuatro campos llegaron informados. */
+        valido: boolean;
+        /** Textos de los campos vacíos. No viene si `valido` es `true`. */
+        errores?: string[];
+    }
+
+
+    /**
+     * -----------------------------------------
+     * -----  interface `SmartformAjuste`  -----
+     * -----------------------------------------
+     * Url, capa, método y modo de respuesta guardados en cada formulario.
+     */
+    interface SmartformAjuste {
+        /** Dirección de envío de ese formulario. */
+        url: string;
+        /** Capa donde se escribe el resultado. */
+        capa: JQuery;
+        /** `get` o `post`. */
+        metodo: "get" | "post";
+        /** `true` en la fase 1: la respuesta se escribe como texto. */
+        texto: boolean;
+        /** Espera del autoguardado, en segundos. Solo si la llamada pasó `segundos`. */
+        segundos?: number;
+    }
+
+
+    /**
      * ----------------------------------------------
      * -----  `AdvancedValidationOptions {}`  -----
      * ----------------------------------------------
@@ -368,6 +421,27 @@ declare global {
          * - String: llama a un método público de la instancia.
          */
         advancedValidation: AdvancedValidationPlugin;
+
+
+        /*
+            *  ------------------------------------------------------------------------------------------  *
+            *  -----  plugin jQuery (clase 30) — /src/scripts/clase-30/plugins/jquery.smartform.js  -----  *
+            *  -----  Documentacion en /src/scripts/clase-30/plugins/jquery.smartform.js             -----  *
+            *  ------------------------------------------------------------------------------------------  *
+        */
+
+
+        /**
+         * -----------------------------------
+         * -----  `smartform(opciones)`  -----
+         * -----------------------------------
+         * - Intercepta el envío y lo manda por Ajax.
+         * - Sin opciones, escribe el texto del PHP en `#mensaje`.
+         * - Con `segundos`, reenvía solo. Dispara `comienzoenvio` y `finalizoenvio`.
+         * @param opciones - Url, capa de mensaje, método y segundos.
+         * @returns Cadena jQuery para encadenar metodos.
+         */
+        smartform(opciones?: SmartformOpciones): JQuery;
 
     }
 

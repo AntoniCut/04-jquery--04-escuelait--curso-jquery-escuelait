@@ -1,0 +1,66 @@
+<pre class="shiki dark-plus" style="background-color:#1E1E1E;color:#D4D4D4" tabindex="0"><code><span class="line"><span style="color:#D4D4D4">        *  -----  guardar-con-json</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  --  /src/services/clase-</span><span style="color:#B5CEA8">30</span><span style="color:#D4D4D4">/guardar-con-json</span><span style="color:#D4D4D4">.</span><span style="color:#D4D4D4">php  -----  *</span></span>
+<span class="line"><span style="color:#D4D4D4">        *  -----------------------------------------------------------------------------------  *</span></span>
+<span class="line"><span style="color:#D4D4D4">    */</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  simular la espera del servidor  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    sleep</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">2</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  campos recibidos por get o post  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">    $nombre</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"nombre"</span><span style="color:#D4D4D4">]) ? (</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"nombre"</span><span style="color:#D4D4D4">] : </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $email</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"email"</span><span style="color:#D4D4D4">]) ? (</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"email"</span><span style="color:#D4D4D4">] : </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $telefono</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"telefono"</span><span style="color:#D4D4D4">]) ? (</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"telefono"</span><span style="color:#D4D4D4">] : </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#9CDCFE">    $direccion</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">isset</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"direccion"</span><span style="color:#D4D4D4">]) ? (</span><span style="color:#569CD6">string</span><span style="color:#D4D4D4">) </span><span style="color:#9CDCFE">$_REQUEST</span><span style="color:#D4D4D4">[</span><span style="color:#CE9178">"direccion"</span><span style="color:#D4D4D4">] : </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    /** </span><span style="color:#569CD6">@var</span><span style="color:#569CD6"> string[]</span><span style="color:#6A9955"> $errores textos de los campos vacíos */</span></span>
+<span class="line"><span style="color:#9CDCFE">    $errores</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">array</span><span style="color:#D4D4D4">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  el nombre es obligatorio  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$nombre</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anotar el fallo del nombre  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $errores</span><span style="color:#D4D4D4">[] = </span><span style="color:#CE9178">"No has indicado el nombre"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  el email es obligatorio  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$email</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anotar el fallo del email  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $errores</span><span style="color:#D4D4D4">[] = </span><span style="color:#CE9178">"No has indicado el email"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  el teléfono es obligatorio  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$telefono</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anotar el fallo del teléfono  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $errores</span><span style="color:#D4D4D4">[] = </span><span style="color:#CE9178">"No has indicado el teléfono"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  la dirección es obligatoria  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#9CDCFE">$direccion</span><span style="color:#D4D4D4"> === </span><span style="color:#CE9178">""</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  anotar el fallo de la dirección  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $errores</span><span style="color:#D4D4D4">[] = </span><span style="color:#CE9178">"No has indicado la dirección"</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  sin fallos, la respuesta es válida  -----</span></span>
+<span class="line"><span style="color:#C586C0">    if</span><span style="color:#D4D4D4"> (</span><span style="color:#DCDCAA">count</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$errores</span><span style="color:#D4D4D4">) === </span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  json de éxito  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $respuesta</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">array</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"valido"</span><span style="color:#D4D4D4"> => </span><span style="color:#569CD6">true</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"><span style="color:#6A9955">    //  -----  con fallos, devolver la lista  -----</span></span>
+<span class="line"><span style="color:#C586C0">    else</span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  json con los textos  -----</span></span>
+<span class="line"><span style="color:#9CDCFE">        $respuesta</span><span style="color:#D4D4D4"> = </span><span style="color:#DCDCAA">array</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"valido"</span><span style="color:#D4D4D4"> => </span><span style="color:#569CD6">false</span><span style="color:#D4D4D4">, </span><span style="color:#CE9178">"errores"</span><span style="color:#D4D4D4"> => </span><span style="color:#9CDCFE">$errores</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"><span style="color:#D4D4D4">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  la respuesta es json  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    header</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"Content-Type: application/json; charset=utf-8"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">    //  -----  enviar el json sin escapar los acentos  -----</span></span>
+<span class="line"><span style="color:#DCDCAA">    echo</span><span style="color:#DCDCAA"> json_encode</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">$respuesta</span><span style="color:#D4D4D4">, JSON_UNESCAPED_UNICODE);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D4D4D4">?></span></span>
+<span class="line"></span></code></pre>

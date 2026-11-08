@@ -1,0 +1,68 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------  *
+    *  -----  03-autoguardado-demo.html  --  /src/pages-components/clase-30/03-autoguardado-demo.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__demo">
+
+    <div class="smartform">
+
+        <h3 class="smartform__title">
+            Autoguardado
+        </h3>
+
+        <p class="smartform__hint">
+            A los 6 segundos el formulario se envía solo. El checkbox empieza activado.
+        </p>
+
+        <form
+            class="smartform__form"
+            id="contacto"
+            action="/escuelait/curso-jquery-escuelait/app/services/clase-30/guardar-con-json.php"
+            method="post"
+        >
+
+            <section class="smartform__fields">
+
+                <h2 class="smartform__fields-title">Contacto</h2>
+
+                <label class="smartform__field">
+                    Nombre
+                    <input class="smartform__input" type="text" name="nombre" autocomplete="name">
+                </label>
+
+                <label class="smartform__field">
+                    Email
+                    <input class="smartform__input" type="text" name="email" autocomplete="email" inputmode="email">
+                </label>
+
+                <label class="smartform__field">
+                    Teléfono
+                    <input class="smartform__input" type="text" name="telefono" autocomplete="tel" inputmode="tel">
+                </label>
+
+                <label class="smartform__field">
+                    Dirección
+                    <input class="smartform__input" type="text" name="direccion" autocomplete="street-address">
+                </label>
+
+                <label class="smartform__field smartform__field--autosave">
+                    Autoguardado
+                    <input class="smartform__checkbox" type="checkbox" name="autosave" checked>
+                </label>
+
+                <button class="smartform__submit" type="submit">Guardar</button>
+
+            </section>
+
+            <section class="smartform__message" id="mensaje">
+                <p class="smartform__message-text">Actualización de contactos</p>
+            </section>
+
+        </form>
+
+    </div>
+
+</div>

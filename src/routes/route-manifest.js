@@ -295,6 +295,12 @@ export const routeManifest = [
     { id: 'clase29TooltipTrack', path: 'clase29-usando-jquery-ui/14-tooltip/06-track', file: 'route-clase29-tooltip-track' },
     { id: 'clase29TooltipPlayer', path: 'clase29-usando-jquery-ui/14-tooltip/07-player', file: 'route-clase29-tooltip-player' },
 
+    { id: 'clase30', path: 'clase30-practica-2', file: 'route-clase30' },
+    { id: 'clase30EnvioHtml', path: 'clase30-practica-2/01-envio-html', file: 'route-clase30-envio-html' },
+    { id: 'clase30Opciones', path: 'clase30-practica-2/02-opciones', file: 'route-clase30-opciones' },
+    { id: 'clase30Autoguardado', path: 'clase30-practica-2/03-autoguardado', file: 'route-clase30-autoguardado' },
+    { id: 'clase30Eventos', path: 'clase30-practica-2/04-eventos', file: 'route-clase30-eventos' },
+
     { id: '404NotFoundPage', path: '404', file: 'route-404-not-found-page' },
 
     

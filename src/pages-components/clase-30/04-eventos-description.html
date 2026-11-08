@@ -1,0 +1,42 @@
+<!--
+    *  ---------------------------------------------------------------------------------------------------------  *
+    *  -----  04-eventos-description.html  --  /src/pages-components/clase-30/04-eventos-description.html  -----  *
+    *  ---------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '04'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">04</p>
+                <h2 class="description-page__hero-title">Eventos</h2>
+                <p class="description-page__hero-subtitle">fase 4 · trigger</p>
+            </div>
+        </header>
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Fase 4
+            </h3>
+
+            <p class="description-page__intro-text">
+                Generar unos eventos personalizados en el plugin, cuando empiece y finalice el envío del formulario por Ajax. Esos eventos se generan con <code>trigger()</code> desde el código del plugin. Desde fuera del plugin, para alguno de los formularios Ajax de la página, se definen dos manejadores de esos eventos, para hacer cosas cuando empieza el envío y cuando finaliza.
+            </p>
+
+            <p class="description-page__intro-text">
+                Como sugerencia, se puede crear una capa overlay en el medio de la pantalla con el símbolo de carga. Cuando comienza el envío se muestra y, cuando finaliza, se oculta.
+            </p>
+
+            <p class="description-page__intro-text">
+                En esta página el primer formulario escucha <code>comienzoenvio</code> y <code>finalizoenvio</code>: baja la opacidad mientras envía y espera 6 segundos. El segundo espera 10 segundos y crea su propio mensaje. Los dos empiezan con el autoguardado activado; si lo desmarcás, se cancela la espera de ese formulario.
+            </p>
+
+        </section>
+
+    </article>
+
+</div>

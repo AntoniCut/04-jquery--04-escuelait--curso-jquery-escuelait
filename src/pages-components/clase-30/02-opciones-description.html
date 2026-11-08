@@ -1,0 +1,57 @@
+<!--
+    *  -----------------------------------------------------------------------------------------------------------  *
+    *  -----  02-opciones-description.html  --  /src/pages-components/clase-30/02-opciones-description.html  -----  *
+    *  -----------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '02'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">02</p>
+                <h2 class="description-page__hero-title">Opciones</h2>
+                <p class="description-page__hero-subtitle">fase 2 · json</p>
+            </div>
+        </header>
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Fase 2
+            </h3>
+
+            <p class="description-page__intro-text">
+                Como segunda fase hacemos lo mismo que la fase 1, pero le agregamos validación. El plugin convierte un formulario normal en un formulario Ajax con validación. El formulario se envía al servidor, que devuelve un JSON con un formato como este:
+            </p>
+
+            <pre class="description-page__sample"><code>{ "valido": true }</code></pre>
+
+            <p class="description-page__intro-text">
+                Si el formulario no era válido:
+            </p>
+
+            <pre class="description-page__sample"><code>{
+    "valido": false,
+    "errores": "&lt;ul&gt;&lt;li&gt;No has indicado el nombre&lt;/li&gt;&lt;li&gt;No has indicado el email&lt;/li&gt;&lt;/ul&gt;"
+}</code></pre>
+
+            <p class="description-page__intro-text">
+                Las validaciones dan igual. La idea es procesar ese JSON en el cliente con jQuery.
+            </p>
+
+            <p class="description-page__intro-text">
+                Al invocarlo, el plugin puede recibir <code>url</code>, <code>capaMensaje</code> y <code>metodo</code>. <code>url</code> es la dirección de envío. <code>capaMensaje</code> es la capa del mensaje de carga y de la respuesta, válida o con errores. Por defecto <code>url</code> y <code>capaMensaje</code> valen <code>false</code> y <code>metodo</code> vale <code>post</code>. Si <code>url</code> es <code>false</code>, se usa el <code>action</code> del formulario. Si <code>capaMensaje</code> es <code>false</code>, el plugin crea un elemento, lo inserta dentro del formulario y muestra ahí los mensajes. <code>metodo</code> solo puede ser <code>post</code> o <code>get</code>; cualquier otro valor queda en <code>post</code>.
+            </p>
+
+            <p class="description-page__intro-text">
+                En esta página la url sale del <code>action</code>. La capa de mensaje y el método se pasan como opciones. Si falta un campo, el mensaje lista el fallo.
+            </p>
+
+        </section>
+
+    </article>
+
+</div>

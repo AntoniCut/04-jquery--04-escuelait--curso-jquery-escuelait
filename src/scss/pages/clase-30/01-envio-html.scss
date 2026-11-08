@@ -1,0 +1,20 @@
+/*
+    *  ---------------------------------------------------------------------------------  *
+    *  -----  01-envio-html.scss  --  /src/scss/pages/clase-30/01-envio-html.scss  -----  *
+    *  ---------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-30-common' as c30;
+
+
+@include c30.frame('smartform', 56rem);
+
+
+[data-component-page="description"] {
+    min-height: 36rem;
+
+    @include c30.tablet {
+        min-height: 32rem;
+    }
+}
