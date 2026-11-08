@@ -46,7 +46,7 @@ export const routeClase30 = {
         },
         headerTitle: 'Clase 30 - Práctica 2',
         styles: [
-            { href: `${styles}/pages/shared/section-img.css` },
+
         ],
         scripts: [
             { src: `${scripts}/tooltips.js` },

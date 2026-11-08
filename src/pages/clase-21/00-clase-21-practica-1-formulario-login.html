@@ -132,65 +132,112 @@
 
             </section>
 
+            <section class="description-page__enunciado" aria-label="Enunciado de la clase 21">
+
+                <h3 class="description-page__enunciado-title">
+                    Práctica 1: "Sistema de login con experiencia de usuario enriquecida"
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Curso de jQuery EscuelaIT
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Objetivo:</strong> Se trata de hacer un completo sistema de login de usuario, aunque limitando el desarrollo a lo que sería la parte Front-end. El sistema tiene que ser dinámico y sencillo de usar, además de responder ante posibles errores de una manera amigable.
+                </p>
+
+                <h3 class="description-page__enunciado-title">
+                    Esquema de funcionamiento
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Basamos este trabajo en varias partes, que enumero en "orden de aparición".
+                </p>
+
+                <ol class="description-page__enunciado-list">
+
+                    <li>
+                        En la página habrá un enlace para "Login de usuario"
+                    </li>
+
+                    <li>
+                        Al pulsar ese enlace se mostrará un formulario de login en una "caja dinámica". El tipo de caja será en función de vuestra creatividad. Podéis intentar hacer lo que llaman una "caja modal" o cualquier otra solución que tenga al menos un efectillo para darle gracia. Como sugerencia, podéis hacer una capa flotante, posicionada de manera absoluta con CSS y que la caja aparezca por un lado y se posicione en el centro de la página con un movimiento suavizado. Otra opción quizás más simple es que se posicione en el centro de la página y aparezca con un fundido de transparente a opaco. Aquí teneis libertad para intentar e inventar lo que se desee.
+                    </li>
+
+                    <li>
+                        En la caja de login habrá un formulario con 2 campos, usuario y clave (aparte del botón de submit para enviar el formulario)
+                    </li>
+
+                    <li>
+                        Al submitir el formulario se enviarán los datos por Ajax, usando POST al servidor.
+                    </li>
+
+                    <li>
+                        No necesitamos hacer la parte de programación del lado del servidor para autenticar al usuario, simplemente se nos devolverá un JSON literal que tendremos almacenado en un archivo de texto plano.
+                    </li>
+
+                    <li>
+                        El JSON que recibirás contiene varios datos, pero básicamente nos debe decir si la supuesta validación ha sido positiva o negativa. El JSON tendría una forma como esta
+                        <p class="description-page__enunciado-text">
+                            <strong>En caso de ser válido el usuario:</strong>
+                        </p>
+                        <pre class="description-page__enunciado-code"><code>{
+    "valido": true,
+    "mensaje": "Entrando..."
+}</code></pre>
+                        <p class="description-page__enunciado-text">
+                            <strong>En caso de NO ser válido el usuario:</strong>
+                        </p>
+                        <pre class="description-page__enunciado-code"><code>{
+    "valido": false,
+    "mensaje": "No se corresponde el usuario o la clave"
+}</code></pre>
+                    </li>
+
+                    <li>
+                        Una vez recibida la respuesta JSON:
+                        <ol type="a">
+                            <li>
+                                Si el login NO es válido, entonces aparece el "mensaje" de fallo en rojo en un sitio cercano al formulario de login, el usuario podría entonces revisar los datos que ha escrito para hacer login y volver a enviar el formulario.
+                            </li>
+                            <li>
+                                Si el login era válido, entonces muestra en verde el "mensaje" recibido en el JSON y al cabo de 2 segundos se oculta la capa de login.
+                            </li>
+                        </ol>
+                    </li>
+
+                </ol>
+
+                <p class="description-page__enunciado-text">
+                    Con esta práctica vamos a trabajar con efectos, Ajax y JSON, por lo que resultará un buen ejercicio para trabajar con todo lo visto durante el curso hasta el momento. Espero que disfrutéis haciéndola.
+                </p>
+
+                <ul class="description-page__enunciado-list">
+                    <li>Las prácticas no hace falta que me las enviéis</li>
+                    <li>El martes siguiente la corregimos en clase y os muestro yo la solución que he tomado para hacer cada uno de los puntos. Así cada uno se podrá auto-evaluar y conocer otras posibilidades.</li>
+                    <li>Tenéis libertad para escoger vuestros efectos personalizados, los que más os gusten.</li>
+                    <li>Se pueden aplicar todo tipo de mejoras que se os ocurran adicionales al presente enunciado.</li>
+                </ul>
+
+                <h3 class="description-page__enunciado-title">
+                    Publicar vuestros trabajos
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Se valorará positivamente que publiquéis el trabajo en un sitio web en Internet, para que otros compaleros puedan ver las resoluciones que habéis seguido.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    En la clase del martes, aparte de resolver la práctica, me gustaría que podamos ver algunos trabajos vuestros y que quien se anime nos comente un poco cómo lo ha hecho.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    Gracias por todo! y feliz código!
+                </p>
+
+            </section>
+
         </article>
-    </section>
-
-    <header class="section__header">
-        <h2 class="section__title" title="Formulario login">
-            Clase 21 - Formulario login - Diapositivas
-        </h2>
-    </header>
-
-    <section class="main__images" aria-label="Diapositivas de Formulario login">
-
-        <div class="section__content-img section__content-img--rows">
-
-            <article class="section__card-img">
-                <picture>
-                    <source
-                        type="image/avif"
-                        srcset="
-                            ../../../assets/img/clase-21/diapositiva-01-280x247.avif  280w,
-                            ../../../assets/img/clase-21/diapositiva-01-560x494.avif  560w
-                        "
-                        sizes="(max-width: 600px) 280px, 560px"
-                    >
-                    <img
-                        src="../../../assets/img/clase-21/diapositiva-01.png"
-                        class="card__img"
-                        alt="Práctica 1: login con caja dinámica, formulario y envío POST que recibe un JSON"
-                        width="1200"
-                        height="1553"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </picture>
-            </article>
-
-            <article class="section__card-img">
-                <picture>
-                    <source
-                        type="image/avif"
-                        srcset="
-                            ../../../assets/img/clase-21/diapositiva-02-280x247.avif  280w,
-                            ../../../assets/img/clase-21/diapositiva-02-560x494.avif  560w
-                        "
-                        sizes="(max-width: 600px) 280px, 560px"
-                    >
-                    <img
-                        src="../../../assets/img/clase-21/diapositiva-02.png"
-                        class="card__img"
-                        alt="Si el login falla se muestra el mensaje en rojo; si es válido, en verde y se oculta la caja"
-                        width="1200"
-                        height="1553"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </picture>
-            </article>
-
-        </div>
-
     </section>
 
 </div>

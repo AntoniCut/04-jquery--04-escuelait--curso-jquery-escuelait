@@ -111,87 +111,160 @@
 
             </section>
 
+            <section class="description-page__enunciado" aria-label="Enunciado de la clase 30">
+
+                <h3 class="description-page__enunciado-title">
+                    Práctica 2 #dwjQuery
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Esta práctica está dividida en "fases", que cada uno implemente la fase que le interese o pueda implementar.
+                </p>
+
+                <h3 class="description-page__enunciado-title">
+                    FASE 1:
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Hacer un plugin que convierta un formulario normal en un formulario Ajax. Simplemente llamamos al plugin sobre el formulario y cuando se haga el "submit" que se envíe por ajax en vez de enviarse por el método común.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Requisitos:</strong>
+                </p>
+
+                <ol class="description-page__enunciado-list">
+                    <li>
+                        Debes conseguir que en algún lugar aparezca el típico mensaje "cargando" mientras que se espera la respuesta a la solicitud ajax por parte del servidor.
+                    </li>
+                    <li>
+                        Mientras que se está enviando el formulario debes desactivar el botón de submit, para que no se vuelva a enviar el formulario mientras que se recibe el resultado de la solicitud Ajax.
+                    </li>
+                </ol>
+
+                <h3 class="description-page__enunciado-title">
+                    FASE 2:
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Como segunda fase hacemos lo mismo que la fase 1 pero le agregamos validación. Hacer un plugin que convierta un formulario normal en un formulario Ajax con validación. El formulario se envía al servidor, que nos devuelve un JSON con un formato como este:
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    Si el formulario era válido)
+                </p>
+
+                <pre class="description-page__enunciado-code"><code>{
+    "valido": true
+}</code></pre>
+
+                <p class="description-page__enunciado-text">
+                    Si el formulario no era válido)
+                </p>
+
+                <pre class="description-page__enunciado-code"><code>{
+    "valido": false,
+    "errores": "&lt;ul&gt;
+        &lt;li&gt;No has indicado el nombre&lt;/li&gt;
+        &lt;li&gt;No has indicado el email&lt;/li&gt;
+        &lt;\/ul&gt;"
+}</code></pre>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Nota:</strong> Las validaciones que hagas realmente me dan igual, la idea es que puedas procesar ese JSON en el cliente con jQuery.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Requisitos:</strong>
+                </p>
+
+                <ol class="description-page__enunciado-list">
+                    <li>
+                        Al invocarlo, el plugin podrá recibir unas opciones como estas:
+                        <pre class="description-page__enunciado-code"><code>{
+    url: "destilo.php",
+    capaMensaje: "#msg",
+    metodo: "get"
+}</code></pre>
+                    </li>
+                </ol>
+
+                <ul class="description-page__enunciado-list">
+                    <li>En el campo "url" indicamos la url a la que hay que enviar el formulario.</li>
+                    <li>En el campo "capaMensaje" indicamos la capa donde se debe mostrar el mensaje de carga los mensajes cuando se reciba la respuesta del ajax, informando si el formulario era válido, de los posibles errores de validación, etc.</li>
+                </ul>
+
+                <p class="description-page__enunciado-text">
+                    Las opciones por defecto que tendremos en el plugin son:
+                </p>
+
+                <pre class="description-page__enunciado-code"><code>{
+    url: false,
+    capaMensaje: false,
+    metodo: "post"
+}</code></pre>
+
+                <ul class="description-page__enunciado-list">
+                    <li>Si url es false, entonces como URL tomamos el action del formulario.</li>
+                    <li>Si capaMensaje es false, entonces generamos un elemento en tiempo de ejecución del plugin ("al vuelo"), de cualquier tipo (me vale una DIV o un P, por ej). el elemento lo insertamos dentro del formulario y los mensajes los mostraremos dentro de ese elemento generado.</li>
+                    <li>metodo solo puede valer "post" o "get". Si no es cualquiera de estos valores, el método que se debe usar es "post".</li>
+                </ul>
+
+                <h3 class="description-page__enunciado-title">
+                    FASE 3:
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Como tercera fase se implementará la fase 2, más un mecanismo para que el formulario se envíe automáticamente cada cierto número de segundos. Hacer un plugin que convierta un formulario normal en un formulario Ajax, con validación y además un mecanismo de "autosave".
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    Al invocar al plugin del formulario con "autosave" se genera un temporizador para que el formulario se envíe por Ajax pasados unos segundos. El tiempo será configurable por el objeto de opciones del plugin, de modo que el objeto de opciones recibirá los mismos datos que la Fase2, más un dato llamado "segundos". Por defecto segundos tomará el valor de 20.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    El mecanismo es el siguiente.
+                </p>
+
+                <ol class="description-page__enunciado-list">
+                    <li>
+                        Invocas al plugin y generas el temporizador para que se auto-envíe pasados x segundos.
+                    </li>
+                    <li>
+                        Si pasados esos x segundos no lo hemos enviado nosotros manualmente (pulsando el botón de submit), el formulario se autoenvía solo y se establece otra vez el temporizador para enviarlo de nuevo automáticamente pasados los segundos definidos en las opciones del plugin.
+                    </li>
+                    <li>
+                        Si antes de que se llegue a producir el auto-envío, osea, antes de completarse los segundos indicados al invocar al plugin, el usuario envía manualmente el formulario pulsando el botón de submit, el formulario se tiene que enviar por Ajax, pero el temporizador de autoenvío se debe parar. Una vez recibida la respuesta de Ajax, se vuelve a establecer el temporizador de autoenvío.
+                    </li>
+                </ol>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Nota:</strong> el temporizador lo puedes implementar con las funciones setTimeout() o setInterval(), nativas de Javascript.
+                </p>
+
+                <h3 class="description-page__enunciado-title">
+                    Fase 4:
+                </h3>
+
+                <p class="description-page__enunciado-text">
+                    Generar unos eventos personalizados en el plugin, cuando empiece y finalice el envío del formulario por ajax. Esos eventos se generan con trigger() desde el código del plugin. Desde fuera del código del plugin, para alguno de los formularios ajax que tengas en la página, definirás dos manejadores de eventos para esos eventos personalizados, para hacer cosas cuando empieza el envío del formulario y cuando finaliza.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    Como sugerencia puedes crear una capa "overlay" que aparezca en el medio de la pantalla y con el típico símbolo del loading (esa ruedita que se va moviendo para expresar que la página está cargando). Cuando se comience a enviar el formulario se muestra y cuando finalice, se oculta la capa loading.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    <strong>Nota:</strong> Los eventos personalizados los expliqué en la clase extra de eventos. No sé si los visteis de nuevo en las clases de plugins.
+                </p>
+
+                <p class="description-page__enunciado-text">
+                    Suerte! y disfrutar codeando!
+                </p>
+
+            </section>
+
         </article>
-
-    </section>
-
-    <header class="section__header">
-        <h2 class="section__title" title="Práctica 2">
-            Clase 30 - Práctica 2 - Diapositivas
-        </h2>
-    </header>
-
-    <section class="main__images" aria-label="Diapositivas de Práctica 2">
-
-        <div class="section__content-img section__content-img--rows">
-
-            <article class="section__card-img">
-                <picture>
-                    <source
-                        type="image/avif"
-                        srcset="
-                            ../../../assets/img/clase-30/diapositiva-01-280x247.avif  280w,
-                            ../../../assets/img/clase-30/diapositiva-01-560x494.avif  560w
-                        "
-                        sizes="(max-width: 600px) 280px, 560px"
-                    >
-                    <img
-                        src="../../../assets/img/clase-30/diapositiva-01.png"
-                        class="card__img"
-                        alt="Fase 1: un plugin convierte el formulario en Ajax, muestra cargando y desactiva el submit"
-                        width="1200"
-                        height="1553"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </picture>
-            </article>
-
-            <article class="section__card-img">
-                <picture>
-                    <source
-                        type="image/avif"
-                        srcset="
-                            ../../../assets/img/clase-30/diapositiva-02-280x247.avif  280w,
-                            ../../../assets/img/clase-30/diapositiva-02-560x494.avif  560w
-                        "
-                        sizes="(max-width: 600px) 280px, 560px"
-                    >
-                    <img
-                        src="../../../assets/img/clase-30/diapositiva-02.png"
-                        class="card__img"
-                        alt="Fase 2: el servidor responde un JSON de validación y el plugin acepta url, capaMensaje y metodo"
-                        width="1200"
-                        height="1553"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </picture>
-            </article>
-
-            <article class="section__card-img">
-                <picture>
-                    <source
-                        type="image/avif"
-                        srcset="
-                            ../../../assets/img/clase-30/diapositiva-03-280x247.avif  280w,
-                            ../../../assets/img/clase-30/diapositiva-03-560x494.avif  560w
-                        "
-                        sizes="(max-width: 600px) 280px, 560px"
-                    >
-                    <img
-                        src="../../../assets/img/clase-30/diapositiva-03.png"
-                        class="card__img"
-                        alt="Fases 3 y 4: autoguardado con temporizador y eventos personalizados al empezar y terminar el envío"
-                        width="1200"
-                        height="1553"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </picture>
-            </article>
-
-        </div>
 
     </section>
 
