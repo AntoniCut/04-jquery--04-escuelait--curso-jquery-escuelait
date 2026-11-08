@@ -127,11 +127,12 @@ curso-jquery-escuelait/
 │   │   ├── 00-home.html
 │   │   ├── clase-01/ … clase-27/     # archivos sueltos en la carpeta de la clase
 │   │   ├── clase-28/ … clase-29/     # una carpeta por sección (01-accordion/, …)
+│   │   ├── clase-30/                 # archivos sueltos (plugin smartform)
 │   │   └── 404/
 │   ├── pages-components/             # Fragmentos de página (demo + description)
-│   │   └── clase-01/ … clase-29/
+│   │   └── clase-01/ … clase-30/
 │   ├── markdown-shiki/               # HTML resaltado con Shiki (generado, plano por clase)
-│   │   └── clase-01/ … clase-29/
+│   │   └── clase-01/ … clase-30/
 │   ├── scripts/                      # JS por clase (misma jerarquía que pages)
 │   ├── scss/                         # Estilos SCSS → app/css/
 │   ├── components/                   # Layout reutilizable (header, navbar, footer…)
@@ -145,7 +146,8 @@ curso-jquery-escuelait/
 │   │   ├── clase-21/                 # login.php, login-auth, register-auth, SQL…
 │   │   ├── clase-26/                 # enviar.php (ajaxForm)
 │   │   ├── clase-27/                 # enviar.php (advancedValidation)
-│   │   └── clase-29/                 # paneles remotos (tabs)
+│   │   ├── clase-29/                 # paneles remotos (tabs)
+│   │   └── clase-30/                 # guardar.php, guardar-con-json.php (smartform)
 │   ├── effects/
 │   ├── libs/                         # jQuery, jQuery UI
 │   └── plugins/
@@ -359,14 +361,21 @@ Clases implementadas en la SPA (menú lateral `layout-aside-left.html`):
 | 27 | Técnicas para desarrollo de plugins complejos |
 | 28 | Librería de componentes: jQuery UI |
 | 29 | Usando jQuery UI |
-
-Clase prevista en el temario (aún no implementada en la SPA):
-
-| Clase | Tema |
-|---|---|
 | 30 | Práctica 2 |
 
-En las clases 01–27 los archivos cuelgan directamente de `clase-XX/`. En las clases 28 y 29 hay una carpeta por sección (`04-checkboxradio/`, `02-interaccion-draggable/`, …) y el número del ejercicio se reinicia en cada sección.
+La clase 30 implementa el plugin `smartform`. Los archivos cuelgan directo de `clase-30/`:
+
+| Ruta | Ejercicio | PHP |
+|---|---|---|
+| `/clase30-practica-2` | Introducción | — |
+| `…/01-envio-html` | Envío en texto | `guardar.php` (respuesta de texto) |
+| `…/02-opciones` | Opciones | `guardar-con-json.php` |
+| `…/03-autoguardado` | Autoguardado | `guardar-con-json.php` |
+| `…/04-eventos` | Eventos | `guardar-con-json.php` |
+
+El plugin vive en `src/scripts/clase-30/plugins/jquery.smartform.js`. Los estilos compartidos están en `src/scss/pages/clase-30/_clase-30-common.scss`.
+
+En las clases 01–27 y 30 los archivos cuelgan directamente de `clase-XX/`. En las clases 28 y 29 hay una carpeta por sección (`04-checkboxradio/`, `02-interaccion-draggable/`, …) y el número del ejercicio se reinicia en cada sección.
 
 Cada demo suele repartirse así:
 
@@ -566,5 +575,6 @@ Las reglas para tocar demos, rutas, títulos y el manifiesto están en [AGENTS.m
 
 - El código se edita en `src/`. `app/` y `dist/` los genera Gulp.
 - Las clases 28 y 29 agrupan cada widget o interacción en su carpeta (`01-accordion/03-….html`).
+- La clase 30 vuelve a archivos sueltos. El plugin está en `src/scripts/clase-30/plugins/jquery.smartform.js`.
 - Un ejercicio nuevo necesita página, fragmentos, script, SCSS, ruta, entrada en `route-manifest.js` y enlace en el aside de la clase.
-- Los títulos de esas clases nombran la sección: `Clase 29 - 04. Checkboxradio - 03. Selector de producto`.
+- Los títulos de las clases 28 y 29 nombran la sección: `Clase 29 - 04. Checkboxradio - 03. Selector de producto`. En la clase 30 el título es `Clase 30 - 01. Envío en texto`.

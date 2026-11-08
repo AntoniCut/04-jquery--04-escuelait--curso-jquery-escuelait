@@ -30,23 +30,41 @@ src/components/layout/pages/clase-29/layout-aside-clase-29.html
 src/routes/route-manifest.js
 ```
 
+Clase **30**: archivos sueltos dentro de `clase-30/`, más el plugin y dos PHP. Ejemplo, Opciones:
+
+```
+src/pages/clase-30/02-opciones.html
+src/pages-components/clase-30/02-opciones-description.html
+src/pages-components/clase-30/02-opciones-demo.html
+src/scripts/clase-30/02-opciones.js
+src/scripts/clase-30/plugins/jquery.smartform.js
+src/scss/pages/clase-30/02-opciones.scss
+src/scss/pages/clase-30/_clase-30-common.scss
+src/services/clase-30/guardar-con-json.php
+src/routes/route-clase30-opciones.js
+src/components/layout/pages/clase-30/layout-aside-clase-30.html
+src/routes/route-manifest.js
+```
+
+`01-envio-html` postea a `guardar.php` (respuesta de texto). `02-opciones`, `03-autoguardado` y `04-eventos` postean a `guardar-con-json.php`.
+
 `src/markdown-shiki/clase-NN/` lo genera Shiki y queda **plano** (sin subcarpetas de sección). `urlOutput` de la ruta apunta a `…/markdown-shiki/clase-NN`.
 
 PHP, JSON o SQL de una demo van en `src/services/clase-NN/`.
 
-## Alta de un ejercicio (clases 28 y 29)
+## Alta de un ejercicio (clases 28, 29 y 30)
 
-Copia un ejercicio vecino de la misma sección y cambia solo lo de ese widget. Piezas que tienen que coincidir:
+En las clases 28 y 29, copia un ejercicio vecino de la misma sección y cambia solo lo de ese widget. En la clase 30, copia un ejercicio vecino de `clase-30/` (no hay subcarpeta de sección). Piezas que tienen que coincidir:
 
 1. **Página** (`src/pages/…`). Slots `data-component-page="description"` y `data-component-page="demo"`. Artículos `data-shiki` (`codeHtml`, `codeCss`, `codeJs`; `codePhp` si hay PHP).
 2. **Fragmentos** (`*-description.html` y `*-demo.html`) en `src/pages-components/…`.
 3. **Script** en `src/scripts/…`, envuelto en `(($) => { … })(jQuery)`.
-4. **Estilo** en `src/scss/pages/…`. En la clase 29, `@use '../clase-29-common' as c29;`. La ruta apunta al **CSS compilado** (`app/css/…`), no al `.scss`.
+4. **Estilo** en `src/scss/pages/…`. En la clase 29, `@use '../clase-29-common' as c29;`. En la clase 30, `@use 'clase-30-common' as c30;` (el partial está en la misma carpeta). La ruta apunta al **CSS compilado** (`app/css/…`), no al `.scss`.
 5. **Ruta** `src/routes/route-claseNN-….js`, copiando `paths` de una ruta hermana. `libs` usa el nombre del widget que carga `src/libs/jquery-module/loader/load-jquery-ui-by-import.js`: `tooltip`, `draggable`, `droppable`, `sortable`, `resizable`, `selectable`, `dialog`, `datepicker`, `button`, `checkboxradio`, `controlgroup`, `menu`, `autocomplete`, `accordion`, `progressbar`, `selectmenu`, `slider`, `spinner`, `tabs`, `effects`.
 6. **Manifiesto** `src/routes/route-manifest.js`: `{ id, path, file }`. `file` es el nombre del módulo sin `.js`. `id` es el mismo valor que `data-id` del aside.
 7. **Aside** `layout-aside-clase-NN.html`: enlace con `data-id` = `id` del manifiesto y `data-route` = `file` (`route-clase29-checkboxradio-product`).
 
-El menú izquierdo del curso está en `src/components/layout/layout-aside-left.html`. La clase 30 sigue marcada como no implementada.
+El menú izquierdo del curso está en `src/components/layout/layout-aside-left.html`. La clase 30 entra con `data-id="clase30"` y `data-route="route-clase30"`. La lista de widgets de jQuery UI del punto 5 no aplica a esta clase: el comportamiento sale de `jquery.smartform.js`.
 
 ## Títulos
 
@@ -54,6 +72,12 @@ El mismo texto en `pageTitle`, `headerTitle` y los `<h2>` de la página. En las 
 
 ```
 Clase 29 - 04. Checkboxradio - 03. Selector de producto
+```
+
+En la clase 30 no hay nombre de sección:
+
+```
+Clase 30 - 01. Envío en texto
 ```
 
 En la página, el bloque de la demo añade ` - Demo` y el de código añade ` - Código Markdown`. El `title` del `<h2>` y la etiqueta del aside llevan solo el nombre del ejercicio (`Selector de producto`).
