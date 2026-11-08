@@ -47,12 +47,12 @@ $accent-press: #054e82;
 
 @mixin title {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 2.56rem;
     font-weight: 650;
     color: $ink;
 
     @include tablet {
-        font-size: 1.8rem;
+        font-size: 3.04rem;
     }
 }
 
@@ -68,7 +68,7 @@ $accent-press: #054e82;
         font-size: 0.92em;
         color: $ink;
         background: #e7eef5;
-        border-radius: 0.3rem;
+        border-radius: 0.48rem;
     }
 }
 
@@ -83,7 +83,7 @@ $accent-press: #054e82;
         --accent: #{$accent};
         --accent-press: #{$accent-press};
         --tint: #f3f8fc;
-        --radius: 0.75rem;
+        --radius: 1.2rem;
     }
 
     [data-component-page="description"] {
@@ -117,9 +117,9 @@ $accent-press: #054e82;
 
     .#{$block}__form {
         display: grid;
-        gap: 1rem;
+        gap: 1.6rem;
         margin: 0;
-        padding: 1rem;
+        padding: 1.6rem;
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: var(--radius);
@@ -138,8 +138,8 @@ $accent-press: #054e82;
     }
 
     .#{$block}__fields-title {
-        margin: 0 0 0.85rem;
-        font-size: 1.05rem;
+        margin: 0 0 1.36rem;
+        font-size: 1.68rem;
         font-weight: 650;
         color: var(--ink);
     }
@@ -147,31 +147,31 @@ $accent-press: #054e82;
     .#{$block}__field {
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
-        margin-bottom: 0.75rem;
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 1.472rem;
     }
 
     .#{$block}__input {
         width: 100%;
-        padding: 0.55rem 0.7rem;
+        padding: 0.88rem 1.12rem;
         color: var(--ink);
         font: inherit;
         background: var(--paper);
         border: 1px solid var(--line);
-        border-radius: 0.5rem;
+        border-radius: 0.8rem;
     }
 
     .#{$block}__submit {
-        margin-top: 0.25rem;
-        padding: 0.55rem 1rem;
+        margin-top: 0.4rem;
+        padding: 0.88rem 1.6rem;
         color: #ffffff;
         font: inherit;
         font-weight: 650;
         background: var(--accent);
         border: 0;
-        border-radius: 0.5rem;
+        border-radius: 0.8rem;
         cursor: pointer;
 
         &:hover,
@@ -187,12 +187,13 @@ $accent-press: #054e82;
 
     .#{$block}__message,
     .#{$block}__form > p {
-        min-height: 6rem;
+        min-height: 9.6rem;
         margin: 0;
-        padding: 0.85rem 1rem;
+        padding: 1.36rem 1.6rem;
         color: var(--muted);
+        font-size: 1.6rem;
         background: var(--tint);
-        border-radius: 0.5rem;
+        border-radius: 0.8rem;
 
         @include tablet {
             grid-column: 2;
@@ -207,12 +208,12 @@ $accent-press: #054e82;
     .#{$block}__message ul,
     .#{$block}__form > p ul {
         margin: 0;
-        padding-left: 1.1rem;
+        padding-left: 1.76rem;
     }
 
     .#{$block}__message li,
     .#{$block}__form > p li {
-        margin: 0.25rem 0;
+        margin: 0.4rem 0;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -229,13 +230,13 @@ $accent-press: #054e82;
         justify-content: flex-start;
         align-items: center;
         width: fit-content;
-        gap: 2rem;
+        gap: 3.2rem;
     }
 
     .smartform__checkbox {
         flex: 0 0 auto;
-        width: 1rem;
-        height: 1rem;
+        width: 1.6rem;
+        height: 1.6rem;
         margin: 0;
         padding: 0;
     }

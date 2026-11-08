@@ -8,12 +8,12 @@
 @use 'clase-30-common' as c30;
 
 
-@include c30.frame('smartform', 78rem);
+@include c30.frame('smartform', 100rem);
 @include c30.autosave;
 
 
 .smartform__form + .smartform__form {
-    margin-top: 1.5rem;
+    margin-top: 2.4rem;
 }
 
 
