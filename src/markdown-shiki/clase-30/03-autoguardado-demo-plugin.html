@@ -52,8 +52,15 @@
 <span class="line"><span style="color:#6A9955">     */</span></span>
 <span class="line"><span style="color:#569CD6">    const</span><span style="color:#DCDCAA"> enviar</span><span style="color:#D4D4D4"> = (</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">) </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste}</span><span style="color:#6A9955"> - `ajustes guardados en este formulario` */</span></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste | undefined}</span><span style="color:#6A9955"> - `ajustes guardados en este formulario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> ajuste</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">        //  -----  la ruta nueva ya quitó este formulario  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  no hay url que pedir  -----</span></span>
+<span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">        }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        //  -----  pedir la respuesta al php  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        $</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">ajax</span><span style="color:#D4D4D4">({</span></span>
@@ -166,11 +173,11 @@
 <span class="line"><span style="color:#6A9955">        //  -----  una sola espera por formulario  -----</span></span>
 <span class="line"><span style="color:#9CDCFE">        window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">clearTimeout</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">previo</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste}</span><span style="color:#6A9955"> - `ajustes guardados en el formulario` */</span></span>
+<span class="line"><span style="color:#6A9955">        /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {SmartformAjuste | undefined}</span><span style="color:#6A9955"> - `ajustes guardados en el formulario` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> ajuste</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#6A9955">        //  -----  sin segundos no hay autoguardado  -----</span></span>
-<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (</span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">"number"</span><span style="color:#D4D4D4">) {</span></span>
+<span class="line"><span style="color:#6A9955">        //  -----  sin ajustes o sin segundos no hay autoguardado  -----</span></span>
+<span class="line"><span style="color:#C586C0">        if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">ajuste</span><span style="color:#D4D4D4"> || </span><span style="color:#569CD6">typeof</span><span style="color:#9CDCFE"> ajuste</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">segundos</span><span style="color:#D4D4D4"> !== </span><span style="color:#CE9178">"number"</span><span style="color:#D4D4D4">) {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">            //  -----  la fase 1 y la fase 2 se envían solo a mano  -----</span></span>
 <span class="line"><span style="color:#C586C0">            return</span><span style="color:#D4D4D4">;</span></span>
@@ -188,6 +195,16 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">        /** - `identificador de la espera` */</span></span>
 <span class="line"><span style="color:#569CD6">        const</span><span style="color:#4FC1FF"> retardo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">window</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">setTimeout</span><span style="color:#D4D4D4">(() </span><span style="color:#569CD6">=></span><span style="color:#D4D4D4"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            /** </span><span style="color:#569CD6">@type</span><span style="color:#4EC9B0"> {HTMLFormElement | undefined}</span><span style="color:#6A9955"> - `nodo de este formulario` */</span></span>
+<span class="line"><span style="color:#569CD6">            const</span><span style="color:#4FC1FF"> nodo</span><span style="color:#D4D4D4"> = </span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">get</span><span style="color:#D4D4D4">(</span><span style="color:#B5CEA8">0</span><span style="color:#D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">            //  -----  la ruta nueva ya sacó el formulario o sus ajustes  -----</span></span>
+<span class="line"><span style="color:#C586C0">            if</span><span style="color:#D4D4D4"> (!</span><span style="color:#9CDCFE">nodo</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">nodo</span><span style="color:#D4D4D4">.</span><span style="color:#9CDCFE">isConnected</span><span style="color:#D4D4D4"> || !</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">.</span><span style="color:#DCDCAA">data</span><span style="color:#D4D4D4">(</span><span style="color:#CE9178">"smartform"</span><span style="color:#D4D4D4">)) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A9955">                //  -----  no enviar un formulario que ya no está  -----</span></span>
+<span class="line"><span style="color:#C586C0">                return</span><span style="color:#D4D4D4">;</span></span>
+<span class="line"><span style="color:#D4D4D4">            }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A9955">            //  -----  enviar cuando vence la espera  -----</span></span>
 <span class="line"><span style="color:#DCDCAA">            enviar</span><span style="color:#D4D4D4">(</span><span style="color:#9CDCFE">formulario</span><span style="color:#D4D4D4">);</span></span>

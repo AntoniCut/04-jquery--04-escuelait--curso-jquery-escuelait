@@ -56,8 +56,15 @@
      */
     const enviar = (formulario) => {
 
-        /** @type {SmartformAjuste} - `ajustes guardados en este formulario` */
+        /** @type {SmartformAjuste | undefined} - `ajustes guardados en este formulario` */
         const ajuste = formulario.data("smartform");
+
+        //  -----  la ruta nueva ya quitó este formulario  -----
+        if (!ajuste) {
+
+            //  -----  no hay url que pedir  -----
+            return;
+        }
 
         //  -----  pedir la respuesta al php  -----
         $.ajax({
@@ -170,11 +177,11 @@
         //  -----  una sola espera por formulario  -----
         window.clearTimeout(previo);
 
-        /** @type {SmartformAjuste} - `ajustes guardados en el formulario` */
+        /** @type {SmartformAjuste | undefined} - `ajustes guardados en el formulario` */
         const ajuste = formulario.data("smartform");
 
-        //  -----  sin segundos no hay autoguardado  -----
-        if (typeof ajuste.segundos !== "number") {
+        //  -----  sin ajustes o sin segundos no hay autoguardado  -----
+        if (!ajuste || typeof ajuste.segundos !== "number") {
 
             //  -----  la fase 1 y la fase 2 se envían solo a mano  -----
             return;
@@ -192,6 +199,16 @@
 
         /** - `identificador de la espera` */
         const retardo = window.setTimeout(() => {
+
+            /** @type {HTMLFormElement | undefined} - `nodo de este formulario` */
+            const nodo = formulario.get(0);
+
+            //  -----  la ruta nueva ya sacó el formulario o sus ajustes  -----
+            if (!nodo || !nodo.isConnected || !formulario.data("smartform")) {
+
+                //  -----  no enviar un formulario que ya no está  -----
+                return;
+            }
 
             //  -----  enviar cuando vence la espera  -----
             enviar(formulario);
