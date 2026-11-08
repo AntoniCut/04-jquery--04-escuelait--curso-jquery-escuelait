@@ -1,0 +1,52 @@
+<!--
+    *  -------------------------------------------------------------------------------------------------------------------  *
+    *  -----  03-autoguardado-description.html  --  /src/pages-components/clase-30/03-autoguardado-description.html  -----  *
+    *  -------------------------------------------------------------------------------------------------------------------  *
+-->
+
+
+<div class="main__description">
+
+    <article class="description-page">
+
+        <header class="description-page__hero" style="--hero-mark: '03'">
+            <div class="description-page__hero-badge">
+                <p class="description-page__hero-tag" aria-hidden="true">03</p>
+                <h2 class="description-page__hero-title">Autoguardado</h2>
+                <p class="description-page__hero-subtitle">fase 3 · segundos</p>
+            </div>
+        </header>
+
+        <section class="description-page__intro">
+
+            <h3 class="description-page__features-title">
+                Fase 3
+            </h3>
+
+            <p class="description-page__intro-text">
+                Como tercera fase se implementa la fase 2, más un mecanismo para que el formulario se envíe automáticamente cada cierto número de segundos. El plugin convierte un formulario normal en un formulario Ajax, con validación y además un mecanismo de autosave.
+            </p>
+
+            <p class="description-page__intro-text">
+                Al invocar al plugin se genera un temporizador para que el formulario se envíe por Ajax pasados unos segundos. El tiempo es configurable en el objeto de opciones, que recibe los mismos datos que la fase 2 más un dato llamado <code>segundos</code>. Por defecto <code>segundos</code> vale 20.
+            </p>
+
+            <ol class="description-page__intro-text">
+                <li>Invocas al plugin y generas el temporizador para que se autoenvíe pasados esos segundos.</li>
+                <li>Si pasados esos segundos no lo hemos enviado manualmente, el formulario se autoenvía y se establece otra vez el temporizador.</li>
+                <li>Si antes de completarse los segundos el usuario envía el formulario con el botón, se envía por Ajax y el temporizador se para. Una vez recibida la respuesta, se vuelve a establecer.</li>
+            </ol>
+
+            <p class="description-page__intro-text">
+                El temporizador puede implementarse con <code>setTimeout()</code> o <code>setInterval()</code>.
+            </p>
+
+            <p class="description-page__intro-text">
+                En esta página el autoguardado está a los 6 segundos y empieza activado. Si lo desmarcás, se cancela la espera. Si envías antes, esa espera se cancela y vuelve a contarse al terminar.
+            </p>
+
+        </section>
+
+    </article>
+
+</div>

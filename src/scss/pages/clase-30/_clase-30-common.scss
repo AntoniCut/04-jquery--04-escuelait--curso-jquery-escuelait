@@ -1,0 +1,242 @@
+/*
+    *  ---------------------------------------------------------------------------------------  *
+    *  -----  _clase-30-common.scss  --  /src/scss/pages/clase-30/_clase-30-common.scss  -----  *
+    *  ---------------------------------------------------------------------------------------  *
+*/
+
+
+@use '../../base/mixins' as mix;
+
+
+$ink: #1c2430;
+$muted: #5c6775;
+$line: #d7dee7;
+$paper: #f4f7fb;
+$card: #ffffff;
+$accent: #0769ad;
+$accent-press: #054e82;
+
+
+@mixin mobile {
+    @include mix.mobile {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @include mix.tablet {
+        @content;
+    }
+}
+
+
+@mixin block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+
+    @include mobile {
+        gap: 1.6rem;
+    }
+}
+
+
+@mixin title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 650;
+    color: $ink;
+
+    @include tablet {
+        font-size: 1.8rem;
+    }
+}
+
+
+@mixin hint {
+    margin: 0;
+    max-width: 65ch;
+    color: $muted;
+    line-height: 1.55;
+
+    code {
+        padding: 0.08em 0.35em;
+        font-size: 0.92em;
+        color: $ink;
+        background: #e7eef5;
+        border-radius: 0.3rem;
+    }
+}
+
+
+@mixin frame($block, $height) {
+    .main__demo {
+        --ink: #{$ink};
+        --muted: #{$muted};
+        --line: #{$line};
+        --paper: #{$paper};
+        --card: #{$card};
+        --accent: #{$accent};
+        --accent-press: #{$accent-press};
+        --tint: #f3f8fc;
+        --radius: 0.75rem;
+    }
+
+    [data-component-page="description"] {
+        min-height: 28rem;
+
+        @include tablet {
+            min-height: 24rem;
+        }
+    }
+
+    [data-component-page="demo"],
+    .#{$block} {
+        min-height: $height;
+    }
+
+    .main__section-markdown {
+        min-height: 48rem;
+    }
+
+    .#{$block} {
+        @include block;
+    }
+
+    .#{$block}__title {
+        @include title;
+    }
+
+    .#{$block}__hint {
+        @include hint;
+    }
+
+    .#{$block}__form {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+        padding: 1rem;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        transition: opacity 160ms ease;
+
+        @include tablet {
+            grid-template-columns: 1.4fr 0.8fr;
+            align-items: start;
+        }
+    }
+
+    .#{$block}__fields {
+        @include tablet {
+            grid-column: 1;
+        }
+    }
+
+    .#{$block}__fields-title {
+        margin: 0 0 0.85rem;
+        font-size: 1.05rem;
+        font-weight: 650;
+        color: var(--ink);
+    }
+
+    .#{$block}__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+    }
+
+    .#{$block}__input {
+        width: 100%;
+        padding: 0.55rem 0.7rem;
+        color: var(--ink);
+        font: inherit;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
+    }
+
+    .#{$block}__submit {
+        margin-top: 0.25rem;
+        padding: 0.55rem 1rem;
+        color: #ffffff;
+        font: inherit;
+        font-weight: 650;
+        background: var(--accent);
+        border: 0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            background: var(--accent-press);
+        }
+
+        &:disabled {
+            opacity: 0.55;
+            cursor: progress;
+        }
+    }
+
+    .#{$block}__message,
+    .#{$block}__form > p {
+        min-height: 6rem;
+        margin: 0;
+        padding: 0.85rem 1rem;
+        color: var(--muted);
+        background: var(--tint);
+        border-radius: 0.5rem;
+
+        @include tablet {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    .#{$block}__message-text {
+        margin: 0;
+    }
+
+    .#{$block}__message ul,
+    .#{$block}__form > p ul {
+        margin: 0;
+        padding-left: 1.1rem;
+    }
+
+    .#{$block}__message li,
+    .#{$block}__form > p li {
+        margin: 0.25rem 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .#{$block}__form {
+            transition: none;
+        }
+    }
+}
+
+
+@mixin autosave {
+    .smartform__field--autosave {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        gap: 2rem;
+    }
+
+    .smartform__checkbox {
+        flex: 0 0 auto;
+        width: 1rem;
+        height: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+}

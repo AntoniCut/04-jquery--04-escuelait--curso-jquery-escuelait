@@ -1,0 +1,20 @@
+/*
+    *  -----------------------------------------------------------------------------  *
+    *  -----  02-opciones.scss  --  /src/scss/pages/clase-30/02-opciones.scss  -----  *
+    *  -----------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-30-common' as c30;
+
+
+@include c30.frame('smartform', 42rem);
+
+
+[data-component-page="description"] {
+    min-height: 64rem;
+
+    @include c30.tablet {
+        min-height: 56rem;
+    }
+}

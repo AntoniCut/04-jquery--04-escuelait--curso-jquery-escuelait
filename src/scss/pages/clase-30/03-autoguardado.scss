@@ -1,0 +1,21 @@
+/*
+    *  -------------------------------------------------------------------------------------  *
+    *  -----  03-autoguardado.scss  --  /src/scss/pages/clase-30/03-autoguardado.scss  -----  *
+    *  -------------------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-30-common' as c30;
+
+
+@include c30.frame('smartform', 48rem);
+@include c30.autosave;
+
+
+[data-component-page="description"] {
+    min-height: 58rem;
+
+    @include c30.tablet {
+        min-height: 50rem;
+    }
+}

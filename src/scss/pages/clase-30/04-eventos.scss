@@ -1,0 +1,26 @@
+/*
+    *  ---------------------------------------------------------------------------  *
+    *  -----  04-eventos.scss  --  /src/scss/pages/clase-30/04-eventos.scss  -----  *
+    *  ---------------------------------------------------------------------------  *
+*/
+
+
+@use 'clase-30-common' as c30;
+
+
+@include c30.frame('smartform', 78rem);
+@include c30.autosave;
+
+
+.smartform__form + .smartform__form {
+    margin-top: 1.5rem;
+}
+
+
+[data-component-page="description"] {
+    min-height: 48rem;
+
+    @include c30.tablet {
+        min-height: 42rem;
+    }
+}
